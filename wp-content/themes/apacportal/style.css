@@ -126,6 +126,10 @@ input[type="reset"]:active {
 	width:280px;
 }
 
+.box{
+	margin-bottom: 20px;
+}
+
 .box header{
 	padding:8px 5px;
 	background-color: rgb(239,244,247);

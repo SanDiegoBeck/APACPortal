@@ -9,7 +9,7 @@
 					<div class="content">
 						<br>
 						<input type="text" placeholder="Search..." >
-						<button type="submit" style="margin-left:140px;margin-top:10px;font-size: 0.8em;">Search</button>
+						<button type="submit" style="margin-left:140px;margin-top:10px;font-size: 0.8em;">SEARCH</button>
 						<br><br>
 					</div>
 				</div>
