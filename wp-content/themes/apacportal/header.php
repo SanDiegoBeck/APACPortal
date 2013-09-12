@@ -29,8 +29,12 @@
 				<h1 class="logo-aside"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
 				<div class="description">
 					<span class="worldtime">
-						<span class="city">Turin: </span><span class="time">5:00am</span>
-						<span class="city">Shanghai: </span><span class="time">11:00am</span>
+						<?date_default_timezone_set('America/New_York');?>
+						<span class="city">Auburn Hills: </span><span class="time"><?=date('H:i')?></span>
+						<?date_default_timezone_set('Europe/Rome');?>
+						<span class="city">Turin: </span><span class="time"><?=date('H:i')?></span>
+						<?date_default_timezone_set('Asia/Shanghai');?>
+						<span class="city">Shanghai: </span><span class="time"><?=date('H:i')?></span>
 					<span>
 					<span class="market">
 						SHARE PRICE  6.23€ + 1.71
