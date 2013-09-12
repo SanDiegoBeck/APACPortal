@@ -18,12 +18,9 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-	background: #e05d22; /* Old browsers */
-	background: -webkit-linear-gradient(top, #e05d22 0%, #d94412 100%); /* Chrome 10+, Safari 5.1+ */
-	background: linear-gradient(to bottom, #949CF1 0%, #1B0EA2 100%);
+	background: none;
+	background: rgb(21,67,123); /* Old browsers */
 	border: none;
-	border-bottom: 3px solid #4771F8;
-	border-radius: 2px;
 	color: #fff;
 	display: inline-block;
 	padding: 6px 5px 3px;
@@ -38,9 +35,8 @@ input[type="reset"]:hover,
 input[type="submit"]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus {
-	background: #ed6a31; /* Old browsers */
-	background: -webkit-linear-gradient(top, #ed6a31 0%, #e55627 100%); /* Chrome 10+, Safari 5.1+ */
-	background:   linear-gradient(to bottom, #ed6a31 0%, #e55627 100%); /* W3C */
+	background: none;
+	background: rgb(31,101,185); /* Old browsers */
 	outline: none;
 }
 
