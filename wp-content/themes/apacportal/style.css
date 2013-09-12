@@ -122,6 +122,10 @@ button, input[type="submit"], input[type="button"], input[type="reset"]{
 	color: rgb(99,98,115);
 }
 
+#right .content ul li a{
+	color: #999;
+}
+
 .site-footer{
 	border-top: solid 1px #ccc;
 	background-color: #FFF;
