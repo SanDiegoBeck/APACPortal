@@ -18,13 +18,21 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
-<!--	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />-->
+	<!--	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />-->
+	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/mobilyslider/mobilyslider.js"></script>
+		<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/mobilyslider/style.css' type='text/css' media='all' />
 </head>
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
 		<header id="masthead" class="site-header" role="banner">
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<div class="description-top">
+					<span class="market">
+						SHARE PRICE  6.23€ + 1.71
+					<span>
+				</div>
 				<h1 class="site-title"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
 				<h1 class="logo-aside"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
 				<div class="description">
@@ -35,9 +43,6 @@
 						<span class="city">Turin: </span><span class="time"><?=date('H:i')?></span>
 						<?date_default_timezone_set('Asia/Shanghai');?>
 						<span class="city">Shanghai: </span><span class="time"><?=date('H:i')?></span>
-					<span>
-					<span class="market">
-						SHARE PRICE  6.23€ + 1.71
 					<span>
 				</div>
 			</a>

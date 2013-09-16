@@ -54,11 +54,12 @@ input[type="reset"]:active {
 
 .site-header{
 	background-image: url('images/headerbg.jpg');
-	background-position: center -210px;
+	background-position: top;
+	background-repeat: no-repeat;
 }
 
 .site-header .home-link{
-	min-height: 250px;
+	min-height: 212px;
 	padding: 10px 10px 10px 10px;
 	background: rgba(255, 255, 255, 0.9);
 	box-shadow: 2px 2px 20px #888;
@@ -67,13 +68,14 @@ input[type="reset"]:active {
 .site-title{
 	padding: 0;
 	display: inline-block;
+	margin-top: 40px;
 }
 
 .logo-aside{
 	margin-left: 470px;
 	display: inline-block;
 	position: relative;
-	top: 70px;
+	top: 30px;
 }
 
 .navbar{
@@ -141,8 +143,12 @@ input[type="reset"]:active {
 	font-size: 0.9em;
 }
 
+.description-top{
+	text-align: right;
+}
+
 .description{
-	margin-top: 80px;
+	margin-top: 0;
 }
 
 .description .worldtime .city{
