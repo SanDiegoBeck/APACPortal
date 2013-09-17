@@ -51,7 +51,7 @@
 
 .sliderBullets {
 	position:absolute;
-	bottom:10px;
+	bottom:3px;
 	right:10px;
 	z-index:50;
 }

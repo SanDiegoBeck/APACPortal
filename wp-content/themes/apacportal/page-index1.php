@@ -14,8 +14,8 @@
 					<header>People Finder</header>
 					<div class="content">
 						<br>
-						<input type="text" placeholder="Search..." >
-						<button type="submit" style="margin-left:140px;margin-top:10px;font-size: 0.8em;">SEARCH</button>
+						<input type="text" placeholder="Search..." style="width: 150px">
+						<button type="submit" style="font-size: 0.8em;">SEARCH</button>
 						<br><br>
 					</div>
 				</div>

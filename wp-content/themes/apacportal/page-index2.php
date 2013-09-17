@@ -2,29 +2,29 @@
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-				<div class="box" style="position: absolute; width: 785px;">
+				<div class="box" style="position: absolute; width: 810px;">
 					<header>APAC News
 						<span class="more-link">More</span>
 					</header>
 					<div class="content">
-						<div class="slider" id="slider192" style="width: 770px; height:200px; position: absolute;"> 
-							<div class="sliderContent" style="width: 770px; height:200px">
+						<div class="slider" id="slider192" style="width: 800px; height:200px; position: absolute;"> 
+							<div class="sliderContent" style="width: 800px; height:200px">
 								<div class="item">
 									<a href="">
-										<img src="<?=get_stylesheet_directory_uri()?>/images/news_0.jpg" alt="News 0">
-										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_0.jpg" alt="News 0" width="800px">
+										<div style="position: relative; top:-30px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
 									</a>
 								</div>
 								<div class="item">
 									<a href="">
-										<img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0">
-										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0" width="800px">
+										<div style="position: relative; top:-30px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
 									</a>
 								</div>
 								<div class="item">
 									<a href="">
-										<img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0">
-										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0" width="800px">
+										<div style="position: relative; top:-30px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
 									</a>
 								</div>
 							</div>
@@ -94,8 +94,8 @@
 					<header>People Finder</header>
 					<div class="content">
 						<br>
-						<input type="text" placeholder="Search..." >
-						<button type="submit">SEARCH</button>
+						<input type="text" placeholder="Search..." style="width: 150px;">
+						<button type="submit" style="font-size: 0.8em;">SEARCH</button>
 						<br><br>
 					</div>
 				</div>
