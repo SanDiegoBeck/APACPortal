@@ -65,7 +65,7 @@
 			</div>
 			<div id="right">
 				<div class="box">
-					<header>Policy</header>
+					<header>Policies</header>
 					<div class="content">
 						<ul>
 							<li><a href="http://10.27.17.106/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">ICT Security Policies</a></li>

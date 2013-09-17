@@ -89,6 +89,10 @@ input[type="reset"]:active {
 	border-bottom: 3px solid #800;
 }
 
+.nav-menu li a{
+	color: #003F7D;
+}
+
 .nav-menu li.current-menu-item, 
 .nav-menu li:hover > a, .nav-menu li a:hover {
 	background-color: #F8F8F8;
@@ -96,7 +100,7 @@ input[type="reset"]:active {
 }
 
 .nav-menu li:hover > a, .nav-menu li a:hover{
-	color: rgb(5,50,133);
+	color: #003F7D;
 }
 
 #content {

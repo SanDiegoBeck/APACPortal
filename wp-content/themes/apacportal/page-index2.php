@@ -3,7 +3,7 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 				<div class="box" style="position: absolute; width: 785px;">
-					<header>Internal News
+					<header>APAC News
 						<span class="more-link">More</span>
 					</header>
 					<div class="content">
@@ -12,16 +12,20 @@
 								<div class="item">
 									<a href="">
 										<img src="<?=get_stylesheet_directory_uri()?>/images/news_0.jpg" alt="News 0">
-										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5);">News Title News Title News Title News Title News Title News Title</div>
+										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
 									</a>
 								</div>
 								<div class="item">
-									<a href=""><img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0"></a>
-										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5);">News Title News Title News Title News Title News Title News Title</div>
+									<a href="">
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0">
+										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+									</a>
 								</div>
 								<div class="item">
-									<a href=""><img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0"></a>
-										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5);">News Title News Title News Title News Title News Title News Title</div>
+									<a href="">
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0">
+										<div style="position: relative; top:-23px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -29,7 +33,7 @@
 				</div>
 			<div id="left" style="margin-top:260px;">
 				<div class="box">
-					<header>Internal News
+					<header>Useful Links
 						<span class="more-link">More</span>
 					</header>
 					<div class="content">
@@ -73,7 +77,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Useful Links</header>
+					<header>Internal News</header>
 					<div class="content">
 						<ul>
 							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>

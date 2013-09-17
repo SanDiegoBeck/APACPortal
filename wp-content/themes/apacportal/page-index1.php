@@ -3,6 +3,7 @@
 <style>
 	.box header{
 		background: #EFF4F7 url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;
+		font-weight: bold;
 	}
 </style>
 
@@ -48,13 +49,22 @@
 						<div class="slider" id="slider192" style="width: 550px; height:180px; position: absolute;"> 
 							<div class="sliderContent" style="width: 550px; height:180px">
 								<div class="item">
-									<a href=""><img src="<?=get_stylesheet_directory_uri()?>/images/news_0.jpg" alt="News 0"></a>
+									<a href="">
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_0.jpg" alt="News 0">
+										<div style="position: relative; top:-40px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+									</a>
 								</div>
 								<div class="item">
-									<a href=""><img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0"></a>
+									<a href="">
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0">
+										<div style="position: relative; top:-40px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+									</a>
 								</div>
 								<div class="item">
-									<a href=""><img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0"></a>
+									<a href="">
+										<img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0">
+										<div style="position: relative; top:-40px; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+									</a>
 								</div>
 							</div>
 						</div>
