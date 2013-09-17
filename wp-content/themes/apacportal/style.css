@@ -13,6 +13,18 @@ body{
 	background-color: #CCC;
 }
 
+h1{
+	font-size: 2em;
+}
+
+a{
+	color: inherit;
+}
+
+a:visited{
+	color: #AAA;
+}
+
 button,
 input[type="submit"],
 input[type="button"],
@@ -197,5 +209,19 @@ input[type="reset"]:active {
 	background-color: #FFF;
 }
 
+.archive-header{
+	background: none;
+	border-bottom: 2px #DDD solid;
+}
 
+.archive-title{
+	font: inherit;
+	color: #003F7D;
+	font-size: 2em;
+	padding: 0;
+}
+
+#content #main.two-columns{
+	width: 800px;
+}
 

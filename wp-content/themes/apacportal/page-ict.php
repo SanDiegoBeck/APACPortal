@@ -38,7 +38,7 @@
 			<div id="main">
 				<div class="box" style="height: 250px;">
 					<header>News
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
@@ -68,7 +68,7 @@
 					<header>Policies</header>
 					<div class="content">
 						<ul>
-							<li><a href="http://10.27.17.106/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">ICT Security Policies</a></li>
+							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">ICT Security Policies</a></li>
 							<li><a href="#">Email Guidelines</a></li>
 							<li><a href="#">Mobile Phone</a></li>
 						</ul>
