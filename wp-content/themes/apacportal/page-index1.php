@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+<style>
+	.box header{
+		background: #EFF4F7 url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;
+	}
+</style>
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 			<div id="left">
