@@ -69,24 +69,42 @@ input[type="reset"]:active {
 	background-repeat: no-repeat;
 }
 
-.site-header .home-link{
+.site-header .wrapper{
+	width: 1080px;
+	height: 170px;
 	min-height: 150px;
 	padding: 10px 10px 10px 10px;
+	margin: auto;
 	background: rgba(255, 255, 255, 0.9);
 	box-shadow: 2px 2px 20px #888;
 }
 
 .site-title{
 	padding: 0;
-	display: inline-block;
-	margin-top: 0;
+	margin-top: 10px;
 }
 
 .logo-aside{
-	margin-left: 470px;
-	display: inline-block;
-	position: relative;
-	top: 30px;
+	clear: none;
+	margin-top: 80px;
+}
+
+.description-top{
+	text-align: right;
+}
+
+.description{
+	clear: left;
+	margin-top: 10px;
+}
+
+.description .worldtime .city{
+	color: rgb(193,187,94);
+	margin-left: 10px;
+}
+
+.description .market{
+	float: right;
 }
 
 .navbar{
@@ -120,27 +138,8 @@ input[type="reset"]:active {
 	width: 1080px;
 }
 
-#content #left, #content #main, #content #right{
-	display: inline-block;
-	vertical-align: top;
-}
-
-#content #left{
-	width:240px;
-}
-
-#content #main{
-	width:560px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
 #content.site-content{
 	margin-top: 10px;
-}
-
-#content #right{
-	width:240px;
 }
 
 .box{
@@ -156,23 +155,6 @@ input[type="reset"]:active {
 .box header .more-link{
 	float: right;
 	font-size: 0.9em;
-}
-
-.description-top{
-	text-align: right;
-}
-
-.description{
-	margin-top: 0;
-}
-
-.description .worldtime .city{
-	color: rgb(193,187,94);
-	margin-left: 10px;
-}
-
-.description .market{
-	float: right;
 }
 
 .box .content{
@@ -200,7 +182,7 @@ input[type="reset"]:active {
 	color: rgb(99,98,115);
 }
 
-#right .content ul li a{
+.col-right .box .content ul li a{
 	color: #999;
 }
 

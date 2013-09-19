@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-			<div id="left" >
+		<div id="content" class="site-content row" role="main">
+			<div class="col-md-3">
 				<div class="box" style="margin-bottom: 0;">
 					<div class="content">
 						<img src="<?=get_stylesheet_directory_uri()?>/images/ict/logo.png" width="150px">
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="main">
+			<div class="col-md-6">
 				<div class="box" style="height: 250px;">
 					<header>News
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
@@ -63,7 +63,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="right">
+			<div class="col-md-3 col-right">
 				<div class="box">
 					<header>Policies</header>
 					<div class="content">
@@ -106,5 +106,4 @@
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
