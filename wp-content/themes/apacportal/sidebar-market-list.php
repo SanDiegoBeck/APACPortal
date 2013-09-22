@@ -1,5 +1,5 @@
 				<div class="box department-list">
-					<header>Departments</header>
+					<header>Markets</header>
 					<div class="content">
 						<ul>
 							<li>
