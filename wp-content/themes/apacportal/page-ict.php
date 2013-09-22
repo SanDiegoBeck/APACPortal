@@ -19,7 +19,18 @@
 					<header>Employee of the Month
 					</header>
 					<div class="content">
-						Bala
+						<dl class="dl-horizontal employee-this-month">
+							<dt>
+								<img src="<?=get_stylesheet_directory_uri()?>/images/ict/employee.jpg" width="125px">
+							</dt>
+							<dd>
+								<ul>
+									<li>Mark Zuckerberg</li>
+									<li>ICT
+									<li>New Comer</li>
+								</ul>
+							</dd>
+						</dl>
 					</div>
 				</div>
 				<div class="box">
@@ -36,12 +47,22 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="box" style="height: 250px;">
+				<div class="box">
 					<header>News
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
 					</header>
-					<div class="content">
+					<div class="content" style="height: 150px;">
 						<ul>
+							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
+							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
+							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
+							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
+							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
+							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
+							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
+							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
+							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
 							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
 							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>

@@ -10,8 +10,12 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content clearfix" role="main">
 
+			<div class="col-md-3">
+				<?=get_sidebar()?>
+			</div>
+			<div class="col-md-9">
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -20,6 +24,7 @@ get_header(); ?>
 				<?php comments_template(); ?>
 
 			<?php endwhile; ?>
+			</div>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

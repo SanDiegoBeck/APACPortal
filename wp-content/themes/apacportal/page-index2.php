@@ -1,5 +1,11 @@
 <?php get_header(); ?>
-
+<style>
+.box header{
+	background: none;
+	background-color: rgb(239,244,247);
+	font-weight: normal;
+}
+</style>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row" role="main">
 			<div class="col-md-9">

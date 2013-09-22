@@ -7,10 +7,8 @@
 @import '../twentythirteen/style.css';
 
 body{
-	font-size: 14px;
-	font-family: "HelveticaNeueW02-55Roma", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #626373;
-	background-color: #CCC;
+	background:#FFF url('images/bg.png') bottom center repeat-x;
 }
 
 h1{
@@ -22,7 +20,7 @@ a{
 }
 
 a:visited{
-	color: #AAA;
+	color: #888;
 }
 
 button,
@@ -30,10 +28,9 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"] {
 	background: none;
-	background: rgb(21,67,123); /* Old browsers */
+	background: #15437B;
 	border: none;
 	color: #fff;
-	display: inline-block;
 	padding: 6px 5px 3px;
 	text-decoration: none;
 }
@@ -47,7 +44,7 @@ input[type="submit"]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus {
 	background: none;
-	background: rgb(31,101,185); /* Old browsers */
+	background: #1F65B9;
 	outline: none;
 }
 
@@ -55,12 +52,21 @@ button:active,
 input[type="submit"]:active,
 input[type="button"]:active,
 input[type="reset"]:active {
-	background: #d94412; /* Old browsers */
-	background: -webkit-linear-gradient(top, #d94412 0%, #e05d22 100%); /* Chrome 10+, Safari 5.1+ */
-	background:   linear-gradient(to bottom, #d94412 0%, #e05d22 100%); /* W3C */
+	background: none;
+	background: #1F65B9;
 	border: none;
-	border-top: 3px solid #b93207;
-	padding: 10px 24px 11px;
+	outline: none;
+	padding: 6px 5px 3px;
+}
+
+.site{
+	background: none;
+}
+
+.wrapper{
+	width: 1080px;
+	padding: 10px 10px 10px 10px;
+	margin: auto;
 }
 
 .site-header{
@@ -70,11 +76,8 @@ input[type="reset"]:active {
 }
 
 .site-header .wrapper{
-	width: 1080px;
 	height: 170px;
 	min-height: 150px;
-	padding: 10px 10px 10px 10px;
-	margin: auto;
 	background: rgba(255, 255, 255, 0.9);
 	box-shadow: 2px 2px 20px #888;
 }
@@ -110,9 +113,11 @@ input[type="reset"]:active {
 .navbar{
 	background: rgb(239,244,247) url('images/navbg.png') repeat-x;
 	border-top: 2px solid #808080;
+	border-radius: 0 !important;
+	box-shadow: 0 3px 4px #CCC;
 }
 
-.nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a {
+.nav-menu .current-page-item > a, .nav-menu .current-page-ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a {
 	color: rgb(5,50,133);
 	font-style: normal;
 	font-weight: bold;
@@ -123,7 +128,7 @@ input[type="reset"]:active {
 	color: #003F7D;
 }
 
-.nav-menu li.current-menu-item, 
+.nav-menu li.current-menu-item, .nav-menu li.current-page-ancestor, 
 .nav-menu li:hover > a, .nav-menu li a:hover {
 	background-color: #F8F8F8;
 	box-shadow: 2px 0px 20px #888;
@@ -138,35 +143,35 @@ input[type="reset"]:active {
 	width: 1080px;
 }
 
-#content.site-content{
-	margin-top: 10px;
-}
-
 .box{
 	margin-bottom: 30px;
 }
 
-.box header{
-	padding:8px 5px;
-	background-color: rgb(239,244,247);
+.box>header{
+	padding:8px 8px;
 	color: #003F7D;
+	background: #EFF4F7 url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;
+	font-weight: bold;
+	box-shadow: 0 3px 3px #CCC;
+	border-radius: 3px;
 }
 
-.box header .more-link{
+.box>header .more-link{
 	float: right;
 	font-size: 0.9em;
 }
 
-.box .content{
+.box>.content{
 	padding:10px;
+	overflow-x: scroll;
 }
 
-.box .content ul{
+.box>.content ul{
 	margin: 0;
 	padding-left: 0;
 }
 
-.box .content ul li{
+.box>.content ul li{
 	word-wrap:normal;
 	overflow:hidden;
 	white-space:nowrap;
@@ -174,11 +179,11 @@ input[type="reset"]:active {
 	list-style-position: inside;
 }
 
-.box .content ul li:nth-child(even) a{
+.box>.content ul li:nth-child(even) a{
 	color: rgb(0,52,114);
 }
 
-.box .content ul li:nth-child(odd) a{
+.box>.content ul li:nth-child(odd) a{
 	color: rgb(99,98,115);
 }
 
@@ -188,7 +193,18 @@ input[type="reset"]:active {
 
 .site-footer{
 	border-top: solid 1px #ccc;
-	background-color: #FFF;
+	background: none;
+	padding-bottom: 200px;
+}
+
+.site-footer nav ul li{
+	float: left; margin-left: 20px;
+}
+
+.site-info {
+	margin: auto;
+	padding: 0;
+	width: auto;
 }
 
 .archive-header{
@@ -199,7 +215,7 @@ input[type="reset"]:active {
 .archive-title{
 	font: inherit;
 	color: #003F7D;
-	font-size: 2em;
+	font-size: 1.2em;
 	padding: 0;
 }
 
@@ -207,3 +223,27 @@ input[type="reset"]:active {
 	width: 800px;
 }
 
+.department-list .content ul li{
+	background-color: #F2F6F8;
+	line-height: 30px;
+	padding: 0 10px;
+	list-style-type: circle;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+.department-list .content ul li a{
+	color: #000 !important;
+}
+
+.employee-this-month{
+	margin: auto;
+}
+
+.employee-this-month dt{
+	width: auto !important;
+}
+
+.employee-this-month dd{
+	margin-left: 130px !important;
+}

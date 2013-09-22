@@ -1,40 +1,84 @@
 <?php get_header(); ?>
-
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row" role="main">
 			<div class="col-md-3">
-				<?get_sidebar()?>
+				<div class="box">
+					<header>Corporate History
+					</header>
+					<div class="content">
+						<ul>
+							<li><a href="#">Fiat Group</a></li>
+							<li><a href="#">Chrysler Group LLC</a></li>
+							<li><a href="#">Heritage</a></li>
+							<li><a href="#">About the Founders</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="box" style="height: 250px;">
-					<header>HR
+			<div class="col-md-3">
+				<div class="box">
+					<header>Product Pictures
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="box">
-					<header>Admin</header>
-					<div class="content">
-						<ul>
-							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<li><a href="#">Fiat</a></li>
+							<li><a href="#">Alfa Romeo</a></li>
+							<li><a href="#">Lancia</a></li>
+							<li><a href="#">Fiat Professional</a></li>
+							<li><a href="#">Abarth</a></li>
+							<li><a href="#">Jeep®</a></li>
+							<li><a href="#">Chrysler</a></li>
+							<li><a href="#">Dodge</a></li>
+							<li><a href="#">Ram</a></li>
+							<li><a href="#">Mopar</a></li>
+							<li><a href="#">SRT</a></li>
+							<li><a href="#">Maserati</a></li>
+							<li><a href="#">Ferrari</a></li>
+							<li><a href="#">Magneti Marelli</a></li>
+							<li><a href="#">Teksid</a></li>
+							<li><a href="#">Comau</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 col-right">
-				<?get_sidebar('department-list')?>
+				<div class="box">
+					<header>Corporate Image</header>
+					<div class="content">
+						<ul>
+							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">Office Regulations</a></li>
+							<li><a href="#">Facility Security Policy (access card management etc)</a></li>
+							<li><a href="#">EHS policy</a></li>
+							<li><a href="#">Emergency Response Policy by site</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<header>Executive Photos
+						<span class="more-link">More</span>
+					</header>
+					<div class="content">
+						<ul>
+							<li><a href="#">Pool car shuttle service schedule</a></li>
+							<li><a href="#">Tips for vehicle maintenance</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<header>Press Releases
+						<span class="more-link">More</span>
+					</header>
+					<div class="content">
+						<ul>
+							<li><a href="#">Apply for business card</a></li>
+							<li><a href="#">Request for employee badge</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-right">
+				<?get_sidebar('market-list')?>
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->
