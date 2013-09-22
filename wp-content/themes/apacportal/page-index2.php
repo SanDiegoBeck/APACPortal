@@ -35,9 +35,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="box">
-							<header>Useful Links
-								<span class="more-link">More</span>
-							</header>
+							<header>Internal News</header>
 							<div class="content">
 								<ul>
 									<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
@@ -79,7 +77,9 @@
 							</div>
 						</div>
 						<div class="box">
-							<header>Internal News</header>
+							<header>Useful Links
+								<span class="more-link">More</span>
+							</header>
 							<div class="content">
 								<ul>
 									<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
