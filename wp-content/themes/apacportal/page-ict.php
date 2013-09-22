@@ -34,7 +34,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Resources
+					<header>
+						Resources
+						<span class="more-link"><a href="/resources">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
@@ -96,7 +98,7 @@
 				</div>
 				<div class="box">
 					<header>Processes
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/processes">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
@@ -108,8 +110,8 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>How do I...
-						<span class="more-link">More</span>
+					<header>How to's
+						<span class="more-link"><a href="/how-tos">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
