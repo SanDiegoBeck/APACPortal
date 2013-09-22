@@ -38,6 +38,10 @@
 					</header>
 					<div class="content">
 						<ul>
+							<?query_posts('post_parent=92&post_type=attachment&post_status=any')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<?endwhile;?>
 							<li><a href="#">Projects</a></li>
 							<li><a href="#">ICT Abbreviations</a></li>
 							<li><a href="#">ICT Orgnizations</a></li>
@@ -49,49 +53,44 @@
 			<div class="col-md-6">
 				<div class="box">
 					<header>News
-						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
+						<span class="more-link"><a href="/category/departments/ict/news">More</a></span>
 					</header>
 					<div class="content" style="height: 150px;">
 						<ul>
-							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
-							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
-							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<?query_posts('category_name=departments/ict/news&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
-					<header>Technology Update</header>
+					<header>
+						Technology Update
+						<span class="more-link"><a href="/category/departments/ict/technology-updates">More</a></span>
+					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="#">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="#">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="#">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="#">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<?query_posts('category_name=departments/ict/technology-updates&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 col-right">
 				<div class="box">
-					<header>Policies</header>
+					<header>
+						Policies
+						<span class="more-link"><a href="/policies">More</a></span>
+					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">ICT Security Policies</a></li>
-							<li><a href="#">Email Guidelines</a></li>
-							<li><a href="#">Mobile Phone</a></li>
+							<?query_posts('post_parent=54&post_type=attachment&post_status=any&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
@@ -101,11 +100,10 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Software Purchase Process</a></li>
-							<li><a href="#">Spending Committee</a></li>
-							<li><a href="#">Capital AR</a></li>
-							<li><a href="#">Change Request Process</a></li>
-							<li><a href="#">Server Process</a></li>
+							<?query_posts('post_parent=100&post_type=attachment&post_status=any&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
@@ -115,11 +113,10 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Request assistance</a></li>
-							<li><a href="#">Request PC, BBM</a></li>
-							<li><a href="#">Add Printer</a></li>
-							<li><a href="#">Reset Password</a></li>
-							<li><a href="#">Telepresence: Booking/usage</a></li>
+							<?query_posts('post_parent=112&post_type=attachment&post_status=any&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
