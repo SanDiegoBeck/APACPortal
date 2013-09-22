@@ -163,7 +163,7 @@ input[type="reset"]:active {
 
 .box>.content{
 	padding:10px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .box>.content ul{
