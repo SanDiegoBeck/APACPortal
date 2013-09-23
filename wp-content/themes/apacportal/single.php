@@ -12,10 +12,10 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content clearfix" role="main">
 
-			<div class="col-md-3">
+			<div class="span3">
 				<?=get_sidebar()?>
 			</div>
-			<div class="col-md-9">
+			<div class="span9">
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 

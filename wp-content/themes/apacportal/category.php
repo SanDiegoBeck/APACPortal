@@ -13,10 +13,10 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content clearfix" role="main">
-			<div class="col-md-3">
+			<div class="span3">
 				<?=get_sidebar()?>
 			</div>
-			<div class="col-md-9 box">
+			<div class="span9 box">
 			<?php if ( have_posts() ) : ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'twentythirteen' ), single_cat_title( '', false ) ); ?></h1>

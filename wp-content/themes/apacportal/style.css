@@ -132,6 +132,8 @@ input[type="reset"]:active {
 .nav-menu li:hover > a, .nav-menu li a:hover {
 	background-color: #F8F8F8;
 	box-shadow: 2px 0px 20px #888;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
 
 .nav-menu li:hover > a, .nav-menu li a:hover{
@@ -244,6 +246,14 @@ input[type="reset"]:active {
 	width: auto !important;
 }
 
+.employee-this-month dt img{
+	width: 125px;
+}
+
 .employee-this-month dd{
 	margin-left: 130px !important;
+}
+
+.market-list .flag img{
+	width: 30px
 }

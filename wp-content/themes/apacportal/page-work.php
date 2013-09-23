@@ -6,8 +6,8 @@
 }
 </style>
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content row" role="main">
-			<div class="col-md-3">
+		<div id="content" class="site-content row-fluid" role="main">
+			<div class="span3">
 				<div class="box" style="margin-bottom: 0;">
 					<div class="content">
 						<img src="<?=get_stylesheet_directory_uri()?>/images/admin/logo.png" width="150px">
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="span3">
 				<div class="box">
 					<header>Facility News
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-right">
+			<div class="span3 col-right">
 				<div class="box">
 					<header>Policies</header>
 					<div class="content">
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-right">
+			<div class="span3 col-right">
 				<?get_sidebar('department-list')?>
 			</div>
 		</div><!-- #content -->

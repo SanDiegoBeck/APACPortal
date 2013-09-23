@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content row" role="main">
-			<div class="col-md-3">
+		<div id="content" class="site-content row-fluid" role="main">
+			<div class="span3">
 				<div class="box">
 					<header>Human Resources
 					</header>
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="span6">
 				<div class="box" style="height: 250px;">
 					<header>Organization Chart
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
@@ -98,7 +98,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-right">
+			<div class="span3 col-right">
 				<div class="box">
 					<header>Policy & Process</header>
 					<div class="content">

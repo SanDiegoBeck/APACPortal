@@ -8,11 +8,11 @@
 </style>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content row" role="main">
-			<div class="col-md-3">
+		<div id="content" class="site-content row-fluid" role="main">
+			<div class="span3">
 				<?get_sidebar()?>
 			</div>
-			<div class="col-md-6">
+			<div class="span6">
 				<div class="box">
 					<header>APAC News
 						<span class="more-link">More</span>
@@ -71,7 +71,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-right">
+			<div class="span3 col-right">
 				<div class="box">
 					<header>Notices
 						<span class="more-link">More</span>

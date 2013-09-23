@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content row" role="main">
-			<div class="col-md-3">
+		<div id="content" class="site-content row-fluid" role="main">
+			<div class="span3">
 				<div class="box" style="margin-bottom: 0;">
 					<div class="content">
 						<img src="<?=get_stylesheet_directory_uri()?>/images/ict/logo.png" width="150px">
@@ -21,7 +21,7 @@
 					<div class="content">
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
-								<img src="<?=get_stylesheet_directory_uri()?>/images/ict/employee.jpg" width="125px">
+								<img src="<?=get_stylesheet_directory_uri()?>/images/ict/employee.jpg">
 							</dt>
 							<dd>
 								<ul>
@@ -52,7 +52,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="span6">
 				<div class="box">
 					<header>News
 						<span class="more-link"><a href="/category/departments/ict/news">More</a></span>
@@ -81,7 +81,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-right">
+			<div class="span3 col-right">
 				<div class="box">
 					<header>
 						Policies
