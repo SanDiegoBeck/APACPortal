@@ -11,7 +11,7 @@
 				<div class="box" style="margin-bottom: 0;">
 					<div class="content">
 						<img src="<?=get_stylesheet_directory_uri()?>/images/admin/logo.png" width="150px">
-						<h3>Facilities & Administration</h3>
+						<p style="font-weight: bold; font-size: 1.3em;">Facilities & Administration</p>
 					</div>
 				</div>
 				<div class="box">

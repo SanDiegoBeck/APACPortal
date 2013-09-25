@@ -117,11 +117,12 @@ input[type="reset"]:active {
 	box-shadow: 0 3px 4px #CCC;
 }
 
-.nav-menu .current-page-item > a, .nav-menu .current-page-ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a {
+.nav-menu .current_page_item > a, .nav-menu .current-page-ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a {
 	color: rgb(5,50,133);
 	font-style: normal;
 	font-weight: bold;
 	border-bottom: 3px solid #800;
+	box-shadow: 2px 0px 20px #888;
 }
 
 .nav-menu li a{
@@ -132,8 +133,6 @@ input[type="reset"]:active {
 .nav-menu li:hover > a, .nav-menu li a:hover {
 	background-color: #F8F8F8;
 	box-shadow: 2px 0px 20px #888;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
 
 .nav-menu li:hover > a, .nav-menu li a:hover{
@@ -160,7 +159,11 @@ input[type="reset"]:active {
 
 .box>header .more-link{
 	float: right;
-	font-size: 0.9em;
+	font-size: 0.8em;
+}
+
+.box>header .more-link a{
+	font-size: 0.8em;
 }
 
 .box>.content{
@@ -247,13 +250,17 @@ input[type="reset"]:active {
 }
 
 .employee-this-month dt img{
-	width: 125px;
+	width: 80px;
 }
 
 .employee-this-month dd{
-	margin-left: 130px !important;
+	margin-left: 90px !important;
 }
 
 .market-list .flag img{
 	width: 30px
+}
+
+.market-list li{
+	list-style: none;
 }

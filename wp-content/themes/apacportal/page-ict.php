@@ -12,7 +12,7 @@
 					<header>Mission
 					</header>
 					<div class="content">
-						Be an agile and  innovative business partner providing high quality, cost effective and secure technology solutions
+						Be an agile and  innovative business partner providing high quality, cost effective and secure technology solutions.
 					</div>
 				</div>
 				<div class="box">
@@ -40,9 +40,9 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('post_parent=92&post_type=attachment&post_status=any')?>
+							<?query_posts('post_parent=33&post_type=attachment&post_status=any')?>
 							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
 							<li><a href="#">Projects</a></li>
 							<li><a href="#">ICT Abbreviations</a></li>
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>How to's
+					<header>How to
 						<span class="more-link"><a href="/how-tos">More</a></span>
 					</header>
 					<div class="content">

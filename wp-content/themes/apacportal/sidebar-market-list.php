@@ -4,35 +4,27 @@
 						<ul class="market-list">
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="#" target="_blank">China</a>
+								<a href="#" target="_blank">India</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/Marketing" target="_blank">FIASA</a>
+								<a href="/Marketing" target="_blank">Japan</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/Communication" target="_blank">Fiat Auto Poland</a>
+								<a href="/Communication" target="_blank">Korea</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/ICT" target="_blank">Germany</a>
+								<a href="/ICT" target="_blank">Australia</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/ICT" target="_blank">Hungary</a>
+								<a href="/ICT" target="_blank">New Zealand</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/ICT" target="_blank">Netherlands</a>
-							</li>
-							<li>
-								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/ICT" target="_blank">Slovakia</a>
-							</li>
-							<li>
-								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/ICT" target="_blank">Serbia</a>
+								<a href="/ICT" target="_blank">ASEAN</a>
 							</li>
 						</ul>
 					</div>
