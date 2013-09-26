@@ -1,10 +1,4 @@
 <?php get_header(); ?>
-<style>
-.site-header {
-	background-image: url('<?=get_stylesheet_directory_uri()?>/images/admin/headerbg.jpg');
-	background-position: center -20px;
-}
-</style>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
@@ -15,14 +9,16 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Mission
+					<header>
+						Mission
 					</header>
 					<div class="content">
 						Maintain a Healthy Working Environment
 					</div>
 				</div>
 				<div class="box">
-					<header>Work Place
+					<header>
+						Work Place
 					</header>
 					<div class="content">
 						<ul>
@@ -36,8 +32,8 @@
 			</div>
 			<div class="span3">
 				<div class="box">
-					<header>Facility News
-						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
+					<header>
+						Facility News
 					</header>
 					<div class="content">
 						<ul>
@@ -49,7 +45,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Travel Service</header>
+					<header>
+						Travel Service
+					</header>
 					<div class="content">
 						<ul>
 							<li><a href="/coming-soon">Travel agency introduction – hotline, service scope</a></li>
@@ -61,7 +59,9 @@
 			</div>
 			<div class="span3">
 				<div class="box">
-					<header>Policies</header>
+					<header>
+						Policies
+					</header>
 					<div class="content">
 						<ul>
 							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">Office Regulations</a></li>
@@ -72,8 +72,8 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Vehicle Service
-						<span class="more-link">More</span>
+					<header>
+						Vehicle Service
 					</header>
 					<div class="content">
 						<ul>
@@ -83,8 +83,8 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>How To
-						<span class="more-link">More</span>
+					<header>
+						How To
 					</header>
 					<div class="content">
 						<ul>

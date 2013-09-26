@@ -7,10 +7,11 @@
 			</div>
 			<div class="span6">
 				<div class="box">
-					<header>APAC News
+					<header>
 						<span class="more-link"><a href="/category/apac-news">More</a></span>
+						APAC News
 					</header>
-					<div class="content" style="height:135px; padding: 0;">
+					<div class="content" style="height:135px; padding: 0; margin-top: 10px">
 						<div class="slider" id="slider192" style="width: 530px; height:135px; position: absolute;"> 
 							<div class="sliderContent" style="width: 530px; height:135px">
 								<?query_posts('category_name=apac-news&posts_per_page=5')?>
@@ -27,8 +28,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Internal News
+					<header>
 						<span class="more-link"><a href="/category/internal-news">More</a></span>
+						Internal News
 					</header>
 					<div class="content">
 						<ul>
@@ -40,8 +42,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Global News
+					<header>
 						<span class="more-link"><a href="/category/global-news">More</a></span>
+						Global News
 					</header>
 					<div class="content">
 						<ul>
@@ -55,8 +58,9 @@
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
-					<header>Notices
+					<header>
 						<span class="more-link"><a href="/category/notices">More</a></span>
+						Notices
 					</header>
 					<div class="content">
 						<ul>
@@ -68,8 +72,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Quick Links
+					<header>
 						<span class="more-link"><a href="/category/quick-links">More</a></span>
+						Quick Links
 					</header>
 					<div class="content">
 						<ul>

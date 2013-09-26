@@ -86,9 +86,7 @@ body, h1, h2, h3, h4, h5{
 
 /*Header*/
 .site-header{
-	background-image: url('images/headerbg.jpg');
-	background-position: top;
-	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .site-header .wrapper{

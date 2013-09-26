@@ -9,19 +9,21 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Mission
+					<header>
+						Mission
 					</header>
 					<div class="content">
 						Be an agile and  innovative business partner providing high quality, cost effective and secure technology solutions.
 					</div>
 				</div>
 				<div class="box">
-					<header>Employee of the Month
+					<header>
+						Employee of the Month
 					</header>
 					<div class="content">
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
-								<img src="<?=get_stylesheet_directory_uri()?>/images/ict/employee.jpg">
+								<img src="<?=get_stylesheet_directory_uri()?>/images/ict/avatar.png">
 							</dt>
 							<dd>
 								<ul>
@@ -35,8 +37,8 @@
 				</div>
 				<div class="box">
 					<header>
-						Resources
 						<span class="more-link"><a href="/resources">More</a></span>
+						Resources
 					</header>
 					<div class="content">
 						<ul>
@@ -44,18 +46,15 @@
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
-							<li><a href="/coming-soon">Projects</a></li>
-							<li><a href="/coming-soon">ICT Abbreviations</a></li>
-							<li><a href="/coming-soon">ICT Orgnizations</a></li>
-							<li><a href="/coming-soon">Favorite Links</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="span6">
 				<div class="box">
-					<header>News
+					<header>
 						<span class="more-link"><a href="/category/departments/ict/news">More</a></span>
+						News
 					</header>
 					<div class="content">
 						<?query_posts('category_name=departments/ict/news&posts_per_page=1')?>
@@ -66,8 +65,8 @@
 				</div>
 				<div class="box">
 					<header>
-						Technology Update
 						<span class="more-link"><a href="/category/departments/ict/technology-updates">More</a></span>
+						Technology Update
 					</header>
 					<div class="content">
 						<ul>
@@ -82,8 +81,8 @@
 			<div class="span3 col-right">
 				<div class="box">
 					<header>
-						Policies
 						<span class="more-link"><a href="/policies">More</a></span>
+						Policies
 					</header>
 					<div class="content">
 						<ul>
@@ -95,8 +94,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Processes
+					<header>
 						<span class="more-link"><a href="/processes">More</a></span>
+						Processes
 					</header>
 					<div class="content">
 						<ul>
@@ -108,8 +108,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>How to
+					<header>
 						<span class="more-link"><a href="/how-tos">More</a></span>
+						How to
 					</header>
 					<div class="content">
 						<ul>

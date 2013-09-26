@@ -12,7 +12,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content clearfix" role="main">
+		<div id="content" class="site-content row-fluid clearfix" role="main">
 			<div class="span3">
 				<?=get_sidebar()?>
 			</div>

@@ -9,8 +9,9 @@
 	</div>
 </div>
 <div class="box">
-	<header>Events
+	<header>
 		<span class="more-link"><a href="/category/events">More</a></span>
+		Events
 	</header>
 	<div class="content">
 		<ul>

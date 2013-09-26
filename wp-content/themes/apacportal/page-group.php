@@ -3,8 +3,9 @@
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
 				<div class="box">
-					<header>Corporate History
+					<header>
 						<span class="more-link"><a href="/category/departments/communication/corporate-history">More</a></span>
+						Corporate History
 					</header>
 					<div class="content">
 						<ul>
@@ -18,8 +19,9 @@
 			</div>
 			<div class="span3">
 				<div class="box">
-					<header>Product Pictures
+					<header>
 						<span class="more-link"><a href="/category/departments/communication/product-pictures">More</a></span>
+						Product Pictures
 					</header>
 					<div class="content">
 						<ul>
@@ -33,8 +35,9 @@
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
-					<header>Corporate Image
+					<header>
 						<span class="more-link"><a href="/category/departments/communication/corporate-image">More</a></span>
+						Corporate Image
 					</header>
 					<div class="content">
 						<ul>
@@ -46,8 +49,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Executive Photos
+					<header>
 						<span class="more-link"><a href="/category/departments/communication/executive-photos">More</a></span>
+						Executive Photos
 					</header>
 					<div class="content">
 						<ul>
@@ -59,8 +63,9 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Press Releases
+					<header>
 						<span class="more-link"><a href="/press-releases">More</a></span>
+						Press Releases
 					</header>
 					<div class="content">
 						<ul>
