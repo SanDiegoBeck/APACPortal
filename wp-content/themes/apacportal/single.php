@@ -9,23 +9,20 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content clearfix" role="main">
+<div id="primary" class="row-fluid content-area">
+	<div id="content" class="site-content clearfix" role="main">
 
-			<div class="span3">
-				<?=get_sidebar()?>
-			</div>
-			<div class="span9">
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+		<div class="span3">
+			<?=get_sidebar()?>
+		</div>
+		<div class="span9">
+		<?php /* The loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php endwhile; ?>
+		</div>
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+	</div><!-- #content -->
+</div><!-- #primary -->
 
-			<?php endwhile; ?>
-			</div>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

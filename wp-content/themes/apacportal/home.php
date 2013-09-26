@@ -10,14 +10,14 @@
 					<header>APAC News
 						<span class="more-link"><a href="/category/apac-news">More</a></span>
 					</header>
-					<div class="content" style="height:135px">
+					<div class="content" style="height:135px; padding: 0;">
 						<div class="slider" id="slider192" style="width: 530px; height:135px; position: absolute;"> 
 							<div class="sliderContent" style="width: 530px; height:135px">
 								<?query_posts('category_name=apac-news&posts_per_page=5')?>
 								<?while(have_posts()):the_post();?>
 								<div class="item">
 									<a href="<?the_permalink()?>">
-										<?the_post_thumbnail(array(530,135))?>
+										<?the_post_thumbnail('home-news-slider')?>
 										<summary><?the_title()?></summary>
 									</a>
 								</div>
@@ -83,5 +83,5 @@
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->
-
+<?wp_reset_query()?>
 <?php get_footer(); ?>
