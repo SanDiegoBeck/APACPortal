@@ -1,14 +1,23 @@
 /* 
 	Name: Apac Portal
 	Template: twentythirteen
-	Author : Uice Stone <uicestone@gmail.com>
+	Author : Uice Lu <uicelu@gmail.com>
 */
 
 @import '../twentythirteen/style.css';
 
-body{
-	color: #626373;
-	background:#FFF url('images/bg.png') bottom center repeat-x;
+/*Repeatable Patterns*/
+
+a{
+	color: #003F7D;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:visited{
+	color: #A6C1EB;
 }
 
 input{
@@ -55,6 +64,16 @@ input[type="reset"]:active {
 	padding: 6px 5px 3px;
 }
 
+/*Basic Structure*/
+body{
+	color: #626373;
+	background:#FFF url('images/bg.png') bottom center repeat-x;
+}
+
+body, h1, h2, h3, h4, h5{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .site{
 	background: none;
 }
@@ -65,6 +84,7 @@ input[type="reset"]:active {
 	margin: auto;
 }
 
+/*Header*/
 .site-header{
 	background-image: url('images/headerbg.jpg');
 	background-position: top;
@@ -119,7 +139,7 @@ input[type="reset"]:active {
 	background-image: url('images/navbg.png');
 	background-repeat: repeat-x;
 	border-top: 2px solid #808080;
-	border-radius: 0 !important;
+	border-radius: 0;
 	box-shadow: 0 3px 4px #CCC;
 }
 
@@ -148,6 +168,7 @@ input[type="reset"]:active {
 	box-shadow: none;
 }
 
+/*Content*/
 #content {
 	margin: 0 auto;
 	width: 1080px;
@@ -193,10 +214,7 @@ input[type="reset"]:active {
 	list-style-position: inside;
 }
 
-.box>.content ul li a{
-	color: #003472;
-}
-
+/*Footer*/
 .site-footer{
 	border-top: solid 1px #ccc;
 	background: none;
@@ -213,6 +231,16 @@ input[type="reset"]:active {
 	width: auto;
 }
 
+/*Home Page*/
+.slider .item summary{
+	position: relative;
+	top:-1.5em;
+	color: #FFF;
+	background:rgba(0,0,0,0.5);
+	padding-left: 1em;
+}
+
+/*Archive Page*/
 .archive-header{
 	background: none;
 	border-bottom: 2px #DDD solid;
@@ -225,10 +253,7 @@ input[type="reset"]:active {
 	padding: 0;
 }
 
-#content #main.two-columns{
-	width: 800px;
-}
-
+/*Department List*/
 .department-list .content ul li, .market-list .content ul li{
 	background-color: #F2F6F8;
 	line-height: 30px;
@@ -238,10 +263,21 @@ input[type="reset"]:active {
 	border-radius: 5px;
 }
 
-.department-list .content ul li a, .market-list .content ul li a{
-	color: #000 !important;
+/*Market List*/
+.market-list .flag img{
+	width: 30px
 }
 
+.market-list .content ul li{
+	list-style-type: none;
+}
+
+/*404 Page*/
+.error404 .page-wrapper{
+	background-color: #F6F6F6;
+}
+
+/*ICT Page*/
 .employee-this-month{
 	margin: auto;
 }
@@ -255,17 +291,5 @@ input[type="reset"]:active {
 }
 
 .employee-this-month dd{
-	margin-left: 90px !important;
-}
-
-.market-list .flag img{
-	width: 30px
-}
-
-.market-list .content ul li{
-	list-style-type: none;
-}
-
-.error404 .page-wrapper{
-	background-color: #F6F6F6;
+	margin-left: 90px;
 }

@@ -10,21 +10,14 @@
 				</div>
 				<div class="box">
 					<header>Events
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/events">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
+							<?query_posts('category_name=events&posts_per_page=10')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>

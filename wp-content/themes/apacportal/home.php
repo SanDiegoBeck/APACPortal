@@ -1,12 +1,5 @@
 <?php get_header(); ?>
 
-<style>
-	.box header{
-		background: #EFF4F7 url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;
-		font-weight: bold;
-	}
-</style>
-
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
@@ -15,58 +8,47 @@
 			<div class="span6">
 				<div class="box">
 					<header>APAC News
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/apac-news">More</a></span>
 					</header>
-					<div class="content" style="height: 135px; padding: 5px 0;">
+					<div class="content" style="height:135px">
 						<div class="slider" id="slider192" style="width: 530px; height:135px; position: absolute;"> 
 							<div class="sliderContent" style="width: 530px; height:135px">
+								<?query_posts('category_name=apac-news&posts_per_page=5')?>
+								<?while(have_posts()):the_post();?>
 								<div class="item">
-									<a href="">
-										<img src="<?=get_stylesheet_directory_uri()?>/images/news_0.jpg" alt="News 0">
-										<div style="position: relative; top:-1.5em; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
+									<a href="<?the_permalink()?>">
+										<?the_post_thumbnail(array(530,135))?>
+										<summary><?the_title()?></summary>
 									</a>
 								</div>
-								<div class="item">
-									<a href="">
-										<img src="<?=get_stylesheet_directory_uri()?>/images/news_5.jpg" alt="News 0">
-										<div style="position: relative; top:-1.5em; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
-									</a>
-								</div>
-								<div class="item">
-									<a href="">
-										<img src="<?=get_stylesheet_directory_uri()?>/images/news_6.jpg" alt="News 0">
-										<div style="position: relative; top:-1.5em; color: #FFF; background: rgba(0,0,0,0.5); padding-left: 1em;">News Title News Title News Title News Title News Title News Title</div>
-									</a>
-								</div>
+								<?endwhile;?>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="box">
 					<header>Internal News
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/internal-news">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<?query_posts('category_name=internal-news&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
 					<header>Global News
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/global-news">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<?query_posts('category_name=global-news&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
@@ -74,29 +56,27 @@
 			<div class="span3 col-right">
 				<div class="box">
 					<header>Notices
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/notices">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<?query_posts('category_name=notices&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
 					<header>Quick Links
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/quick-links">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
+							<?query_posts('category_name=quick-links&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>

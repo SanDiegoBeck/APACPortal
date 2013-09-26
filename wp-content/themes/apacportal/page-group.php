@@ -4,13 +4,14 @@
 			<div class="span3">
 				<div class="box">
 					<header>Corporate History
+						<span class="more-link"><a href="/category/departments/communication/corporate-history">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Fiat Group</a></li>
-							<li><a href="/coming-soon">Chrysler Group LLC</a></li>
-							<li><a href="/coming-soon">Heritage</a></li>
-							<li><a href="/coming-soon">About the Founders</a></li>
+							<?query_posts('category_name=departments/communication/corporate-history&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
@@ -18,61 +19,55 @@
 			<div class="span3">
 				<div class="box">
 					<header>Product Pictures
-						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
+						<span class="more-link"><a href="/category/departments/communication/product-pictures">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Fiat</a></li>
-							<li><a href="/coming-soon">Alfa Romeo</a></li>
-							<li><a href="/coming-soon">Lancia</a></li>
-							<li><a href="/coming-soon">Fiat Professional</a></li>
-							<li><a href="/coming-soon">Abarth</a></li>
-							<li><a href="/coming-soon">Jeep®</a></li>
-							<li><a href="/coming-soon">Chrysler</a></li>
-							<li><a href="/coming-soon">Dodge</a></li>
-							<li><a href="/coming-soon">Ram</a></li>
-							<li><a href="/coming-soon">Mopar</a></li>
-							<li><a href="/coming-soon">SRT</a></li>
-							<li><a href="/coming-soon">Maserati</a></li>
-							<li><a href="/coming-soon">Ferrari</a></li>
-							<li><a href="/coming-soon">Magneti Marelli</a></li>
-							<li><a href="/coming-soon">Teksid</a></li>
-							<li><a href="/coming-soon">Comau</a></li>
+							<?query_posts('category_name=departments/communication/product-pictures&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
-					<header>Corporate Image</header>
+					<header>Corporate Image
+						<span class="more-link"><a href="/category/departments/communication/corporate-image">More</a></span>
+					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">Office Regulations</a></li>
-							<li><a href="/coming-soon">Facility Security Policy (access card management etc)</a></li>
-							<li><a href="/coming-soon">EHS policy</a></li>
-							<li><a href="/coming-soon">Emergency Response Policy by site</a></li>
+							<?query_posts('category_name=departments/communication/corporate-image&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
 					<header>Executive Photos
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/category/departments/communication/executive-photos">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Pool car shuttle service schedule</a></li>
-							<li><a href="/coming-soon">Tips for vehicle maintenance</a></li>
+							<?query_posts('category_name=departments/communication/executive-photos&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
 					<header>Press Releases
-						<span class="more-link">More</span>
+						<span class="more-link"><a href="/press-releases">More</a></span>
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Apply for business card</a></li>
-							<li><a href="/coming-soon">Request for employee badge</a></li>
+							<?query_posts('post_parent=225&post_type=attachment&post_status=any&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
