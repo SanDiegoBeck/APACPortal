@@ -4,7 +4,7 @@
 						<ul>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/in.png"></span>
-								<a href="#" target="_blank">India</a>
+								<a href="/coming-soon" target="_blank">India</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/jp.png"></span>

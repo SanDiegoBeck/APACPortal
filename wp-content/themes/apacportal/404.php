@@ -12,15 +12,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
+			<div class="page-wrapper">
+				<div class="page-content">
+					<h3>We’re Sorry! This page is coming soon. We appreciate your patience.</h3>
+				</div><!-- .page-content -->
+			</div><!-- .page-wrapper -->
+
 			<header class="page-header">
 				<h1 class="page-title">Coming Soon</h1>
 			</header>
-
-			<div class="page-wrapper">
-				<div class="page-content">
-					<h2>The page you're visiting  is under construction, and may be available soon.</h2>
-				</div><!-- .page-content -->
-			</div><!-- .page-wrapper -->
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

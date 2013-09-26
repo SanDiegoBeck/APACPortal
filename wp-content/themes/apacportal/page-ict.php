@@ -44,10 +44,10 @@
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
-							<li><a href="#">Projects</a></li>
-							<li><a href="#">ICT Abbreviations</a></li>
-							<li><a href="#">ICT Orgnizations</a></li>
-							<li><a href="#">Favorite Links</a></li>
+							<li><a href="/coming-soon">Projects</a></li>
+							<li><a href="/coming-soon">ICT Abbreviations</a></li>
+							<li><a href="/coming-soon">ICT Orgnizations</a></li>
+							<li><a href="/coming-soon">Favorite Links</a></li>
 						</ul>
 					</div>
 				</div>

@@ -26,10 +26,10 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Shanghai Dawning center office</a></li>
-							<li><a href="#">Shanghai Zizhu office</a></li>
-							<li><a href="#">Shanghai Jiading office</a></li>
-							<li><a href="#">Beijing R&F center office</a></li>
+							<li><a href="/coming-soon">Shanghai Dawning center office</a></li>
+							<li><a href="/coming-soon">Shanghai Zizhu office</a></li>
+							<li><a href="/coming-soon">Shanghai Jiading office</a></li>
+							<li><a href="/coming-soon">Beijing R&F center office</a></li>
 						</ul>
 					</div>
 				</div>
@@ -41,10 +41,10 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Facility notice</a></li>
-							<li><a href="#">Office move or expansion project introduction</a></li>
-							<li><a href="#">New service introduction</a></li>
-							<li><a href="#">Facility Team introduction</a></li>
+							<li><a href="/coming-soon">Facility notice</a></li>
+							<li><a href="/coming-soon">Office move or expansion project introduction</a></li>
+							<li><a href="/coming-soon">New service introduction</a></li>
+							<li><a href="/coming-soon">Facility Team introduction</a></li>
 						</ul>
 					</div>
 				</div>
@@ -52,9 +52,9 @@
 					<header>Travel Service</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Travel agency introduction – hotline, service scope</a></li>
-							<li><a href="#">China Corporate Hotel List </a></li>
-							<li><a href="#">Travel Destination Alert </a></li>
+							<li><a href="/coming-soon">Travel agency introduction – hotline, service scope</a></li>
+							<li><a href="/coming-soon">China Corporate Hotel List </a></li>
+							<li><a href="/coming-soon">Travel Destination Alert </a></li>
 						</ul>
 					</div>
 				</div>
@@ -65,9 +65,9 @@
 					<div class="content">
 						<ul>
 							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">Office Regulations</a></li>
-							<li><a href="#">Facility Security Policy (access card management etc)</a></li>
-							<li><a href="#">EHS policy</a></li>
-							<li><a href="#">Emergency Response Policy by site</a></li>
+							<li><a href="/coming-soon">Facility Security Policy (access card management etc)</a></li>
+							<li><a href="/coming-soon">EHS policy</a></li>
+							<li><a href="/coming-soon">Emergency Response Policy by site</a></li>
 						</ul>
 					</div>
 				</div>
@@ -77,8 +77,8 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Pool car shuttle service schedule</a></li>
-							<li><a href="#">Tips for vehicle maintenance</a></li>
+							<li><a href="/coming-soon">Pool car shuttle service schedule</a></li>
+							<li><a href="/coming-soon">Tips for vehicle maintenance</a></li>
 						</ul>
 					</div>
 				</div>
@@ -88,8 +88,8 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Apply for business card</a></li>
-							<li><a href="#">Request for employee badge</a></li>
+							<li><a href="/coming-soon">Apply for business card</a></li>
+							<li><a href="/coming-soon">Request for employee badge</a></li>
 						</ul>
 					</div>
 				</div>
