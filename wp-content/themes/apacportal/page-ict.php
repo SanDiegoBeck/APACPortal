@@ -42,7 +42,7 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('post_parent=33&post_type=attachment&post_status=any')?>
+							<?query_posts('post_parent=92&post_type=attachment&post_status=any')?>
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
