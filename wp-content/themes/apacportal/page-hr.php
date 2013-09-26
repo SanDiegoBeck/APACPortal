@@ -8,7 +8,7 @@
 					</header>
 				</div>
 				<div class="box">
-					<header>HR Contact
+					<header>Contact
 					</header>
 					<div class="content">
 						<ul>
@@ -21,7 +21,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>HR Annoucement & Notice
+					<header>Annoucement & Notice
 					</header>
 					<div class="content">
 						<ul>

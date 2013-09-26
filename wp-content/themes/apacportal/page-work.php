@@ -2,7 +2,7 @@
 <style>
 .site-header {
 	background-image: url('<?=get_stylesheet_directory_uri()?>/images/admin/headerbg.jpg');
-	background-position: bottom;
+	background-position: center -20px;
 }
 </style>
 	<div id="primary" class="content-area">
@@ -22,13 +22,14 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>Site Info
+					<header>Work Place
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="#">Site map</a></li>
-							<li><a href="#">Site pictures</a></li>
-							<li><a href="#">Favorite Links</a></li>
+							<li><a href="#">Shanghai Dawning center office</a></li>
+							<li><a href="#">Shanghai Zizhu office</a></li>
+							<li><a href="#">Shanghai Jiading office</a></li>
+							<li><a href="#">Beijing R&F center office</a></li>
 						</ul>
 					</div>
 				</div>
@@ -58,7 +59,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span3 col-right">
+			<div class="span3">
 				<div class="box">
 					<header>Policies</header>
 					<div class="content">

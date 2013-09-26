@@ -4,8 +4,6 @@
 	Author : Uice Stone <uicestone@gmail.com>
 */
 
-@import '../twentythirteen/style.css';
-
 body{
 	color: #626373;
 	background:#FFF url('images/bg.png') bottom center repeat-x;
@@ -20,7 +18,42 @@ a{
 }
 
 a:visited{
-	color: #888;
+	color: #A6CFE4;
+}
+
+/* Assistive text */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/* Search widget */
+.search-form .search-submit {
+	display: none;
+}
+
+.search-form .search-field {
+	box-shadow: none;
 }
 
 button,
@@ -108,6 +141,132 @@ input[type="reset"]:active {
 
 .description .market{
 	float: right;
+}
+
+/**
+ * 4.2 Navigation
+ * ----------------------------------------------------------------------------
+ */
+
+.main-navigation {
+	clear: both;
+	margin: 0 auto;
+	max-width: 1080px;
+	min-height: 45px;
+	position: relative;
+}
+
+ul.nav-menu,
+div.nav-menu > ul {
+	margin: 0;
+	padding: 0 40px 0 0;
+}
+
+.nav-menu li {
+	display: inline-block;
+	position: relative;
+}
+
+.nav-menu li a {
+	color: #141412;
+	display: block;
+	font-size: 15px;
+	line-height: 1;
+	padding: 15px 20px;
+	text-decoration: none;
+}
+
+.nav-menu li:hover > a,
+.nav-menu li a:hover {
+	background-color: #220e10;
+	color: #fff;
+}
+
+.nav-menu .sub-menu,
+.nav-menu .children {
+	background-color: #220e10;
+	border: 2px solid #f7f5e7;
+	border-top: 0;
+	display: none;
+	padding: 0;
+	position: absolute;
+	left: -2px;
+	z-index: 99999;
+}
+
+.nav-menu .sub-menu ul,
+.nav-menu .children ul {
+	border-left: 0;
+	left: 100%;
+	top: 0;
+}
+
+ul.nav-menu ul a,
+.nav-menu ul ul a {
+	color: #fff;
+	margin: 0;
+	width: 200px;
+}
+
+ul.nav-menu ul a:hover,
+.nav-menu ul ul a:hover {
+	background-color: #db572f;
+}
+
+ul.nav-menu li:hover > ul,
+.nav-menu ul li:hover > ul {
+	display: block;
+}
+
+.nav-menu .current_page_item > a,
+.nav-menu .current_page_ancestor > a,
+.nav-menu .current-menu-item > a,
+.nav-menu .current-menu-ancestor > a {
+	color: #bc360a;
+	font-style: italic;
+}
+
+.menu-toggle {
+	display: none;
+}
+
+/* Navbar */
+.navbar {
+	background-color: #f7f5e7;
+	margin: 0 auto;
+	max-width: 1600px;
+	width: 100%;
+}
+
+.site-header .search-form {
+	position: absolute;
+	right: 20px;
+	top: 1px;
+}
+
+.site-header .search-field {
+	background-color: transparent;
+	background-image: url(images/search-icon.png);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	border: none;
+	cursor: pointer;
+	height: 37px;
+	margin: 3px 0;
+	padding: 0 0 0 34px;
+	position: relative;
+	-webkit-transition: width 400ms ease, background 400ms ease;
+	transition:         width 400ms ease, background 400ms ease;
+	width: 0;
+}
+
+.site-header .search-field:focus {
+	background-color: #fff;
+	border: 2px solid #c3c0ab;
+	cursor: text;
+	outline: 0;
+	width: 230px;
 }
 
 .navbar{
@@ -228,7 +387,7 @@ input[type="reset"]:active {
 	width: 800px;
 }
 
-.department-list .content ul li{
+.department-list .content ul li, .market-list .content ul li{
 	background-color: #F2F6F8;
 	line-height: 30px;
 	padding: 0 10px;
@@ -237,7 +396,7 @@ input[type="reset"]:active {
 	border-radius: 5px;
 }
 
-.department-list .content ul li a{
+.department-list .content ul li a, .market-list .content ul li a{
 	color: #000 !important;
 }
 
@@ -261,6 +420,6 @@ input[type="reset"]:active {
 	width: 30px
 }
 
-.market-list li{
-	list-style: none;
+.market-list .content ul li{
+	list-style-type: none;
 }

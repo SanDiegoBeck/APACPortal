@@ -2,9 +2,10 @@
 					<header>People Finder</header>
 					<div class="content">
 						<br>
-						<input type="text" placeholder="Search..." style="width: 150px">
-						<button type="submit" style="font-size: 0.8em;">SEARCH</button>
-						<br><br>
+						<form class="form-inline">
+							<input type="text" placeholder="Search..." style="width: 150px">
+							<button type="submit" style="font-size: 0.8em;">SEARCH</button>
+						</form>
 					</div>
 				</div>
 				<div class="box">
