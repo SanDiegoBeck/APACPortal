@@ -85,15 +85,12 @@ body, h1, h2, h3, h4, h5{
 }
 
 /*Header*/
-.site-header{
-	background-position: center;
-}
-
 .site-header .wrapper{
 	height: 170px;
 	min-height: 150px;
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 2px 2px 20px #888;
+	background-position: center;
 }
 
 .main-navigation{
@@ -241,7 +238,17 @@ body, h1, h2, h3, h4, h5{
 	padding-left: 1em;
 }
 
-/*Archive Page*/
+/*Archive List Page*/
+.entry-title{
+	font-size: 2em;
+	padding-left: 4em;
+}
+
+.hentry{
+	padding: 20px 0;
+}
+
+/*Archive Single Page*/
 .archive-header{
 	background: none;
 	border-bottom: 2px #DDD solid;
