@@ -11,10 +11,10 @@
 						<span class="more-link"><a href="/category/apac-news">More</a></span>
 						APAC News
 					</header>
-					<div class="content" style="height:135px; padding: 0; margin-top: 10px">
+					<div class="content" style="height:135px; padding: 0;">
 						<div class="slider" id="slider192" style="width: 530px; height:135px; position: absolute;"> 
 							<div class="sliderContent" style="width: 530px; height:135px">
-								<?query_posts('category_name=apac-news&posts_per_page=5')?>
+								<?query_posts('category_name=apac-news&posts_per_page=3')?>
 								<?while(have_posts()):the_post();?>
 								<div class="item">
 									<a href="<?the_permalink()?>">

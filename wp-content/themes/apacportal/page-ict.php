@@ -110,7 +110,7 @@
 				<div class="box">
 					<header>
 						<span class="more-link"><a href="/how-tos">More</a></span>
-						How to
+						How To
 					</header>
 					<div class="content">
 						<ul>

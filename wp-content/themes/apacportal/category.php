@@ -26,6 +26,7 @@ get_header(); ?>
 					<?php endif; ?>
 				</header><!-- .archive-header -->
 
+				<div class="content">
 				<?php /* The loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -73,7 +74,8 @@ get_header(); ?>
 						</footer><!-- .entry-meta -->
 					</article><!-- #post -->
 				<?php endwhile; ?>
-
+				</div>
+				
 				<?php twentythirteen_paging_nav(); ?>
 
 			<?php else : ?>
