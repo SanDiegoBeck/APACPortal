@@ -31,7 +31,7 @@
 			<div class="wrapper">
 				<div class="description-top">
 					<span class="market">
-						SHARE PRICE  6.23€ + 1.71
+						<?=share_price()?>
 					<span>
 				</div>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
