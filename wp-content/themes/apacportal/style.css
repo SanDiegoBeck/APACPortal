@@ -163,6 +163,10 @@ body, h1, h2, h3, h4, h5{
 	box-shadow: none;
 }
 
+.breadcrumb{
+	background: none;
+}
+
 /*Content*/
 #content {
 	margin: 0 auto;
