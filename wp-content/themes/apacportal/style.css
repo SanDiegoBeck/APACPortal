@@ -245,7 +245,6 @@ body, h1, h2, h3, h4, h5{
 /*Archive List Page*/
 .entry-title{
 	font-size: 2em;
-	padding-left: 4em;
 }
 
 .hentry{
@@ -263,6 +262,11 @@ body, h1, h2, h3, h4, h5{
 	color: #003F7D;
 	font-size: 1.2em;
 	padding: 0;
+}
+
+.post{
+	background-color: #FFF;
+	box-shadow: 2px 2px 5px #CCC;
 }
 
 /*Department List*/
