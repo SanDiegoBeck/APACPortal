@@ -27,27 +27,29 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
-		<header id="masthead" class="site-header" role="banner" style="background-image: url('<?=get_stylesheet_directory_uri()?>/images/headerbg_<?=floor(rand(0,12))?>')">
-			<div class="wrapper">
-				<div class="description-top">
-					<span class="market">
-						
-					<span>
-				</div>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
-				</a>
-				<h1 class="logo-aside pull-right"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
-				<div class="description pull-left">
-					<span class="worldtime">
-						<?date_default_timezone_set('Asia/Shanghai');?>
-						<span class="city">Shanghai: </span><span class="time"><?=date('H:i')?></span>
-						<?date_default_timezone_set('Europe/Rome');?>
-						<span class="city">Turin: </span><span class="time"><?=date('H:i')?></span>
-						<?date_default_timezone_set('America/New_York');?>
-						<span class="city">Auburn Hills: </span><span class="time"><?=date('H:i')?></span>
-						<?date_default_timezone_set('Asia/Shanghai');?>
-					<span>
+		<header id="masthead" class="site-header" role="banner">
+			<div class="banner" style="background-image: url('<?=get_stylesheet_directory_uri()?>/images/headerbg_<?=floor(rand(0,12))?>')">
+				<div class="wrapper">
+					<div class="description-top">
+						<span class="market">
+
+						<span>
+					</div>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+						<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
+					</a>
+					<h1 class="logo-aside pull-right"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
+					<div class="description pull-left">
+						<span class="worldtime">
+							<?date_default_timezone_set('Asia/Shanghai');?>
+							<span class="city">Shanghai: </span><span class="time"><?=date('H:i')?></span>
+							<?date_default_timezone_set('Europe/Rome');?>
+							<span class="city">Turin: </span><span class="time"><?=date('H:i')?></span>
+							<?date_default_timezone_set('America/New_York');?>
+							<span class="city">Auburn Hills: </span><span class="time"><?=date('H:i')?></span>
+							<?date_default_timezone_set('Asia/Shanghai');?>
+						<span>
+					</div>
 				</div>
 			</div>
 			<div id="navbar" class="navbar">
