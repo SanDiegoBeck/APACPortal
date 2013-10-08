@@ -12,11 +12,6 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -25,11 +20,6 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -38,11 +28,6 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -52,11 +37,6 @@
 					<header>Total Compensation</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -64,11 +44,6 @@
 					<header>Training & Development</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -76,11 +51,6 @@
 					<header>PLM & SAP</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -90,11 +60,6 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -102,11 +67,6 @@
 					<header>Career Opportunities</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -116,11 +76,6 @@
 					<header>Policy & Process</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -130,11 +85,6 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -144,11 +94,6 @@
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Mopar® at the 2013 Frankfurt International Motor Show</a></li>
-							<li><a href="/coming-soon">Panda 4x4 Antartica, Freemont Black Code, new 500 engines at Frankfurt 2013</a></li>
-							<li><a href="/coming-soon">FIAT Freestyle Team is official sponsor of Vans Downtown Showdown 2013</a></li>
-							<li><a href="/coming-soon">Bielsko Biala receives the prestigious Automotive Lean Production Award </a></li>
-							<li><a href="/coming-soon">Fiat is Technical Sponsor of the ‘World Masters Games 2013’.</a></li>
 						</ul>
 					</div>
 				</div>
