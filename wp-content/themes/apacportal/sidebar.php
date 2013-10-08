@@ -2,8 +2,8 @@
 	<header>People Finder</header>
 	<div class="content">
 		<br>
-		<form class="form-inline">
-			<input type="search" placeholder="Search..." style="width: 150px">
+		<form class="form-inline" action="/user/">
+			<input type="search" name="s_user" placeholder="Search..." style="width: 150px">
 			<button type="submit" style="font-size: 0.9em;">SEARCH</button>
 		</form>
 	</div>

@@ -36,4 +36,13 @@ function str_get_excerpt($str,$length=28){
 	}
 }
 
+function modify_contact_methods($profile_fields) {
+
+	$profile_fields['department'] = 'Department';
+
+	return $profile_fields;
+}
+
+add_filter('user_contactmethods', 'modify_contact_methods');
+
 ?>
