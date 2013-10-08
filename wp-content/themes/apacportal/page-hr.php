@@ -8,7 +8,7 @@
 					</header>
 				</div>
 				<div class="box">
-					<header>Annoucement & Notice
+					<header>Annoucements & Notices
 					</header>
 					<div class="content">
 						<ul>
@@ -73,7 +73,7 @@
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
-					<header>Policy & Process</header>
+					<header>Policys & Processes</header>
 					<div class="content">
 						<ul>
 						</ul>
