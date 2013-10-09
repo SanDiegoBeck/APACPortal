@@ -20,14 +20,14 @@ array_walk($users, function(&$user){
 			<?get_sidebar()?>
 		</div>
 		<div class="span9">
-			<table>
-				<thead>
+			<table class="box">
+				<thead class="header">
 					<th>Name</th>
 					<th>Department</th>
 					<th>Phone</th>
 					<th>Email</th>
 				</thead>
-				<tbody>
+				<tbody class="content">
 <?foreach($users as $user){?>
 					<tr>
 						<td><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>

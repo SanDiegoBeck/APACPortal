@@ -20,12 +20,12 @@ a:visited{
 	color: #003F7D;
 }
 
-input{
-	box-sizing: content-box;
+td, th{
+	padding:3px 5px;
 }
 
-li{
-	line-height: 1.5;
+input{
+	box-sizing: content-box;
 }
 
 button,
@@ -92,7 +92,7 @@ body, h1, h2, h3, h4, h5{
 .site-header .wrapper{
 	height: 170px;
 	min-height: 150px;
-	background: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 2px 2px 20px #888;
 }
 
@@ -186,7 +186,7 @@ body, h1, h2, h3, h4, h5{
 	box-shadow: 2px 2px 5px #CCC;
 }
 
-.box>header{
+.box>header, .box>.header{
 	padding:8px 8px;
 	color: #003F7D;
 	background: #EFF4F7 url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;

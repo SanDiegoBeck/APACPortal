@@ -43,7 +43,7 @@ get_header(); ?>
 								<? endif; ?>
 							</dt>
 							<dd>
-								<?php echo str_get_excerpt(get_the_content(),250); ?>
+								<?php the_excerpt(); ?>
 							</dd>
 						</dl>
 					</article><!-- #post -->

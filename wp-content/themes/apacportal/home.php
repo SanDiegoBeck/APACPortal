@@ -11,9 +11,9 @@
 						<span class="more-link"><a href="/category/apac-news">More</a></span>
 						APAC News
 					</header>
-					<div class="content" style="height:135px; padding: 0;">
-						<div class="slider" id="slider192" style="width: 530px; height:135px; position: absolute;"> 
-							<div class="sliderContent" style="width: 530px; height:135px">
+					<div class="content" style="min-height: 0; height:135px; padding: 0;">
+						<div class="slider" id="slider192" style="width: 526px; height:135px; position: absolute;"> 
+							<div class="sliderContent" style="width: 526px; height:135px">
 								<?query_posts('category_name=apac-news&posts_per_page=3')?>
 								<?while(have_posts()):the_post();?>
 								<div class="item">
@@ -63,6 +63,28 @@
 						?>
 
 						<ul>
+							<li>
+								<a href="http://scoop.chrysler.com/2013/09/18/fiat-spa-earns-spot-on-sustainability-list/" title="Posted 18 September 2013 | 11:33 pm" target="_blank">
+									Fiat SpA earns spot on sustainability list										</a>
+							</li>
+							<li>
+								<a href="http://scoop.chrysler.com/2013/09/12/australian-media-get-a-taste-of-competition-in-chrysler-300-srt8-core-models/" title="Posted 13 September 2013 | 12:15 am" target="_blank">
+									Australian media get a taste of competition in Chrysler 300 SRT8 Core models										</a>
+							</li>
+							<li>
+								<a href="http://scoop.chrysler.com/2013/09/11/jeep-wrangler-polar-debuts-in-frankfurt-celebrates-winter-driving/" title="Posted 12 September 2013 | 12:04 am" target="_blank">
+									Jeep® Wrangler Polar debuts in Frankfurt										</a>
+							</li>
+							<li>
+								<a href="http://scoop.chrysler.com/2013/09/06/international-sales-rise-25-in-best-august-ever/" title="Posted 6 September 2013 | 11:05 pm" target="_blank">
+									International sales rise 25% in best August ever										</a>
+							</li>
+							<li>
+								<a href="http://scoop.chrysler.com/2013/09/04/jeep-brand-to-debut-wrangler-polar-edition-at-frankfurt/" title="Posted 4 September 2013 | 10:26 pm" target="_blank">
+									Jeep® brand to debut Wrangler Polar Edition at Frankfurt										</a>
+							</li>
+						</ul>						
+<!--						<ul>
 							<?php if ( $maxitems == 0 ) : ?>
 								<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
 							<?php else : ?>
@@ -77,7 +99,7 @@
 									</li>
 								<?php endforeach; ?>
 							<?php endif; ?>
-						</ul>
+						</ul>-->
 					</div>
 				</div>
 			</div>
