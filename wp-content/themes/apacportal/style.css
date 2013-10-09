@@ -66,8 +66,8 @@ input[type="reset"]:active {
 
 /*Basic Structure*/
 body{
-	color: #626373;
-	background:#FFF url('images/bg.png') bottom repeat-x;
+	color: #080808;
+	background:#FFF url('images/bg.png') 0 220px repeat-x;
 }
 
 body, h1, h2, h3, h4, h5{
@@ -92,7 +92,7 @@ body, h1, h2, h3, h4, h5{
 .site-header .wrapper{
 	height: 170px;
 	min-height: 150px;
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0.5);
 	box-shadow: 2px 2px 20px #888;
 }
 
@@ -124,7 +124,7 @@ body, h1, h2, h3, h4, h5{
 }
 
 .description .worldtime .city{
-	color: rgb(193,187,94);
+	color: #003F7D;
 	margin-left: 10px;
 }
 
@@ -208,7 +208,7 @@ body, h1, h2, h3, h4, h5{
 	padding:10px;
 	overflow-y: auto;
 	background-color: #FFF;
-	min-height: 7em;
+	min-height: 10em;
 }
 
 .box>.content ul{
@@ -217,6 +217,7 @@ body, h1, h2, h3, h4, h5{
 }
 
 .box>.content ul li{
+	line-height: 2;
 	word-wrap:normal;
 	overflow:hidden;
 	white-space:nowrap;
@@ -244,10 +245,13 @@ body, h1, h2, h3, h4, h5{
 /*Home Page*/
 .slider .item summary{
 	position: relative;
-	top:-1.5em;
-	color: #FFF;
-	background:rgba(0,0,0,0.5);
+	top: -2em;
+	color: #000;
+	background: rgba(255, 255, 255, 0.7);
 	padding-left: 1em;
+	line-height: 2;
+	word-wrap: break-word;
+	padding-right: 60px;
 }
 
 /*Archive List Page*/

@@ -43,15 +43,40 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/global-news">More</a></span>
+						<span class="more-link"><a href="http://scoop.chrysler.com/category/international" target="_target">More</a></span>
 						Global News
 					</header>
 					<div class="content">
+						<?php // Get RSS Feed(s)
+						// Get a SimplePie feed object from the specified feed source.
+						$rss = fetch_feed( 'http://scoop.chrysler.com/category/international/feed' );
+
+						if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+
+							// Figure out how many total items there are, but limit it to 5. 
+							$maxitems = $rss->get_item_quantity( 5 ); 
+
+							// Build an array of all the items, starting with element 0 (first element).
+							$rss_items = $rss->get_items( 0, $maxitems );
+
+						endif;
+						?>
+
 						<ul>
-							<?query_posts('category_name=global-news&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
+							<?php if ( $maxitems == 0 ) : ?>
+								<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+							<?php else : ?>
+								<?php // Loop through each feed item and display each item as a hyperlink. ?>
+								<?php foreach ( $rss_items as $item ) : ?>
+									<li>
+										<a href="<?php echo esc_url( $item->get_permalink() ); ?>"
+											title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>"
+											target="_blank">
+											<?php echo esc_html( $item->get_title() ); ?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>
