@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="box" style="height: 250px;">
-					<header>Organization Charts
+					<header>Organizational Charts
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
 					</header>
 					<div class="content">
@@ -73,7 +73,7 @@
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
-					<header>Policys & Processes</header>
+					<header>Policies & Processes</header>
 					<div class="content">
 						<ul>
 						</ul>

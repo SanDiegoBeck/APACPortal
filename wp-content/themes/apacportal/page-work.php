@@ -65,7 +65,7 @@
 					<div class="content">
 						<ul>
 							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">Office Regulations</a></li>
-							<li><a href="/coming-soon">Facility Security Policy (access card management etc)</a></li>
+							<li><a href="/coming-soon">Facility Security Policy</a></li>
 							<li><a href="/coming-soon">EHS policy</a></li>
 							<li><a href="/coming-soon">Emergency Response Policy by site</a></li>
 						</ul>

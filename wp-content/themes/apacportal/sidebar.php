@@ -3,7 +3,7 @@
 	<div class="content">
 		<br>
 		<form class="form-inline" action="/user/">
-			<input type="search" name="s_user" placeholder="Search..." style="width: 150px">
+			<input type="search" name="s_user" placeholder="Search..." style="width: 140px">
 			<button type="submit" style="font-size: 0.9em;">SEARCH</button>
 		</form>
 	</div>
