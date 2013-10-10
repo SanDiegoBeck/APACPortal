@@ -19,10 +19,6 @@
 								<a href="/australia" target="_blank">Australia</a>
 							</li>
 							<li>
-								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/nz.png"></span>
-								<a href="/new-zealand" target="_blank">New Zealand</a>
-							</li>
-							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/as.png"></span>
 								<a href="/asean" target="_blank">ASEAN</a>
 							</li>

@@ -8,7 +8,7 @@
 					</header>
 				</div>
 				<div class="box">
-					<header>Annoucements & Notices
+					<header>Announcements & Notices
 					</header>
 					<div class="content">
 						<ul>

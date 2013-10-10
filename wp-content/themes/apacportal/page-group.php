@@ -9,10 +9,10 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/communication/corporate-history&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
+							<li><a href="/category/departments/communication/corporate-history/fiat-group/">Fiat Group</a></li>
+							<li><a href="/category/departments/communication/corporate-history/chrysler-group-llc/">Chrysler Group LLC</a></li>
+							<li><a href="/heritage/">Heritage</a></li>
+							<li><a href="/category/departments/communication/corporate-history/about-the-founders/">About the Founders</a></li>
 						</ul>
 					</div>
 				</div>
@@ -25,7 +25,7 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/communication/product-pictures&posts_per_page=5')?>
+							<?query_posts('category_name=departments/communication/product-pictures&order=ASC')?>
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
@@ -41,7 +41,7 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/communication/corporate-image&posts_per_page=5')?>
+							<?query_posts('category_name=departments/communication/corporate-image&order=ASC')?>
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
@@ -51,11 +51,11 @@
 				<div class="box">
 					<header>
 						<span class="more-link"><a href="/category/departments/communication/executive-photos">More</a></span>
-						Executive Photos
+						Executives
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/communication/executive-photos&posts_per_page=5')?>
+							<?query_posts('category_name=departments/communication/executive-photos&order=ASC')?>
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
