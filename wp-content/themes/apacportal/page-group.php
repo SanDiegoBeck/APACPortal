@@ -4,7 +4,6 @@
 			<div class="span3">
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/communication/corporate-history">More</a></span>
 						Corporate History
 					</header>
 					<div class="content">
@@ -20,7 +19,6 @@
 			<div class="span3">
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/communication/product-pictures">More</a></span>
 						Product Pictures
 					</header>
 					<div class="content">
@@ -36,7 +34,6 @@
 			<div class="span3 col-right">
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/communication/corporate-image">More</a></span>
 						Corporate Image
 					</header>
 					<div class="content">
@@ -50,7 +47,6 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/communication/executive-photos">More</a></span>
 						Executives
 					</header>
 					<div class="content">
