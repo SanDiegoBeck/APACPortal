@@ -38,10 +38,8 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/communication/corporate-image&order=ASC&posts_per_page=-1')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
+							<li><a href="/brand-logos/">Brand Logos</a></li>
+							<li><a href="/wp-content/uploads/2013/09/Fiat-Chrysler-APAC-Corporate-Identity-Manual.pdf" target="_blank">Fiat-Chrysler APAC Corporate Identity Manual</a></li>
 						</ul>
 					</div>
 				</div>
