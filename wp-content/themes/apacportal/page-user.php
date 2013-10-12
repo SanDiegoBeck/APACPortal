@@ -15,6 +15,11 @@ array_walk($users, function(&$user){
 
 ?>
 <?php get_header(); ?>
+<style tyle="text/css">
+	tr.odd{
+		background-color: #FAFAFA;
+	}
+</style>
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
@@ -24,17 +29,21 @@ array_walk($users, function(&$user){
 			<table class="box">
 				<thead class="header">
 					<th>Name</th>
-					<th>Department</th>
-					<th>Phone</th>
+					<th>Telephone</th>
+					<th>Cellphone</th>
 					<th>Email</th>
+					<th>Department</th>
 				</thead>
 				<tbody class="content">
+<? $i=0; ?>
 <?foreach($users as $user){?>
-					<tr>
+					<? $i++ ?>
+					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Company Name: <?=$user->data->meta['company_name'][0]?> Working Site Country: <?=$user->data->meta['working_site_country'][0]?>">
 						<td><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>
-						<td><?=$user->data->meta['department'][0]?></td>
-						<td><?=$user->data->meta['phone'][0]?></td>
+						<td><?=$user->data->meta['telephone'][0]?></td>
+						<td><?=$user->data->meta['cellphone'][0]?></td>
 						<td><?=$user->data->user_email?></td>
+						<td><?=$user->data->meta['department'][0]?></td>
 					</tr>
 <?}?>
 				</tbody>

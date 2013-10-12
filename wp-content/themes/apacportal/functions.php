@@ -38,7 +38,13 @@ function str_get_excerpt($str,$length=28){
 
 function modify_contact_methods($profile_fields) {
 
-	$profile_fields['department'] = 'Department';
+	$profile_fields=array(
+		'telephone'=>'Telephone',
+		'cellphone'=>'Cell Phone',
+		'department'=>'Department',
+		'company_name'=>'Company Name',
+		'working_site_country'=>'Working Site Country'
+	);
 
 	return $profile_fields;
 }
