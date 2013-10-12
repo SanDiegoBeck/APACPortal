@@ -1,5 +1,5 @@
 .site-header .wrapper{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#E6FFFFFF', endColorstr='#E6FFFFFF');
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');
 }
 
 .navbar{
@@ -16,6 +16,10 @@
 .box{
 	background-color: #000;
 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+}
+
+.slider .item summary{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');
 }
 
 
