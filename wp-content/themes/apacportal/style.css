@@ -115,7 +115,8 @@ input[type="reset"]:active {
 /*Basic Structure*/
 body{
 	color: #080808;
-	background:#FFF url('images/bg.png') 0 220px repeat-x;
+	/*background:#FFF url('images/bg.png') 0 220px repeat-x;*/
+	background:#FFF url('images/bg_bottom.png') bottom repeat-x;
 }
 
 body, a{
