@@ -3,6 +3,8 @@ $user_args=array();
 
 if(isset($_GET['s_user'])){
 	$user_args['meta_value']=$_GET['s_user'];
+	$user_args['group']=true;
+	$user_args['meta_compare']='LIKE';
 }
 
 $users=get_users($user_args);
@@ -11,7 +13,6 @@ array_walk($users, function(&$user){
 	$user->meta=get_user_meta($user->id);
 });
 
-//print_r($users);
 ?>
 <?php get_header(); ?>
 <div id="primary" class="content-area">

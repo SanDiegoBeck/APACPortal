@@ -340,6 +340,7 @@ class WP_User_Query {
 	var $query_fields;
 	var $query_from;
 	var $query_where;
+	var $query_groupby;
 	var $query_orderby;
 	var $query_limit;
 
@@ -409,6 +410,11 @@ class WP_User_Query {
 		$this->query_from = "FROM $wpdb->users";
 		$this->query_where = "WHERE 1=1";
 
+		//grouping uicestone 2013/10/12
+		if(array_key_exists('group', $qv) && $qv['group']){
+			$this->query_groupby='GROUP BY '.$wpdb->users.'.ID';
+		}
+		
 		// sorting
 		if ( in_array( $qv['orderby'], array('nicename', 'email', 'url', 'registered') ) ) {
 			$orderby = 'user_' . $qv['orderby'];
@@ -540,9 +546,9 @@ class WP_User_Query {
 		$qv =& $this->query_vars;
 
 		if ( is_array( $qv['fields'] ) || 'all' == $qv['fields'] ) {
-			$this->results = $wpdb->get_results("SELECT $this->query_fields $this->query_from $this->query_where $this->query_orderby $this->query_limit");
+			$this->results = $wpdb->get_results("SELECT $this->query_fields $this->query_from $this->query_where $this->query_groupby $this->query_orderby $this->query_limit");//uicestone 2013/10/12
 		} else {
-			$this->results = $wpdb->get_col("SELECT $this->query_fields $this->query_from $this->query_where $this->query_orderby $this->query_limit");
+			$this->results = $wpdb->get_col("SELECT $this->query_fields $this->query_from $this->query_where $this->query_groupby $this->query_orderby $this->query_limit");//uicestone 2013/10/12
 		}
 
 		if ( $qv['count_total'] )
