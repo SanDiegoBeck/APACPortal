@@ -14,6 +14,9 @@
 							<li>
 								<a href="/ict" target="_blank">ICT</a>
 							</li>
+							<li>
+								<a href="/admin" target="_blank">Facilities & Administration</a>
+							</li>
 						</ul>
 					</div>
 				</div>

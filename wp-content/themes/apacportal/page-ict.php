@@ -18,7 +18,8 @@
 				</div>
 				<div class="box">
 					<header>
-						Employee of the Month
+						<span class="more-link"><a href="/category/departments/ict/employee-of-the-week">More</a></span>
+						Employee of the Week
 					</header>
 					<div class="content">
 						<dl class="dl-horizontal employee-this-month">

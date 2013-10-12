@@ -7,7 +7,7 @@
 			</div>
 			<div class="span9">
 				<div class="box">
-					<header>Quick Links
+					<header>Useful Links
 					</header>
 					<div class="content">
 						<ul>

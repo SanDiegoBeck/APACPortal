@@ -43,53 +43,42 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="http://scoop.chrysler.com/category/international" target="_target">More</a></span>
+						<span class="more-link"><a href="http://www.fiatspa.com/en-US/media_center/Pages/default.aspx" target="_blank">FIAT</a></span>
+						<span class="more-link" style="margin-right: 5px;"><a href="http://scoop.chrysler.com/category/international" target="_blank">Scoop</a></span>
 						Global News
 					</header>
 					<div class="content">
 						<?php // Get RSS Feed(s)
 						// Get a SimplePie feed object from the specified feed source.
-						$rss = fetch_feed( 'http://scoop.chrysler.com/category/international/feed' );
+						$rss_chrysler = fetch_feed( 'http://scoop.chrysler.com/category/international/feed' );
+						$rss_fiat = fetch_feed( 'http://www.fiatspa.com/en-US/media_center/_layouts/15/listfeed.aspx?List=7F16150F-5594-419A-8A89-4F567AF5CEC8' );
 
-						if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+						if ( ! is_wp_error( $rss_chrysler ) ) : // Checks that the object is created correctly
 
 							// Figure out how many total items there are, but limit it to 5. 
-							$maxitems = $rss->get_item_quantity( 5 ); 
+							$maxitems = $rss_chrysler->get_item_quantity( 3 ); 
 
 							// Build an array of all the items, starting with element 0 (first element).
-							$rss_items = $rss->get_items( 0, $maxitems );
+							$rss_items_chrysler = $rss_chrysler->get_items( 0, $maxitems );
+
+						endif;
+						
+						if ( ! is_wp_error( $rss_fiat ) ) : // Checks that the object is created correctly
+
+							// Figure out how many total items there are, but limit it to 5. 
+							$maxitems = $rss_fiat->get_item_quantity( 3 ); 
+
+							// Build an array of all the items, starting with element 0 (first element).
+							$rss_items_fiat = $rss_fiat->get_items( 0, $maxitems );
 
 						endif;
 						?>
-
 						<ul>
-							<li>
-								<a href="http://scoop.chrysler.com/2013/09/18/fiat-spa-earns-spot-on-sustainability-list/" title="Posted 18 September 2013 | 11:33 pm" target="_blank">
-									Fiat SpA earns spot on sustainability list										</a>
-							</li>
-							<li>
-								<a href="http://scoop.chrysler.com/2013/09/12/australian-media-get-a-taste-of-competition-in-chrysler-300-srt8-core-models/" title="Posted 13 September 2013 | 12:15 am" target="_blank">
-									Australian media get a taste of competition in Chrysler 300 SRT8 Core models										</a>
-							</li>
-							<li>
-								<a href="http://scoop.chrysler.com/2013/09/11/jeep-wrangler-polar-debuts-in-frankfurt-celebrates-winter-driving/" title="Posted 12 September 2013 | 12:04 am" target="_blank">
-									Jeep® Wrangler Polar debuts in Frankfurt										</a>
-							</li>
-							<li>
-								<a href="http://scoop.chrysler.com/2013/09/06/international-sales-rise-25-in-best-august-ever/" title="Posted 6 September 2013 | 11:05 pm" target="_blank">
-									International sales rise 25% in best August ever										</a>
-							</li>
-							<li>
-								<a href="http://scoop.chrysler.com/2013/09/04/jeep-brand-to-debut-wrangler-polar-edition-at-frankfurt/" title="Posted 4 September 2013 | 10:26 pm" target="_blank">
-									Jeep® brand to debut Wrangler Polar Edition at Frankfurt										</a>
-							</li>
-						</ul>						
-<!--						<ul>
 							<?php if ( $maxitems == 0 ) : ?>
 								<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
 							<?php else : ?>
 								<?php // Loop through each feed item and display each item as a hyperlink. ?>
-								<?php foreach ( $rss_items as $item ) : ?>
+								<?php foreach ( $rss_items_chrysler as $item ) : ?>
 									<li>
 										<a href="<?php echo esc_url( $item->get_permalink() ); ?>"
 											title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>"
@@ -99,7 +88,22 @@
 									</li>
 								<?php endforeach; ?>
 							<?php endif; ?>
-						</ul>-->
+							
+							<?php if ( $maxitems == 0 ) : ?>
+								<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+							<?php else : ?>
+								<?php // Loop through each feed item and display each item as a hyperlink. ?>
+								<?php foreach ( $rss_items_fiat as $item ) : ?>
+									<li>
+										<a href="<?php echo esc_url( $item->get_permalink() ); ?>"
+											title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>"
+											target="_blank">
+											<?php echo esc_html( $item->get_title() ); ?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							<?php endif; ?>
+						</ul>
 					</div>
 				</div>
 			</div>
