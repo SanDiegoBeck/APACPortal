@@ -9,8 +9,8 @@
 					<div class="content">
 						<ul>
 							<li><a href="/category/departments/communication/corporate-history/fiat-group/">Fiat Group</a></li>
-							<li><a href="/category/departments/communication/corporate-history/chrysler-group-llc/">Chrysler Group LLC</a></li>
-							<li><a href="/heritage/">Heritage</a></li>
+							<li><a href="/chrysler-group-llc-2/">Chrysler Group LLC</a></li>
+							<li><a href="/category/department/communication/corporate-history/heritage/">Heritage</a></li>
 							<li><a href="/category/departments/communication/corporate-history/about-the-founders/">About the Founders</a></li>
 						</ul>
 					</div>
@@ -48,12 +48,20 @@
 						Executives
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=departments/communication/executive-photos&order=ASC&posts_per_page=-1')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?query_posts('category_name=departments/communication/executive-photos&order=ASC&posts_per_page=-1')?>
+						<?while(have_posts()):the_post();?>
+						<dl class="dl-horizontal employee-this-month">
+							<dt>
+								<?the_post_thumbnail()?>
+							</dt>
+							<dd>
+								<ul>
+									<li><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+									<summary><?the_excerpt()?></summary>
+								</ul>
+							</dd>
+						</dl>
+						<?endwhile;?>
 					</div>
 				</div>
 				<div class="box">

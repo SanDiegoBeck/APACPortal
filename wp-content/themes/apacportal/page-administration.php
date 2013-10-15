@@ -18,14 +18,29 @@
 				</div>
 				<div class="box">
 					<header>
+						<span class="more-link"><a href="/out-team">More</a></span>
+						Our Team
+					</header>
+					<div class="content">
+						<ul>
+							<?query_posts('post_parent=735&post_type=attachment&post_status=any')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<header>
+						<span class="more-link"><a href="/work-place-2">More</a></span>
 						Work Place
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Shanghai Dawning center office</a></li>
-							<li><a href="/coming-soon">Shanghai Zizhu office</a></li>
-							<li><a href="/coming-soon">Shanghai Jiading office</a></li>
-							<li><a href="/coming-soon">Beijing R&F center office</a></li>
+							<?query_posts('post_parent=716&post_type=attachment&post_status=any')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
@@ -33,26 +48,43 @@
 			<div class="span6">
 				<div class="box">
 					<header>
+						<span class="more-link"><a href="/category/departments/admin/facility-news">More</a></span>
 						Facility News
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Facility notice</a></li>
-							<li><a href="/coming-soon">Office move or expansion project introduction</a></li>
-							<li><a href="/coming-soon">New service introduction</a></li>
-							<li><a href="/coming-soon">Facility Team introduction</a></li>
+							<?query_posts('category_name=departments/admin/facility-news&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
 					<header>
+						<span class="more-link"><a href="/category/departments/admin/travel-service">More</a></span>
 						Travel Service
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Travel agency introduction – hotline, service scope</a></li>
-							<li><a href="/coming-soon">China Corporate Hotel List </a></li>
-							<li><a href="/coming-soon">Travel Destination Alert </a></li>
+							<?query_posts('category_name=departments/admin/travel-service&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<header>
+						<span class="more-link"><a href="/category/departments/admin/vehicle-service">More</a></span>
+						Vehicle Service
+					</header>
+					<div class="content">
+						<ul>
+							<?query_posts('category_name=departments/admin/vehicle-service&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
@@ -60,36 +92,29 @@
 			<div class="span3">
 				<div class="box">
 					<header>
+						<span class="more-link"><a href="/category/departments/admin/policies">More</a></span>
 						Policies
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/wp-content/uploads/2013/09/Invitation-Letter-for-Ennio.pdf">Office Regulations</a></li>
-							<li><a href="/coming-soon">Facility Security Policy</a></li>
-							<li><a href="/coming-soon">EHS policy</a></li>
-							<li><a href="/coming-soon">Emergency Response Policy by site</a></li>
+							<?query_posts('category_name=departments/admin/policies&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>
 				<div class="box">
 					<header>
-						Vehicle Service
-					</header>
-					<div class="content">
-						<ul>
-							<li><a href="/coming-soon">Pool car shuttle service schedule</a></li>
-							<li><a href="/coming-soon">Tips for vehicle maintenance</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="box">
-					<header>
+						<span class="more-link"><a href="/category/departments/admin/how-to">More</a></span>
 						How To
 					</header>
 					<div class="content">
 						<ul>
-							<li><a href="/coming-soon">Apply for business card</a></li>
-							<li><a href="/coming-soon">Request for employee badge</a></li>
+							<?query_posts('category_name=departments/admin/how-to&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<?endwhile;?>
 						</ul>
 					</div>
 				</div>

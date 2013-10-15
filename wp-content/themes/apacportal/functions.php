@@ -1,5 +1,5 @@
 <?php
-add_image_size( 'home-news-slider', 526, 135, true );
+add_image_size( 'home-news-slider', 526, 188, true );
 
 function share_price(){
 	$content = file_get_contents('http://uk.finance.yahoo.com/q?s=F.MI');
