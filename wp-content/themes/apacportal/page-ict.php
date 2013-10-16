@@ -69,13 +69,11 @@
 						<span class="more-link"><a href="/category/departments/ict/technology-updates">More</a></span>
 						Technology Update
 					</header>
-					<div class="content">
-						<ul>
-							<?query_posts('category_name=departments/ict/technology-updates&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+					<div class="content" style="height: 280px; overflow-y: auto;">
+						<?query_posts('category_name=departments/ict/technology-updates&posts_per_page=1')?>
+						<?the_post()?>
+						<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
+						<summary><?the_content()?></summary></a>
 					</div>
 				</div>
 			</div>

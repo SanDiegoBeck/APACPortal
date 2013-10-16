@@ -5,7 +5,7 @@
 			<div class="span3">
 				<?get_sidebar()?>
 			</div>
-			<div class="span9">
+			<div class="span3">
 				<div class="box">
 					<header>Useful Links
 					</header>
@@ -24,6 +24,40 @@
 					<div class="content">
 						<ul>
 						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="box">
+					<header>Quote of the Day
+					</header>
+					<div class="content">
+					</div>
+				</div>
+				<div class="box">
+					<header>Useful Apps
+					</header>
+					<div class="content">
+					</div>
+				</div>
+				<div class="box">
+					<header>Utilities
+					</header>
+					<div class="content">
+					</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="box">
+					<header>Notices
+					</header>
+					<div class="content">
+					</div>
+				</div>
+				<div class="box">
+					<header>Quick Links
+					</header>
+					<div class="content">
 					</div>
 				</div>
 			</div>
