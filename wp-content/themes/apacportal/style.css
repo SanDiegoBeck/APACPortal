@@ -346,6 +346,11 @@ h1, h2, h3, h4, h5, h6{
 	max-width: none;
 }
 
+.single-post footer.entry-meta{
+	font-size: 0.8em;
+	border-top: 1px solid #CCC;
+}
+
 .post{
 	background-color: #FFF;
 	box-shadow: 2px 2px 5px #CCC;
@@ -385,10 +390,21 @@ h1, h2, h3, h4, h5, h6{
 	width: auto !important;
 }
 
+
+
 .employee-this-month dt img{
 	width: 80px;
 }
 
 .employee-this-month dd{
 	margin-left: 90px;
+}
+
+.employee-this-month dd ul li{
+	list-style: none;
+}
+
+.employee-this-month dd summary{
+	font-size: 0.7em;
+	font-style: italic;
 }
