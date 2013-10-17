@@ -4,21 +4,6 @@
 			<div class="span3">
 				<div class="box">
 					<header>
-						Corporate History
-					</header>
-					<div class="content">
-						<ul>
-							<li><a href="/category/departments/communication/corporate-history/fiat-group/">Fiat Group</a></li>
-							<li><a href="/chrysler-group-llc-2/">Chrysler Group LLC</a></li>
-							<li><a href="/category/department/communication/corporate-history/heritage/">Heritage</a></li>
-							<li><a href="/category/departments/communication/corporate-history/about-the-founders/">About the Founders</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="box">
-					<header>
 						Product Pictures
 					</header>
 					<div class="content">
@@ -31,7 +16,21 @@
 					</div>
 				</div>
 			</div>
-			<div class="span3 col-right">
+			<div class="span6">
+				<div class="box">
+					<header>
+						<span class="more-link"><a href="/press-releases">More</a></span>
+						Press Releases
+					</header>
+					<div class="content">
+						<ul>
+							<?query_posts('post_parent=225&post_type=attachment&post_status=any&posts_per_page=5')?>
+							<?while(have_posts()):the_post();?>
+							<li title="<?the_title()?>"><?the_attachment_link()?></li>
+							<?endwhile;?>
+						</ul>
+					</div>
+				</div>
 				<div class="box">
 					<header>
 						Corporate Image
@@ -40,6 +39,21 @@
 						<ul>
 							<li><a href="/brand-logos/">Brand Logos</a></li>
 							<li><a href="/wp-content/uploads/2013/09/Fiat-Chrysler-APAC-Corporate-Identity-Manual.pdf" target="_blank">Fiat-Chrysler APAC Corporate Identity Manual</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="span3 col-right">
+				<div class="box">
+					<header>
+						Corporate History
+					</header>
+					<div class="content">
+						<ul>
+							<li><a href="/category/departments/communication/corporate-history/fiat-group/">Fiat Group</a></li>
+							<li><a href="/chrysler-group-llc-2/">Chrysler Group LLC</a></li>
+							<li><a href="/category/department/communication/corporate-history/heritage/">Heritage</a></li>
+							<li><a href="/category/departments/communication/corporate-history/about-the-founders/">About the Founders</a></li>
 						</ul>
 					</div>
 				</div>
@@ -64,23 +78,6 @@
 						<?endwhile;?>
 					</div>
 				</div>
-				<div class="box">
-					<header>
-						<span class="more-link"><a href="/press-releases">More</a></span>
-						Press Releases
-					</header>
-					<div class="content">
-						<ul>
-							<?query_posts('post_parent=225&post_type=attachment&post_status=any&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><?the_attachment_link()?></li>
-							<?endwhile;?>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="span3 col-right">
-				<?get_sidebar('market-list')?>
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->

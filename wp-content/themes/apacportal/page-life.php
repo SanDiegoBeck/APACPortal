@@ -19,21 +19,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="box">
-					<header>Classifieds</header>
-					<div class="content">
-						<ul>
-						</ul>
-					</div>
-				</div>
 			</div>
 			<div class="span3">
-				<div class="box">
-					<header>Quote of the Day
-					</header>
-					<div class="content">
-					</div>
-				</div>
 				<div class="box">
 					<header>Useful Apps
 					</header>
@@ -48,6 +35,12 @@
 				</div>
 			</div>
 			<div class="span3">
+				<div class="box">
+					<header>Quote of the Day
+					</header>
+					<div class="content" style="max-height: none;">
+					</div>
+				</div>
 				<div class="box">
 					<header>Notices
 					</header>
