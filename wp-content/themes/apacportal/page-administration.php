@@ -92,12 +92,12 @@
 			<div class="span3">
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/admin/policies">More</a></span>
+						<span class="more-link"><a href="/category/departments/admin/policies-admin">More</a></span>
 						Policies
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/admin/policies&posts_per_page=5')?>
+							<?query_posts('category_name=policies-admin&posts_per_page=5')?>
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
@@ -111,7 +111,7 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=departments/admin/how-to&posts_per_page=5')?>
+							<?query_posts('category_name=how-to&posts_per_page=5')?>
 							<?while(have_posts()):the_post();?>
 							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
