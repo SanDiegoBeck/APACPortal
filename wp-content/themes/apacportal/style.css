@@ -124,7 +124,7 @@ body, a{
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Helvetica Neue Lt Std Condensed', Arial, sans-serif;
+	font-family: 'Helvetica Neue Lt Std', Arial, sans-serif;
 }
 
 .site{
@@ -203,6 +203,7 @@ h1, h2, h3, h4, h5, h6{
 
 .nav-menu li a{
 	color: #003F7D;
+	font-size: 1.1em;
 }
 
 .nav-menu li.current-menu-item, .nav-menu li.current-page-ancestor, 
@@ -240,7 +241,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .box>header, .box>.header{
-	font-size: 1.2em;
+	font-size: 1em;
 	padding:8px 8px;
 	color: #003F7D;
 	background: url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;
@@ -315,17 +316,23 @@ h1, h2, h3, h4, h5, h6{
 
 /*Archive List Page*/
 .entry-title{
-	font-size: 2em;
+	font-size: 1.5em;
+	margin: 0 0 0.5em;
 }
 
-.hentry{
-	padding: 0;
+.archive .hentry{
+	padding: 1em;
 }
 
 /*Archive Single Page*/
 .archive-header{
 	background: none;
 	border-bottom: 2px #DDD solid;
+}
+
+.single-post .entry-header{
+	padding: 0 2em;
+	border-bottom: 1px solid #CCC;
 }
 
 .archive-title{
@@ -340,17 +347,18 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .post{
-	
-}
-
-.post{
 	background-color: #FFF;
 	box-shadow: 2px 2px 5px #CCC;
 }
 
 /*Department List*/
-.department-list .content ul li, .market-list .content ul li{
+
+.department-list .content, .market-list .content{
 	background-color: #E3E3E4;
+}
+
+.department-list .content ul li, .market-list .content ul li{
+	background-color: #FFFFFF;
 	line-height: 30px;
 	padding: 0 10px;
 	list-style-type: circle;

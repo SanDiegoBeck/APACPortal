@@ -51,4 +51,36 @@ function modify_contact_methods($profile_fields) {
 
 add_filter('user_contactmethods', 'modify_contact_methods');
 
+if ( ! function_exists( 'twentythirteen_entry_meta' ) ) :
+/**
+ * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
+ *
+ * Create your own twentythirteen_entry_meta() to override in a child theme.
+ *
+ * @since Twenty Thirteen 1.0
+ *
+ * @return void
+ */
+function twentythirteen_entry_meta() {
+	if ( is_sticky() && is_home() && ! is_paged() )
+		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
+
+	// Translators: used between list items, there is a space after the comma.
+	$categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
+	if ( $categories_list ) {
+		echo '<span class="categories-links">' . $categories_list . '</span>';
+	}
+
+	// Translators: used between list items, there is a space after the comma.
+	$tag_list = get_the_tag_list( '', __( ', ', 'twentythirteen' ) );
+	if ( $tag_list ) {
+		echo '<span class="tags-links">' . $tag_list . '</span>';
+	}
+
+	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
+		twentythirteen_entry_date();
+
+}
+endif;
+
 ?>

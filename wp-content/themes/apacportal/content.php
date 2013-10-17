@@ -8,7 +8,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('box'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 <!--		<div class="entry-thumbnail">
@@ -42,6 +42,7 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
+		<?php twentythirteen_entry_meta(); ?>
 		<?php if ( comments_open() && ! is_single() ) : ?>
 			<div class="comments-link">
 				<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
