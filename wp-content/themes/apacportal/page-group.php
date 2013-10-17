@@ -52,7 +52,7 @@
 						<?while(have_posts()):the_post();?>
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
-								<?the_post_thumbnail()?>
+								<?the_post_thumbnail('thumbnail')?>
 							</dt>
 							<dd>
 								<ul>
