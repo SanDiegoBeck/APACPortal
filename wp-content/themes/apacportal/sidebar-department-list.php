@@ -23,6 +23,9 @@
 							<li>
 								<a href="/scm">Supply Chain Management</a>
 							</li>
+							<li>
+								<a href="/dnd">Dealer Network Development</a>
+							</li>
 						</ul>
 					</div>
 				</div>
