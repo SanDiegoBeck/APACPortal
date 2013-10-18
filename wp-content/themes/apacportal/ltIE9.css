@@ -1,10 +1,11 @@
 .site-header .wrapper{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');
+	background: url('images/transparent.png');
 }
 
 .navbar{
-	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+	border-bottom: solid 2px #CCC;
+/*	background-color: #FFF;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
 }
 
 .nav-menu li.current-menu-item, .nav-menu li.current-page-ancestor, 
@@ -14,12 +15,13 @@
 }
 
 .box{
-	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+	border-right: #CCC 2px solid;
+	border-bottom: #AAA 2px solid;
+/*	background-color: #FFF;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
 }
 
 .slider .item summary{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');
+	background-image: url('images/transparent.png');
+	/*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');*/
 }
-
-
