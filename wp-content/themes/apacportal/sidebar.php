@@ -1,5 +1,5 @@
 <div class="box">
-	<header>People Finder</header>
+	<header>APAC People Finder</header>
 	<div class="content">
 		<br>
 		<form class="form-inline" action="/user/">

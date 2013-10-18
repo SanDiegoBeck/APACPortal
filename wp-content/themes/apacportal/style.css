@@ -56,6 +56,10 @@
 
 /*Repeatable Patterns*/
 
+*{
+	font-weight: normal;
+}
+
 a{
 	color: #001144;
 }
@@ -112,6 +116,11 @@ input[type="reset"]:active {
 	padding: 5px;
 }
 
+summary p{
+	margin-bottom: 0;
+	word-wrap: break-word;
+}
+
 /*Basic Structure*/
 body{
 	color: #080808;
@@ -120,11 +129,11 @@ body{
 }
 
 body, a{
-	font-family: 'Helvetica Neue Lt Std', Arial, sans-serif;
+	/*font-family: 'Helvetica Neue Lt Std', Arial, sans-serif;*/
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Helvetica Neue Lt Std', Arial, sans-serif;
+	/*font-family: 'Helvetica Neue Lt Std', Arial, sans-serif;*/
 }
 
 .site{
@@ -253,6 +262,7 @@ h1, h2, h3, h4, h5, h6{
 .box>header .more-link{
 	float: right;
 	font-size: 0.8em;
+	font-weight: normal;
 }
 
 .box>header .more-link a{
@@ -383,7 +393,7 @@ h1, h2, h3, h4, h5, h6{
 
 /*ICT Page*/
 .employee-this-month{
-	margin: auto;
+	margin: auto auto 0.5em auto;
 }
 
 .employee-this-month dt{
