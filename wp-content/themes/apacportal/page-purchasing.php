@@ -2,27 +2,36 @@
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-			<header>Organization
-				<span class="more-link"><a href="/category/departments/purchasing/organization">More</a></span>
-			</header>
-			<div class="content">
-				<ul>
-					<?query_posts('category_name=organization&posts_per_page=5')?>
-					<?while(have_posts()):the_post();?>
-					<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-					<?endwhile;?>
-				</ul>
+			<div class="box">
+				<div class="content" style="min-height: 0;">
+					<img src="<?=get_stylesheet_directory_uri()?>/images/purchasing/logo.png">
+				</div>
 			</div>
-			<header>Training
-				<span class="more-link"><a href="/category/departments/purchasing/training">More</a></span>
-			</header>
-			<div class="content">
-				<ul>
-					<?query_posts('category_name=training&posts_per_page=5')?>
-					<?while(have_posts()):the_post();?>
-					<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-					<?endwhile;?>
-				</ul>
+			<div class="box">
+				<header>Organization
+					<span class="more-link"><a href="/category/departments/purchasing/organization">More</a></span>
+				</header>
+				<div class="content">
+					<ul>
+						<?query_posts('category_name=organization&posts_per_page=5')?>
+						<?while(have_posts()):the_post();?>
+						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+						<?endwhile;?>
+					</ul>
+				</div>
+			</div>
+			<div class="box">
+				<header>Training
+					<span class="more-link"><a href="/category/departments/purchasing/training">More</a></span>
+				</header>
+				<div class="content">
+					<ul>
+						<?query_posts('category_name=training&posts_per_page=5')?>
+						<?while(have_posts()):the_post();?>
+						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+						<?endwhile;?>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div class="span6">

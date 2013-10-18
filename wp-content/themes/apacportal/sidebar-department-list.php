@@ -17,6 +17,12 @@
 							<li>
 								<a href="/admin">Facilities & Administration</a>
 							</li>
+							<li>
+								<a href="/purchasing">Purchasing & Suppier Quality</a>
+							</li>
+							<li>
+								<a href="/scm">Supply Chain Management</a>
+							</li>
 						</ul>
 					</div>
 				</div>
