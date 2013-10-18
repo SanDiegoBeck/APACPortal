@@ -59,7 +59,7 @@ class PrettyFileListPlugin_Class{
 	public function prettyfilelist_shortcode($atts, $content = null){
 		//Get attributes from shortcode
 		extract(shortcode_atts(array(  
-			"type" => "excel,pdf,doc,zip,ppt",
+			"type" => "",
 			"filesperpage" => "7"
 		), $atts)); 
 		
@@ -77,7 +77,12 @@ class PrettyFileListPlugin_Class{
 		//If all types add filters
 		//Get all attachments of the right type
 		//TODO:Add option for 'orderby' => 'title'
-		$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => get_the_id(), 'post_mime_type' => $mimeTypesToGet); 
+		$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => get_the_id()); 
+
+		if($mimeTypesToGet){
+			$args['post_mime_type']=$mimeTypesToGet;
+		}
+		
 		$attachments = get_children( $args);
 		if ($attachments) {
 			$html .= '<div class="prettyFileList">';
@@ -136,13 +141,16 @@ class PrettyFileListPlugin_Class{
 			break;
 		  case "excel":
 		  case "xls":
-			$typeString .= "application/vnd.ms-excel";  
+		  case "xlsx":
+			$typeString .= "application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";  
 			break;
 		  case "doc":
-			$typeString .= "doc";
+		  case "docx":
+			$typeString .= "application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 			break;
 		  case "ppt":
-			$typeString .= "application/mspowerpnt,application/vnd-mspowerpoint,application/powerpoint,application/x-powerpoint,application/vnd.ms-powerpoint,application/mspowerpoint,application/ms-powerpoint";
+		  case "pptx":
+			$typeString .= "application/mspowerpnt,application/vnd-mspowerpoint,application/powerpoint,application/x-powerpoint,application/vnd.ms-powerpoint,application/mspowerpoint,application/ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation";
 			break;      
 		  case "zip":
 			$typeString .= "application/zip,application/x-zip,application/x-zip-compressed,application/x-compress,application/x-compressed,multipart/x-zip";
@@ -170,6 +178,7 @@ class PrettyFileListPlugin_Class{
 			$type = "pdf";
 			break;
 		  case "application/vnd.ms-excel":
+		  case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
 			$type = "xls";  
 			break;
 		  case "application/doc":
@@ -180,6 +189,7 @@ class PrettyFileListPlugin_Class{
 		  case "application/x-msw6":
 		  case "application/x-msword":
 		  case "application/msword":
+		  case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
 			$type = "doc";
 			break;
 		  case "application/mspowerpnt":
@@ -189,6 +199,7 @@ class PrettyFileListPlugin_Class{
 		  case "application/vnd.ms-powerpoint":
 		  case "application/mspowerpoint":
 		  case "application/ms-powerpoint":
+		  case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
 			$type = "ppt";
 			break;      
 		  case "application/zip":
