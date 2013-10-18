@@ -4,27 +4,27 @@
 						<ul>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/as.png"></span>
-								<a href="/asean" target="_blank">ASEAN</a>
+								<a href="/asean">ASEAN</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/au.png"></span>
-								<a href="/australia" target="_blank">Australia</a>
+								<a href="/australia">Australia</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/australia" target="_blank">China</a>
+								<a href="/australia">China</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/in.png"></span>
-								<a href="/indea" target="_blank">India</a>
+								<a href="/indea">India</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/jp.png"></span>
-								<a href="/japanese" target="_blank">Japan</a>
+								<a href="/japanese">Japan</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/kr.png"></span>
-								<a href="/korea" target="_blank">Korea</a>
+								<a href="/korea">Korea</a>
 							</li>
 						</ul>
 					</div>

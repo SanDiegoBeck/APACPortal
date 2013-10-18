@@ -3,19 +3,19 @@
 					<div class="content">
 						<ul>
 							<li>
-								<a href="/hr" target="_blank">Human Resources</a>
+								<a href="/hr">Human Resources</a>
 							</li>
 							<li>
-								<a href="/marketing" target="_blank">Marketing</a>
+								<a href="/marketing">Marketing</a>
 							</li>
 							<li>
-								<a href="/group" target="_blank">Corporate Communication</a>
+								<a href="/group">Corporate Communication</a>
 							</li>
 							<li>
-								<a href="/ict" target="_blank">ICT</a>
+								<a href="/ict">ICT</a>
 							</li>
 							<li>
-								<a href="/admin" target="_blank">Facilities & Administration</a>
+								<a href="/admin">Facilities & Administration</a>
 							</li>
 						</ul>
 					</div>
