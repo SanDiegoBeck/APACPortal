@@ -3,7 +3,7 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
 			<div class="box">
-				<div class="content" style="min-height: 0;">
+				<div class="content" style="min-height: 0; overflow: hidden;">
 					<img src="<?=get_stylesheet_directory_uri()?>/images/purchasing/logo.png">
 				</div>
 			</div>
