@@ -32,14 +32,14 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/work-place-2">More</a></span>
+						<span class="more-link"><a href="/category/departments/admin/work-place">More</a></span>
 						Work Place
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('post_parent=716&post_type=attachment&post_status=any')?>
+							<?query_posts('category_name=work-place&posts_per_page=5')?>
 							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
+							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
 						</ul>
 					</div>

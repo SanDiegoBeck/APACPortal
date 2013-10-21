@@ -5,7 +5,7 @@
 			<div class="span3">
 				<?get_sidebar()?>
 			</div>
-			<div class="span3">
+			<div class="span6">
 				<div class="box">
 					<header>Useful Links
 					</header>
@@ -16,21 +16,10 @@
 							<li><a href="http://www.timeanddate.com/worldclock/" target="_blank">Time Zones</a></li>
 							<li><a href="http://www.oanda.com/currency/converter/" target="_blank">Currency Converter</a></li>
 							<li><a href="http://www.timeanddate.com/weather/" target="_blank">Weather</a></li>
+							<li><a href="http://translate.google.cn/?hl=en" target="_blank">Google Translate</a></li>
+							<li><a href="/where-to-eat" target="_blank">Where to eat</a></li>
+							<li><a href="/useful-apps" target="_blank">Useful Apps</a></li>
 						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="box">
-					<header>Useful Apps
-					</header>
-					<div class="content">
-					</div>
-				</div>
-				<div class="box">
-					<header>Utilities
-					</header>
-					<div class="content">
 					</div>
 				</div>
 			</div>
