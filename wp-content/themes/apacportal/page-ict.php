@@ -22,18 +22,20 @@
 						Employee of the Week
 					</header>
 					<div class="content">
+						<?query_posts('category_name=employee-of-the-week&order=ASC&posts_per_page=1')?>
+						<?while(have_posts()):the_post();?>
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
-								<img src="<?=get_stylesheet_directory_uri()?>/images/ict/avatar.png">
+								<?the_post_thumbnail('thumbnail')?>
 							</dt>
 							<dd>
 								<ul>
-									<li>Mark Zuckerberg</li>
-									<li>ICT
-									<li>New Comer</li>
+									<li><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+									<summary><?the_excerpt()?></summary>
 								</ul>
 							</dd>
 						</dl>
+						<?endwhile;?>
 					</div>
 				</div>
 				<div class="box">
