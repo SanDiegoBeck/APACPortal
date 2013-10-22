@@ -28,6 +28,7 @@
 					<header>Quote of the Day
 					</header>
 					<div class="content" style="max-height: none;">
+						<?php echo do_shortcode('[quotcoll]')?>
 					</div>
 				</div>
 				<div class="box">
