@@ -396,13 +396,7 @@ h1, h2, h3, h4, h5, h6{
 	margin: auto auto 0.5em auto;
 }
 
-.employee-this-month dt{
-	width: auto !important;
-}
-
-
-
-.employee-this-month dt img{
+.employee-this-month dt, .employee-this-month dt img{
 	width: 80px;
 }
 
