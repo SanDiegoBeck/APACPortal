@@ -63,13 +63,6 @@
 						</ul>
 					</div>
 				</div>
-				<div class="box">
-					<header>Career Opportunities</header>
-					<div class="content">
-						<ul>
-						</ul>
-					</div>
-				</div>
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
@@ -89,9 +82,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<header>FAQs
-						<span class="more-link">More</span>
-					</header>
+					<header>Career Opportunities</header>
 					<div class="content">
 						<ul>
 						</ul>
