@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/rich-text-excerpts/
 Description: Adds rich text editing capability for excerpts using wp_editor()
 Author: Peter Edwards
 Author URI: https://github.com/bjorsq/rich-text-excerpts
-Version: 1.3
+Version: 1.3.1
 Text Domain: rich-text-excerpts
 License: GPLv3
 
@@ -67,10 +67,12 @@ class RichTextExcerpts {
 		 */
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugin_admin_menu' ) );
 		add_action( 'admin_init', array( __CLASS__, 'register_plugin_options' ) );
+
 		 /**
 		  * add a link to the settings page from the plugins page
 		  */
-		add_filter( 'plugin_action_links', array( __CLASS__, 'add_settings_page_link'), 10, 2 );
+		add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( __CLASS__, 'add_settings_page_link'), 10, 2 );
+
 		/**
 		 * register text domain
 		 */
@@ -189,8 +191,15 @@ class RichTextExcerpts {
 			"textarea_rows" => $plugin_options['editor_settings']['textarea_rows'],
 			"teeny" => ($plugin_options['editor_type'] === "teeny")? true: false
 		);
-		/* "echo" the editor */
-		wp_editor(html_entity_decode($excerpt), 'excerpt', $options );
+		/* get decoded content for the editor */
+		$excerpt = html_entity_decode($excerpt);
+		/**
+		 * this will decode numeric entities
+		 * @see http://wordpress.org/support/topic/special-characters-show-as-their-character-codes
+		 */
+		$excerpt = wp_kses_decode_entities($excerpt);
+		/* output editor */
+		wp_editor( $excerpt, 'excerpt', $options );
 		if (!$plugin_options['metabox']['use']) {
 			/* finish wrapping */
 			print('</div></div>');
@@ -302,7 +311,7 @@ class RichTextExcerpts {
 		/* post type and metabox options */
 		add_settings_section(
 			'post-type-options',
-			'Post Types',
+			__('Post Types', 'rich-text-excerpts'),
 			array( __CLASS__, 'options_section_text' ), 
 			'rte'
 		);
@@ -395,11 +404,11 @@ class RichTextExcerpts {
 	public static function options_setting_post_types()
 	{ 
 		$options = self::get_plugin_options();
-		$post_types = get_post_types(array("public" => true),'names');
+		$post_types = get_post_types(array("public" => true), 'objects');
 		foreach ($post_types as $post_type ) {
-			if ( post_type_supports($post_type, 'excerpt') ) {
-				$chckd = (in_array($post_type, $options["supported_post_types"]))? ' checked="checked"': '';
-				printf('<p class="rte-post-types-inputs"><input class="rte-post-types" type="checkbox" name="rich_text_excerpts_options[supported_post_types][]" id="supported_post_types-%s" value="%s"%s /> <label for="supported_post_types-%s">%s</label></p>', $post_type, $post_type, $chckd, $post_type, $post_type);
+			if ( post_type_supports($post_type->name, 'excerpt') ) {
+				$chckd = (in_array($post_type->name, $options["supported_post_types"]))? ' checked="checked"': '';
+				printf('<p class="rte-post-types-inputs"><input class="rte-post-types" type="checkbox" name="rich_text_excerpts_options[supported_post_types][]" id="supported_post_types-%s" value="%s"%s /> <label for="supported_post_types-%s">%s</label></p>', $post_type->name, $post_type->name, $chckd, $post_type->name, $post_type->labels->name);
 			}
 		}
 		printf('<div class="rte-post-types-error"></p>%s</p></div>', __('If you want to disable support for all post types, please disable the plugin', 'rich-text-excerpts'));

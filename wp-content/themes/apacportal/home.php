@@ -78,7 +78,7 @@
 								<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
 							<?php else : ?>
 								<?php // Loop through each feed item and display each item as a hyperlink. ?>
-								<?php foreach ( $rss_items_chrysler as $item ) : ?>
+								<?php foreach ( (array)$rss_items_chrysler as $item ) : ?>
 									<li>
 										<a href="<?php echo esc_url( $item->get_permalink() ); ?>"
 											title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>"
@@ -93,7 +93,7 @@
 								<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
 							<?php else : ?>
 								<?php // Loop through each feed item and display each item as a hyperlink. ?>
-								<?php foreach ( $rss_items_fiat as $item ) : ?>
+								<?php foreach ( (array)$rss_items_fiat as $item ) : ?>
 									<li>
 										<a href="<?php echo esc_url( $item->get_permalink() ); ?>"
 											title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>"
