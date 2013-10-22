@@ -386,6 +386,12 @@ h1, h2, h3, h4, h5, h6{
 	list-style-type: none;
 }
 
+/*Notices*/
+#notices.box>.content ul li{
+	font-size: 0.9em;
+	line-height: 1.5;
+}
+
 /*404 Page*/
 .error404 .page-wrapper{
 	background-color: #F6F6F6;

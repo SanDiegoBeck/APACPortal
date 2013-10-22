@@ -17,8 +17,7 @@
 							<li><a href="http://www.oanda.com/currency/converter/" target="_blank">Currency Converter</a></li>
 							<li><a href="http://www.timeanddate.com/weather/" target="_blank">Weather</a></li>
 							<li><a href="http://translate.google.cn/?hl=en" target="_blank">Google Translate</a></li>
-							<li><a href="/where-to-eat" target="_blank">Where to eat</a></li>
-							<li><a href="/useful-apps" target="_blank">Useful Apps</a></li>
+							<li><a href="/wp-content/uploads/2013/10/Useful-Apps.pdf" target="_blank">Useful Apps</a></li>
 						</ul>
 					</div>
 				</div>
@@ -28,19 +27,19 @@
 					<header>Quote of the Day
 					</header>
 					<div class="content" style="max-height: none;">
-						<?php echo do_shortcode('[quotcoll]')?>
+						<?php echo do_shortcode('[quotcoll orderby="random" limit=1]')?>
 					</div>
 				</div>
-				<div class="box">
+				<div class="box" id="notices">
 					<header>
-						<span class="more-link"><a href="/category/notices">More</a></span>
+						<span class="more-link"><a href="/notices">More</a></span>
 						Notices
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('category_name=notices&posts_per_page=5')?>
+							<?query_posts('post_parent=1198&post_type=attachment&post_status=any')?>
 							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
+							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
 							<?endwhile;?>
 						</ul>
 					</div>
