@@ -31,8 +31,8 @@ $user_metas=array(
 		<div class="span9">
 			<table class="box table-bordered">
 				<thead class="header">
-					<th width="180px">Item</th>
-					<th>Value</th>
+					<th width="180px">&nbsp;</th>
+					<th>&nbsp;</th>
 				</thead>
 				<tbody class="content">
 					<tr>

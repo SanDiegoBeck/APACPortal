@@ -25,7 +25,7 @@
 					</ul>
 				</nav>
 				<div class="site-info pull-right">
-					© 2013 FIAT S.P.A.
+<!--					© 2013 FIAT S.P.A.-->
 				</div><!-- .site-info -->
 			</div>
 		</footer><!-- #colophon -->

@@ -28,7 +28,7 @@ array_walk($users, function(&$user){
 		<div class="span9">
 			<table class="box">
 				<thead class="header">
-					<th>Name</th>
+					<th>Name<span class="icon icon-info-sign" title="Click Names For More Information"></span></th>
 					<th>Telephone</th>
 					<th>Email</th>
 					<th>Company</th>
@@ -38,7 +38,7 @@ array_walk($users, function(&$user){
 <? $i=0; ?>
 <?foreach($users as $user){?>
 					<? $i++ ?>
-					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Company Name: <?=$user->data->meta['company_name'][0]?> Working Site Country: <?=$user->data->meta['working_site_country'][0]?>">
+					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Click For More Information">
 						<td><a href="/user-detail?id=<?=$user->data->ID?>" target="_blank"><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>
 						<td><?=$user->data->meta['telephone'][0]?></td>
 						<td><?=$user->data->user_email?></td>
