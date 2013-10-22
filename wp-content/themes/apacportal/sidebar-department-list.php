@@ -12,10 +12,10 @@
 								<a href="/group">Corporate Communication</a>
 							</li>
 							<li>
-								<a href="/ict">ICT</a>
+								<a href="/ict">Information and Communication Technology</a>
 							</li>
 							<li>
-								<a href="/admin">Facilities & Administration</a>
+								<a href="/admin">Facilities and Administration</a>
 							</li>
 							<li>
 								<a href="/purchasing">Purchasing and Supplier Quality</a>
