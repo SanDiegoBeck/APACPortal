@@ -12,7 +12,7 @@
 					<header>
 						Mission
 					</header>
-					<div class="content">
+					<div class="content" style="min-height: 0;">
 						Be an agile and  innovative business partner providing high quality, cost effective and secure technology solutions.
 					</div>
 				</div>
