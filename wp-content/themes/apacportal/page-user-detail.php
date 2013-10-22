@@ -12,7 +12,7 @@ $user_metas=array(
 	'telephone'=>'Telephone',
 	'cellphone'=>'Cellphone',
 	'department'=>'Department',
-	'company_name'=>"Company Name",
+	'company_name'=>"Company",
 	'working_site_country'=>'Working Site Country'
 );
 

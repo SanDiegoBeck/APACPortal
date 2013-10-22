@@ -31,6 +31,7 @@ array_walk($users, function(&$user){
 					<th>Name</th>
 					<th>Telephone</th>
 					<th>Email</th>
+					<th>Company</th>
 					<th>Department</th>
 				</thead>
 				<tbody class="content">
@@ -41,6 +42,7 @@ array_walk($users, function(&$user){
 						<td><a href="/user-detail?id=<?=$user->data->ID?>" target="_blank"><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>
 						<td><?=$user->data->meta['telephone'][0]?></td>
 						<td><?=$user->data->user_email?></td>
+						<td><?=$user->data->meta['company_name'][0]?></td>
 						<td><?=$user->data->meta['department'][0]?></td>
 					</tr>
 <?}?>
