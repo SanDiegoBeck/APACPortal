@@ -87,10 +87,20 @@
 					</header>
 					<div class="content">
 						<ul>
-							<?query_posts('post_parent=54&post_type=attachment&post_status=any&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><?the_attachment_link()?></li>
-							<?endwhile;?>
+							<?foreach(get_posts(array('category_name'=>'policies','post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>5)) as $post):?>
+							<li title="<?=$post->post_title?>"><?php
+							switch($post->post_type){
+								case 'link':
+									echo '<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
+									break;
+								case 'attachment':
+									echo wp_get_attachment_link($post->ID);
+									break;
+								default:
+									echo '<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
+							}
+							?></a></li>
+							<?endforeach;?>
 						</ul>
 					</div>
 				</div>

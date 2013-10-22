@@ -12,7 +12,7 @@
 								<a href="/group">Corporate Communication</a>
 							</li>
 							<li>
-								<a href="/ict">Information and Communication Technology</a>
+								<a href="/ict">Information and Communication Technology (ICT)</a>
 							</li>
 							<li>
 								<a href="/admin">Facilities and Administration</a>

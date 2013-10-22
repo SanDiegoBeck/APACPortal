@@ -116,6 +116,43 @@ function twentythirteen_paging_nav() {
 }
 endif;
 
+add_action( 'init', 'register_link_post_type');
 
+function register_link_post_type(){
+	register_post_type( 'link',
+		array(
+			'label'=>'Links',
+			'labels' => array(
+				'name' => 'Links',
+				'singular_name' => 'Link',
+				'add_new_item' => 'Add New Link'
+			),
+			'taxonomies' => array('category'), 
+			'public' => true,
+			'supports' => array('title','editor','thumbnail')
+		)
+	);
+}
+
+function apacportal_post_list($category_name,$limit=5){
+	$list='<ul>';
+	foreach(get_posts(array('category_name'=>$category_name,'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit)) as $post){
+		$list.='<li title="'.$post->post_title.'">';
+		switch($post->post_type){
+			case 'link':
+				$list.='<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
+				break;
+			case 'attachment':
+				$list.=wp_get_attachment_link($post->ID);
+				break;
+			default:
+				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
+		}
+		$list.='</a></li>';
+	}
+	$list.='</ul>';
+	
+	return $list;
+}
 
 ?>
