@@ -26,7 +26,7 @@
 				<div class="box">
 					<header>Quote of the Day
 					</header>
-					<div class="content" style="max-height: none;">
+					<div class="content" style="min-height: 0;">
 						<?php echo do_shortcode('[quotcoll orderby="random" limit=1]')?>
 					</div>
 				</div>
