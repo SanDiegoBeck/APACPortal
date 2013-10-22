@@ -3,7 +3,7 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
-				<?get_sidebar()?>
+				<?get_sidebar('left')?>
 			</div>
 			<div class="span6">
 				<div class="box">

@@ -14,7 +14,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid clearfix" role="main">
 			<div class="span3">
-				<?=get_sidebar()?>
+				<?=get_sidebar('left')?>
 			</div>
 			<div class="span9 box">
 			<?php if ( have_posts() ) : ?>
@@ -60,5 +60,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('left'); ?>
 <?php get_footer(); ?>

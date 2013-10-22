@@ -23,14 +23,13 @@ array_walk($users, function(&$user){
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-			<?get_sidebar()?>
+			<?get_sidebar('left')?>
 		</div>
 		<div class="span9">
 			<table class="box">
 				<thead class="header">
 					<th>Name</th>
 					<th>Telephone</th>
-					<th>Cellphone</th>
 					<th>Email</th>
 					<th>Department</th>
 				</thead>
@@ -39,9 +38,8 @@ array_walk($users, function(&$user){
 <?foreach($users as $user){?>
 					<? $i++ ?>
 					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Company Name: <?=$user->data->meta['company_name'][0]?> Working Site Country: <?=$user->data->meta['working_site_country'][0]?>">
-						<td><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>
+						<td><a href="/user-detail?id=<?=$user->data->ID?>" target="_blank"><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>
 						<td><?=$user->data->meta['telephone'][0]?></td>
-						<td><?=$user->data->meta['cellphone'][0]?></td>
 						<td><?=$user->data->user_email?></td>
 						<td><?=$user->data->meta['department'][0]?></td>
 					</tr>

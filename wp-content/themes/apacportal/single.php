@@ -13,7 +13,7 @@ get_header(); ?>
 	<div id="content" class="site-content clearfix" role="main">
 
 		<div class="span3">
-			<?=get_sidebar()?>
+			<?=get_sidebar('left')?>
 		</div>
 		<div class="span9">
 		<?php /* The loop */ ?>
