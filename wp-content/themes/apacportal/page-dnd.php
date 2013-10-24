@@ -7,7 +7,6 @@
 						Mission
 					</header>
 					<div class="content">
-						Scope of work, People and contact 
 					</div>
 				</div>
 				<div class="box">

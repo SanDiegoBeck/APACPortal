@@ -11,24 +11,21 @@
 					<header>Announcements & Notices
 					</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('hr-announcement-notice');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>Contacts
 					</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('contacts');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>Expatriate Management
 					</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('expatriate-management');?>
 					</div>
 				</div>
 			</div>
@@ -36,22 +33,19 @@
 				<div class="box">
 					<header>Total Compensation</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('total-compensation');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>Training & Development</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('training-development');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>PLM & SAP</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('plm-sap');?>
 					</div>
 				</div>
 				<div class="box" style="height: 250px;">
@@ -66,8 +60,7 @@
 				<div class="box">
 					<header>Policies & Processes</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('policy-process');?>
 					</div>
 				</div>
 				<div class="box">
@@ -75,15 +68,13 @@
 						<span class="more-link">More</span>
 					</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('forms');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>Career Opportunities</header>
 					<div class="content">
-						<ul>
-						</ul>
+						<?=apacportal_post_list('career-opportunities');?>
 					</div>
 				</div>
 			</div>

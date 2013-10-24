@@ -17,10 +17,9 @@
 				<?//php get_sidebar( 'main' ); ?>
 				<nav>
 					<ul>
-						<li><a href="/coming-soon">Sitemap</a></li>
 						<li><a href="/coming-soon">Privacy Policy</a></li>
 						<li><a href="/coming-soon">Legal Disclaimer</a></li>
-						<li><a href="/coming-soon">Contact Us</a></li>
+						<li><a href="mailto:hr638@chrysler.com">Contact Us</a></li>
 						<li><a href="/coming-soon">Terms of Use</a></li>
 					</ul>
 				</nav>
@@ -35,5 +34,12 @@
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/js/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/mobilyslider/mobilyslider.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.getJSON('http://www.fiatspa.com/it-IT/Pages/home.aspx',function(response){
+				console.log(response);
+			});
+		});
+	</script>
 </body>
 </html>

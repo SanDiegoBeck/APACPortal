@@ -44,12 +44,7 @@
 						Resources
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('post_parent=92&post_type=attachment&post_status=any')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('resources');?>
 					</div>
 				</div>
 			</div>
@@ -60,7 +55,7 @@
 						News
 					</header>
 					<div class="content" style="height: 280px; overflow-y: auto;">
-						<?query_posts('category_name=departments/ict/news&posts_per_page=1')?>
+						<?query_posts('category_name=news&posts_per_page=1')?>
 						<?the_post()?>
 						<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
 						<summary><?the_content()?></summary></a>
@@ -95,16 +90,16 @@
 						Processes
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('processes');?>
+						<?=apacportal_post_list('processes-ict');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/how-tos">More</a></span>
+						<span class="more-link"><a href="/how-to-ict">More</a></span>
 						How To
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('how-tos');?>
+						<?=apacportal_post_list('how-to-ict');?>
 					</div>
 				</div>
 			</div>
