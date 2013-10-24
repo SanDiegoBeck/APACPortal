@@ -300,6 +300,7 @@ h1, h2, h3, h4, h5, h6{
 	white-space:nowrap;
 	text-overflow: ellipsis;*/
 	margin-bottom: 0.5em;
+	font-size: 0.95em;
 	list-style-position: inside;
 }
 
@@ -436,6 +437,10 @@ h1, h2, h3, h4, h5, h6{
 blockquote.quotescollection{
 	font-style: normal;
 	margin: 0 auto;
+}
+
+blockquote.quotescollection p{
+	font-size: 1.1em;
 }
 
 blockquote.quotescollection q{

@@ -26,7 +26,7 @@
 						News from the markets 
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('news-from-the-market');?>
+						<?=apacportal_post_list('news-from-the-markets');?>
 					</div>
 				</div>
 				<div class="box">
