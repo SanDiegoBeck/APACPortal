@@ -12,12 +12,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/organization">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=organization&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('organization');?>
 				</div>
 			</div>
 			<div class="box">
@@ -25,12 +20,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/training">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=training&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('training');?>
 				</div>
 			</div>
 		</div>
@@ -40,12 +30,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/news-events">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=news-eventsfiat-apac-purchasing&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('news-events');?>
 				</div>
 			</div>
 			<div class="box">
@@ -53,12 +38,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/redbook">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=redbook&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('redbook');?>
 				</div>
 			</div>
 		</div>
@@ -68,12 +48,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/policies-process">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=policies-process&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('policies-process');?>
 				</div>
 			</div>
 			<div class="box">
@@ -81,12 +56,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/roe">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=roe&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('roe');?>
 				</div>
 			</div>
 			<div class="box">
@@ -94,12 +64,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/contacts">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=contacts&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('contacts');?>
 				</div>
 			</div>
 		</div>

@@ -134,9 +134,16 @@ function register_link_post_type(){
 	);
 }
 
-function apacportal_post_list($category_name,$limit=5){
+function apacportal_post_list($category_name,$limit=5,$args=array()){
 	$list='<ul>';
-	foreach(get_posts(array('category_name'=>$category_name,'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit)) as $post){
+	foreach(
+		get_posts(
+			array_merge(
+				array('category_name'=>$category_name,'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit),
+				$args
+			)
+		) as $post
+	){
 		$list.='<li title="'.$post->post_title.'">';
 		switch($post->post_type){
 			case 'link':

@@ -16,12 +16,7 @@
 						The people behind the department 
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=the-people-behind-the-department&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('the-people-behind-the-department');?>
 					</div>
 				</div>
 			</div>
@@ -32,12 +27,7 @@
 						News from the markets 
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=news-from-the-markets&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('news-from-the-market');?>
 					</div>
 				</div>
 				<div class="box">
@@ -46,12 +36,7 @@
 						Best practice
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=best-practice&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('best-practice');?>
 					</div>
 				</div>
 			</div>
@@ -62,12 +47,7 @@
 						Upcoming events 
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=upcoming-events&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('upcoming-events');?>
 					</div>
 				</div>
 			</div>

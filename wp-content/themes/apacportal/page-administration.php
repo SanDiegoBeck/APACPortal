@@ -12,22 +12,17 @@
 					<header>
 						Mission
 					</header>
-					<div class="content">
-						Maintain a Healthy Working Environment
+					<div class="content" style="min-height: 0;">
+						Maintain a Healthy Working Environment.
 					</div>
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/out-team">More</a></span>
+						<span class="more-link"><a href="/our-team">More</a></span>
 						Our Team
 					</header>
-					<div class="content">
-						<ul>
-							<?query_posts('post_parent=735&post_type=attachment&post_status=any')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+					<div class="content" style="min-height: 0;">
+						<?=apacportal_post_list('our-team');?>
 					</div>
 				</div>
 				<div class="box">
@@ -36,12 +31,7 @@
 						Work Place
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('post_parent=602&post_type=attachment&post_status=any')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?=wp_get_attachment_url()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('work-place');?>
 					</div>
 				</div>
 			</div>
@@ -52,12 +42,7 @@
 						Facility News
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=departments/admin/facility-news&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('facility-news');?>
 					</div>
 				</div>
 				<div class="box">
@@ -66,12 +51,7 @@
 						Travel Service
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=departments/admin/travel-service&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('travel-service');?>
 					</div>
 				</div>
 				<div class="box">
@@ -80,12 +60,7 @@
 						Vehicle Service
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=departments/admin/vehicle-service&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('vehicle-service');?>
 					</div>
 				</div>
 			</div>
@@ -96,12 +71,7 @@
 						Policies
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=policies-admin&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('policies-admin');?>
 					</div>
 				</div>
 				<div class="box">
@@ -110,12 +80,7 @@
 						How To
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=how-to&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('how-to');?>
 					</div>
 				</div>
 			</div>

@@ -59,8 +59,6 @@
 						<span class="more-link"><a href="/category/departments/ict/">More</a></span>
 					</header>
 					<div class="content">
-						<ul>
-						</ul>
 					</div>
 				</div>
 			</div>

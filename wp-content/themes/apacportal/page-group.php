@@ -7,12 +7,7 @@
 						Product Pictures
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('category_name=departments/communication/product-pictures&order=ASC&posts_per_page=-1')?>
-							<?while(have_posts()):the_post();?>
-							<li><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('product-pictures',-1,array('order'=>'ASC'));?>
 					</div>
 				</div>
 			</div>
@@ -23,12 +18,7 @@
 						Press Releases
 					</header>
 					<div class="content">
-						<ul>
-							<?query_posts('post_parent=225&post_type=attachment&post_status=any&posts_per_page=5')?>
-							<?while(have_posts()):the_post();?>
-							<li title="<?the_title()?>"><?the_attachment_link()?></li>
-							<?endwhile;?>
-						</ul>
+						<?=apacportal_post_list('press-releases');?>
 					</div>
 				</div>
 				<div class="box">
@@ -36,10 +26,7 @@
 						Corporate Image
 					</header>
 					<div class="content">
-						<ul>
-							<li><a href="/brand-logos/">Brand Logos</a></li>
-							<li><a href="/wp-content/uploads/2013/09/Fiat-Chrysler-APAC-Corporate-Identity-Manual.pdf" target="_blank">Fiat-Chrysler APAC Corporate Identity Manual</a></li>
-						</ul>
+						<?=apacportal_post_list('corporate-image');?>
 					</div>
 				</div>
 			</div>
@@ -49,12 +36,7 @@
 						Corporate History
 					</header>
 					<div class="content">
-						<ul>
-							<li><a href="/category/departments/communication/corporate-history/fiat-group/">Fiat Group</a></li>
-							<li><a href="/chrysler-group-llc-2/">Chrysler Group LLC</a></li>
-							<li><a href="/category/department/communication/corporate-history/heritage/">Heritage</a></li>
-							<li><a href="/category/departments/communication/corporate-history/about-the-founders/">About the Founders</a></li>
-						</ul>
+						<?=apacportal_post_list('corporate-history');?>
 					</div>
 				</div>
 				<div class="box">

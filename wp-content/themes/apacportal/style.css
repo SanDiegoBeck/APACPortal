@@ -190,8 +190,20 @@ h1, h2, h3, h4, h5, h6{
 	margin-left: 10px;
 }
 
-.description .market{
-	float: right;
+.site-header .market{
+	color: #888;
+}
+
+.site-header .market .current-value{
+	color: #003478;
+}
+
+.site-header .market .current-gap.negative{
+	color: #AB0000;
+}
+
+.site-header .market .current-gap.positive{
+	color: #00AB00;
 }
 
 .navbar{
@@ -282,11 +294,12 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .box>.content ul li{
-	line-height: 2;
-	word-wrap:normal;
+	line-height: 1.5;
+/*	word-wrap:normal;
 	overflow:hidden;
 	white-space:nowrap;
-	text-overflow: ellipsis;
+	text-overflow: ellipsis;*/
+	margin-bottom: 0.5em;
 	list-style-position: inside;
 }
 
@@ -387,10 +400,10 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /*Notices*/
-#notices.box>.content ul li{
+/*#notices.box>.content ul li{
 	font-size: 0.9em;
 	line-height: 1.5;
-}
+}*/
 
 /*404 Page*/
 .error404 .page-wrapper{

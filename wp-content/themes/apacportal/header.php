@@ -24,6 +24,7 @@
 	<!--[if lt IE 9]>
 	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/ltIE9.css' type='text/css' media='all' />
 	<![endif]-->
+	
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,7 +34,9 @@
 				<div class="wrapper">
 					<div class="description-top">
 						<span class="market">
-
+							Share Price&nbsp;
+							<span class="current-value">5.985€</span>
+							<span class="current-gap negative">-2.05</span>
 						<span>
 					</div>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">

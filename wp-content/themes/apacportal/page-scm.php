@@ -22,12 +22,7 @@
 					<span class="more-link"><a href="/category/departments/scm/organization-introduction">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=organization-introduction&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('organization-introduction');?>
 				</div>
 			</div>
 		</div>
@@ -38,10 +33,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?query_posts('category_name=scm-news&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
+						<?=apacportal_post_list('scm-news');?>
 					</ul>
 				</div>
 			</div>
@@ -50,12 +42,7 @@
 					<span class="more-link"><a href="/category/departments/scm/industry-news">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=industry-news&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('industry-news');?>
 				</div>
 			</div>
 		</div>
@@ -65,12 +52,7 @@
 					<span class="more-link"><a href="/category/departments/scm/scm-knowledge-folder">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=scm-knowledge-folder&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('scm-knowledge-folder');?>
 				</div>
 			</div>
 			<div class="box">
@@ -78,12 +60,7 @@
 					<span class="more-link"><a href="/category/departments/scm/useful-website">More</a></span>
 				</header>
 				<div class="content">
-					<ul>
-						<?query_posts('category_name=useful-website&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+					<?=apacportal_post_list('useful-website');?>
 				</div>
 			</div>
 		</div>
