@@ -46,7 +46,7 @@
 						Product Pictures
 					</header>
 					<div class="content">
-					<?foreach(get_posts(array('category_name'=>'product-pictures','order'=>'ASC')) as $post){?>
+					<?foreach(get_posts(array('category_name'=>'product-pictures','order'=>'ASC','posts_per_page'=>-1)) as $post){?>
 						<dl>
 							<dt><?the_post_thumbnail('thumbnail')?></dt>
 							<dd><?the_title()?></dd>
