@@ -139,7 +139,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	foreach(
 		get_posts(
 			array_merge(
-				array('category__in'=>get_category_by_slug($category_name)->cat_ID,'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit),
+				array('category__in'=>array(get_category_by_slug($category_name)->cat_ID),'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit),
 				$args
 			)
 		) as $post

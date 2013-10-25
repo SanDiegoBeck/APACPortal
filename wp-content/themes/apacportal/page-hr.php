@@ -18,11 +18,11 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/department/hr/contacts">More</a></span>
+						<span class="more-link"><a href="/category/department/hr/hr-contact">More</a></span>
 						Contacts
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('contacts');?>
+						<?=apacportal_post_list('hr-contact');?>
 					</div>
 				</div>
 				<div class="box">
