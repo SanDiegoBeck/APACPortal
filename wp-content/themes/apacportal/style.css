@@ -465,3 +465,13 @@ blockquote.quotescollection cite{
 .quotescollection_author{
 	font-style: italic;
 }
+
+.box.product-picture .content dl{
+	float: left;
+}
+
+.box.product-picture .content dd{
+	text-align: center;
+	margin-top: 0.5em;
+	font-size: 1.2em;
+}

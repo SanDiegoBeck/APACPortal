@@ -40,7 +40,7 @@ get_header(); ?>
 									the_attachment_link();
 									break;
 								default:
-									echo '<a href="'.get_the_ID().'" target="_blank">'.get_the_title().'</a>';
+									echo '<a href="'.get_permalink().'" target="_blank">'.get_the_title().'</a>';
 							}
 						?>		
 						</h1>

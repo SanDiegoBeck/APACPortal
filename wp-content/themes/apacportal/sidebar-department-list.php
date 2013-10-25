@@ -9,7 +9,7 @@
 								<a href="/marketing">Marketing</a>
 							</li>
 							<li>
-								<a href="/group">Corporate Communication</a>
+								<a href="/communication">Corporate Communication</a>
 							</li>
 							<li>
 								<a href="/ict">Information and Communication Technology (ICT)</a>

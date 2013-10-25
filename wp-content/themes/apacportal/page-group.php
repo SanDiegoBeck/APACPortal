@@ -4,35 +4,6 @@
 			<div class="span3">
 				<div class="box">
 					<header>
-						Product Pictures
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('product-pictures',-1,array('order'=>'ASC'));?>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box">
-					<header>
-						<span class="more-link"><a href="/category/department/communication/press-releases">More</a></span>
-						Press Releases
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('press-releases');?>
-					</div>
-				</div>
-				<div class="box">
-					<header>
-						Corporate Image
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('corporate-image');?>
-					</div>
-				</div>
-			</div>
-			<div class="span3 col-right">
-				<div class="box">
-					<header>
 						Corporate History
 					</header>
 					<div class="content">
@@ -60,6 +31,40 @@
 						<?endwhile;?>
 					</div>
 				</div>
+				<div class="box">
+					<header>
+						Corporate Image
+					</header>
+					<div class="content">
+						<?=apacportal_post_list('corporate-image');?>
+					</div>
+				</div>
+			</div>
+			<div class="span9">
+				<div class="box product-picture">
+					<header>
+						Product Pictures
+					</header>
+					<div class="content">
+					<?foreach(get_posts(array('category_name'=>'product-pictures','order'=>'ASC')) as $post){?>
+						<dl>
+							<dt><?the_post_thumbnail('thumbnail')?></dt>
+							<dd><?the_title()?></dd>
+						</dl>
+					<?}?>
+					</div>
+				</div>
+				<div class="box">
+					<header>
+						<span class="more-link"><a href="/category/department/communication/press-releases">More</a></span>
+						Press Releases
+					</header>
+					<div class="content">
+						<?=apacportal_post_list('press-releases');?>
+					</div>
+				</div>
+			</div>
+			<div class="span3 col-right">
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->
