@@ -10,7 +10,7 @@
 					<header>Useful Links
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('useful-links',-1);?>
+						<?=apacportal_post_list('useful-links',-1,array('orderby'=>'title','order'=>'ASC'));?>
 					</div>
 				</div>
 			</div>
