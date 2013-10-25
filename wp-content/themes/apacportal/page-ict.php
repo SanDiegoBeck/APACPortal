@@ -40,7 +40,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/resources">More</a></span>
+						<span class="more-link"><a href="/category/department/ict/resources">More</a></span>
 						Resources
 					</header>
 					<div class="content">
@@ -77,7 +77,7 @@
 			<div class="span3 col-right">
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/policies">More</a></span>
+						<span class="more-link"><a href="/category/department/ict/policies">More</a></span>
 						Policies
 					</header>
 					<div class="content">
@@ -86,7 +86,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/processes">More</a></span>
+						<span class="more-link"><a href="/category/department/ict/processes-ict">More</a></span>
 						Processes
 					</header>
 					<div class="content">
@@ -95,7 +95,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/how-to-ict">More</a></span>
+						<span class="more-link"><a href="/category/department/ict/how-to-ict">More</a></span>
 						How To
 					</header>
 					<div class="content">

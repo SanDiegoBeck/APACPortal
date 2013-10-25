@@ -24,7 +24,7 @@
 				</div>
 				<div class="box" id="notices">
 					<header>
-						<span class="more-link"><a href="/notices">More</a></span>
+						<span class="more-link"><a href="/category/notices">More</a></span>
 						Notices
 					</header>
 					<div class="content">

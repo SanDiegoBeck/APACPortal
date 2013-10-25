@@ -1,16 +1,29 @@
 <?php
 $user_args=array();
 
-if(isset($_GET['s_user'])){
-	$user_args['meta_value']=$_GET['s_user'];
-	$user_args['group']=true;
-	$user_args['meta_compare']='LIKE';
+$search=esc_sql($_GET['s_user']);
+
+if(!$search){
+	$search='FALSE';
 }
 
-$users=get_users($user_args);
+$query="
+	SELECT wp_users.* 
+	FROM wp_users 
+	INNER JOIN wp_usermeta ON (
+		wp_users.ID = wp_usermeta.user_id 
+		AND wp_usermeta.meta_key IN ('first_name','last_name','telephone','cellphone','department','company_name','working_site_country')
+	)
+	INNER JOIN wp_usermeta last_name ON wp_users.ID = last_name.user_id 
+	WHERE  (wp_usermeta.meta_value LIKE '%$search%' OR wp_users.user_email LIKE '%$search%')
+		AND wp_users.user_registered = 0
+	GROUP BY wp_users.ID
+";
+
+$users = $wpdb->get_results($query);
 
 array_walk($users, function(&$user){
-	$user->meta=get_user_meta($user->id);
+	$user->meta=get_user_meta($user->ID);
 });
 
 ?>
@@ -39,11 +52,11 @@ array_walk($users, function(&$user){
 <?foreach($users as $user){?>
 					<? $i++ ?>
 					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Click For More Information">
-						<td><a href="/user-detail?id=<?=$user->data->ID?>" target="_blank"><?=$user->data->meta['first_name'][0]?> <?=$user->data->meta['last_name'][0]?></td>
-						<td><?=$user->data->meta['telephone'][0]?></td>
-						<td><?=$user->data->user_email?></td>
-						<td><?=$user->data->meta['company_name'][0]?></td>
-						<td><?=$user->data->meta['department'][0]?></td>
+						<td><a href="/user-detail?id=<?=$user->ID?>" target="_blank"><?=$user->meta['first_name'][0]?> <?=$user->meta['last_name'][0]?></td>
+						<td><?=$user->meta['telephone'][0]?></td>
+						<td><?=$user->user_email?></td>
+						<td><?=$user->meta['company_name'][0]?></td>
+						<td><?=$user->meta['department'][0]?></td>
 					</tr>
 <?}?>
 				</tbody>

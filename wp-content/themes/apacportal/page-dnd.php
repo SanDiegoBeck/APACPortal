@@ -3,10 +3,15 @@
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
 				<div class="box">
+					<header>Dealer Network Development
+					</header>
+				</div>
+				<div class="box">
 					<header>
 						Mission
 					</header>
 					<div class="content">
+						<?=apacportal_post_list('mission');?>
 					</div>
 				</div>
 				<div class="box">

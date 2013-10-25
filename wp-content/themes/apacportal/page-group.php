@@ -14,7 +14,7 @@
 			<div class="span6">
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/press-releases">More</a></span>
+						<span class="more-link"><a href="/category/department/communication/press-releases">More</a></span>
 						Press Releases
 					</header>
 					<div class="content">

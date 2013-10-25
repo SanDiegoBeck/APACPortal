@@ -2,13 +2,17 @@
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
+				<div class="box">
+					<header>Supply Chain Management
+					</header>
+				</div>
 			<div class="box">
 				<div class="content">
 					<img src="" />
 				</div>
 			</div>
 			<div class="box">
-				<header>SCM Mission
+				<header>Mission
 				</header>
 				<div class="content" style="height: 280px; overflow-y: auto;">
 					<?query_posts('category_name=scm-mission&posts_per_page=1')?>
@@ -28,7 +32,7 @@
 		</div>
 		<div class="span6">
 			<div class="box">
-				<header>SCM News
+				<header>News
 					<span class="more-link"><a href="/category/departments/scm/scm-news">More</a></span>
 				</header>
 				<div class="content">
@@ -48,7 +52,7 @@
 		</div>
 		<div class="span3 col-right">
 			<div class="box">
-				<header>SCM knowledge Folder
+				<header>Knowledge Folder
 					<span class="more-link"><a href="/category/departments/scm/scm-knowledge-folder">More</a></span>
 				</header>
 				<div class="content">
@@ -56,7 +60,7 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>Useful Website
+				<header>Useful Websites
 					<span class="more-link"><a href="/category/departments/scm/useful-website">More</a></span>
 				</header>
 				<div class="content">

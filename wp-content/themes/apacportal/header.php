@@ -34,9 +34,9 @@
 				<div class="wrapper">
 					<div class="description-top">
 						<span class="market">
-							Share Price&nbsp;
+<!--							Share Price&nbsp;
 							<span class="current-value">5.985€</span>
-							<span class="current-gap negative">-2.05</span>
+							<span class="current-gap negative">-2.05</span>-->
 						<span>
 					</div>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">

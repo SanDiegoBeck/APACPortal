@@ -18,7 +18,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/our-team">More</a></span>
+						<span class="more-link"><a href="/category/department/admin/our-team">More</a></span>
 						Our Team
 					</header>
 					<div class="content" style="min-height: 0;">
@@ -27,7 +27,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/work-place">More</a></span>
+						<span class="more-link"><a href="/category/department/admin/work-place">More</a></span>
 						Work Place
 					</header>
 					<div class="content">

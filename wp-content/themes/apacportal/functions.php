@@ -139,7 +139,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	foreach(
 		get_posts(
 			array_merge(
-				array('category_name'=>$category_name,'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit),
+				array('category__in'=>get_category_by_slug($category_name)->cat_ID,'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit),
 				$args
 			)
 		) as $post
@@ -150,7 +150,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 				$list.='<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
 				break;
 			case 'attachment':
-				$list.=wp_get_attachment_link($post->ID);
+				$list.=preg_replace('/(a href=".*?")/','\$1 target="blank"',wp_get_attachment_link($post->ID));
 				break;
 			default:
 				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
