@@ -54,7 +54,7 @@ get_header(); ?>
 								<? endif; ?>
 							</dt>
 							<dd>
-								<?php the_excerpt(); ?>
+								<?if(get_post_type()=='post'){ the_excerpt(); }?>
 							</dd>
 						</dl>
 					</article><!-- #post -->
