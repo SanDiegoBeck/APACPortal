@@ -51,6 +51,5 @@ array_walk($users, function(&$user){
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->
-<?wp_reset_query()?>
 <?php get_footer(); ?>
 

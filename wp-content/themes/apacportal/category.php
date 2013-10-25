@@ -8,7 +8,7 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
-
+query_posts(array('cat'=>$cat,'post_type'=>array('post','attachment','link'),'post_status'=>array('publish','inherit')));
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -31,7 +31,18 @@ get_header(); ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<h1 class="entry-title">
-							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+						<?php						
+							switch(get_post_type()){
+								case 'link':
+									echo '<a href="'.get_the_content().'" target="_blank">'.get_the_title().'</a>';
+									break;
+								case 'attachment':
+									the_attachment_link();
+									break;
+								default:
+									echo '<a href="'.get_the_ID().'" target="_blank">'.get_the_title().'</a>';
+							}
+						?>		
 						</h1>
 						<dl class="dl-horizontal">
 							<dt>
@@ -55,7 +66,7 @@ get_header(); ?>
 
 			<?php else : ?>
 				<?php get_template_part( 'content', 'none' ); ?>
-			<?php endif; ?>
+			<?php endif; wp_reset_query();?>
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->

@@ -70,5 +70,4 @@
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->
-<?wp_reset_query()?>
 <?php get_footer(); ?>

@@ -95,7 +95,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/how-to-ict">More</a></span>
+						<span class="more-link"><a href="/category/how-to-ict">More</a></span>
 						How To
 					</header>
 					<div class="content">
@@ -105,5 +105,4 @@
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->
-<?wp_reset_query()?>
 <?php get_footer(); ?>
