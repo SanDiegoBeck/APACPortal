@@ -48,8 +48,8 @@
 					<div class="content">
 					<?foreach(get_posts(array('category_name'=>'product-pictures','order'=>'ASC','posts_per_page'=>-1)) as $post){?>
 						<dl>
-							<dt><?the_post_thumbnail('thumbnail')?></dt>
-							<dd><?the_title()?></dd>
+							<dt><a href="<?the_permalink()?>"><?the_post_thumbnail('thumbnail')?></a></dt>
+							<dd><a href="<?the_permalink()?>"><?the_title()?></a></dd>
 						</dl>
 					<?}?>
 					</div>
