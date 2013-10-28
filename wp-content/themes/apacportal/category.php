@@ -8,7 +8,7 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
-query_posts(array('cat'=>$cat,'post_type'=>array('post','attachment','link'),'post_status'=>array('publish','inherit')));
+query_posts(array('cat'=>$cat,'post_type'=>array('post','attachment','link'),'post_status'=>array('publish','inherit'),'paged'=>$paged));
 get_header(); ?>
 
 	<div id="primary" class="content-area">
