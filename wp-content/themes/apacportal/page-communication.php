@@ -7,7 +7,7 @@
 						Product Pictures
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('product-pictures',-1,array('order'=>'ASC'));?>
+						<?=apacportal_post_list('product-pictures',-1,array('orderby'=>'ID','order'=>'ASC'));?>
 					</div>
 				</div>
 			</div>
