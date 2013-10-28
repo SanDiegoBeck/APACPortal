@@ -468,10 +468,14 @@ blockquote.quotescollection cite{
 
 .box.product-picture .content dl{
 	float: left;
+	margin: auto 32px;
+}
+
+.box.product-picture .content dl img{
+	width:130px;
 }
 
 .box.product-picture .content dd{
 	text-align: center;
 	margin-top: 0.5em;
-	font-size: 1.2em;
 }

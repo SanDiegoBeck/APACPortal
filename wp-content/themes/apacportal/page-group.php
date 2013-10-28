@@ -39,6 +39,8 @@
 						<?=apacportal_post_list('corporate-image');?>
 					</div>
 				</div>
+				
+				<?get_sidebar('market-list')?>
 			</div>
 			<div class="span9">
 				<div class="box product-picture">
