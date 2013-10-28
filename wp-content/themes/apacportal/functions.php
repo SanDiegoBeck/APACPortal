@@ -103,11 +103,11 @@ function twentythirteen_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&rarr;</span> Next', 'twentythirteen' ) ); ?></div>
+			<div class="nav-next"><?php next_posts_link( __( '<span class="meta-nav">&rarr;</span> Next', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Previous <span class="meta-nav">&larr;</span>', 'twentythirteen' ) ); ?></div>
+			<div class="nav-previous"><?php previous_posts_link( __( 'Previous <span class="meta-nav">&larr;</span>', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -160,6 +160,12 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	$list.='</ul>';
 	
 	return $list;
+}
+
+add_action('init','apacportal_add_role_contact_editor');
+
+function apacportal_add_role_contact_editor(){
+	add_role('contact_editor','Contact Editor');
 }
 
 ?>
