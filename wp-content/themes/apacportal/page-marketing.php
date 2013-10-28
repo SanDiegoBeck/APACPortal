@@ -6,6 +6,15 @@
 				<header>APAC Marketing Team
 				</header>
 				<div class="content">
+					<?=apacportal_post_list('apac-marketing-team');?>
+				</div>
+			</div>
+			<div class="box">
+				<header>Digital
+					<span class="more-link"><a href="/category/departments/marketing/digital">More</a></span>
+				</header>
+				<div class="content">
+					<?=apacportal_post_list('digital');?>
 				</div>
 			</div>
 		</div>
@@ -74,26 +83,40 @@
 				<header>Abarth APAC Marketing
 					<span class="more-link"><a href="/category/departments/marketing/abarth-apac-marketing">More</a></span>
 				</header>
-				<div class="content">
-					<ul>
-						<?query_posts('category_name=abarth-apac-marketing&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+				<div class="content" style="min-height: 0; height:188px; padding: 0;">
+					<div class="slider" id="slider192" style="width: 526px; height:188px; position: absolute;"> 
+						<div class="sliderContent" style="width: 526px; height:188px">
+							<?query_posts('category_name=abarth-apac-marketing&posts_per_page=3')?>
+							<?while(have_posts()):the_post();?>
+							<div class="item" style="width:526px; height:188px">
+								<a href="<?the_permalink()?>">
+									<?the_post_thumbnail('home-news-slider')?>
+								</a>
+								<summary><?the_title()?></summary>
+							</div>
+							<?endwhile;?>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="box">
 				<header>Chrysler & Dodge APAC Marketing
 					<span class="more-link"><a href="/category/departments/marketing/chrysler-dodgeapac-marketing">More</a></span>
 				</header>
-				<div class="content">
-					<ul>
-						<?query_posts('category_name=chrysler-dodgeapac-marketing&posts_per_page=5')?>
-						<?while(have_posts()):the_post();?>
-						<li title="<?the_title()?>"><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-						<?endwhile;?>
-					</ul>
+				<div class="content" style="min-height: 0; height:188px; padding: 0;">
+					<div class="slider" id="slider192" style="width: 526px; height:188px; position: absolute;"> 
+						<div class="sliderContent" style="width: 526px; height:188px">
+							<?query_posts('category_name=chrysler-dodgeapac-marketing&posts_per_page=3')?>
+							<?while(have_posts()):the_post();?>
+							<div class="item" style="width:526px; height:188px">
+								<a href="<?the_permalink()?>">
+									<?the_post_thumbnail('home-news-slider')?>
+								</a>
+								<summary><?the_title()?></summary>
+							</div>
+							<?endwhile;?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -112,14 +135,6 @@
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('events-motor-show');?>
-				</div>
-			</div>
-			<div class="box">
-				<header>Digital
-					<span class="more-link"><a href="/category/departments/marketing/digital">More</a></span>
-				</header>
-				<div class="content">
-					<?=apacportal_post_list('digital');?>
 				</div>
 			</div>
 		</div>
