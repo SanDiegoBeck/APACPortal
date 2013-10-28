@@ -50,7 +50,7 @@
 					<div class="content">
 					<?foreach(get_posts(array('category_name'=>'product-pictures','order'=>'ASC','posts_per_page'=>-1)) as $post){?>
 						<dl>
-							<dt><a href="<?the_permalink()?>" target="_blank"><?the_post_thumbnail('thumbnail')?></a></dt>
+							<dt><a href="<?the_permalink()?>" target="_blank"><?the_post_thumbnail(array(130,130))?></a></dt>
 							<dd><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></dd>
 						</dl>
 					<?}?>

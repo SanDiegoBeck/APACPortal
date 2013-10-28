@@ -471,8 +471,9 @@ blockquote.quotescollection cite{
 	margin: auto 32px;
 }
 
-.box.product-picture .content dl img{
-	width:130px;
+.box.product-picture .content dl dt img{
+	/*width: 130px;*/
+	height: 130px;
 }
 
 .box.product-picture .content dd{
