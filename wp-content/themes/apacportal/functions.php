@@ -165,7 +165,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 add_action('init','apacportal_add_role_contact_editor');
 
 function apacportal_add_role_contact_editor(){
-	add_role('contact_editor','Contact Editor');
+	add_role('contact_editor','Contact Editor',array());
 }
 
 ?>

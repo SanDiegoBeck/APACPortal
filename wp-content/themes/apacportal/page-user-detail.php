@@ -69,6 +69,9 @@ $user_metas=array(
 					</tr>
 				</tbody>
 			</table>
+			<?if(current_user_can('edit_users')){?>
+			<a class="btn btn-danger pull-right">DELETE <?=implode((array)$user->data->meta['first_name'])?> <?=implode((array)$user->data->meta['last_name'])?> PERMANENTLY</a>
+			<?}?>
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->

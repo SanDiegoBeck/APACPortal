@@ -15,7 +15,7 @@ $query="
 		AND wp_usermeta.meta_key IN ('first_name','last_name','telephone','cellphone','department','company_name','working_site_country')
 	)
 	INNER JOIN wp_usermeta last_name ON wp_users.ID = last_name.user_id 
-	WHERE  (wp_usermeta.meta_value LIKE '%$search%' OR wp_users.user_email LIKE '%$search%')
+	WHERE  (wp_usermeta.meta_value LIKE '$search%' OR wp_users.user_email LIKE '$search%')
 		AND wp_users.user_registered = 0
 	GROUP BY wp_users.ID
 ";
@@ -61,6 +61,12 @@ array_walk($users, function(&$user){
 <?}?>
 				</tbody>
 			</table>
+			<?if(current_user_can('edit_users')){?>
+			<form class="form-inline pull-right">
+				<input type="file" name="contact-list" />
+				<button type="submit" class="btn">Upload</button>
+			</form>
+			<?}?>
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->
