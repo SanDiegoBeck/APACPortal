@@ -10,8 +10,10 @@
 
 .nav-menu li.current-menu-item, .nav-menu li.current-page-ancestor, 
 .nav-menu li:hover > a, .nav-menu li a:hover {
-	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+	border-right: #CCC 2px solid;
+	border-bottom: #AAA 2px solid;
+/*	background-color: #FFF;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
 }
 
 .box{

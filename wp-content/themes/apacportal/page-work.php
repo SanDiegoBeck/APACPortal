@@ -21,7 +21,7 @@
 							</header>
 							<div class="content">
 								<ul>
-									<li class="coming-soon">
+									<li class="coming-soon" style="height: 30px;">
 										<a href="/manufacturing">Manufacturing</a>
 									</li>
 									<li class="coming-soon">
@@ -64,7 +64,7 @@
 										<a href="/gc">General Counsel</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/gr">Goverment Relations</a>
+										<a href="/government">Goverment Relations</a>
 									</li>
 									<li>
 										<a href="/hr">Human Resources</a>

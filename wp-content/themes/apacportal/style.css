@@ -408,6 +408,7 @@ h1, h2, h3, h4, h5, h6{
 /*Department List*/
 
 .department-list .content ul li, .market-list .content ul li{
+	height: 30px;
 	background-color: #F1F1F3;
 	line-height: 30px;
 	padding: 0 10px;
