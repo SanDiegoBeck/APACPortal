@@ -5,43 +5,43 @@
 				<?get_sidebar('left')?>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/joint-ventures">More</a></span>
 						Joint Ventures
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('joint-ventures');?>
+						<?=apacportal_post_list('joint-ventures',-1,array('orderby'=>'ID','order'=>'ASC'));?>
 					</div>
 				</div>
 			</div>
-			<div class="span5 col-right">
-				<div class="box">
-					<header>
-						<span class="more-link"><a href="/category/commercial">More</a></span>
-						Commercial
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('commercial');?>
+			<div class="span9">
+				<div class="row-fluid">
+					<div class="span6">
+						<div class="box">
+							<header>
+								Commercial
+							</header>
+							<div class="content">
+								<?=apacportal_post_list('commercial',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+							</div>
+						</div>
+						<div class="box">
+							<header>
+								Industrial
+							</header>
+							<div class="content">
+								<?=apacportal_post_list('industrial',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+							</div>
+						</div>
+						<div class="box">
+							<header>
+								Corporate Function
+							</header>
+							<div class="content">
+								<?=apacportal_post_list('corporate-function',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="box">
-					<header>
-						<span class="more-link"><a href="/category/industrial">More</a></span>
-						Industrial
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('industrial');?>
-					</div>
-				</div>
-			</div>
-			<div class="span4 col-right">
-				<?get_sidebar('department-list')?>
-				<div class="box">
-					<header>
-						<span class="more-link"><a href="/category/corporate-function">More</a></span>
-						Corporate Function
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('corporate-function');?>
+					<div class="span6">
+						<?get_sidebar('market-list')?>
 					</div>
 				</div>
 			</div>
