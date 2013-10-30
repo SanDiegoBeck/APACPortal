@@ -18,9 +18,7 @@
 				<nav>
 					<ul>
 						<li><a href="/coming-soon">Privacy Policy</a></li>
-						<li><a href="/coming-soon">Legal Disclaimer</a></li>
 						<li><a href="mailto:hr638@chrysler.com">Contact Us</a></li>
-						<li><a href="/coming-soon">Terms of Use</a></li>
 					</ul>
 				</nav>
 				<div class="site-info pull-right">
