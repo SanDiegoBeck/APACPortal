@@ -18,6 +18,7 @@
 				<nav>
 					<ul>
 						<li><a href="/coming-soon">Privacy Policy</a></li>
+						<li>|</li>
 						<li><a href="mailto:hr638@chrysler.com">Contact Us</a></li>
 					</ul>
 				</nav>
