@@ -63,6 +63,9 @@
 								</ul>
 							</div>
 						</div>
+					</div>
+					<div class="span6">
+						<?get_sidebar('market-list')?>
 						<div class="box department-list">
 							<header>
 								Corporate Function
@@ -96,9 +99,6 @@
 								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="span6">
-						<?get_sidebar('market-list')?>
 					</div>
 				</div>
 			</div>
