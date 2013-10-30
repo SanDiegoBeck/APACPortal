@@ -416,6 +416,10 @@ h1, h2, h3, h4, h5, h6{
 	border-radius: 5px;
 }
 
+.department-list .content ul li.coming-soon a{
+	color: #B80000;
+}
+
 /*Market List*/
 .market-list .flag img{
 	width: 30px

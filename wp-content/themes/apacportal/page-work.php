@@ -3,7 +3,7 @@
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
 				<?get_sidebar('left')?>
-				<div class="box">
+				<div class="box department-list">
 					<header>
 						Joint Ventures
 					</header>
@@ -15,28 +15,85 @@
 			<div class="span9">
 				<div class="row-fluid">
 					<div class="span6">
-						<div class="box">
+						<div class="box department-list">
 							<header>
 								Commercial
 							</header>
 							<div class="content">
-								<?=apacportal_post_list('commercial',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+								<ul>
+									<li class="coming-soon">
+										<a href="/ps">MOPAR - Parts and Service</a>
+									</li>
+									<li>
+										<a href="/dnd">Dealer Network Development</a>
+									</li>
+									<li>
+										<a href="/marketing">Marketing</a>
+									</li>
+									<li>
+										<a href="/scm">Supply Chain Management</a>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<div class="box">
+						<div class="box department-list">
 							<header>
 								Industrial
 							</header>
 							<div class="content">
-								<?=apacportal_post_list('industrial',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+								<ul>
+									<li class="coming-soon">
+										<a href="/manufacturing">Manufacturing</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/powertrain">Powertrain</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/rnd">Research and Development</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/pp">Product Portfolio</a>
+									</li>
+									<li>
+										<a href="/purchasing">Purchasing and Supplier Quality</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/quality">Quality</a>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<div class="box">
+						<div class="box department-list">
 							<header>
 								Corporate Function
 							</header>
 							<div class="content">
-								<?=apacportal_post_list('corporate-function',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+								<ul>
+									<li class="coming-soon">
+										<a href="/bd">Business Development</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/gr">Goverment Relations</a>
+									</li>
+									<li>
+										<a href="/communication">Corporate Communication</a>
+									</li>
+									<li>
+										<a href="/administration">Facilities and Administration</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/finance">Finance</a>
+									</li>
+									<li>
+										<a href="/hr">Human Resources</a>
+									</li>
+									<li>
+										<a href="/ict">Information and Communication Technology (ICT)</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/gc">General Counsel</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
