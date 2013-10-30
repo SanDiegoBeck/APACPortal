@@ -13,6 +13,14 @@
 						<?=apacportal_post_list('useful-links',-1,array('orderby'=>'title','order'=>'ASC'));?>
 					</div>
 				</div>
+				<div class="box">
+					<header>Where to Eat
+						<span class="more-link"><a href="/category/where-to-eat">More</a></span>
+					</header>
+					<div class="content">
+						<?=apacportal_post_list('where-to-eat',10,array('orderby'=>'title','order'=>'ASC'));?>
+					</div>
+				</div>
 			</div>
 			<div class="span3">
 				<div class="box">

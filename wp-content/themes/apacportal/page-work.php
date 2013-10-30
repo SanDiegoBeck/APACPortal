@@ -17,27 +17,6 @@
 					<div class="span6">
 						<div class="box department-list">
 							<header>
-								Commercial
-							</header>
-							<div class="content">
-								<ul>
-									<li class="coming-soon">
-										<a href="/ps">MOPAR - Parts and Service</a>
-									</li>
-									<li>
-										<a href="/dnd">Dealer Network Development</a>
-									</li>
-									<li>
-										<a href="/marketing">Marketing</a>
-									</li>
-									<li>
-										<a href="/scm">Supply Chain Management</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="box department-list">
-							<header>
 								Industrial
 							</header>
 							<div class="content">
@@ -49,9 +28,6 @@
 										<a href="/powertrain">Powertrain</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/rnd">Research and Development</a>
-									</li>
-									<li class="coming-soon">
 										<a href="/pp">Product Portfolio</a>
 									</li>
 									<li>
@@ -60,12 +36,12 @@
 									<li class="coming-soon">
 										<a href="/quality">Quality</a>
 									</li>
+									<li class="coming-soon">
+										<a href="/rnd">Research and Development</a>
+									</li>
 								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="span6">
-						<?get_sidebar('market-list')?>
 						<div class="box department-list">
 							<header>
 								Corporate Function
@@ -74,9 +50,6 @@
 								<ul>
 									<li class="coming-soon">
 										<a href="/bd">Business Development</a>
-									</li>
-									<li class="coming-soon">
-										<a href="/gr">Goverment Relations</a>
 									</li>
 									<li>
 										<a href="/communication">Corporate Communication</a>
@@ -87,14 +60,41 @@
 									<li class="coming-soon">
 										<a href="/finance">Finance</a>
 									</li>
+									<li class="coming-soon">
+										<a href="/gc">General Counsel</a>
+									</li>
+									<li class="coming-soon">
+										<a href="/gr">Goverment Relations</a>
+									</li>
 									<li>
 										<a href="/hr">Human Resources</a>
 									</li>
 									<li>
 										<a href="/ict">Information and Communication Technology (ICT)</a>
 									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="span6">
+						<?get_sidebar('market-list')?>
+						<div class="box department-list">
+							<header>
+								Commercial
+							</header>
+							<div class="content">
+								<ul>
+									<li>
+										<a href="/dnd">Dealer Network Development</a>
+									</li>
+									<li>
+										<a href="/marketing">Marketing</a>
+									</li>
 									<li class="coming-soon">
-										<a href="/gc">General Counsel</a>
+										<a href="/ps">MOPAR - Parts and Service</a>
+									</li>
+									<li>
+										<a href="/scm">Supply Chain Management</a>
 									</li>
 								</ul>
 							</div>
