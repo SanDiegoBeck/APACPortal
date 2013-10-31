@@ -33,5 +33,12 @@
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/js/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/mobilyslider/mobilyslider.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.get('http://www.fiatspa.com/en-us/pages/home.aspx',function(result){
+				$('.share-price').html($(result).find('.inborsa').get(0));
+			});
+		});
+	</script>
 </body>
 </html>
