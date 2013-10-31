@@ -150,7 +150,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 				$list.='<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
 				break;
 			case 'attachment':
-				$list.=preg_replace('/(a href=".*?")/','\$1 target="blank"',wp_get_attachment_link($post->ID));
+				$list.=preg_replace('/<a(.*?)>/i','<a$1 target="_blank">',wp_get_attachment_link($post->ID));
 				break;
 			default:
 				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
