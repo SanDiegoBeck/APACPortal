@@ -166,4 +166,24 @@ function apacportal_add_role_contact_editor(){
 	add_role('contact_editor','Contact Editor',array());
 }
 
+function world_time(){
+	
+	$world_time='';
+	
+	date_default_timezone_set('Asia/Shanghai');
+	
+	$world_time.='<span class="city">Shanghai: </span><span class="time">'.date('H:i').'</span>';
+	date_default_timezone_set('Europe/Rome');
+	
+	$world_time.='<span class="city">Turin: </span><span class="time">'.date('H:i').'</span>';
+	
+	date_default_timezone_set('America/New_York');
+	$world_time.='<span class="city">Auburn Hills: </span><span class="time">'.date('H:i').'</span>';
+	
+	date_default_timezone_set('Asia/Shanghai');
+	
+	return $world_time;
+
+}
+
 ?>
