@@ -16,6 +16,25 @@
 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
 }
 
+.site-header .search-form{
+	width: 150px;
+}
+
+.site-header .search-form [type="search"],
+.site-header .search-form [type="text"] {
+	padding-top: 6px;
+}
+
+.site-header .search-form [type="search"],
+.site-header .search-form [type="text"] {
+	background-color: #fff;
+	border: 2px solid #c3c0ab;
+	cursor: text;
+	height: 28px;
+	outline: 0;
+	width: 150px;
+}
+
 .box{
 	border-right: #CCC 2px solid;
 	border-bottom: #AAA 2px solid;
