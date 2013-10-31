@@ -27,7 +27,7 @@
 					<header>Quote of the Day
 					</header>
 					<div class="content" style="min-height: 0;">
-						<?php echo do_shortcode('[quotcoll orderby="random" limit=1]')?>
+						<?php echo do_shortcode('[quotcoll limit="'.floor((time()-strtotime('2013-10-31'))/86400/7).',1"]')?>
 					</div>
 				</div>
 				<div class="box" id="notices">

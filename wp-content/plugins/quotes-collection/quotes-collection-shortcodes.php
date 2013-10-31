@@ -103,7 +103,7 @@ function quotescollection_shortcodes($atts = array())
 		
 	}
 	
-	else if($limit && is_numeric($limit))
+	else if($limit)
 		$condition .= " LIMIT ".$limit;
 	
 //	return $condition;
