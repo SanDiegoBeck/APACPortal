@@ -35,8 +35,8 @@
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/mobilyslider/mobilyslider.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$.get('http://www.fiatspa.com/en-us/pages/home.aspx',function(result){
-				$('.share-price').html($(result).find('.inborsa').get(0));
+			$.get('/share-price',function(result){
+				$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('£ ');
 			});
 		});
 	</script>

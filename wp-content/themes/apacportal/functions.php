@@ -2,9 +2,7 @@
 add_image_size( 'home-news-slider', 526, 188, true );
 
 function share_price(){
-	$content = file_get_contents('http://uk.finance.yahoo.com/q?s=F.MI');
-	preg_match('/\<div class="yfi_rt_quote_summary_rt_top"\>\<p\>(.*?)\<\/p\>\<\/div\>/',$content,$matches);
-	return $matches[1];
+	return $content = file_get_contents('https://www.google.com/finance?cid=673373');
 }
 
 function str_get_excerpt($str,$length=28){

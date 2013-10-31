@@ -193,16 +193,18 @@ h1, h2, h3, h4, h5, h6{
 .site-header .share-price{
 	color: #888;
 }
-
-.site-header .share-price .current-value{
+.site-header .share-price div{
+	display: inline;
+}
+.site-header .share-price .pr{
 	color: #003478;
 }
 
-.site-header .share-price .current-gap{
+.site-header .share-price .id-price-change.nwp .chg{
 	color: #00AB00;
 }
 
-.site-header .share-price .current-gap.negative{
+.site-header .share-price .id-price-change.nwp .chr{
 	color: #AB0000;
 }
 
