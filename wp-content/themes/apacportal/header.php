@@ -44,7 +44,7 @@
 					<div class="description pull-left">
 						<span class="worldtime">
 							<?=world_time();?>
-						<span>
+						</span>
 					</div>
 				</div>
 			</div>
