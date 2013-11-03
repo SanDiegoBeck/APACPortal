@@ -33,9 +33,11 @@
 			<div class="banner" style="background-image: url('<?=get_stylesheet_directory_uri()?>/images/headerbg_<?=floor(rand(0,13))?>.jpg')">
 				<div class="wrapper">
 					<div class="description-top">
+<?if($_GET['share_price']){?>
 						<span class="share-price">
 							Share Price: Loading...
 						</span>
+<?}?>
 					</div>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
@@ -58,4 +60,4 @@
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main">
-			<?php if (function_exists('HAG_Breadcrumbs') && !is_home()) { HAG_Breadcrumbs(array('wrapper_element'=>'ul','wrapper_class'=>'wrapper breadcrumb','prefix'=>'<li>','suffix'=>'</li>','last_link'=>true)); } ?>
+			<?php if (function_exists('HAG_Breadcrumbs') && !is_home()) { HAG_Breadcrumbs(array('wrapper_element'=>'ul','wrapper_class'=>'wrapper breadcrumb','prefix'=>'<li>','suffix'=>'</li>','crumb_link'=>false)); } ?>

@@ -36,7 +36,7 @@
 	<script type="text/javascript">
 		$(function(){
 			$.get('/share-price',function(result){
-				$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('£ ');
+				$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('€ ');
 			});
 			
 			setInterval("$.get('/world-time/',function(time){$('.worldtime').html(time);})",60000);
