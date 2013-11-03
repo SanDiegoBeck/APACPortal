@@ -46,3 +46,7 @@
 	background-image: url('images/transparent.png');
 	/*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');*/
 }
+
+.ie8 .me-plugin {
+	position: static;
+}
