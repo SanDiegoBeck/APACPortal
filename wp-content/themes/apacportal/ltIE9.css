@@ -50,3 +50,8 @@
 .ie8 .me-plugin {
 	position: static;
 }
+
+.mejs-layers, .mejs-overlay-play{
+	width: 100%;
+	height: 100%;
+}
