@@ -60,4 +60,4 @@
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main">
-			<?php if (function_exists('HAG_Breadcrumbs') && !is_home()) { HAG_Breadcrumbs(array('wrapper_element'=>'ul','wrapper_class'=>'wrapper breadcrumb','prefix'=>'<li>','suffix'=>'</li>','crumb_link'=>false)); } ?>
+			<?php if (function_exists('HAG_Breadcrumbs') && !is_home()) { HAG_Breadcrumbs(array('wrapper_element'=>'ul','wrapper_class'=>'wrapper breadcrumb','prefix'=>'<li>','suffix'=>'</li>','crumb_link'=>false,'last_link'=>true,'post_types'=>array('post'=>array('last_show'=>false)))); } ?>
