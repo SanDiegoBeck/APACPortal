@@ -22,22 +22,22 @@
 							<div class="content">
 								<ul>
 									<li class="coming-soon" style="height: 30px;">
-										<a href="/manufacturing">Manufacturing</a>
+										<a href="#">Manufacturing</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/powertrain">Powertrain</a>
+										<a href="#">Powertrain</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/pp">Product Portfolio</a>
+										<a href="#">Product Portfolio</a>
 									</li>
 									<li>
 										<a href="/purchasing">Purchasing and Supplier Quality</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/quality">Quality</a>
+										<a href="#">Quality</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/rnd">Research and Development</a>
+										<a href="#">Research and Development</a>
 									</li>
 								</ul>
 							</div>
@@ -49,7 +49,7 @@
 							<div class="content">
 								<ul>
 									<li class="coming-soon">
-										<a href="/bd">Business Development</a>
+										<a href="#">Business Development</a>
 									</li>
 									<li>
 										<a href="/communication">Corporate Communication</a>
@@ -58,13 +58,13 @@
 										<a href="/administration">Facilities and Administration</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/finance">Finance</a>
+										<a href="#">Finance</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/gc">General Counsel</a>
+										<a href="#">General Counsel</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/government">Goverment Relations</a>
+										<a href="#">Goverment Relations</a>
 									</li>
 									<li>
 										<a href="/hr">Human Resources</a>
@@ -91,7 +91,7 @@
 										<a href="/marketing">Marketing</a>
 									</li>
 									<li class="coming-soon">
-										<a href="/ps">MOPAR - Parts and Service</a>
+										<a href="#">MOPAR - Parts and Service</a>
 									</li>
 									<li>
 										<a href="/scm">Supply Chain Management</a>

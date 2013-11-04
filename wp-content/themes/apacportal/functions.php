@@ -101,11 +101,11 @@ function twentythirteen_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-next"><?php next_posts_link( __( '<span class="meta-nav">&rarr;</span> Next', 'twentythirteen' ) ); ?></div>
+			<div class="nav-next"><?php next_posts_link( __( 'Next <span>&rarr;</span>', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-previous"><?php previous_posts_link( __( 'Previous <span class="meta-nav">&larr;</span>', 'twentythirteen' ) ); ?></div>
+			<div class="nav-previous"><?php previous_posts_link( __( '<span>&larr;</span> Previous', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
