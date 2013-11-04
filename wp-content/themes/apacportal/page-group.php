@@ -15,7 +15,7 @@
 						Executives
 					</header>
 					<div class="content">
-						<?query_posts('category_name=departments/communication/executive-photos&posts_per_page=-1')?>
+						<?query_posts('category_name=departments/communication/executive-photos&orderby=ID&order=ASC&posts_per_page=-1')?>
 						<?while(have_posts()):the_post();?>
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
