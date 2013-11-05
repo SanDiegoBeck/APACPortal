@@ -71,7 +71,7 @@ $user_metas=array(
 			</table>
 			<label>Please contact your department's secretary for updating your information.</label>
 			<?if(current_user_can('edit_users')){?>
-			<a class="btn btn-danger pull-right">DELETE <?=implode((array)$user->data->meta['first_name'])?> <?=implode((array)$user->data->meta['last_name'])?> PERMANENTLY</a>
+			<a class="btn btn-danger pull-right" href="/user-remove/?ID=<?=$user->data->ID?>">DELETE <?=implode((array)$user->data->meta['first_name'])?> <?=implode((array)$user->data->meta['last_name'])?> PERMANENTLY</a>
 			<?}?>
 		</div>
 	</div><!-- #content -->

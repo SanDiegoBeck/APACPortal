@@ -17,6 +17,7 @@ $query="
 	INNER JOIN wp_usermeta last_name ON wp_users.ID = last_name.user_id AND last_name.meta_key = 'last_name'
 	WHERE  (wp_usermeta.meta_value LIKE '$search%' OR wp_users.user_email LIKE '$search%')
 		AND wp_users.user_registered = 0
+		AND wp_users.user_status >= 0
 	GROUP BY wp_users.ID
 	ORDER BY last_name.meta_value ASC
 ";
@@ -53,7 +54,7 @@ array_walk($users, function(&$user){
 <?foreach($users as $user){?>
 					<? $i++ ?>
 					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Click For More Information">
-						<td><a href="/user-detail?id=<?=$user->ID?>" target="_blank"><?=$user->meta['first_name'][0]?> <?=$user->meta['last_name'][0]?></td>
+						<td><a href="/user-detail/?id=<?=$user->ID?>" target="_blank"><?=$user->meta['first_name'][0]?> <?=$user->meta['last_name'][0]?></td>
 						<td><?=$user->meta['telephone'][0]?></td>
 						<td><?=$user->user_email?></td>
 						<td><?=$user->meta['company_name'][0]?></td>

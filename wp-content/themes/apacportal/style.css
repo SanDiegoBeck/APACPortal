@@ -253,6 +253,19 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /*Content*/
+
+.page-header{
+	background-color: #FFF;
+	padding-bottom: 0;
+}
+
+.page-title{
+	font-size: 1.5em;
+	font-weight: normal;
+	font-style: normal;
+	padding: 10px;
+}
+
 #content {
 	margin: 0 auto;
 	width: 1080px;
@@ -370,6 +383,10 @@ h1, h2, h3, h4, h5, h6{
 	width: 50px;
 }
 
+.paging-navigation .nav-next{
+	padding: 0;
+}
+
 .paging-navigation .nav-next .meta-nav {
 	margin-left: 10px;
 	margin-right: 10px;
@@ -381,6 +398,12 @@ h1, h2, h3, h4, h5, h6{
 .paging-navigation .meta-nav {
 	padding: 17px 0 23px;
 	width: 80px;
+}
+
+.paging-navigation a {
+	font-size: 1.5em;
+	font-style: normal;
+	font-weight: normal;
 }
 
 /*Archive Single Page*/
@@ -413,6 +436,10 @@ h1, h2, h3, h4, h5, h6{
 .post{
 	background-color: #FFF;
 	box-shadow: 2px 2px 5px #CCC;
+}
+
+.post table{
+	table-layout: fixed;
 }
 
 .entry-content img.alignleft, .entry-content .wp-caption.alignleft {

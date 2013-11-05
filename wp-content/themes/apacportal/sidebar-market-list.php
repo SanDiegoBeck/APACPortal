@@ -2,29 +2,29 @@
 					<header>Markets</header>
 					<div class="content">
 						<ul>
-							<li>
+							<li class="coming-soon">
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/as.png"></span>
-								<a href="/asean">ASEAN</a>
+								<a href="#">ASEAN</a>
 							</li>
-							<li>
+							<li class="coming-soon">
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/au.png"></span>
-								<a href="/australia">Australia</a>
+								<a href="#">Australia</a>
 							</li>
-							<li>
+							<li class="coming-soon">
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/cn.png"></span>
-								<a href="/australia">China</a>
-							</li>
-							<li>
+								<a href="#">China</a>
+							</li class="coming-soon">
+							<li class="coming-soon">
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/in.png"></span>
-								<a href="/indea">India</a>
+								<a href="#">India</a>
 							</li>
-							<li>
+							<li class="coming-soon">
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/jp.png"></span>
-								<a href="/japanese">Japan</a>
+								<a href="#">Japan</a>
 							</li>
 							<li>
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/kr.png"></span>
-								<a href="/korea">Korea</a>
+								<a href="#">Korea</a>
 							</li>
 						</ul>
 					</div>

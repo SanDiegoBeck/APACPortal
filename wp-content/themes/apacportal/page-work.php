@@ -7,8 +7,19 @@
 					<header>
 						Joint Ventures
 					</header>
-					<div class="content">
-						<?=apacportal_post_list('joint-ventures',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+					<div class="content" style="min-height: 0">
+						<!--<?=apacportal_post_list('joint-ventures',-1,array('orderby'=>'ID','order'=>'ASC'));?>-->
+						<ul>
+							<li class="coming-soon" style="height: 30px;">
+								<a href="#">GAC FIAT</a>
+							</li>
+							<li class="coming-soon">
+								<a href="#">FIAL</a>
+							</li>
+							<li class="coming-soon">
+								<a href="#">HAVECO</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -94,7 +105,7 @@
 										<a href="#">MOPAR - Parts and Service</a>
 									</li>
 									<li>
-										<a href="/scm">Supply Chain Management</a>
+										<a href="/#">Supply Chain Management</a>
 									</li>
 								</ul>
 							</div>
