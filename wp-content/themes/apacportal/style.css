@@ -458,7 +458,7 @@ h1, h2, h3, h4, h5, h6{
 	border-radius: 5px;
 }
 
-.department-list .content ul li.coming-soon a{
+.department-list .content ul li.coming-soon a, .market-list .content ul li.coming-soon a{
 	color: #686758;
 }
 
