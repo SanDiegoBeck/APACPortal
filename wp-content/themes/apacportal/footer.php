@@ -41,6 +41,10 @@
 			
 			setInterval("$.get('/world-time/',function(time){$('.worldtime').html(time);})",60000);
 			
+			$('a[href="#"]').on('click',function(){
+				return false;
+			});
+			
 		});
 	</script>
 </body>
