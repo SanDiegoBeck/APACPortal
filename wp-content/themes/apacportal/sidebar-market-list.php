@@ -22,7 +22,7 @@
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/jp.png"></span>
 								<a href="#">Japan</a>
 							</li>
-							<li>
+							<li class="coming-soon">
 								<span class="flag"><img src="<?=get_stylesheet_directory_uri()?>/images/flags/kr.png"></span>
 								<a href="#">Korea</a>
 							</li>
