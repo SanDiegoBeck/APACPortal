@@ -17,7 +17,7 @@
 				<?//php get_sidebar( 'main' ); ?>
 				<nav>
 					<ul>
-						<li><a href="/coming-soon">Privacy Policy</a></li>
+						<li><a href="/wp-content/uploads/2013/11/Privacy-Policy.pdf" target="_blank">Privacy Policy</a></li>
 						<li>|</li>
 						<li><a href="mailto:hr638@chrysler.com">Contact Us</a></li>
 					</ul>
