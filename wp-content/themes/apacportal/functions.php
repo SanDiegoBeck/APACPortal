@@ -193,7 +193,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 
 function apacportal_add_role_contact_editor(){
 	remove_role('contact_editor');
-	add_role('contact_editor','Contact Editor',array('remove_users_in_same_company'=>true,'edit_users'=>true,'read'=>true));
+	add_role('contact_editor','Contact Editor',array('edit_users_in_same_company'=>true,'edit_users'=>true,'read'=>true));
 }
 
 add_action('init','apacportal_add_role_contact_editor');

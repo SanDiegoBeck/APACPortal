@@ -1,6 +1,8 @@
 <?php
 $user_args=array();
 
+$current_user_meta = get_user_meta($current_user->ID);
+
 if(isset($_GET['id'])){
 	$user=get_userdata($_GET['id']);
 	$user->meta=get_user_meta($_GET['id']);
@@ -69,9 +71,15 @@ $user_metas=array(
 					</tr>
 				</tbody>
 			</table>
-			<label>Please contact your department's secretary for updating your information.</label>
-			<?if(current_user_can('edit_users')){?>
-			<a class="btn btn-danger pull-right" href="/user-remove/?ID=<?=$user->data->ID?>">DELETE <?=implode((array)$user->data->meta['first_name'])?> <?=implode((array)$user->data->meta['last_name'])?> PERMANENTLY</a>
+			<label><span class="icon icon-info-sign"></span><i>Please contact your department's secretary for updating your information.</i></label>
+			<?if(
+				current_user_can('remove_users') ||
+				(current_user_can('edit_users_in_same_company') && $user->meta['company_name'] == $current_user_meta['company_name'])
+			){?>
+			<div class="pull-right">
+				<a class="btn" href="/wp-admin/user-edit.php?user_id=<?=$user->data->ID?>" target="_blank">Edit "<?=$user->data->display_name?>"</a>
+				<a class="btn btn-danger" href="/user-remove/?ID=<?=$user->data->ID?>">DELETE "<?=$user->data->display_name?>" PERMANENTLY</a>
+			</div>
 			<?}?>
 		</div>
 	</div><!-- #content -->

@@ -63,9 +63,9 @@ array_walk($users, function(&$user){
 <?}?>
 				</tbody>
 			</table>
-			<label>Please contact your department's secretary for updating your information.</label>
+			<label><span class="icon icon-info-sign"></span><i>Please contact your department's secretary for updating your information.</i></label>
 			<?if(current_user_can('edit_users')){?>
-			<form class="form-inline pull-right">
+			<form class="form-inline pull-right" method="post" enctype="multipart/form-data" action="/user-import/">
 				<input type="file" name="contact-list" />
 				<button type="submit" class="btn">Upload</button>
 			</form>
