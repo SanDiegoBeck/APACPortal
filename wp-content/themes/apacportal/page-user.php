@@ -22,6 +22,8 @@ $query="
 	ORDER BY last_name.meta_value ASC
 ";
 
+//$query="SELECT * FROM wp_usermeta INNER JOIN wp_users ON wp_users.ID = wp_usermeta.user_id WHERE wp_usermeta.meta_key = 'search_info' AND MATCH(wp_usermeta.meta_value) AGAINST('$search');";
+
 $users = $wpdb->get_results($query);
 
 array_walk($users, function(&$user){
@@ -63,7 +65,7 @@ array_walk($users, function(&$user){
 <?}?>
 				</tbody>
 			</table>
-			<label><span class="icon icon-info-sign"></span><i>Please contact your department's secretary for updating your information.</i></label>
+			<label><i>Please contact your department's secretary for updating your information.</i></label>
 			<?if(current_user_can('edit_users')){?>
 			<form class="form-inline pull-right" method="post" enctype="multipart/form-data" action="/user-import/">
 				<input type="file" name="contact-list" />
