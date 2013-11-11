@@ -116,6 +116,10 @@ input[type="reset"]:active {
 	padding: 5px;
 }
 
+button.btn:active{
+	padding: 4px 12px;
+}
+
 input[type="file"]{
 	border: none;
 	line-height: 1;

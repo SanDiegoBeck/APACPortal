@@ -78,7 +78,21 @@ $user_metas=array(
 			){?>
 			<div class="pull-right">
 				<a class="btn" href="/wp-admin/user-edit.php?user_id=<?=$user->data->ID?>" target="_blank">Edit "<?=$user->data->display_name?>"</a>
-				<a class="btn btn-danger" href="/user-remove/?ID=<?=$user->data->ID?>">DELETE "<?=$user->data->display_name?>" PERMANENTLY</a>
+				<a id="remove-user" href="#remove-user-modal" class="btn btn-danger" data-toggle="modal">DELETE "<?=$user->data->display_name?>" PERMANENTLY</a>
+
+				<div id="remove-user-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4>Confirm to Remove</h4>
+					</div>
+					<div class="modal-body">
+						You're removing a user. This operation is unrecoverable. Are you sure?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+						<a href="/user-remove/?ID=<?=$user->data->ID?>" class="btn btn-danger">DELETE "<?=$user->data->display_name?>" PERMANENTLY</a>
+					</div>
+				</div>	
 			</div>
 			<?}?>
 		</div>

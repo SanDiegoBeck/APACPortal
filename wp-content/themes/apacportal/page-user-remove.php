@@ -12,6 +12,10 @@ if(
 	$wpdb->query("UPDATE wp_users SET user_status = -1 WHERE ID = ".intval($_GET['ID']));
 ?>
 <div class="wrapper alert">Contact: "<?=implode($target_user_meta['first_name']).' '.implode($target_user_meta['last_name'])?>" Deleted</div>
+
+<script type="text/javascript">
+setTimeout("window.close();",5000);
+</script>
 <?php
 }else{
 ?>
