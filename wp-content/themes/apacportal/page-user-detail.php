@@ -71,7 +71,7 @@ $user_metas=array(
 					</tr>
 				</tbody>
 			</table>
-			<label><span class="icon icon-info-sign"></span><i>Please contact your department's secretary for updating your information.</i></label>
+			<label><i>Please contact your department's secretary for updating your information.</i></label>
 			<?if(
 				current_user_can('remove_users') ||
 				(current_user_can('edit_users_in_same_company') && $user->meta['company_name'] == $current_user_meta['company_name'])

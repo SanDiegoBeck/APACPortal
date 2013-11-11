@@ -21,7 +21,7 @@ try{
 	$collection = array();
 
 	$wpdb->query(
-	"CREATE TABLE `_people` (
+	"CREATE TEMPORARY TABLE `_people` (
 		`id` int(11) NOT NULL AUTO_INCREMENT,
 		`First Name` varchar(255) NULL,
 		`Last name` varchar(255) NULL,
@@ -92,6 +92,11 @@ FROM wp_users;"
 	$wpdb->query("REPLACE INTO wp_usermeta (user_id,meta_key,meta_value)
 	SELECT wp_users.id,'working_site_country',_people.`working site country`
 	FROM wp_users INNER JOIN _people ON _people.`e-mail` = wp_users.user_email;");
+	
+//	$wpdb->query("REPLACE INTO wp_usermeta (user_id, meta_key, meta_value)
+//SELECT wp_users.ID,'search_info',CONCAT(user_email,',',GROUP_CONCAT(meta_value)) FROM wp_usermeta INNER JOIN wp_users ON wp_users.ID = wp_usermeta.user_id WHERE wp_usermeta.meta_key IN ('first_name','last_name','telephone','cellphone','department','company_name','working_site_country')
+//GROUP BY wp_usermeta.user_id;");
+	
 ?>
 	<script type="text/javascript">window.location.href="<?=$_SERVER['HTTP_REFERER']?>";</script>
 <?php
