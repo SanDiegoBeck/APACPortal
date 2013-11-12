@@ -16,11 +16,10 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/dnd/the-people-behind-the-department">More</a></span>
-						The people behind the department 
+						Our Team
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('the-people-behind-the-department');?>
+						<?=apacportal_post_list('the-people-behind-the-department',-1,array('order'=>'ASC','orderby'=>'ID'));?>
 					</div>
 				</div>
 			</div>
@@ -28,7 +27,7 @@
 				<div class="box">
 					<header>
 						<span class="more-link"><a href="/category/departments/dnd/news-from-the-markets">More</a></span>
-						News from the markets 
+						News
 					</header>
 					<div class="content">
 						<?=apacportal_post_list('news-from-the-markets');?>
@@ -37,7 +36,7 @@
 				<div class="box">
 					<header>
 						<span class="more-link"><a href="/category/departments/dnd/best-practice">More</a></span>
-						Best practice
+						Best Practice
 					</header>
 					<div class="content">
 						<?=apacportal_post_list('best-practice');?>
@@ -48,7 +47,7 @@
 				<div class="box">
 					<header>
 						<span class="more-link"><a href="/category/departments/dnd/upcoming-events">More</a></span>
-						Upcoming events 
+						Future Events
 					</header>
 					<div class="content">
 						<?=apacportal_post_list('upcoming-events');?>

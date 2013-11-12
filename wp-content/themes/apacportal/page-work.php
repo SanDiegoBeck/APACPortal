@@ -55,7 +55,7 @@
 						</div>
 						<div class="box department-list">
 							<header>
-								Corporate Function
+								Corporate
 							</header>
 							<div class="content">
 								<ul>
@@ -63,7 +63,7 @@
 										<a href="#">Business Development</a>
 									</li>
 									<li>
-										<a href="/communication">Corporate Communication</a>
+										<a href="/communication">Government Relations/Communications</a>
 									</li>
 									<li class="coming-soon">
 										<a href="#">Environment Health and Safety (EHS)</a>
@@ -76,9 +76,6 @@
 									</li>
 									<li class="coming-soon">
 										<a href="#">General Counsel</a>
-									</li>
-									<li class="coming-soon">
-										<a href="#">Goverment Relations</a>
 									</li>
 									<li>
 										<a href="/hr">Human Resources</a>
