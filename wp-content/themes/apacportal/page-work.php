@@ -63,7 +63,7 @@
 										<a href="#">Business Development</a>
 									</li>
 									<li>
-										<a href="/communication">Government Relations/Communications</a>
+										<a href="/communication">Corporate Communications</a>
 									</li>
 									<li class="coming-soon">
 										<a href="#">Environment Health and Safety (EHS)</a>
