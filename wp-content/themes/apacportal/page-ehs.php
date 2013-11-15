@@ -2,14 +2,8 @@
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-				<div class="box">
-					<header>WELCOME TO THE EHS DEPARTMENT
-					</header>
-				</div>
 			<div class="box">
-				<div class="content">
-					<img src="" />
-				</div>
+				<header>WELCOME TO THE EHS DEPARTMENT</header>
 			</div>
 			<div class="box">
 				<header>EHS TEAM & CONTACT INFORMATION
@@ -38,11 +32,10 @@
 		</div>
 		<div class="span6">
 			<div class="box">
-				<header>MISSION STATEMENT
-				</header>
 				<div class="content">
-					The APAC Environment, Health and Safety (EHS) team is dedicated to reduce injuries, accidents and environmental impact and are committed to complying with regulatory and corporate requirements on environment, health and safety, regulations, policies and procedures. 
-The EHS program reduces these risks through partnerships with APAC employees, joint venture companies and visitors at our facilities. We achieve this by providing high quality training, comprehensive workplace inspections, emergency response programs and hazardous materials management from acquisition to disposal while setting goals and objectives to continuously improve environment, health and safety performances.
+					<div style="text-align: center"><img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png"></div>
+					<p><b>MISSION STATEMENT</b>: The APAC Environment, Health and Safety (EHS) team is dedicated to reduce injuries, accidents and environmental impact and are committed to complying with regulatory and corporate requirements on environment, health and safety, regulations, policies and procedures.</p>
+					<p>The EHS program reduces these risks through partnerships with APAC employees, joint venture companies and visitors at our facilities. We achieve this by providing high quality training, comprehensive workplace inspections, emergency response programs and hazardous materials management from acquisition to disposal while setting goals and objectives to continuously improve environment, health and safety performances.</p>
 				</div>
 			</div>
 			<div class="box">
