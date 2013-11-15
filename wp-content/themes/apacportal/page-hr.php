@@ -42,7 +42,10 @@
 						Total Compensation
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('total-compensation');?>
+						<ul>
+							<li>Coming Soon</li>
+						</ul>
+						<!--<?=apacportal_post_list('total-compensation');?>-->
 					</div>
 				</div>
 				<div class="box">

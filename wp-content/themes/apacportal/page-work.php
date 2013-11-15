@@ -66,7 +66,7 @@
 										<a href="/communication">Corporate Communications</a>
 									</li>
 									<li class="coming-soon">
-										<a href="#">Environment Health and Safety (EHS)</a>
+										<a href="#">Environment, Health and Safety (EHS)</a>
 									</li>
 									<li>
 										<a href="/administration">Facilities and Administration</a>
