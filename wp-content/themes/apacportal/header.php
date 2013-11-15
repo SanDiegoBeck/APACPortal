@@ -33,11 +33,9 @@
 			<div class="banner" style="background-image: url('<?=get_stylesheet_directory_uri()?>/images/headerbg_<?=floor(rand(0,12))?>.jpg')">
 				<div class="wrapper">
 					<div class="description-top">
-<?if($_GET['share_price']){?>
-						<span class="share-price">
-							Share Price: Loading...
-						</span>
-<?}?>
+						<a href="https://www.google.com/finance?cid=673373" target="_blank">
+							<span class="share-price">Share Price: Loading...</span>
+						</a>
 					</div>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
