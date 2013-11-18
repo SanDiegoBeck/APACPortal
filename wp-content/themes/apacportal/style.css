@@ -201,6 +201,7 @@ h1, h2, h3, h4, h5, h6{
 
 .site-header .share-price{
 	color: #888;
+	font-size: 0.8em;
 }
 .site-header .share-price div{
 	display: inline;
