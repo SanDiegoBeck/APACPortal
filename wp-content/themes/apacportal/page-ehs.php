@@ -6,7 +6,7 @@
 				<header>WELCOME TO THE EHS DEPARTMENT</header>
 			</div>
 			<div class="box">
-				<header>EHS TEAM & CONTACT INFORMATION
+				<header>EHS Team & Contact Information
 					<span class="more-link"><a href="/category/departments/ehs/ehs-team-contact-information">More</a></span>
 				</header>
 				<div class="content">
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>EMERGENCY EVACUATION PLANS
+				<header>Emegency Evacuation Plans
 					<span class="more-link"><a href="/category/departments/ehs/emergency-evacuation-plans">More</a></span>
 				</header>
 				<div class="content">
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>EHS AWARDS/RECOGNITION
+				<header>EHS Awards/Recognition
 					<span class="more-link"><a href="/category/departments/ehs/ehs-awardsrecognition">More</a></span>
 				</header>
 				<div class="content">
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>EHS BULLETIN - NEWS
+				<header>EHS Bulletin - News
 					<span class="more-link"><a href="/category/departments/ehs/ehs-bulletin-news">More</a></span>
 				</header>
 				<div class="content">
@@ -57,7 +57,7 @@
 		</div>
 		<div class="span3 col-right">
 			<div class="box">
-				<header>ENVIRONMENT
+				<header>Environment
 					<span class="more-link"><a href="/category/departments/ehs/environment">More</a></span>
 				</header>
 				<div class="content">
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>HEALTH AND SAFETY
+				<header>Health and Safety
 					<span class="more-link"><a href="/category/departments/ehs/health-and-safety">More</a></span>
 				</header>
 				<div class="content">
@@ -73,7 +73,7 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>WCM CORNER
+				<header>WCM Corner
 					<span class="more-link"><a href="/category/departments/ehs/wcm-corner">More</a></span>
 				</header>
 				<div class="content">
