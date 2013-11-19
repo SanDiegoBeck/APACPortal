@@ -77,7 +77,7 @@ class PrettyFileListPlugin_Class{
 		//If all types add filters
 		//Get all attachments of the right type
 		//TODO:Add option for 'orderby' => 'title'
-		$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => get_the_id()); 
+		$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => get_the_id(), 'orderby'=>'menu_order','order'=>'desc'); 
 
 		if($mimeTypesToGet){
 			$args['post_mime_type']=$mimeTypesToGet;
