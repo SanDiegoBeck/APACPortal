@@ -1,4 +1,3 @@
-<?header('X-UA-Compatible: IE=edge,chrome=1')?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>

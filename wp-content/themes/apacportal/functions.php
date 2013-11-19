@@ -1,4 +1,6 @@
 <?php
+header('X-UA-Compatible: IE=edge,chrome=1');
+
 add_image_size( 'home-news-slider', 526, 188, true );
 
 function share_price(){
