@@ -44,29 +44,37 @@
 					</header>
 					<div class="content">
 						<?php // Get RSS Feed(s)
-						// Get a SimplePie feed object from the specified feed source.
-						$rss_chrysler = fetch_feed( 'http://scoop.chrysler.com/category/international/feed' );
-						$rss_fiat = fetch_feed( 'http://www.fiatspa.com/en-US/media_center/_layouts/15/listfeed.aspx?List=7F16150F-5594-419A-8A89-4F567AF5CEC8' );
-
-						if ( ! is_wp_error( $rss_chrysler ) ) : // Checks that the object is created correctly
-
-							// Figure out how many total items there are, but limit it to 5. 
-							$maxitems = $rss_chrysler->get_item_quantity( 3 ); 
-
-							// Build an array of all the items, starting with element 0 (first element).
-							$rss_items_chrysler = $rss_chrysler->get_items( 0, $maxitems );
-
-						endif;
 						
-						if ( ! is_wp_error( $rss_fiat ) ) : // Checks that the object is created correctly
+						require_once( ABSPATH . WPINC . '/class-feed.php' );
+						
+						$feed_data = unserialize(get_option('feed_data'));
+						
+						if(empty($feed_data) || ($feed_data['timestamp'] < time() - 7200)){
+							$feed_data['chrysler'] = fetch_feed( 'http://scoop.chrysler.com/category/international/feed' );
+							$feed_data['fiat'] = fetch_feed( 'http://www.fiatspa.com/en-US/media_center/_layouts/15/listfeed.aspx?List=7F16150F-5594-419A-8A89-4F567AF5CEC8' );
+							$feed_data['timestamp'] = time();
+							update_option('feed_data', serialize($feed_data));
+						}
+						
+						if ( ! is_wp_error( $feed_data['chrysler'] ) ){
 
 							// Figure out how many total items there are, but limit it to 5. 
-							$maxitems = $rss_fiat->get_item_quantity( 3 ); 
+							$maxitems = $feed_data['chrysler']->get_item_quantity( 3 ); 
 
 							// Build an array of all the items, starting with element 0 (first element).
-							$rss_items_fiat = $rss_fiat->get_items( 0, $maxitems );
+							$rss_items_chrysler = $feed_data['chrysler']->get_items( 0, $maxitems );
 
-						endif;
+						}
+						
+						if ( ! is_wp_error( $feed_data['fiat'] ) ){
+
+							// Figure out how many total items there are, but limit it to 5. 
+							$maxitems = $feed_data['fiat']->get_item_quantity( 3 ); 
+
+							// Build an array of all the items, starting with element 0 (first element).
+							$rss_items_fiat = $feed_data['fiat']->get_items( 0, $maxitems );
+
+						}
 						?>
 						<ul>
 							<?php if ( $maxitems == 0 ) : ?>
