@@ -226,4 +226,10 @@ function edit_posts_orderby($orderby_statement){
 
 add_filter('posts_orderby', 'edit_posts_orderby');
 
+function apply_page_attributes_to_posts(){
+    add_post_type_support( 'post', 'page-attributes' );
+}
+
+add_action( 'admin_init', 'apply_page_attributes_to_posts' );
+
 ?>
