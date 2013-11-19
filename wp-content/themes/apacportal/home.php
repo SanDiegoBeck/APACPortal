@@ -14,7 +14,7 @@
 					<div class="content" style="min-height: 0; height:188px; padding: 0;">
 						<div class="slider" id="slider192" style="width: 526px; height:188px; position: absolute;"> 
 							<div class="sliderContent" style="width: 526px; height:188px">
-								<?query_posts(array('category_name'=>'apac-news','post_per_page'=>3,'orderby'=>'menu_order date','order'=>'desc'))?>
+								<?query_posts(array('category_name'=>'apac-news','posts_per_page'=>3,'orderby'=>'menu_order date','order'=>'desc'))?>
 								<?while(have_posts()):the_post();?>
 								<div class="item" style="width:526px; height:188px">
 									<a href="<?the_permalink()?>">
