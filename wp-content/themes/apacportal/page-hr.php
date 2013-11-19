@@ -66,7 +66,7 @@
 						<?=apacportal_post_list('plm-sap');?>
 					</div>
 				</div>
-				<div class="box" style="height: 250px;">
+				<div class="box">
 					<header>
 						<span class="more-link"><a href="/category/department/hr/organizational-charts">More</a></span>
 						Organizational Charts

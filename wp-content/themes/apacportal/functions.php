@@ -170,7 +170,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	foreach(
 		get_posts(
 			array_merge(
-				array('category__in'=>array(get_category_by_slug($category_name)->cat_ID),'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit,'orderby'=>'menu_order date','order'=>'DESC'),
+				array('category__in'=>array(get_category_by_slug($category_name)->cat_ID),'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit,'orderby'=>'menu_order date','order'=>'desc','suppress_filters'=>false),
 				$args
 			)
 		) as $post
@@ -220,13 +220,11 @@ function world_time(){
 
 }
 
-/*
 function edit_posts_orderby($orderby_statement){
-	return str_replace('wp_posts.menu_order,wp_posts.post_date desc', 'wp_posts.menu_order asc,wp_posts.post_date desc', $orderby_statement);
+	return str_replace('wp_posts.menu_order,wp_posts.post_date desc', 'wp_posts.menu_order desc,wp_posts.post_date desc', $orderby_statement);
 }
 
 add_filter('posts_orderby', 'edit_posts_orderby');
-*/
 
 function apply_page_attributes_to_posts(){
     add_post_type_support( 'post', 'page-attributes' );

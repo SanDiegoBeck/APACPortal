@@ -33,7 +33,7 @@
 				<div class="wrapper">
 					<div class="description-top">
 						<a href="https://www.google.com/finance?cid=673373" target="_blank">
-							<span class="share-price"></span>
+							<span class="share-price">&nbsp;</span>
 						</a>
 					</div>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
