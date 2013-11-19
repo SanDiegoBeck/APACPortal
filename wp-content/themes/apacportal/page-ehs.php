@@ -3,10 +3,10 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
 			<div class="box">
-				<header>WELCOME TO THE EHS DEPARTMENT</header>
+				<header>Environment, Health and Safety</header>
 			</div>
 			<div class="box">
-				<header>EHS Team & Contact Information
+				<header>Team & Contact Information
 					<span class="more-link"><a href="/category/departments/ehs/ehs-team-contact-information">More</a></span>
 				</header>
 				<div class="content">
