@@ -224,9 +224,9 @@ function world_time(){
 function edit_posts_orderby($orderby_statement){
 	return str_replace('wp_posts.menu_order,wp_posts.post_date desc', 'wp_posts.menu_order asc,wp_posts.post_date desc', $orderby_statement);
 }
-*/
 
 add_filter('posts_orderby', 'edit_posts_orderby');
+*/
 
 function apply_page_attributes_to_posts(){
     add_post_type_support( 'post', 'page-attributes' );

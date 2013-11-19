@@ -35,11 +35,39 @@
 	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/mobilyslider/mobilyslider.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('.share-price').length && $.get('/share-price/',function(result){
-				$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
-			});
 			
-			setInterval("$.get('/world-time/',function(time){$('.worldtime').html(time);})",60000);
+			if(localStorage && localStorage.sharePrice && (JSON.parse(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
+				
+				$('.share-price').html(JSON.parse(localStorage.sharePrice).content);
+			}
+			else{
+				
+				$('.share-price').text('Loading Share Price ...');
+				
+				$('.share-price').length && $.get('/share-price/',function(result){
+					$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+					localStorage.sharePrice=JSON.stringify({
+						content: $('.share-price').html(),
+						timestamp: new Date().getTime()
+					});
+				});
+				
+			}
+		
+			
+			setInterval(function(){
+				
+				$.get('/world-time/',function(time){$('.worldtime').html(time);});
+				
+				$('.share-price').length && $.get('/share-price/',function(result){
+					$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+					localStorage.sharePrice=JSON.stringify({
+						content: $('.share-price').html(),
+						timestamp: new Date().getTime()
+					});
+				});
+				
+			},60000);
 			
 			$('a[href="#"]').on('click',function(){
 				return false;
