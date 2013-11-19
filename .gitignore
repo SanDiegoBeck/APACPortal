@@ -1,5 +1,8 @@
 .DS_Store
+.htaccess
 /nbproject
 /wp-content/uploads
 /wp-content/backup
+/wp-content/plugins/mysql-profiler
+/wp-config.php
 
