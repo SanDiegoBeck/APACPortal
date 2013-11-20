@@ -27,6 +27,7 @@
 
 		<div class="entry-meta">
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
+			<div class="views pull-right"><?php echo do_shortcode('[post_view]'); ?>  Views</div>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
