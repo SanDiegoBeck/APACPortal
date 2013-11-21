@@ -42,7 +42,7 @@
 										<a href="#">Product Portfolio</a>
 									</li>
 									<li>
-										<a href="/purchasing">Purchasing and Supplier Quality</a>
+										<a href="/work/purchasing/">Purchasing and Supplier Quality</a>
 									</li>
 									<li class="coming-soon">
 										<a href="#">Quality</a>
@@ -63,13 +63,13 @@
 										<a href="#">Business Development</a>
 									</li>
 									<li>
-										<a href="/communication">Corporate Communications</a>
-									</li>
-									<li class="coming-soon">
-										<a href="#">Environment, Health and Safety (EHS)</a>
+										<a href="/work/communication/">Corporate Communications</a>
 									</li>
 									<li>
-										<a href="/administration">Facilities and Administration</a>
+										<a href="/work/ehs/">Environment, Health and Safety (EHS)</a>
+									</li>
+									<li>
+										<a href="/work/administration/">Facilities and Administration</a>
 									</li>
 									<li class="coming-soon">
 										<a href="#">Finance</a>
@@ -78,10 +78,10 @@
 										<a href="#">General Counsel</a>
 									</li>
 									<li>
-										<a href="/hr">Human Resources</a>
+										<a href="/work/hr/">Human Resources</a>
 									</li>
 									<li>
-										<a href="/ict">Information and Communication Technology (ICT)</a>
+										<a href="/work/ict/">Information and Communication Technology (ICT)</a>
 									</li>
 								</ul>
 							</div>
@@ -96,10 +96,10 @@
 							<div class="content">
 								<ul>
 									<li>
-										<a href="/dnd">Dealer Network Development</a>
+										<a href="/work/dnd/">Dealer Network Development</a>
 									</li>
 									<li>
-										<a href="/marketing">Marketing</a>
+										<a href="/work/marketing/">Marketing</a>
 									</li>
 									<li class="coming-soon">
 										<a href="#">MOPAR - Parts and Service</a>
