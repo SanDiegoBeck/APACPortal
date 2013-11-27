@@ -6,19 +6,15 @@
 				<div class="content"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bd/logo.png" /></div>
 			</div>
 			<div class="box">
-				<header>Our Team
-					<span class="more-link"><a href="/category/departments/bd/our-team-bd">More</a></span>
-				</header>
-				<div class="content">
-					<?=apacportal_post_list('our-team-bd');?>
+				<header>Our Team</header>
+				<div class="content" style="text-align: center;">
+					<?=apacportal_post_list('our-team-bd',-1);?>
 				</div>
 			</div>
 			<div class="box">
-				<header>Contacts
-					<span class="more-link"><a href="/category/departments/bd/contacts-bd">More</a></span>
-				</header>
+				<header>Contacts</header>
 				<div class="content">
-					<?=apacportal_post_list('contacts-bd');?>
+					<?=apacportal_post_list('contacts-bd',-1);?>
 				</div>
 			</div>
 		</div>
