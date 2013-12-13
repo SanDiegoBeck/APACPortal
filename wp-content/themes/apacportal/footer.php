@@ -60,7 +60,7 @@
 				$.get('/world-time/',function(time){$('.worldtime').html(time);});
 				
 				$('.share-price').length && $.get('/share-price/',function(result){
-					$('.share-price').html($(result).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+					$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
 					localStorage.sharePrice=JSON.stringify({
 						content: $('.share-price').html(),
 						timestamp: new Date().getTime()
