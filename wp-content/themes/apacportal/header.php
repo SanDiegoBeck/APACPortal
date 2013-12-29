@@ -12,6 +12,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
@@ -23,7 +24,6 @@
 	<!--[if lt IE 9]>
 	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/ltIE9.css' type='text/css' media='all' />
 	<![endif]-->
-	
 </head>
 
 <body <?php body_class(); ?>>
