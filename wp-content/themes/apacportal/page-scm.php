@@ -2,23 +2,18 @@
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-				<div class="box">
-					<header>Supply Chain Management
-					</header>
-				</div>
 			<div class="box">
-				<div class="content">
-					<img src="" />
+				<header>Supply Chain Management
+				</header>
+				<div class="content" style="height: 140px;">
+					<img src="<?=get_stylesheet_directory_uri()?>/images/scm/logo.jpg" />
 				</div>
 			</div>
 			<div class="box">
-				<header>Mission
+				<header>Business Mission
 				</header>
-				<div class="content" style="height: 280px; overflow-y: auto;">
-					<?query_posts('category_name=scm-mission&posts_per_page=1')?>
-					<?the_post()?>
-					<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
-					<summary><?the_content()?></summary></a>
+				<div class="content" style="min-height: 0;">
+					<b>To provide world-class SCM services on time, with high quality at competitive costs.</b>
 				</div>
 			</div>
 			<div class="box">
@@ -32,21 +27,21 @@
 		</div>
 		<div class="span6">
 			<div class="box">
-				<header>News
+				<header>Industry News
+					<span class="more-link"><a href="/category/departments/scm/industry-news">More</a></span>
+				</header>
+				<div class="content">
+					<?=apacportal_post_list('industry-news');?>
+				</div>
+			</div>
+			<div class="box">
+				<header>SCM News
 					<span class="more-link"><a href="/category/departments/scm/scm-news">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
 						<?=apacportal_post_list('scm-news');?>
 					</ul>
-				</div>
-			</div>
-			<div class="box">
-				<header>Industry News
-					<span class="more-link"><a href="/category/departments/scm/industry-news">More</a></span>
-				</header>
-				<div class="content">
-					<?=apacportal_post_list('industry-news');?>
 				</div>
 			</div>
 		</div>

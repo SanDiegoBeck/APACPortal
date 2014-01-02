@@ -104,8 +104,8 @@
 									<li class="coming-soon">
 										<a href="#">MOPAR - Parts and Service</a>
 									</li>
-									<li class="coming-soon">
-										<a href="#">Supply Chain Management</a>
+									<li>
+										<a href="/work/scm/">Supply Chain Management</a>
 									</li>
 								</ul>
 							</div>
