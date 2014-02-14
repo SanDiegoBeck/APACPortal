@@ -7,8 +7,11 @@
 			</div>
 			<div class="box">
 				<header>Our Team</header>
-				<div class="content" style="text-align: center;">
-					<?=apacportal_post_list('our-team-bd',-1);?>
+				<div class="content" style="height: 280px; overflow-y: auto;">
+					<?query_posts('category_name=out-team-bd')?>
+					<?the_post()?>
+					<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
+					<summary><?the_content()?></summary></a>
 				</div>
 			</div>
 			<div class="box">
