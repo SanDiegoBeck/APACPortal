@@ -8,7 +8,7 @@
 			<div class="box">
 				<header>Our Team</header>
 				<div class="content" style="height: 280px; overflow-y: auto;">
-					<?query_posts('category_name=out-team-bd')?>
+					<?query_posts('category_name=our-team-bd')?>
 					<?the_post()?>
 					<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
 					<summary><?the_content()?></summary></a>
