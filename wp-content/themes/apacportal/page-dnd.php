@@ -10,8 +10,8 @@
 					<header>
 						Mission
 					</header>
-					<div class="content">
-						<?=apacportal_post_list('mission');?>
+					<div class="content" style="min-height: 0; height: 71px;">
+						<a href="/wp-content/uploads/2013/10/Mission.pdf" target="_blank">Prepare the network of the countries for the future. </a>
 					</div>
 				</div>
 				<div class="box">

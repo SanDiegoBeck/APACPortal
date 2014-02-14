@@ -3,7 +3,7 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span6">
 			<div class="box">
-				<div class="content"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bd/logo.png" /></div>
+				<div class="content" style="text-align: center;"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bd/logo.png" /></div>
 			</div>
 			<div class="box">
 				<header>Our Team</header>
