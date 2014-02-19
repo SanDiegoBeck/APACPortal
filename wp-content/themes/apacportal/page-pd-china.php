@@ -49,10 +49,10 @@
 		<div class="span3 col-right">
 			<div class="box">
 				<header>Policy and Process
-					<span class="more-link"><a href="/category/departments/pd/china/policy-process">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/policy-process-china">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('policy-process');?>
+					<?=apacportal_post_list('policy-process-china');?>
 				</div>
 			</div>
 			<div class="box">

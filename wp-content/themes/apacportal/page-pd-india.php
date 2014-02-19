@@ -82,10 +82,10 @@
 			</div>
 			<div class="box">
 				<header>Quick Links
-					<span class="more-link"><a href="/category/departments/pd/india/quick-links">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/quick-links-india">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('quick-links');?>
+					<?=apacportal_post_list('quick-links-india');?>
 				</div>
 			</div>
 		</div>
