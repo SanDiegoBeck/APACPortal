@@ -3,7 +3,7 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
 			<div class="box">
-				<header>Welcome to China Product Engineering
+				<header>India Product Engineering
 				</header>
 			</div>
 			<div class="box">
@@ -33,7 +33,7 @@
 		</div>
 		<div class="span6">
 			<div class="box">
-				<header>News Letter
+				<header>Newsletter
 					<span class="more-link"><a href="/category/departments/pd/india/news-letter">More</a></span>
 				</header>
 				<div class="content">

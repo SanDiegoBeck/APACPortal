@@ -3,14 +3,9 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span12">
 			<div class="box">
-				<header style="text-align: center;">Welcome to APAC Product Development
-				</header>
+				<header style="text-align: center;">Welcome to APAC Product Development</header>
 				<div class="content" style="font-size: 1.5em; min-height: 0;">
-					<ul>
-						<li>Organisation Chart</li>
-						<li>Org /Personnel Announcement</li>
-						<li>Calendar –December 2013</li>
-					</ul>
+					<?=apacportal_post_list('welcome');?>
 				</div>
 			</div>
 		</div>

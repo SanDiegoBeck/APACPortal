@@ -3,22 +3,19 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
 			<div class="box">
-				<header>Welcome to China Product Engineering
+				<header>China Product Engineering
 				</header>
 			</div>
 			<div class="box">
-				<header>Organization
-				</header>
+				<header>Organization</header>
 				<div class="content" style="min-height: 0;">
-					<b>China product engineering - leadership team</b>
+					<?=apacportal_post_list('organization-china');?>
 				</div>
 			</div>
 			<div class="box">
-				<header>Contacts and Logistics Information
-					<span class="more-link"><a href="/category/departments/pd/china/contacts-and-logistics-information">More</a></span>
-				</header>
+				<header>Contacts and Logistics Information</header>
 				<div class="content">
-					<?=apacportal_post_list('contacts-and-logistics-information');?>
+					<?=apacportal_post_list('contacts-logistics-information',-1);?>
 				</div>
 			</div>
 		</div>
@@ -26,20 +23,25 @@
 			<div class="box">
 				<div class="content">
 					<img src="<?=get_stylesheet_directory_uri()?>/images/pd/china-map.png" style="width: 30%; margin: auto; display: block;" />
+					<b>Brief Introduction: </b>
 					<p>
-						<b>Brief Introduction: </b>China Product Engineering is the largest department under APAC Product Development. It is the team that undertakes all major projects and the majority of engineering activities. It has a team of diverse cultural background, which includes Chinese, Italian, American, Canandian, Korean, Indian, and Hungarian. 
+						China Product Engineering is the largest department under APAC Product Development. It is the team that undertakes all major projects and the majority of engineering activities. It has a team of diverse cultural background, which includes Chinese, Italian, American, Canandian, Korean, Indian, and Hungarian. 
+					</p>
+					<p>
 						China Product Engineering locates on 4th floor of FIAT-CHRYSLER office in Zizhu Park, Shanghai, CHINA.
+					</p>
+					<p>
 						Our goal is to deliver efficient, quality, affordable and safe cars for our customers all over APAC! 
 					</p>
 				</div>
 			</div>
 			<div class="box">
 				<header>Forms and Templates
-					<span class="more-link"><a href="/category/departments/pd/china/forms-and-templates">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/forms-templates">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('forms-and-templates');?>
+						<?=apacportal_post_list('forms-templates');?>
 					</ul>
 				</div>
 			</div>
@@ -47,10 +49,10 @@
 		<div class="span3 col-right">
 			<div class="box">
 				<header>Policy and Process
-					<span class="more-link"><a href="/category/departments/pd/china/policy-and-process">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/policy-process">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('policy-and-process');?>
+					<?=apacportal_post_list('policy-process');?>
 				</div>
 			</div>
 			<div class="box">
