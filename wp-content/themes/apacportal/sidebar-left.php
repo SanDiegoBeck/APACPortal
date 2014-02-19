@@ -15,6 +15,6 @@
 		Events
 	</header>
 	<div class="content">
-		<?=apacportal_post_list('events', 10)?>
+		<?=apacportal_post_list('events', 5)?>
 	</div>
 </div>
