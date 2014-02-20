@@ -8,7 +8,7 @@
 			</div>
 			<div class="box">
 				<header>Workplace
-					<span class="more-link"><a href="/category/departments/pd/india/workplace">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/workplace/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('workplace');?>
@@ -16,25 +16,25 @@
 			</div>
 			<div class="box">
 				<header>Products
-					<span class="more-link"><a href="/category/departments/pd/india/products">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/products/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('products');?>
 				</div>
 			</div>
 			<div class="box">
-				<header>Pay and Benefits
-					<span class="more-link"><a href="/category/departments/pd/india/pay-and-benefits">More</a></span>
+				<header>Pay & Benefits
+					<span class="more-link"><a href="/category/departments/pd/india/pay-benefits/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('pay-and-benefits');?>
+					<?=apacportal_post_list('pay-benefits');?>
 				</div>
 			</div>
 		</div>
 		<div class="span6">
 			<div class="box">
 				<header>Newsletter
-					<span class="more-link"><a href="/category/departments/pd/india/news-letter">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/news-letter/">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
@@ -44,7 +44,7 @@
 			</div>
 			<div class="box">
 				<header>Services
-					<span class="more-link"><a href="/category/departments/pd/india/services">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/services/">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
@@ -54,7 +54,7 @@
 			</div>
 			<div class="box">
 				<header>Going Abroad
-					<span class="more-link"><a href="/category/departments/pd/india/going-abroad">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/going-abroad/">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
@@ -66,7 +66,7 @@
 		<div class="span3 col-right">
 			<div class="box">
 				<header>About Us
-					<span class="more-link"><a href="/category/departments/pd/india/about-us">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/about-us/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('about-us');?>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="box">
 				<header>Visiting India
-					<span class="more-link"><a href="/category/departments/pd/india/visiting-india">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/visiting-india/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('visiting-india');?>
@@ -82,7 +82,7 @@
 			</div>
 			<div class="box">
 				<header>Quick Links
-					<span class="more-link"><a href="/category/departments/pd/india/quick-links-india">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/india/quick-links-india/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('quick-links-india');?>

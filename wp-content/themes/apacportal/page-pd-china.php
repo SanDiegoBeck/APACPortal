@@ -37,7 +37,7 @@
 			</div>
 			<div class="box">
 				<header>Forms and Templates
-					<span class="more-link"><a href="/category/departments/pd/china/forms-templates">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/forms-templates/">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
@@ -49,7 +49,7 @@
 		<div class="span3 col-right">
 			<div class="box">
 				<header>Policy and Process
-					<span class="more-link"><a href="/category/departments/pd/china/policy-process-china">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/policy-process-china/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('policy-process-china');?>
@@ -57,7 +57,7 @@
 			</div>
 			<div class="box">
 				<header>Employee Council
-					<span class="more-link"><a href="/category/departments/pd/china/employee-council">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/employee-council/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('employee-council');?>
@@ -65,7 +65,7 @@
 			</div>
 			<div class="box">
 				<header>IT Support
-					<span class="more-link"><a href="/category/departments/pd/china/it-support">More</a></span>
+					<span class="more-link"><a href="/category/departments/pd/china/it-support/">More</a></span>
 				</header>
 				<div class="content">
 					<?=apacportal_post_list('it-support');?>
