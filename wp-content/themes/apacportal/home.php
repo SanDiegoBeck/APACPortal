@@ -38,7 +38,7 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link" style="margin: auto 0.5em;"><a href="http://scoop.chrysler.com/category/international" target="_blank">Scoop</a></span>
+						<span class="more-link" style="margin: auto 0.5em;"><a href="http://scoop.chrysler.com" target="_blank">Scoop</a></span>
 						<span class="more-link"><a href="http://www.fiatspa.com/en-US/media_center/Pages/default.aspx" target="_blank">FIAT</a> &nbsp;&nbsp;|</span>
 						Global News
 					</header>
