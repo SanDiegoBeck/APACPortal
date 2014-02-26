@@ -32,7 +32,7 @@
 							</header>
 							<div class="content">
 								<ul>
-									<li style="height: 30px;">
+									<li class="coming-soon">
 										<a href="#">Manufacturing</a>
 									</li>
 									<li class="coming-soon">
@@ -59,7 +59,7 @@
 							</header>
 							<div class="content">
 								<ul>
-									<li class="coming-soon">
+									<li>
 										<a href="/work/bd/">Business Development</a>
 									</li>
 									<li>
