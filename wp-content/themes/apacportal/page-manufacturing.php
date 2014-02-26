@@ -51,8 +51,6 @@
 					<?=apacportal_post_list('manufacturing-team');?>
 				</div>
 			</div>
-		</div>
-		<div class="span3 col-right">
 			<div class="box">
 				<header>World Class Manufacturing
 					<span class="more-link"><a href="/category/departments/manufacturing/world-class-manufacturing/">More</a></span>
@@ -61,6 +59,8 @@
 					<?=apacportal_post_list('world-class-manufacturing');?>
 				</div>
 			</div>
+		</div>
+		<div class="span3 col-right">
 			<div class="box">
 				<header>Environmental Health & Safety
 					<span class="more-link"><a href="/category/departments/manufacturing/environmental-health-safety/">More</a></span>
