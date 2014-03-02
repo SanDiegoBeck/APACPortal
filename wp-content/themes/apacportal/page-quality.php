@@ -33,15 +33,6 @@
 				</div>
 				<div class="box">
 					<header>
-						Who We Are
-						<span class="more-link"><a href="/category/departments/quality/who-we-are">More</a></span>
-					</header>
-					<div class="content">
-						<?=apacportal_post_list('who-we-are');?>
-					</div>
-				</div>
-				<div class="box">
-					<header>
 						<span class="more-link"><a href="/category/departments/quality/why-we-are-here">More</a></span>
 						Why We Are Here
 					</header>
