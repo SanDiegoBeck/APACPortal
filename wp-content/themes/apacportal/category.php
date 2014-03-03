@@ -8,8 +8,8 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
-query_posts(array('cat'=>$cat,'post_type'=>array('post','attachment','link'),'post_status'=>array('publish','inherit'),'paged'=>$paged,'orderby'=>'menu_order date','order'=>'desc'));
-get_header();?>
+get_header();
+?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid clearfix" role="main">

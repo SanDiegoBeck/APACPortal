@@ -416,6 +416,10 @@ h1, h2, h3, h4, h5, h6{
 	font-weight: normal;
 }
 
+.paging-navigation .nav-links {
+	margin: 7px auto;
+}
+
 /*Archive Single Page*/
 .archive-header{
 	background: none;
@@ -443,7 +447,7 @@ h1, h2, h3, h4, h5, h6{
 	border-top: 1px solid #CCC;
 }
 
-.post{
+.single-post .post{
 	background-color: #FFF;
 	box-shadow: 2px 2px 5px #CCC;
 }
