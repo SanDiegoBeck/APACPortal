@@ -233,6 +233,11 @@ function apply_page_attributes_to_posts(){
 add_action( 'admin_init', 'apply_page_attributes_to_posts' );
 
 add_action('parse_query', function($wp_query){
+	
+	if(!$wp_query->is_main_query() || !$wp_query->is_archive()){
+		return;
+	}
+	
 	$wp_query->set('post_type', array('post','attachment','link'));
 	$wp_query->set('post_status', array('publish','inherit'));
 	$wp_query->set('orderby', 'menu_order date');
