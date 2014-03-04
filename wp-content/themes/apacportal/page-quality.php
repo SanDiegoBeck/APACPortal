@@ -30,14 +30,11 @@
 					<div class="content" style="padding: 0;">
 						<img src="<?=get_stylesheet_directory_uri()?>/images/quality/team.jpg" style="width: 100%" />
 					</div>
-				</div>
-				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/departments/quality/why-we-are-here">More</a></span>
 						Why We Are Here
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('why-we-are-here');?>
+						Provide regionally competitive, quality vehicles through global quality strategies, alignment, and synergies to sustain local capabilities.
 					</div>
 				</div>
 				<div class="box">
