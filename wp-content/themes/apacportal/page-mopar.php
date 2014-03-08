@@ -12,17 +12,17 @@
 					<header>
 						Team
 					</header>
-					<div class="content" style="min-height: 0;">
-						Be an agile and  innovative business partner providing high quality, cost effective and secure technology solutions.
+					<div class="content">
+						<?=apacportal_post_list('team-mopar');?>
 					</div>
 				</div>
 				<div class="box">
 					<header>
 						<span class="more-link"><a href="/category/department/mopar/news-mopar">More</a></span>
-						News
+						MOPAR News
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('policies');?>
+						<?=apacportal_post_list('news-mopar');?>
 					</div>
 				</div>
 			</div>
