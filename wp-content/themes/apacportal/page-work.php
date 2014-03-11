@@ -44,7 +44,7 @@
 									<li>
 										<a href="/work/purchasing/">Purchasing and Supplier Quality</a>
 									</li>
-									<li class="coming-soon">
+									<li>
 										<a href="/work/quality/">Quality</a>
 									</li>
 									<li class="coming-soon">
