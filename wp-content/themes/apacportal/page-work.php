@@ -45,7 +45,7 @@
 										<a href="/work/purchasing/">Purchasing and Supplier Quality</a>
 									</li>
 									<li class="coming-soon">
-										<a href="#">Quality</a>
+										<a href="/work/quality/">Quality</a>
 									</li>
 									<li class="coming-soon">
 										<a href="/work/pd/">Product Development</a>
