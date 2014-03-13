@@ -1,4 +1,7 @@
-
+<?php
+$total_hits = get_option('total_hits', 0);
+!is_user_logged_in() && $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] !== 'XMLHttpRequest' && update_option('total_hits', ++$total_hits);
+?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -53,6 +56,7 @@
 					<h3 class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></h3>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 					<?php get_search_form(); ?>
+					<span class="total-hits">Total Hits: <?=$total_hits?></span>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 		</header><!-- #masthead -->

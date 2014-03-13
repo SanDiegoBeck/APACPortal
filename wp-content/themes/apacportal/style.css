@@ -253,6 +253,16 @@ h1, h2, h3, h4, h5, h6{
 	box-shadow: none;
 }
 
+.site-header .search-form {
+	right: 130px;
+}
+
+.site-header .total-hits {
+	position: absolute;
+	right: 20px;
+	top: 13px;
+}
+
 .breadcrumb{
 	background: none;
 	font-size: 0.9em;
