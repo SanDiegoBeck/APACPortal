@@ -3,7 +3,7 @@
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
 			<div class="box">
-				<div class="content">
+				<div class="content" style="min-height: 0;">
 					<img src="<?=get_stylesheet_directory_uri()?>/images/manufacturing/logo.png" />
 				</div>
 			</div>
@@ -62,11 +62,12 @@
 		</div>
 		<div class="span3 col-right">
 			<div class="box">
-				<header>Environmental Health & Safety
-					<span class="more-link"><a href="/category/departments/manufacturing/environmental-health-safety/">More</a></span>
+				<header>Environment Health & Safety
+					<span class="more-link"><a href="/category/departments/ehs/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('environmental-health-safety');?>
+					<img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" />
+					<?=apacportal_post_list('ehs');?>
 				</div>
 			</div>
 			<div class="box">

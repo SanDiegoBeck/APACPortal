@@ -32,8 +32,8 @@
 							</header>
 							<div class="content">
 								<ul>
-									<li class="coming-soon">
-										<a href="#">Manufacturing</a>
+									<li>
+										<a href="/work/manufacturing/">Manufacturing</a>
 									</li>
 									<li class="coming-soon">
 										<a href="#">Powertrain</a>
