@@ -62,12 +62,11 @@
 		</div>
 		<div class="span3 col-right">
 			<div class="box">
-				<header>Environment Health & Safety
-					<span class="more-link"><a href="/category/departments/ehs/">More</a></span>
+				<header>
+					Environment Health & Safety
 				</header>
 				<div class="content">
-					<img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" />
-					<?=apacportal_post_list('ehs');?>
+					<a href="/category/departments/ehs/"><img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" /></a>
 				</div>
 			</div>
 			<div class="box">
