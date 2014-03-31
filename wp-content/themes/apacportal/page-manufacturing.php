@@ -66,7 +66,7 @@
 					Environment, Health & Safety
 				</header>
 				<div class="content">
-					<a href="/work/ehs/"><img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" /></a>
+					<a href="/work/ehs/"><img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" style="width: 115px; display: block; margin: auto;" /></a>
 				</div>
 			</div>
 			<div class="box">
