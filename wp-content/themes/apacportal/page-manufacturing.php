@@ -63,10 +63,10 @@
 		<div class="span3 col-right">
 			<div class="box">
 				<header>
-					Environment Health & Safety
+					Environment, Health & Safety
 				</header>
 				<div class="content">
-					<a href="/category/departments/ehs/"><img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" /></a>
+					<a href="/work/ehs/"><img src="<?=get_stylesheet_directory_uri()?>/images/ehs/logo.png" /></a>
 				</div>
 			</div>
 			<div class="box">
