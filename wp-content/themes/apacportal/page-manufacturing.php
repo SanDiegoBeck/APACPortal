@@ -32,7 +32,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="span6">
+		<div class="span5">
 			<div class="box">
 				<header>Manufacturing News
 					<span class="more-link"><a href="/category/departments/manufacturing/manufacturing-news/">More</a></span>
@@ -60,7 +60,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="span3 col-right">
+		<div class="span4 col-right">
 			<div class="box">
 				<header>
 					Environment, Health & Safety
