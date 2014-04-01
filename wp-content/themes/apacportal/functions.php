@@ -2,6 +2,8 @@
 header('X-UA-Compatible: IE=edge,chrome=1');
 
 add_image_size( 'home-news-slider', 526, 188, true );
+add_image_size( '3-column-thumbnail', 249, 188, true );
+add_image_size( 'list-bullet', 30, 30, true );
 
 function share_price(){
 	return $content = file_get_contents('https://www.google.com/finance?q=BIT%3AF&sq=fiat%20spa&sp=4&ei=U4EeU9jxFsSUwQPSlgE');

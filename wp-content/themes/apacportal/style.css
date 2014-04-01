@@ -566,3 +566,8 @@ blockquote.quotescollection cite{
 	text-align: center;
 	margin-top: 0.5em;
 }
+
+/*MOPAR Page*/
+.page-mopar .market-list .content ul li{
+	background: none;
+}
