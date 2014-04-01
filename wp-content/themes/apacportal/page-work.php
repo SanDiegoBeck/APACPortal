@@ -47,7 +47,7 @@
 									<li>
 										<a href="/work/quality/">Quality</a>
 									</li>
-									<li class="coming-soon">
+									<li>
 										<a href="/work/pd/">Product Development</a>
 									</li>
 								</ul>
@@ -101,8 +101,8 @@
 									<li>
 										<a href="/work/marketing/">Marketing</a>
 									</li>
-									<li class="coming-soon">
-										<a href="#">MOPAR - Parts and Service</a>
+									<li>
+										<a href="/work/mopar/">MOPAR - Parts and Service</a>
 									</li>
 									<li>
 										<a href="/work/scm/">Supply Chain Management</a>
