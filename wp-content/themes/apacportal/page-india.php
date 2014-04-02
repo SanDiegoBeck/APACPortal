@@ -3,7 +3,7 @@
 	<div id="primary" class="content-area page-india">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
-				<div class="box" style="height: 227px;">
+				<div class="box">
 					<header>APAC Tech Center, Chennai</header>
 				</div>
 				<div class="box market-list">

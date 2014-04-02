@@ -126,7 +126,7 @@
 						Quick Links
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('quick-links');?>
+						<?=apacportal_post_list('quick-links', 10);?>
 					</div>
 				</div>
 			</div>
