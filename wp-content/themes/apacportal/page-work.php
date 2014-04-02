@@ -66,9 +66,6 @@
 										<a href="/work/communication/">Corporate Communications</a>
 									</li>
 									<li>
-										<a href="/work/ehs/">Environment, Health and Safety (EHS)</a>
-									</li>
-									<li>
 										<a href="/work/administration/">Facilities and Administration</a>
 									</li>
 									<li class="coming-soon">
@@ -101,8 +98,8 @@
 									<li>
 										<a href="/work/marketing/">Marketing</a>
 									</li>
-									<li>
-										<a href="/work/mopar/">MOPAR - Parts and Service</a>
+									<li class="coming-soon">
+										<a href="#">MOPAR - Parts and Service</a>
 									</li>
 									<li>
 										<a href="/work/scm/">Supply Chain Management</a>
