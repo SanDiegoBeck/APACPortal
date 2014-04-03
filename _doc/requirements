@@ -1,0 +1,15 @@
+Server Side Requirements
+-----------------------------
+1. Apache, IIS or NGINX web server
+  The rewrite code (.htaccess) is only tested under apache.
+
+2. php 5.3 or newer
+  "short_open_tag" should be set to "On" in php 5.3 ini, while unnecessarily in php 5.4 and newer.
+
+3. MySQL 5
+  Tested under MySQL 5.6, but no edge techs is applied, which means MySQL 5.0 and newer version should also works.
+
+Client Side Requirements
+------------------------------
+All visual elements are tested under IE9 and newer, Chrome, Safari and Firefox.
+Some visual effects lost under IE8, such as box shadows and border radius.

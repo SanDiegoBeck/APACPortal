@@ -1,10 +1,5 @@
 <?php
 /**
- * APAC Poatal Theme for WordPress
- * This theme requires php 5.3 or newer
- */
-
-/**
  * retrive a post list including "post", "attachment" and "link" post type
  * @param string $category_name
  * @param int $limit
