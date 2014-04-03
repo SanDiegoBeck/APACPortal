@@ -136,7 +136,7 @@ add_action('wp_enqueue_scripts', function(){
 //	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css', array(), '3.11');
 //	wp_register_style('bootstrap-theme', get_stylesheet_directory_uri().'/css/bootstrap-theme.min.css', array('bootstrap'), '3.11');
 	wp_register_style('mobilyslider', get_stylesheet_directory_uri().'/mobilyslider/style.css');
-	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array('style'));
+	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css');
 	
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('mobilyslider');
