@@ -38,7 +38,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('news-letter')?>
+						<?=apacportal_post_list('newsletter')?>
 					</ul>
 				</div>
 			</div>
