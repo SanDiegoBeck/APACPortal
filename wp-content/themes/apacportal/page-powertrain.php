@@ -17,8 +17,8 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/department/powertrain/annoucement-notice">More</a></span>
-						Annoucement & Notice
+						<span class="more-link"><a href="/category/department/powertrain/announcement-notice">More</a></span>
+						Announcement & Notice
 					</header>
 					<div class="content">
 						<?=apacportal_post_list('announcement-notice')?>
@@ -35,8 +35,8 @@
 				</div>
 				<div class="box">
 					<header>
-						<span class="more-link"><a href="/category/department/powertrain/power-train">More</a></span>
-						Power Train
+						<span class="more-link"><a href="/category/department/powertrain/power-training">More</a></span>
+						Power Training
 					</header>
 					<div class="content">
 						<?=apacportal_post_list('power-train')?>
