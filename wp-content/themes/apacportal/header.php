@@ -46,7 +46,7 @@ $total_hits = get_option('total_hits', 0);
 					<h1 class="logo-aside pull-right"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
 					<div class="description pull-left">
 						<span class="worldtime">
-							<?=world_time();?>
+							<?php get_template_part('world-time'); ?>
 						</span>
 					</div>
 				</div>

@@ -1,3 +1,1 @@
-<?php
-echo world_time();
-?>
+<?php get_template_part('world-time'); ?>
