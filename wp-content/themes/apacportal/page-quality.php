@@ -12,7 +12,7 @@
 						<span class="more-link"><a href="/category/departments/quality/who-we-are">More</a></span>
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('who-we-are');?>
+						<?=apacportal_post_list('who-we-are')?>
 					</div>
 				</div>
 				<div class="box">
@@ -21,7 +21,7 @@
 						<span class="more-link"><a href="/category/departments/quality/whats-happening">More</a></span>
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('whats-happening');?>
+						<?=apacportal_post_list('whats-happening')?>
 					</div>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 						How We Are Connected
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('how-we-are-connected');?>
+						<?=apacportal_post_list('how-we-are-connected')?>
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 						I’m Looking For
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('im-looking-for');?>
+						<?=apacportal_post_list('im-looking-for')?>
 					</div>
 				</div>
 				<div class="box">
@@ -63,7 +63,7 @@
 						I Want to Learn About
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('i-want-to-learn-about');?>
+						<?=apacportal_post_list('i-want-to-learn-about')?>
 					</div>
 				</div>
 			</div>

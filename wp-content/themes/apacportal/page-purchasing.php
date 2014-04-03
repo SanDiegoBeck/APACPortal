@@ -12,7 +12,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/organization">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('organization');?>
+					<?=apacportal_post_list('organization')?>
 				</div>
 			</div>
 			<div class="box">
@@ -20,7 +20,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/training">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('training');?>
+					<?=apacportal_post_list('training')?>
 				</div>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/news-events">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('news-events');?>
+					<?=apacportal_post_list('news-events')?>
 				</div>
 			</div>
 			<div class="box">
@@ -38,7 +38,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/redbook">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('redbook');?>
+					<?=apacportal_post_list('redbook')?>
 				</div>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/policies-process">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('policies-process');?>
+					<?=apacportal_post_list('policies-process')?>
 				</div>
 			</div>
 			<div class="box">
@@ -56,7 +56,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/roe">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('roe');?>
+					<?=apacportal_post_list('roe')?>
 				</div>
 			</div>
 			<div class="box">
@@ -64,7 +64,7 @@
 					<span class="more-link"><a href="/category/departments/purchasing/contacts">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('contacts');?>
+					<?=apacportal_post_list('contacts')?>
 				</div>
 			</div>
 		</div>

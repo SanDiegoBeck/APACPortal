@@ -14,7 +14,7 @@
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrapper">
-				<?//php get_sidebar( 'main' ); ?>
+				<?php //get_sidebar( 'main' ); ?>
 				<nav>
 					<ul>
 						<li><a href="/wp-content/uploads/2013/11/Privacy-Policy.pdf" target="_blank">Privacy Policy</a></li>

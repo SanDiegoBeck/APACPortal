@@ -11,10 +11,10 @@
 				<header>Contact Information
 				</header>
 				<div class="content">
-					<?query_posts('category_name=contact-information&posts_per_page=1')?>
-					<?the_post()?>
-					<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
-					<summary><?the_content()?></summary></a>
+					<?php query_posts('category_name=contact-information&posts_per_page=1')?>
+					<?php the_post()?>
+					<a href="<?php the_permalink()?>"><h4><?php the_title()?></h4></a>
+					<summary><?php the_content()?></summary></a>
 				</div>
 			</div>
 			<div class="box">
@@ -22,13 +22,13 @@
 					<span class="more-link"><a href="/category/departments/manufacturing/apac-plants/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('apac-plants');?>
+					<?=apacportal_post_list('apac-plants')?>
 				</div>
 			</div>
 			<div class="box">
 				<header>Training</header>
 				<div class="content">
-					<?=apacportal_post_list('training');?>
+					<?=apacportal_post_list('training')?>
 				</div>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('manufacturing-news');?>
+						<?=apacportal_post_list('manufacturing-news')?>
 					</ul>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 					<span class="more-link"><a href="/category/departments/manufacturing/manufacturing-team/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('manufacturing-team');?>
+					<?=apacportal_post_list('manufacturing-team')?>
 				</div>
 			</div>
 			<div class="box">
@@ -56,7 +56,7 @@
 					<span class="more-link"><a href="/category/departments/manufacturing/world-class-manufacturing/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('world-class-manufacturing');?>
+					<?=apacportal_post_list('world-class-manufacturing')?>
 				</div>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 					<span class="more-link"><a href="/category/departments/manufacturing/manufacturing-engineering-vehecle/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('manufacturing-engineering-vehecle');?>
+					<?=apacportal_post_list('manufacturing-engineering-vehecle')?>
 				</div>
 			</div>
 			<div class="box">
@@ -82,7 +82,7 @@
 					<span class="more-link"><a href="/category/departments/manufacturing/manufacturing-engineering-powertrain/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('manufacturing-engineering-powertrain');?>
+					<?=apacportal_post_list('manufacturing-engineering-powertrain')?>
 				</div>
 			</div>
 			<div class="box">
@@ -90,7 +90,7 @@
 					<span class="more-link"><a href="/category/departments/manufacturing/manufacturing-planning-control/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('manufacturing-planning-control');?>
+					<?=apacportal_post_list('manufacturing-planning-control')?>
 				</div>
 			</div>
 		</div>

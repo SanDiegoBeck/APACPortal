@@ -22,7 +22,7 @@
 						Our Team
 					</header>
 					<div class="content" style="min-height: 0;">
-						<?=apacportal_post_list('our-team');?>
+						<?=apacportal_post_list('our-team')?>
 					</div>
 				</div>
 				<div class="box">
@@ -31,7 +31,7 @@
 						Work Place
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('work-place');?>
+						<?=apacportal_post_list('work-place')?>
 					</div>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 						Facility News
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('facility-news');?>
+						<?=apacportal_post_list('facility-news')?>
 					</div>
 				</div>
 				<div class="box">
@@ -51,7 +51,7 @@
 						Travel Service
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('travel-service');?>
+						<?=apacportal_post_list('travel-service')?>
 					</div>
 				</div>
 				<div class="box">
@@ -60,7 +60,7 @@
 						Vehicle Service
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('vehicle-service');?>
+						<?=apacportal_post_list('vehicle-service')?>
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 						Policies
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('policies-admin');?>
+						<?=apacportal_post_list('policies-admin')?>
 					</div>
 				</div>
 				<div class="box">
@@ -80,7 +80,7 @@
 						How To
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('how-to');?>
+						<?=apacportal_post_list('how-to')?>
 					</div>
 				</div>
 			</div>

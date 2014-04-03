@@ -51,10 +51,10 @@ get_header();
 									<?php the_post_thumbnail(); ?>
 									&nbsp;
 								</div>
-								<? endif; ?>
+								<?php endif; ?>
 							</dt>
 							<dd>
-								<?if(get_post_type()=='post'){ the_excerpt(); }?>
+								<?php if(get_post_type()=='post'){ the_excerpt(); }?>
 							</dd>
 						</dl>
 					</article><!-- #post -->
@@ -66,7 +66,7 @@ get_header();
 
 			<?php else : ?>
 				<?php get_template_part( 'content', 'none' ); ?>
-			<?php endif; wp_reset_query();?>
+			<?php endif; wp_reset_query(); ?>
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->

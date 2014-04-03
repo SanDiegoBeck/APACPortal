@@ -21,7 +21,7 @@
 					<span class="more-link"><a href="/category/departments/scm/organization-introduction">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('organization-introduction');?>
+					<?=apacportal_post_list('organization-introduction')?>
 				</div>
 			</div>
 		</div>
@@ -31,7 +31,7 @@
 					<span class="more-link"><a href="/category/departments/scm/industry-news">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('industry-news');?>
+					<?=apacportal_post_list('industry-news')?>
 				</div>
 			</div>
 			<div class="box">
@@ -40,7 +40,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('scm-news');?>
+						<?=apacportal_post_list('scm-news')?>
 					</ul>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 					<span class="more-link"><a href="/category/departments/scm/scm-knowledge-folder">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('scm-knowledge-folder');?>
+					<?=apacportal_post_list('scm-knowledge-folder')?>
 				</div>
 			</div>
 			<div class="box">
@@ -59,7 +59,7 @@
 					<span class="more-link"><a href="/category/departments/scm/useful-website">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('useful-website');?>
+					<?=apacportal_post_list('useful-website')?>
 				</div>
 			</div>
 		</div>

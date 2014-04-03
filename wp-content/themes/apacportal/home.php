@@ -3,7 +3,7 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
-				<?get_sidebar('left')?>
+				<?php get_sidebar('left')?>
 			</div>
 			<div class="span6">
 				<div class="box">
@@ -14,15 +14,15 @@
 					<div class="content" style="min-height: 0; height:188px; padding: 0;">
 						<div class="slider" id="slider192" style="width: 526px; height:188px; position: absolute;"> 
 							<div class="sliderContent" style="width: 526px; height:188px">
-								<?query_posts(array('category_name'=>'apac-news','posts_per_page'=>5))?>
-								<?while(have_posts()):the_post();?>
+								<?php query_posts(array('category_name'=>'apac-news','posts_per_page'=>5))?>
+								<?php while(have_posts()):the_post(); ?>
 								<div class="item" style="width:526px; height:188px">
-									<a href="<?the_permalink()?>">
-										<?the_post_thumbnail('home-news-slider')?>
+									<a href="<?php the_permalink()?>">
+										<?php the_post_thumbnail('home-news-slider')?>
 									</a>
-									<summary><?the_title()?></summary>
+									<summary><?php the_title()?></summary>
 								</div>
-								<?endwhile;?>
+								<?php endwhile; ?>
 							</div>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 						More News
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('internal-news');?>
+						<?=apacportal_post_list('internal-news')?>
 					</div>
 				</div>
 				<div class="box">
@@ -117,7 +117,7 @@
 						Notices
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('notices');?>
+						<?=apacportal_post_list('notices')?>
 					</div>
 				</div>
 				<div class="box">
@@ -126,7 +126,7 @@
 						Quick Links
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('quick-links', 10);?>
+						<?=apacportal_post_list('quick-links', 10)?>
 					</div>
 				</div>
 			</div>

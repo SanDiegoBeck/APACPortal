@@ -28,7 +28,7 @@ $user_metas=array(
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-			<?get_sidebar('left')?>
+			<?php get_sidebar('left')?>
 		</div>
 		<div class="span9">
 			<table class="box table-bordered">
@@ -72,7 +72,7 @@ $user_metas=array(
 				</tbody>
 			</table>
 			<label><i>Please contact your department's secretary for updating your information.</i></label>
-			<?if(
+			<?php if(
 				current_user_can('remove_users') ||
 				(current_user_can('edit_users_in_same_company') && $user->meta['company_name'] == $current_user_meta['company_name'])
 			){?>
@@ -94,7 +94,7 @@ $user_metas=array(
 					</div>
 				</div>	
 			</div>
-			<?}?>
+			<?php }?>
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->

@@ -2,13 +2,13 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
-				<?get_sidebar('left')?>
+				<?php get_sidebar('left')?>
 				<div class="box department-list">
 					<header>
 						Joint Ventures
 					</header>
 					<div class="content" style="min-height: 0">
-						<!--<?=apacportal_post_list('joint-ventures',-1,array('orderby'=>'ID','order'=>'ASC'));?>-->
+						<!--<?=apacportal_post_list('joint-ventures',-1,array('orderby'=>'ID','order'=>'ASC'))?>-->
 						<ul>
 							<li class="coming-soon" style="height: 30px;">
 								<a href="#">GAC FIAT</a>
@@ -85,7 +85,7 @@
 						</div>
 					</div>
 					<div class="span6">
-						<?get_sidebar('market-list')?>
+						<?php get_sidebar('market-list')?>
 						<div class="box department-list">
 							<header>
 								Commercial

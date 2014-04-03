@@ -9,7 +9,7 @@
 				<div class="box market-list">
 					<header>About Us</header>
 					<div class="content">
-						<?=apacportal_post_list('about-us-india-market',-1);?>
+						<?=apacportal_post_list('about-us-india-market',-1)?>
 					</div>
 				</div>
 				<div class="box">
@@ -18,7 +18,7 @@
 						Products
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('products-india-market');?>
+						<?=apacportal_post_list('products-india-market')?>
 					</div>
 				</div>
 				<div class="box">
@@ -27,7 +27,7 @@
 						Work Place
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('work-place-india-market');?>
+						<?=apacportal_post_list('work-place-india-market')?>
 					</div>
 				</div>
 			</div>
@@ -38,7 +38,7 @@
 						News
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('news-india-market');?>
+						<?=apacportal_post_list('news-india-market')?>
 					</div>
 				</div>
 				<div class="box">
@@ -47,7 +47,7 @@
 						Services
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('services-india-market');?>
+						<?=apacportal_post_list('services-india-market')?>
 					</div>
 				</div>
 				<div class="box">
@@ -56,7 +56,7 @@
 						Travel
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('travel');?>
+						<?=apacportal_post_list('travel')?>
 					</div>
 				</div>
 			</div>
@@ -67,7 +67,7 @@
 						Pays & Benefits
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('pays-benefits');?>
+						<?=apacportal_post_list('pays-benefits')?>
 					</div>
 				</div>
 				<div class="box">
@@ -76,7 +76,7 @@
 						Quick Links
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('quick-links-india-market');?>
+						<?=apacportal_post_list('quick-links-india-market')?>
 					</div>
 				</div>
 			</div>

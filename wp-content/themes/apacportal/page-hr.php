@@ -13,7 +13,7 @@
 						Announcements & Notices
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('hr-announcement-notice');?>
+						<?=apacportal_post_list('hr-announcement-notice')?>
 					</div>
 				</div>
 				<div class="box">
@@ -22,7 +22,7 @@
 						Contacts
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('hr-contact');?>
+						<?=apacportal_post_list('hr-contact')?>
 					</div>
 				</div>
 				<div class="box">
@@ -31,7 +31,7 @@
 						Expatriate Management
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('expatriate-management');?>
+						<?=apacportal_post_list('expatriate-management')?>
 					</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 						<ul>
 							<li>Coming Soon</li>
 						</ul>
-						<!--<?=apacportal_post_list('total-compensation');?>-->
+						<!--<?=apacportal_post_list('total-compensation')?>-->
 					</div>
 				</div>
 				<div class="box">
@@ -54,7 +54,7 @@
 						Training & Development
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('training-development');?>
+						<?=apacportal_post_list('training-development')?>
 					</div>
 				</div>
 				<div class="box">
@@ -63,7 +63,7 @@
 						PLM & SAP
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('plm-sap');?>
+						<?=apacportal_post_list('plm-sap')?>
 					</div>
 				</div>
 				<div class="box">
@@ -72,7 +72,7 @@
 						Organizational Charts
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('organizational-charts');?>
+						<?=apacportal_post_list('organizational-charts')?>
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 						Policies & Processes
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('policy-process');?>
+						<?=apacportal_post_list('policy-process')?>
 					</div>
 				</div>
 				<div class="box">
@@ -92,7 +92,7 @@
 						Forms
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('forms');?>
+						<?=apacportal_post_list('forms')?>
 					</div>
 				</div>
 				<div class="box">
@@ -101,7 +101,7 @@
 						Career Opportunities
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('career-opportunities');?>
+						<?=apacportal_post_list('career-opportunities')?>
 					</div>
 				</div>
 			</div>

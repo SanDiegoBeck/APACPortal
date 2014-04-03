@@ -9,13 +9,13 @@
 			<div class="box">
 				<header>Organization</header>
 				<div class="content" style="min-height: 0;">
-					<?=apacportal_post_list('organization-china');?>
+					<?=apacportal_post_list('organization-china')?>
 				</div>
 			</div>
 			<div class="box">
 				<header>Contacts and Logistics Information</header>
 				<div class="content">
-					<?=apacportal_post_list('contacts-logistics-information',-1);?>
+					<?=apacportal_post_list('contacts-logistics-information',-1)?>
 				</div>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('forms-templates');?>
+						<?=apacportal_post_list('forms-templates')?>
 					</ul>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 					<span class="more-link"><a href="/category/departments/pd/china/policy-process-china/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('policy-process-china');?>
+					<?=apacportal_post_list('policy-process-china')?>
 				</div>
 			</div>
 			<div class="box">
@@ -60,7 +60,7 @@
 					<span class="more-link"><a href="/category/departments/pd/china/employee-council/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('employee-council');?>
+					<?=apacportal_post_list('employee-council')?>
 				</div>
 			</div>
 			<div class="box">
@@ -68,7 +68,7 @@
 					<span class="more-link"><a href="/category/departments/pd/china/it-support/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('it-support');?>
+					<?=apacportal_post_list('it-support')?>
 				</div>
 			</div>
 		</div>

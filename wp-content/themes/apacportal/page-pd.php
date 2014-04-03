@@ -5,7 +5,7 @@
 			<div class="box">
 				<header style="text-align: center;">Welcome to APAC Product Development</header>
 				<div class="content" style="font-size: 1.5em; min-height: 0;">
-					<?=apacportal_post_list('welcome-pd');?>
+					<?=apacportal_post_list('welcome-pd')?>
 				</div>
 			</div>
 		</div>

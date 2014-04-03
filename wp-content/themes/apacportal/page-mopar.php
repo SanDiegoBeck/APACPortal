@@ -12,7 +12,7 @@
 					<header>Team</header>
 					<div class="content">
 						<ul>
-							<?query_posts(array('category_name'=>'team','posts_per_page'=>-1))?>
+							<?php query_posts(array('category_name'=>'team','posts_per_page'=>-1))?>
 							<?php while(have_posts()):the_post(); ?>
 							<li class="coming-soon">
 								<span class="flag"><?php the_post_thumbnail('list-bullet'); ?></span>
@@ -28,7 +28,7 @@
 						News
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('news-mopar');?>
+						<?=apacportal_post_list('news-mopar')?>
 					</div>
 				</div>
 			</div>
@@ -41,15 +41,15 @@
 					<div class="content" style="min-height: 0; height:188px; padding: 0;">
 						<div class="slider" id="slider192" style="width: 526px; height:188px; position: absolute;"> 
 							<div class="sliderContent" style="width: 526px; height:188px">
-								<?query_posts(array('category_name'=>'mopar-mopar','posts_per_page'=>3))?>
-								<?while(have_posts()):the_post();?>
+								<?php query_posts(array('category_name'=>'mopar-mopar','posts_per_page'=>3))?>
+								<?php while(have_posts()):the_post(); ?>
 								<div class="item" style="width:526px; height:188px">
-									<a href="<?the_permalink()?>">
-										<?the_post_thumbnail('home-news-slider')?>
+									<a href="<?php the_permalink()?>">
+										<?php the_post_thumbnail('home-news-slider')?>
 									</a>
-									<summary><?the_title()?></summary>
+									<summary><?php the_title()?></summary>
 								</div>
-								<?endwhile;?>
+								<?php endwhile; ?>
 							</div>
 						</div>
 					</div>
@@ -62,15 +62,15 @@
 					<div class="content" style="min-height: 0; height:188px; padding: 0;">
 						<div class="slider" id="slider192" style="width: 526px; height:188px; position: absolute;"> 
 							<div class="sliderContent" style="width: 526px; height:188px">
-								<?query_posts(array('category_name'=>'accessorization-personalization','posts_per_page'=>3))?>
-								<?while(have_posts()):the_post();?>
+								<?php query_posts(array('category_name'=>'accessorization-personalization','posts_per_page'=>3))?>
+								<?php while(have_posts()):the_post(); ?>
 								<div class="item" style="width:526px; height:188px">
-									<a href="<?the_permalink()?>">
-										<?the_post_thumbnail('home-news-slider')?>
+									<a href="<?php the_permalink()?>">
+										<?php the_post_thumbnail('home-news-slider')?>
 									</a>
-									<summary><?the_title()?></summary>
+									<summary><?php the_title()?></summary>
 								</div>
-								<?endwhile;?>
+								<?php endwhile; ?>
 							</div>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 						Bulletin
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('bulletin');?>
+						<?=apacportal_post_list('bulletin')?>
 					</div>
 				</div>
 			</div>
@@ -97,10 +97,10 @@
 								<?php query_posts(array('category_name'=>'events-motor-show-mopar','posts_per_page'=>1)); ?>
 								<?php the_post(); ?>
 								<div class="item" style="width:249px; height:188px">
-									<a href="<?the_permalink()?>">
-										<?the_post_thumbnail('3-column-thumbnail')?>
+									<a href="<?php the_permalink()?>">
+										<?php the_post_thumbnail('3-column-thumbnail')?>
 									</a>
-									<summary><?the_title()?></summary>
+									<summary><?php the_title()?></summary>
 								</div>
 								<?php wp_reset_query(); ?>
 							</div>
@@ -113,7 +113,7 @@
 						MOPAR World
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('mopar-world');?>
+						<?=apacportal_post_list('mopar-world')?>
 					</div>
 				</div>
 				<div class="box">
@@ -122,7 +122,7 @@
 						Merchandising Corner
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('merchandising-corner');?>
+						<?=apacportal_post_list('merchandising-corner')?>
 					</div>
 				</div>
 			</div>

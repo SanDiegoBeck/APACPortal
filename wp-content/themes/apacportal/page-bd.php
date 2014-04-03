@@ -8,17 +8,17 @@
 			<div class="box">
 				<header>Our Team</header>
 				<div class="content" style="height: 280px; overflow-y: auto;">
-					<?query_posts('category_name=our-team-bd')?>
-					<?the_post()?>
-					<summary><?the_content()?></summary></a>
+					<?php query_posts('category_name=our-team-bd')?>
+					<?php the_post()?>
+					<summary><?php the_content()?></summary></a>
 				</div>
 			</div>
 			<div class="box">
 				<header>Contacts</header>
 				<div class="content">
-					<?query_posts('category_name=contacts-bd')?>
-					<?the_post()?>
-					<summary><?the_content()?></summary></a>
+					<?php query_posts('category_name=contacts-bd')?>
+					<?php the_post()?>
+					<summary><?php the_content()?></summary></a>
 				</div>
 			</div>
 		</div>

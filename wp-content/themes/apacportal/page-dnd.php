@@ -19,7 +19,7 @@
 						Our Team
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('the-people-behind-the-department',-1,array('order'=>'ASC','orderby'=>'ID'));?>
+						<?=apacportal_post_list('the-people-behind-the-department',-1,array('order'=>'ASC','orderby'=>'ID'))?>
 					</div>
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 						News
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('news-from-the-markets');?>
+						<?=apacportal_post_list('news-from-the-markets')?>
 					</div>
 				</div>
 				<div class="box">
@@ -39,7 +39,7 @@
 						Best Practice
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('best-practice');?>
+						<?=apacportal_post_list('best-practice')?>
 					</div>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 						Future Events
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('upcoming-events');?>
+						<?=apacportal_post_list('upcoming-events')?>
 					</div>
 				</div>
 			</div>

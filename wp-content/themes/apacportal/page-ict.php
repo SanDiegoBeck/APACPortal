@@ -22,20 +22,20 @@
 						Employee of the Week
 					</header>
 					<div class="content">
-						<?query_posts('category_name=employee-of-the-week&posts_per_page=1')?>
-						<?while(have_posts()):the_post();?>
+						<?php query_posts('category_name=employee-of-the-week&posts_per_page=1')?>
+						<?php while(have_posts()):the_post(); ?>
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
-								<?the_post_thumbnail('thumbnail')?>
+								<?php the_post_thumbnail('thumbnail')?>
 							</dt>
 							<dd>
 								<ul>
-									<li><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-									<summary><?the_excerpt()?></summary>
+									<li><a href="<?php the_permalink()?>" target="_blank"><?php the_title()?></a></li>
+									<summary><?php the_excerpt()?></summary>
 								</ul>
 							</dd>
 						</dl>
-						<?endwhile;?>
+						<?php endwhile; ?>
 					</div>
 				</div>
 				<div class="box">
@@ -44,7 +44,7 @@
 						Resources
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('resources');?>
+						<?=apacportal_post_list('resources')?>
 					</div>
 				</div>
 			</div>
@@ -55,10 +55,10 @@
 						News
 					</header>
 					<div class="content" style="height: 280px; overflow-y: auto;">
-						<?query_posts('category_name=news&posts_per_page=1')?>
-						<?the_post()?>
-						<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
-						<summary><?the_content()?></summary></a>
+						<?php query_posts('category_name=news&posts_per_page=1')?>
+						<?php the_post()?>
+						<a href="<?php the_permalink()?>"><h4><?php the_title()?></h4></a>
+						<summary><?php the_content()?></summary></a>
 					</div>
 				</div>
 				<div class="box">
@@ -67,10 +67,10 @@
 						Technology Update
 					</header>
 					<div class="content" style="height: 280px; overflow-y: auto;">
-						<?query_posts('category_name=departments/ict/technology-updates&posts_per_page=1')?>
-						<?the_post()?>
-						<a href="<?the_permalink()?>"><h4><?the_title()?></h4></a>
-						<summary><?the_content()?></summary></a>
+						<?php query_posts('category_name=departments/ict/technology-updates&posts_per_page=1')?>
+						<?php the_post()?>
+						<a href="<?php the_permalink()?>"><h4><?php the_title()?></h4></a>
+						<summary><?php the_content()?></summary></a>
 					</div>
 				</div>
 			</div>
@@ -81,7 +81,7 @@
 						Policies
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('policies');?>
+						<?=apacportal_post_list('policies')?>
 					</div>
 				</div>
 				<div class="box">
@@ -90,7 +90,7 @@
 						Processes
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('processes-ict');?>
+						<?=apacportal_post_list('processes-ict')?>
 					</div>
 				</div>
 				<div class="box">
@@ -99,7 +99,7 @@
 						How To
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('how-to-ict');?>
+						<?=apacportal_post_list('how-to-ict')?>
 					</div>
 				</div>
 			</div>

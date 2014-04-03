@@ -3,14 +3,14 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
-				<?get_sidebar('left')?>
+				<?php get_sidebar('left')?>
 			</div>
 			<div class="span6">
 				<div class="box">
 					<header>Useful Links
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('useful-links',-1,array('orderby'=>'title','order'=>'ASC'));?>
+						<?=apacportal_post_list('useful-links',-1,array('orderby'=>'title','order'=>'ASC'))?>
 					</div>
 				</div>
 				<div class="box">
@@ -18,7 +18,7 @@
 						<span class="more-link"><a href="/category/where-to-eat">More</a></span>
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('where-to-eat',10,array('orderby'=>'title','order'=>'ASC'));?>
+						<?=apacportal_post_list('where-to-eat',10,array('orderby'=>'title','order'=>'ASC'))?>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 						Notices
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('notices');?>
+						<?=apacportal_post_list('notices')?>
 					</div>
 				</div>
 				<div class="box">
@@ -45,7 +45,7 @@
 						Quick Links
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('quick-links');?>
+						<?=apacportal_post_list('quick-links')?>
 					</div>
 				</div>
 			</div>

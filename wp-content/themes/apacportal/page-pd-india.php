@@ -11,7 +11,7 @@
 					<span class="more-link"><a href="/category/departments/pd/india/workplace/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('workplace');?>
+					<?=apacportal_post_list('workplace')?>
 				</div>
 			</div>
 			<div class="box">
@@ -19,7 +19,7 @@
 					<span class="more-link"><a href="/category/departments/pd/india/products/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('products');?>
+					<?=apacportal_post_list('products')?>
 				</div>
 			</div>
 			<div class="box">
@@ -27,7 +27,7 @@
 					<span class="more-link"><a href="/category/departments/pd/india/pay-benefits/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('pay-benefits');?>
+					<?=apacportal_post_list('pay-benefits')?>
 				</div>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('news-letter');?>
+						<?=apacportal_post_list('news-letter')?>
 					</ul>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('services');?>
+						<?=apacportal_post_list('services')?>
 					</ul>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('going-abroad');?>
+						<?=apacportal_post_list('going-abroad')?>
 					</ul>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 					<span class="more-link"><a href="/category/departments/pd/india/about-us/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('about-us');?>
+					<?=apacportal_post_list('about-us')?>
 				</div>
 			</div>
 			<div class="box">
@@ -77,7 +77,7 @@
 					<span class="more-link"><a href="/category/departments/pd/india/visiting-india/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('visiting-india');?>
+					<?=apacportal_post_list('visiting-india')?>
 				</div>
 			</div>
 			<div class="box">
@@ -85,7 +85,7 @@
 					<span class="more-link"><a href="/category/departments/pd/india/quick-links-india/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('quick-links-india');?>
+					<?=apacportal_post_list('quick-links-india')?>
 				</div>
 			</div>
 		</div>

@@ -40,7 +40,7 @@ array_walk($users, function(&$user){
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-			<?get_sidebar('left')?>
+			<?php get_sidebar('left')?>
 		</div>
 		<div class="span9">
 			<table class="box">
@@ -52,26 +52,26 @@ array_walk($users, function(&$user){
 					<th>Department</th>
 				</thead>
 				<tbody class="content">
-<? $i=0; ?>
-<?foreach($users as $user){?>
-					<? $i++ ?>
-					<tr<?if($i % 2 == 0){?> class="odd"<?}?> title="Click For More Information">
+<?php  $i=0; ?>
+<?php foreach($users as $user){?>
+					<?php  $i++ ?>
+					<tr<?php if($i % 2 == 0){?> class="odd"<?php }?> title="Click For More Information">
 						<td><a href="/user-detail/?id=<?=$user->ID?>" target="_blank"><?=$user->meta['first_name'][0]?> <?=$user->meta['last_name'][0]?></td>
 						<td><?=$user->meta['telephone'][0]?></td>
 						<td><?=$user->user_email?></td>
 						<td><?=$user->meta['company_name'][0]?></td>
 						<td><?=$user->meta['department'][0]?></td>
 					</tr>
-<?}?>
+<?php }?>
 				</tbody>
 			</table>
 			<label><i>Please contact your department's secretary for updating your information.</i></label>
-			<?if(current_user_can('edit_users')){?>
+			<?php if(current_user_can('edit_users')){?>
 			<form class="form-inline pull-right" method="post" enctype="multipart/form-data" action="/user-import/">
 				<input type="file" name="contact-list" />
 				<button type="submit" class="btn">Upload</button>
 			</form>
-			<?}?>
+			<?php }?>
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->

@@ -7,7 +7,7 @@
 						Product Pictures
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('product-pictures',-1,array('orderby'=>'ID','order'=>'ASC'));?>
+						<?=apacportal_post_list('product-pictures',-1,array('orderby'=>'ID','order'=>'ASC'))?>
 					</div>
 				</div>
 			</div>
@@ -18,7 +18,7 @@
 						Press Releases
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('press-releases');?>
+						<?=apacportal_post_list('press-releases')?>
 					</div>
 				</div>
 				<div class="box">
@@ -26,7 +26,7 @@
 						Corporate Image
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('corporate-image');?>
+						<?=apacportal_post_list('corporate-image')?>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 						Corporate History
 					</header>
 					<div class="content">
-						<?=apacportal_post_list('corporate-history');?>
+						<?=apacportal_post_list('corporate-history')?>
 					</div>
 				</div>
 				<div class="box">
@@ -44,20 +44,20 @@
 						Executives
 					</header>
 					<div class="content">
-						<?query_posts('category_name=departments/communication/executive-photos&orderby=ID&order=ASC&posts_per_page=-1')?>
-						<?while(have_posts()):the_post();?>
+						<?php query_posts('category_name=departments/communication/executive-photos&orderby=ID&order=ASC&posts_per_page=-1')?>
+						<?php while(have_posts()):the_post(); ?>
 						<dl class="dl-horizontal employee-this-month">
 							<dt>
-								<?the_post_thumbnail('thumbnail')?>
+								<?php the_post_thumbnail('thumbnail')?>
 							</dt>
 							<dd>
 								<ul>
-									<li><a href="<?the_permalink()?>" target="_blank"><?the_title()?></a></li>
-									<summary><?the_excerpt()?></summary>
+									<li><a href="<?php the_permalink()?>" target="_blank"><?php the_title()?></a></li>
+									<summary><?php the_excerpt()?></summary>
 								</ul>
 							</dd>
 						</dl>
-						<?endwhile;?>
+						<?php endwhile; ?>
 					</div>
 				</div>
 			</div>

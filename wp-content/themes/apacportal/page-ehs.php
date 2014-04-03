@@ -10,7 +10,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/ehs-team-contact-information">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('ehs-team-contact-information');?>
+					<?=apacportal_post_list('ehs-team-contact-information')?>
 				</div>
 			</div>
 			<div class="box">
@@ -18,7 +18,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/quick-links-ehs">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('quick-links-ehs');?>
+					<?=apacportal_post_list('quick-links-ehs')?>
 				</div>
 			</div>
 			<div class="box">
@@ -26,7 +26,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/emergency-evacuation-plans">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('emergency-evacuation-plans');?>
+					<?=apacportal_post_list('emergency-evacuation-plans')?>
 				</div>
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/ehs-awardsrecognition">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('ehs-awardsrecognition');?>
+					<?=apacportal_post_list('ehs-awardsrecognition')?>
 				</div>
 			</div>
 			<div class="box">
@@ -51,7 +51,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/ehs-bulletin-news">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('ehs-bulletin-news');?>
+					<?=apacportal_post_list('ehs-bulletin-news')?>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/environment">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('environment');?>
+					<?=apacportal_post_list('environment')?>
 				</div>
 			</div>
 			<div class="box">
@@ -69,7 +69,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/health-and-safety">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('health-and-safety');?>
+					<?=apacportal_post_list('health-and-safety')?>
 				</div>
 			</div>
 			<div class="box">
@@ -77,7 +77,7 @@
 					<span class="more-link"><a href="/category/departments/ehs/wcm-corner">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('wcm-corner');?>
+					<?=apacportal_post_list('wcm-corner')?>
 				</div>
 			</div>
 		</div>
