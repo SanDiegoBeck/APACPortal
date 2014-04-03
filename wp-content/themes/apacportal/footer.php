@@ -30,24 +30,22 @@
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
-	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/js/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?=get_stylesheet_directory_uri()?>/mobilyslider/mobilyslider.js"></script>
+	
 	<script type="text/javascript">
-		$(function(){
+		jQuery(function(){
 			
 			if(localStorage && localStorage.sharePrice && JSON.parse(localStorage.sharePrice).content && (JSON.parse(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
 				
-				$('.share-price').html(JSON.parse(localStorage.sharePrice).content);
+				jQuery('.share-price').html(JSON.parse(localStorage.sharePrice).content);
 			}
 			else{
 				
-				$('.share-price').text('Loading Share Price ...');
+				jQuery('.share-price').text('Loading Share Price ...');
 				
-				$('.share-price').length && $.get('/share-price/',function(result){
-					$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'').replace(/\<link[^\<^\>]*?\>/g,'').replace(/\<iframe[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+				jQuery('.share-price').length && jQuery.get('/share-price/',function(result){
+					jQuery('.share-price').html(jQuery(result.replace(/\<img[^\<^\>]*?\>/g,'').replace(/\<link[^\<^\>]*?\>/g,'').replace(/\<iframe[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
 					localStorage.sharePrice=JSON.stringify({
-						content: $('.share-price').html(),
+						content: jQuery('.share-price').html(),
 						timestamp: new Date().getTime()
 					});
 				});
@@ -57,23 +55,34 @@
 			
 			setInterval(function(){
 				
-				$.get('/world-time/',function(time){$('.worldtime').html(time);});
+				jQuery.get('/world-time/',function(time){jQuery('.worldtime').html(time);});
 				
-				$('.share-price').length && $.get('/share-price/',function(result){
-					$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+				jQuery('.share-price').length && jQuery.get('/share-price/',function(result){
+					jQuery('.share-price').html(jQuery(result.replace(/\<img[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
 					localStorage.sharePrice=JSON.stringify({
-						content: $('.share-price').html(),
+						content: jQuery('.share-price').html(),
 						timestamp: new Date().getTime()
 					});
 				});
 				
 			},60000);
 			
-			$('a[href="#"]').on('click',function(){
+			jQuery('a[href="#"]').on('click',function(){
 				return false;
 			});
 			
+			jQuery('.slider').mobilyslider({
+				transition: 'fade',
+				animationSpeed: 1000,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				pauseOnHover: true,
+				bullets: true,
+				arrows: false
+			});
+			
 		});
+		
 	</script>
 </body>
 </html>

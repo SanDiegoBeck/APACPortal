@@ -158,6 +158,7 @@ h1, h2, h3, h4, h5, h6{
 /*Header*/
 .site-header .banner{
 	background-position: center;
+	background-size: cover;
 }
 
 .site-header .wrapper{

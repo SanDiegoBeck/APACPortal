@@ -14,19 +14,14 @@ $total_hits = get_option('total_hits', 0);
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
 	<?php wp_head(); ?>
-	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/mobilyslider/style.css' type='text/css' media='all' />
 	<!--[if lt IE 9]>
-	<link rel='stylesheet' href='<?=get_stylesheet_directory_uri()?>/ltIE9.css' type='text/css' media='all' />
+	<script src="<?=get_template_directory_uri()?>/js/html5.js"></script>
 	<![endif]-->
 </head>
 
