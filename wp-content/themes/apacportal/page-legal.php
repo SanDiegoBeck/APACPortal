@@ -5,7 +5,7 @@
 			<div class="span3">
 				<div class="box">
 					<div class="content">
-						
+						<img src="<?=get_stylesheet_directory_uri()?>/images/legal/logo.jpg" />
 					</div>
 				</div>
 				<div class="box market-list">
