@@ -38,7 +38,7 @@
 			</div>
 			<div class="span3 col-right">
 				<div class="box">
-					<div class="content" style="min-height: 0;">
+					<div class="content" style="height: 245px; padding-top: 25px;">
 						<img src="<?=get_stylesheet_directory_uri()?>/images/legal/libra.png" />
 					</div>
 				</div>
