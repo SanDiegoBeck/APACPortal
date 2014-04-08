@@ -155,6 +155,44 @@ add_action('wp_footer', function(){
 	
 });
 
+add_action('init', function(){
+	add_shortcode('column', function($attrs, $content){
+		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(strip_tags($content)) . '</div>';
+		return $out;
+	});
+});
+
+add_action('init', function(){
+	add_shortcode('box', function($attrs, $content){
+		
+		$out = '<div class="box' . (array_key_exists('box_class', $attrs) ? ' '.$attrs['box_class'] : '') . '">';
+		
+		if(array_key_exists('title', $attrs)){
+			$out .= '<header>'.$attrs['title'];
+		}
+		
+		if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs)){
+			$out .= '<a href="'.(site_url().'/category/'.$attrs['category']).'" class="more-link">More</a>';
+		}
+		
+		if(array_key_exists('title', $attrs)){
+			$out .= '</header>';
+		}
+		
+		$out .= '<div class="content' . (array_key_exists('class', $attrs) ? ' '.$attrs['class'] : '') . '">';
+		
+		if(array_key_exists('category', $attrs)){
+			$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
+		}
+		
+		$out .= '</div>';
+		
+		$out .= '</div>';
+		
+		return $out;
+	});
+});
+
 /**
  * replace functions in parent built-in theme
  */
