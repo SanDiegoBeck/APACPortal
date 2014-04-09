@@ -340,6 +340,10 @@ h1, h2, h3, h4, h5, h6{
 	list-style-position: inside;
 }
 
+.box.no-min-height>.content{
+	min-height: 0;
+}
+
 /*Footer*/
 .site-footer{
 	border-top: solid 1px #ccc;

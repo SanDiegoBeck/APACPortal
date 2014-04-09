@@ -145,6 +145,9 @@ add_action('wp_enqueue_scripts', function(){
 	
 });
 
+/**
+ * the javascripts should be loaded on the page footer, to ensure the page loading speed
+ */
 add_action('wp_footer', function(){
 	
 	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), '3.11');
@@ -155,17 +158,19 @@ add_action('wp_footer', function(){
 	
 });
 
+/**
+ * add short codes "column" and "box" for admin panel maintainable page
+ */
 add_action('init', function(){
+	
 	add_shortcode('column', function($attrs, $content){
-		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(strip_tags($content)) . '</div>';
+		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(trim(strip_tags($content))) . '</div>';
 		return $out;
 	});
-});
-
-add_action('init', function(){
+	
 	add_shortcode('box', function($attrs, $content){
 		
-		$out = '<div class="box' . (array_key_exists('box_class', $attrs) ? ' '.$attrs['box_class'] : '') . '">';
+		$out = '<div class="box' . (array_key_exists('class', $attrs) ? ' '.$attrs['class'] : '') . '">';
 		
 		if(array_key_exists('title', $attrs)){
 			$out .= '<header>'.$attrs['title'];
@@ -179,7 +184,11 @@ add_action('init', function(){
 			$out .= '</header>';
 		}
 		
-		$out .= '<div class="content' . (array_key_exists('class', $attrs) ? ' '.$attrs['class'] : '') . '">';
+		$out .= '<div class="content">';
+		
+		if($content){
+			$out .= do_shortcode(trim(strip_tags($content)));
+		}
 		
 		if(array_key_exists('category', $attrs)){
 			$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
@@ -191,7 +200,124 @@ add_action('init', function(){
 		
 		return $out;
 	});
+	
+	add_shortcode('sidebar', function($attrs){
+		ob_start();
+		dynamic_sidebar($attrs['id']);
+		$sidebar = ob_get_contents();
+		ob_clean();
+		return $sidebar;
+	});
+	
 });
+
+/**
+ * register a dynamic sidebar / widget area
+ */
+add_action('init', function(){
+	
+	register_sidebar(array(
+		'name' => 'Left Widget Area',
+		'id' => 'left',
+		'before_widget' => '<div class="box">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<header>',
+		'after_title' => '</header><div class="content">'
+	));
+	
+});
+
+add_action('widgets_init', function(){
+	register_widget('PeopleFinder_Widget');
+	register_widget('Posts_Widget');
+});
+
+/**
+ * define customized widgets
+ */
+class PeopleFinder_Widget extends WP_Widget{
+	
+	function __construct() {
+		parent::__construct('people_finder', 'People Finder');
+	}
+	
+	function widget() {
+		?>
+		<div class="box">
+			<header>People Finder</header>
+			<div class="content">
+				<br>
+				<form class="form-inline" action="/user/">
+					<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Search..." style="width: 140px">
+					&nbsp;
+					<button type="submit" style="font-size: 0.9em;">SEARCH</button>
+				</form>
+			</div>
+		</div>
+		<?php
+	}
+	
+}
+
+class Posts_Widget extends WP_Widget{
+	
+	function __construct() {
+		parent::__construct('posts', 'Posts');
+	}
+	
+	function widget($args, $instance) {
+		
+		echo $args['before_widget'];
+		
+		if (isset($instance['title']))
+			echo $args['before_title'] . $instance['title'] . $args['after_title'];
+		
+		$out .= '<div class="content">';
+		
+		if(array_key_exists('category', $instance)){
+			$out .= apacportal_post_list($instance['category']);
+		}
+		
+		$out .= '</div>';
+		
+		echo $out;
+		echo $args['after_widget'];
+		
+	}
+	
+	function update($new_instance, $old_instance) {
+		return parent::update($new_instance, $old_instance);
+	}
+	
+	function form( $instance ) {
+		
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		}
+		
+		if(isset($instance['category'])){
+			$category = $instance['category'];
+		}
+		
+		if(isset($instance['query_args'])){
+			$query_args = $instance['query_args'];
+		}
+		?>
+		<p>
+			<label for="<?=$this->get_field_id('title')?>">Title</label> 
+			<input class="widefat" id="<?=$this->get_field_id('title')?>" name="<?=$this->get_field_name('title')?>" type="text" value="<?=esc_attr($title)?>">
+		</p>
+		<p>
+			<label for="<?=$this->get_field_id('category')?>">Category</label> 
+			<input class="widefat" id="<?=$this->get_field_id('category')?>" name="<?=$this->get_field_name('category')?>" type="text" value="<?=esc_attr($category)?>">
+		</p>
+		<p>
+			<label for="<?=$this->get_field_id('query_args')?>">Query Arguments</label> 
+			<input class="widefat" id="<?=$this->get_field_id('query_args')?>" name="<?=$this->get_field_name('query_args')?>" type="text" value="<?=esc_attr($query_args)?>">
+		</p>
+		<?php 
+	}
+}
 
 /**
  * replace functions in parent built-in theme
