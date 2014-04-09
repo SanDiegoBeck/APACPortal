@@ -7,11 +7,11 @@
 				</header>
 			</div>
 			<div class="box">
-				<header>Workplace
-					<span class="more-link"><a href="/category/departments/pd/india/workplace/">More</a></span>
+				<header>Policies & Procedures
+					<span class="more-link"><a href="/category/departments/pd/india/policies-procedures-india/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('workplace')?>
+					<?=apacportal_post_list('policies-procedures-india')?>
 				</div>
 			</div>
 			<div class="box">
@@ -23,22 +23,22 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>Pay & Benefits
-					<span class="more-link"><a href="/category/departments/pd/india/pay-benefits/">More</a></span>
+				<header>Travel Desk
+					<span class="more-link"><a href="/category/departments/pd/india/travel-desk/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('pay-benefits')?>
+					<?=apacportal_post_list('travel-desk')?>
 				</div>
 			</div>
 		</div>
 		<div class="span6">
 			<div class="box">
-				<header>Newsletter
-					<span class="more-link"><a href="/category/departments/pd/india/news-letter/">More</a></span>
+				<header>APAC TC News & Events
+					<span class="more-link"><a href="/category/departments/pd/india/apac-tc-news-events/">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('newsletter')?>
+						<?=apacportal_post_list('apac-tc-news-events')?>
 					</ul>
 				</div>
 			</div>
@@ -53,12 +53,12 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>Going Abroad
-					<span class="more-link"><a href="/category/departments/pd/india/going-abroad/">More</a></span>
+				<header>Newsletter & Notices
+					<span class="more-link"><a href="/category/departments/pd/india/newsletter-notices/">More</a></span>
 				</header>
 				<div class="content">
 					<ul>
-						<?=apacportal_post_list('going-abroad')?>
+						<?=apacportal_post_list('newsletter-notices')?>
 					</ul>
 				</div>
 			</div>
@@ -73,11 +73,11 @@
 				</div>
 			</div>
 			<div class="box">
-				<header>Visiting India
-					<span class="more-link"><a href="/category/departments/pd/india/visiting-india/">More</a></span>
+				<header>Competencies
+					<span class="more-link"><a href="/category/departments/pd/india/competencies/">More</a></span>
 				</header>
 				<div class="content">
-					<?=apacportal_post_list('visiting-india')?>
+					<?=apacportal_post_list('competencies')?>
 				</div>
 			</div>
 			<div class="box">
