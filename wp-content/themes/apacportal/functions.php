@@ -1,13 +1,22 @@
 <?php
 /**
- * retrive a post list including "post", "attachment" and "link" post type
+ * retrieve a post list including "post", "attachment" and "link" post type
  * @param string $category_name
  * @param int $limit
  * @param array $args
  * @return string
  */
 function apacportal_post_list($category_name,$limit=5,$args=array()){
-	$list='<ul>';
+	
+	$defaults = array( 'container' => 'ul', 'container_class' => '', 'item' => 'li', 'item_class' =>'' );
+	
+	$args = wp_parse_args($args, $defaults);
+	
+	$container_class = $args->container_class ? ' class="'.$args->container_class.'"' : '';
+	$item_class = $args->item_class ? ' class="'.$args->item_class.'"' : '';
+	
+	$list='<' . $args['container'] . $container_class . '>';
+	
 	foreach(
 		get_posts(
 			array_merge(
@@ -16,7 +25,8 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 			)
 		) as $post
 	){
-		$list.='<li title="'.$post->post_title.'">';
+		$list .= '<'. $args['item'] . ' title="'.$post->post_title.'"'.$item_class . '>';
+		
 		switch($post->post_type){
 			case 'link':
 				$list.='<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
@@ -27,11 +37,59 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 			default:
 				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
 		}
-		$list.='</a></li>';
+		$list.='</a></' . $args['item'] . '>';
 	}
-	$list.='</ul>';
+	$list.='</' . $args['container'] . '>';
 	
 	return $list;
+}
+
+/**
+ * generate a carousel/slider from posts
+ * @param args $args
+ * @return string
+ */
+function apacportal_post_slider($args = array()){
+	
+	$defaults = array(
+		'show_bullets' => true,
+		'show_arrows' => false,
+		'posts_per_page' => 5,
+	);
+	
+	if(isset($args['category'])){
+		$args['category_name'] = $args['category'];
+	}
+	
+	$args = wp_parse_args($args, $defaults);
+	
+	$posts = get_posts($args);
+	
+	$id = isset($args['category']) ? $args['category'] : rand(100, 999);
+	
+	$out = '<div id="' . $id . '" class="carousel slide"><div class="carousel-inner">';
+	
+	foreach ( $posts as $index => $post ) {
+		$out .= '<div class="item' . ($index === 0 ? ' active' : '') . '">' . get_the_post_thumbnail($post->ID, 'home-news-slider') . '<div class="carousel-caption">' . $post->post_title . '</div>' . '</div>';
+	}
+	
+	if($args['show_bullets']){
+		$out .= '<ol class="carousel-indicators">';
+		foreach ( $posts as $index => $post ) {
+			$out .= '<li data-target="#' . $id . '" data-slide-to="'.$index.'"' . ($index === 0 ? ' class="active"' : '') . '></li>';
+		}
+		$out .= '</ol>';
+	}
+	
+	if($args['show_arrows']){
+		$out .= '<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>';
+		$out .= '<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>';
+	}
+	
+	$out .= '</div></div>';
+	
+	return $out;
+	
 }
 
 /**
@@ -170,17 +228,22 @@ add_action('init', function(){
 	
 	add_shortcode('box', function($attrs, $content){
 		
+		if(isset($attrs['type']) && $attrs['type'] === 'slider'){
+			$attrs['class'] .= ' slider';
+		}
+		else{
+			$attrs['class'] .= ' list';
+		}
+		
 		$out = '<div class="box' . (array_key_exists('class', $attrs) ? ' '.$attrs['class'] : '') . '">';
 		
 		if(array_key_exists('title', $attrs)){
 			$out .= '<header>'.$attrs['title'];
-		}
-		
-		if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs)){
-			$out .= '<a href="'.(site_url().'/category/'.$attrs['category']).'" class="more-link">More</a>';
-		}
-		
-		if(array_key_exists('title', $attrs)){
+			
+			if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs)){
+				$out .= '<a href="'.(site_url().'/category/'.$attrs['category']).'" class="more-link">More</a>';
+			}
+			
 			$out .= '</header>';
 		}
 		
@@ -191,7 +254,11 @@ add_action('init', function(){
 		}
 		
 		if(array_key_exists('category', $attrs)){
-			$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
+			if(isset($attrs) && $attrs['type'] === 'slider'){
+				$out .= apacportal_post_slider($attrs);
+			}else{
+				$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
+			}
 		}
 		
 		$out .= '</div>';

@@ -42,7 +42,7 @@
 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
 }
 
-.slider .item summary{
+.carousel-caption{
 	background-image: url('images/transparent.png');
 	/*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');*/
 }
