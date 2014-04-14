@@ -228,8 +228,15 @@ add_action('init', function(){
 	
 	add_shortcode('box', function($attrs, $content){
 		
-		if(isset($attrs['type']) && $attrs['type'] === 'slider'){
+		$defaults = array( 'type' => 'list' );
+		
+		$attrs = wp_parse_args($attrs, $defaults);
+		
+		if($attrs['type'] === 'slider'){
 			$attrs['class'] .= ' slider';
+		}
+		elseif($attrs['type'] === 'single'){
+			$attrs['class'] .= ' single';
 		}
 		else{
 			$attrs['class'] .= ' list';
@@ -245,7 +252,7 @@ add_action('init', function(){
 			}
 			
 			if(array_key_exists('more_link', $attrs)){
-				//shortcode_atts($pairs, $atts);
+				$more_links = array();
 				wp_parse_str(html_entity_decode($attrs['more_link']), $more_links);	
 				foreach($more_links as $name => $href){
 					$out .= '<a href="'.$href.'" class="more-link">'.$name.'</a>';
@@ -262,15 +269,28 @@ add_action('init', function(){
 		}
 		
 		if(array_key_exists('category', $attrs)){
-			if(isset($attrs) && $attrs['type'] === 'slider'){
+			if($attrs['type'] === 'slider'){
 				$out .= apacportal_post_slider($attrs);
 			}else{
 				$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
 			}
 		}
 		
-		if(array_key_exists('type', $attrs) && $attrs['type'] === 'rss_feed'){
+		if($attrs['type'] === 'rss_feed'){
 			$out .= '<div ajax-resource="/rss-feed/">Loading RSS Data...</div>';
+		}
+		
+		if($attrs['type'] === 'single'){
+			$single_defaults = array( 'posts_per_page' => 1 );
+			$posts = get_posts(wp_parse_args($attrs, $single_defaults));
+			if(count($posts) > 0){
+				
+				if(isset($attrs['show_title']) && $attrs['show_title']){
+					$out .= '<a href="' . get_permalink($posts[0]->ID) . '">' . '<h4>' . $posts[0]->post_title . '</h4>'.'</a>';
+				}
+				
+				$out .= $posts[0]->post_content;
+			}
 		}
 		
 		$out .= '</div>';
