@@ -43,7 +43,7 @@
 }
 
 .carousel-caption{
-	background-image: url('images/transparent.png');
+	background: url('images/transparent.png');
 	/*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');*/
 }
 
