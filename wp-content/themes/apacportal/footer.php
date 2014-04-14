@@ -88,6 +88,8 @@
 				});
 			});
 			
+			jQuery('.carousel').carousel({interval: 8000});
+			
 		});
 		
 	</script>
