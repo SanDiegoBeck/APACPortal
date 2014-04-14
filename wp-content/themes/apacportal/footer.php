@@ -81,6 +81,13 @@
 				arrows: false
 			});
 			
+			jQuery('[ajax-resource]').each(function(){
+				var that = this;
+				jQuery.get(jQuery(this).attr('ajax-resource'), function(response){
+					jQuery(that).replaceWith(response);
+				});
+			});
+			
 		});
 		
 	</script>

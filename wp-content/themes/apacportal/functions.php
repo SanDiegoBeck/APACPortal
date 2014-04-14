@@ -240,8 +240,16 @@ add_action('init', function(){
 		if(array_key_exists('title', $attrs)){
 			$out .= '<header>'.$attrs['title'];
 			
-			if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs)){
+			if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs) && !array_key_exists('more_link', $attrs)){
 				$out .= '<a href="'.(site_url().'/category/'.$attrs['category']).'" class="more-link">More</a>';
+			}
+			
+			if(array_key_exists('more_link', $attrs)){
+				//shortcode_atts($pairs, $atts);
+				wp_parse_str(html_entity_decode($attrs['more_link']), $more_links);	
+				foreach($more_links as $name => $href){
+					$out .= '<a href="'.$href.'" class="more-link">'.$name.'</a>';
+				}
 			}
 			
 			$out .= '</header>';
@@ -259,6 +267,10 @@ add_action('init', function(){
 			}else{
 				$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
 			}
+		}
+		
+		if(array_key_exists('type', $attrs) && $attrs['type'] === 'rss_feed'){
+			$out .= '<div ajax-resource="/rss-feed/">Loading RSS Data...</div>';
 		}
 		
 		$out .= '</div>';
