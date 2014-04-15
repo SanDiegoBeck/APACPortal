@@ -1,47 +1,27 @@
-.site-header .wrapper .main{
+.site-header .main{
 	background: url('images/transparent.png');
 }
 
-/*.navbar{
-	border-bottom: solid 2px #CCC;
-	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+.site-header .total-hits {
+	position: relative;
 }
 
-.nav-menu li.current-menu-item, .nav-menu li.current-page-ancestor, 
-.nav-menu li:hover > a, .nav-menu li a:hover {
-	border-right: #CCC 2px solid;
-	border-bottom: #AAA 2px solid;
-	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
-}
-
-.site-header .search-form{
-	width: 150px;
-}
-
-.site-header .search-form [type="search"],
-.site-header .search-form [type="text"] {
-	padding-top: 6px;
-}
-
-.site-header .search-form label{
-	text-align: right;
-}
-
-.site-header .search-form [type="search"],
-.site-header .search-form [type="text"] {
-	background-color: #fff;
-	border: 2px solid #c3c0ab;
-	cursor: text;
-	height: 28px;
+.navbar .navbar-search .search-query:focus{
 	outline: 0;
-	width: 150px;
 }
-*/
+
+.navbar .navbar-search .search-query.folded {
+	color: #FFF;
+}
+
 .box{
-	border-right: #CCC 2px solid;
-	border-bottom: #AAA 2px solid;
+	background-color: #FFF;
+	zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+}
+
+.box>.content, .box>header {
+	position: relative;
 }
 
 .slider .item summary{

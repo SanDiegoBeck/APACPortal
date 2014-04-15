@@ -4,6 +4,7 @@
 	Author : Uice Lu <uicelu@gmail.com>
 */
 
+/*Customize Fonts*/
 @font-face {
     font-family: 'Helvetica Neue Lt Std';
     src: url('fonts/HelveticaNeueLTStd-Roman.eot');
@@ -95,7 +96,6 @@ table.box {
 body {
 	color: #080808;
 	background:#FFF url('images/bg.png') 0 220px repeat-x;
-	/*background:#FFF url('images/bg_bottom.png') bottom repeat-x;*/
 }
 
 body, a {
@@ -184,6 +184,10 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0;
 }
 
+.navbar .navbar-search {
+	margin-top: 7px;
+}
+
 .navbar .navbar-search .search-query {
 	background-color: transparent;
 	background-image: url(images/search-icon.png);
@@ -192,12 +196,15 @@ h1, h2, h3, h4, h5, h6 {
 	background-size: 24px 24px;	
 	padding-left: 30px;
 	width: 0;
+	line-height: 30px;
+	margin-right: 10px;
 }
 
 .navbar .navbar-search .search-query.folded {
 	border: none;
 	box-shadow: none;
 	cursor: default;
+	margin-right: 0;
 }
 
 .navbar-inner {
@@ -223,7 +230,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header .total-hits {
-	margin: 2px 0;
+	margin: 6px 0;
+	padding: 4px;
 }
 
 .breadcrumb {

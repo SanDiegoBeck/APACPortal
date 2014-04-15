@@ -204,9 +204,11 @@ add_action('wp_footer', function(){
 	
 	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), '3.11');
 	wp_register_script('mobilyslider', get_stylesheet_directory_uri().'/mobilyslider/mobilyslider.js', array('jquery'), '3.11');
+	wp_register_script('placeholder', get_stylesheet_directory_uri().'/js/jquery.placeholder.js', array('jquery'), '2.0.8');
 	
 	wp_enqueue_script('bootstrap');
 	wp_enqueue_script('mobilyslider');
+	wp_enqueue_script('placeholder');
 	
 });
 
@@ -355,7 +357,7 @@ class PeopleFinder_Widget extends WP_Widget{
 			<div class="content">
 				<form class="form-inline" action="/user/">
 					<br>
-					<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." class="span9">
+					<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." style="width: 170px;">
 					<button type="submit" class="btn pull-right"><span class="icon-search"></span></button>
 				</form>
 			</div>

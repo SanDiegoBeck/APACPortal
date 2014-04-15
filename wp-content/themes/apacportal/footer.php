@@ -32,69 +32,74 @@
 	<?php wp_footer(); ?>
 	
 	<script type="text/javascript">
-		jQuery(function(){
-			
-			if(localStorage && localStorage.sharePrice && JSON.parse(localStorage.sharePrice).content && (JSON.parse(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
-				
-				jQuery('.share-price').html(JSON.parse(localStorage.sharePrice).content);
-			}
-			else{
-				
-				jQuery('.share-price').text('Loading Share Price ...');
-				
-				jQuery('.share-price').length && jQuery.get('/share-price/',function(result){
-					jQuery('.share-price').html(jQuery(result.replace(/\<img[^\<^\>]*?\>/g,'').replace(/\<link[^\<^\>]*?\>/g,'').replace(/\<iframe[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
-					localStorage.sharePrice=JSON.stringify({
-						content: jQuery('.share-price').html(),
-						timestamp: new Date().getTime()
-					});
-				});
-				
-			}
 		
-			
-			setInterval(function(){
-				
-				jQuery.get('/world-time/',function(time){jQuery('.worldtime').html(time);});
-				
-				jQuery('.share-price').length && jQuery.get('/share-price/',function(result){
-					jQuery('.share-price').html(jQuery(result.replace(/\<img[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
-					localStorage.sharePrice=JSON.stringify({
-						content: jQuery('.share-price').html(),
-						timestamp: new Date().getTime()
+		(function($){
+			$(function(){
+
+				if(localStorage && localStorage.sharePrice && JSON.parse(localStorage.sharePrice).content && (JSON.parse(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
+
+					$('.share-price').html(JSON.parse(localStorage.sharePrice).content);
+				}
+				else{
+
+					$('.share-price').text('Loading Share Price ...');
+
+					$('.share-price').length && $.get('/share-price/',function(result){
+						$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'').replace(/\<link[^\<^\>]*?\>/g,'').replace(/\<iframe[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+						localStorage.sharePrice=JSON.stringify({
+							content: $('.share-price').html(),
+							timestamp: new Date().getTime()
+						});
+					});
+
+				}
+
+
+				setInterval(function(){
+
+					$.get('/world-time/',function(time){$('.worldtime').html(time);});
+
+					$('.share-price').length && $.get('/share-price/',function(result){
+						$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+						localStorage.sharePrice=JSON.stringify({
+							content: $('.share-price').html(),
+							timestamp: new Date().getTime()
+						});
+					});
+
+				},60000);
+
+				$('a[href="#"]').on('click',function(){
+					return false;
+				});
+
+				$('.slider').mobilyslider({
+					transition: 'fade',
+					animationSpeed: 1000,
+					autoplay: true,
+					autoplaySpeed: 5000,
+					pauseOnHover: true,
+					bullets: true,
+					arrows: false
+				});
+
+				$('[ajax-resource]').each(function(){
+					var that = this;
+					$.get($(this).attr('ajax-resource'), function(response){
+						$(that).replaceWith(response);
 					});
 				});
-				
-			},60000);
-			
-			jQuery('a[href="#"]').on('click',function(){
-				return false;
-			});
-			
-			jQuery('.slider').mobilyslider({
-				transition: 'fade',
-				animationSpeed: 1000,
-				autoplay: true,
-				autoplaySpeed: 5000,
-				pauseOnHover: true,
-				bullets: true,
-				arrows: false
-			});
-			
-			jQuery('[ajax-resource]').each(function(){
-				var that = this;
-				jQuery.get(jQuery(this).attr('ajax-resource'), function(response){
-					jQuery(that).replaceWith(response);
+
+				$('.search-query').on('focus', function(){
+					$(this).removeClass('folded').animate({width: 200}, 100);
+				}).on('blur', function(){
+					$(this).addClass('folded').animate({width: 0}, 100)
 				});
+				
+				$('input, textarea').placeholder();
+
 			});
-			
-			jQuery('.search-query').on('focus', function(){
-				jQuery(this).removeClass('folded').animate({width: 200}, 100);
-			}).on('blur', function(){
-				jQuery(this).addClass('folded').animate({width: 0}, 100)
-			});
-			
-		});
+		})(jQuery);
 		
 	</script>
 </body>
