@@ -79,6 +79,15 @@ function apacportal_post_slider($args = array()){
 }
 
 /**
+ * count total hits according to data from Baw Post Views Count
+ */
+function get_total_hits(){
+	global $wpdb;
+	$count = $wpdb->get_row( " SELECT SUM( `meta_value` ) `count` FROM `wp_postmeta` WHERE `meta_key` = '_count-views_all' " )->count;
+	return $count;
+}
+
+/**
  * force IE to disable compatible mode, 
  * else IE will automatically switch compatible mode for intranet.
  */

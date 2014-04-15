@@ -88,7 +88,7 @@
 				});
 			});
 			
-			jQuery('.search-field').on('focus', function(){
+			jQuery('.search-query').on('focus', function(){
 				jQuery(this).removeClass('folded').animate({width: 200}, 100);
 			}).on('blur', function(){
 				jQuery(this).addClass('folded').animate({width: 0}, 100)

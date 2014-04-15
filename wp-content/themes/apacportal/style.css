@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, h6{
 	color: #AB0000;
 }
 
-.navbar .search-form .search-field{
+.navbar .navbar-search .search-query{
 	background-color: transparent;
 	background-image: url(images/search-icon.png);
 	background-position: 5px center;
@@ -227,7 +227,7 @@ h1, h2, h3, h4, h5, h6{
 	width: 0;
 }
 
-.navbar .search-form .search-field.folded{
+.navbar .navbar-search .search-query.folded{
 	border: none;
 	box-shadow: none;
 	cursor: default;
@@ -286,20 +286,18 @@ h1, h2, h3, h4, h5, h6{
 	color: #003F7D;
 }
 
-.search-form .search-field{
+.navbar-search .search-query{
 	box-shadow: none;
 }
 
-.site-header .search-form {
+.site-header .navbar-search {
 	right: 130px;
 }
 
-.site-header .total-hits {
-	position: absolute;
-	right: 20px;
-	top: 13px;
+*/.site-header .total-hits {
+	margin: 2px 0;
 }
-*/
+
 .breadcrumb{
 	background: none;
 	font-size: 0.9em;
