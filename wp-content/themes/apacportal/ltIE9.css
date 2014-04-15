@@ -1,19 +1,19 @@
-.site-header .wrapper{
+.site-header .wrapper .main{
 	background: url('images/transparent.png');
 }
 
-.navbar{
+/*.navbar{
 	border-bottom: solid 2px #CCC;
-/*	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
+	background-color: #FFF;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
 }
 
 .nav-menu li.current-menu-item, .nav-menu li.current-page-ancestor, 
 .nav-menu li:hover > a, .nav-menu li a:hover {
 	border-right: #CCC 2px solid;
 	border-bottom: #AAA 2px solid;
-/*	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
+	background-color: #FFF;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
 }
 
 .site-header .search-form{
@@ -25,6 +25,10 @@
 	padding-top: 6px;
 }
 
+.site-header .search-form label{
+	text-align: right;
+}
+
 .site-header .search-form [type="search"],
 .site-header .search-form [type="text"] {
 	background-color: #fff;
@@ -32,9 +36,9 @@
 	cursor: text;
 	height: 28px;
 	outline: 0;
-	/*width: 150px;*/
+	width: 150px;
 }
-
+*/
 .box{
 	border-right: #CCC 2px solid;
 	border-bottom: #AAA 2px solid;

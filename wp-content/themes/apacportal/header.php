@@ -30,28 +30,31 @@ $total_hits = get_option('total_hits', 0);
 		<header id="masthead" class="site-header" role="banner">
 			<div class="banner" style="background-image: url('<?=get_stylesheet_directory_uri()?>/images/headerbg_<?=floor(rand(0,12))?>.jpg')">
 				<div class="wrapper">
-					<div class="description-top">
-						<a href="https://www.google.com/finance?cid=673373" target="_blank">
-							<span class="share-price">&nbsp;</span>
+					<div class="main">
+						<div class="description-top">
+							<a href="https://www.google.com/finance?cid=673373" target="_blank">
+								<span class="share-price">&nbsp;</span>
+							</a>
+						</div>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
 						</a>
-					</div>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-						<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
-					</a>
-					<h1 class="logo-aside pull-right"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
-					<div class="description pull-left">
-						<span class="worldtime">
-							<?php get_template_part('world-time'); ?>
-						</span>
+						<h1 class="logo-aside pull-right"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
+						<div class="description pull-left">
+							<span class="worldtime">
+								<?php get_template_part('world-time'); ?>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div id="navbar" class="navbar">
-				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
-					<h3 class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></h3>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-					<?php get_search_form(); ?>
-					<!--<span class="total-hits">Total Hits: <?=$total_hits?></span>-->
+				<nav id="site-navigation" class="navbar-inner" role="navigation">
+					<div class="wrapper">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
+						<?php get_search_form(); ?>
+						<!--<span class="total-hits">Total Hits: <?=$total_hits?></span>-->
+					</div>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 		</header><!-- #masthead -->

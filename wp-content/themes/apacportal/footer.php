@@ -16,7 +16,7 @@
 			<div class="wrapper">
 				<?php //get_sidebar( 'main' ); ?>
 				<nav>
-					<ul>
+					<ul class="nav">
 						<li><a href="/wp-content/uploads/2013/11/Privacy-Policy.pdf" target="_blank">Privacy Policy</a></li>
 						<li>|</li>
 						<li><a href="mailto:hr638@chrysler.com">Contact Us</a></li>
@@ -86,6 +86,12 @@
 				jQuery.get(jQuery(this).attr('ajax-resource'), function(response){
 					jQuery(that).replaceWith(response);
 				});
+			});
+			
+			jQuery('.search-field').on('focus', function(){
+				jQuery(this).removeClass('folded').animate({width: 200}, 100);
+			}).on('blur', function(){
+				jQuery(this).addClass('folded').animate({width: 0}, 100)
 			});
 			
 		});

@@ -4,8 +4,6 @@
 	Author : Uice Lu <uicelu@gmail.com>
 */
 
-@import '../twentythirteen/style.css';
-
 @font-face {
     font-family: 'Helvetica Neue Lt Std';
     src: url('fonts/HelveticaNeueLTStd-Roman.eot');
@@ -151,7 +149,6 @@ h1, h2, h3, h4, h5, h6{
 
 .wrapper{
 	width: 1080px;
-	padding: 10px 10px 10px 10px;
 	margin: auto;
 }
 
@@ -161,11 +158,12 @@ h1, h2, h3, h4, h5, h6{
 	background-size: cover;
 }
 
-.site-header .wrapper{
+.site-header .banner .main{
 	height: 170px;
 	min-height: 150px;
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 2px 2px 20px #888;
+	padding: 10px;
 }
 
 .main-navigation{
@@ -219,7 +217,45 @@ h1, h2, h3, h4, h5, h6{
 	color: #AB0000;
 }
 
-.navbar{
+.navbar .search-form .search-field{
+	background-color: transparent;
+	background-image: url(images/search-icon.png);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;	
+	padding-left: 30px;
+	width: 0;
+}
+
+.navbar .search-form .search-field.folded{
+	border: none;
+	box-shadow: none;
+	cursor: default;
+}
+
+.navbar-inner{
+	padding: 0;
+	border-top: #003F7D 2px solid;
+	border-radius: 0;
+}
+
+.navbar .nav>li{
+	font-size: 1.1em;
+	color: #003F7D;
+}
+
+.navbar .nav>li>a{
+	color: #003F7D;
+	padding: 10px 20px;
+}
+
+.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus{
+	color: #003F7D;
+	font-weight: bold;
+	border-bottom: 3px solid #800;
+}
+
+/*.navbar{
 	height: 50px;
 	background-image: url('images/navbg.png');
 	background-repeat: repeat-x;
@@ -255,7 +291,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .site-header .search-form {
-	/*right: 130px;*/
+	right: 130px;
 }
 
 .site-header .total-hits {
@@ -263,7 +299,7 @@ h1, h2, h3, h4, h5, h6{
 	right: 20px;
 	top: 13px;
 }
-
+*/
 .breadcrumb{
 	background: none;
 	font-size: 0.9em;
@@ -357,24 +393,25 @@ h1, h2, h3, h4, h5, h6{
 .slider .item summary{
 	position: absolute;
 	bottom: 0;
+	right: 0;
+	left: 0;
+	padding-left: 1em;
+	padding-right: 80px;
+	line-height: 2;
 	color: #000;
 	background: rgba(255, 255, 255, 0.7);
-	padding-left: 1em;
-	line-height: 2;
-	padding-right: 80px;
 	word-wrap: normal;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	list-style-position: inside;
-	width: 100%;
 }
 
 /*Footer*/
 .site-footer{
 	border-top: solid 1px #ccc;
 	background: none;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 }
 
 .site-footer nav ul li{
@@ -387,12 +424,51 @@ h1, h2, h3, h4, h5, h6{
 	width: auto;
 }
 
-/*Archive List Page*/
+/*Posts Common*/
+.hentry {
+	padding: 40px 0;
+}
+
+.entry-header, .entry-content, .entry-summary, .entry-meta {
+	margin: 0 auto;
+	max-width: 604px;
+}
+
+.entry-header{
+	margin-bottom: 30px;
+}
+
 .entry-title{
 	font-size: 1.5em;
+	font-weight: normal;
 	margin: 0 0 0.5em;
 }
 
+.entry-meta > span {
+	margin-right: 20px;
+}
+
+.entry-meta a {
+	color: #bc360a;
+}
+
+.entry-meta a:hover {
+	color: #bc360a;
+}
+
+footer.entry-meta {
+	margin-top: 24px;
+}
+
+.entry-content a, .comment-content a {
+	color: #bc360a;
+}
+
+.entry-content a:hover, .comment-content a:hover {
+	color: #ea9629;
+}
+
+/*Archive List Page*/
 .archive .hentry{
 	padding: 1em;
 }
@@ -464,6 +540,8 @@ h1, h2, h3, h4, h5, h6{
 
 .single-post .entry-header{
 	max-width: none;
+	padding: 0 2em;
+	border-bottom: 1px solid #CCC;
 }
 
 .single-post footer.entry-meta{

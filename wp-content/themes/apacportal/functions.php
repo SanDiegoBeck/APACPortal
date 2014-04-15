@@ -318,6 +318,20 @@ add_action('widgets_init', function(){
 });
 
 /**
+ * add "active" class to current menu item
+ */
+add_filter( 'nav_menu_css_class', 'additional_active_item_classes', 10, 2 );
+
+function additional_active_item_classes($classes = array(), $menu_item = false){
+
+    if(in_array('current-menu-item', $menu_item->classes) || in_array('current-post-ancestor', $menu_item->classes) || in_array('current-page-ancestor', $menu_item->classes)){
+        $classes[] = 'active';
+    }
+
+    return $classes;
+}
+
+/**
  * define customized widgets
  */
 class PeopleFinder_Widget extends WP_Widget{
