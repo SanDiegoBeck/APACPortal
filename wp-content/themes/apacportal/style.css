@@ -92,6 +92,10 @@ table.box {
 	width: 100%;
 }
 
+.screen-reader-text {
+	display: none;
+}
+
 /*Basic Structure*/
 body {
 	color: #080808;
@@ -416,7 +420,8 @@ footer.entry-meta {
 }
 
 .paging-navigation {
-	padding: 0;
+	padding: 10px 40px;
+	background-color: rgb(231, 235, 255);
 }
 
 .paging-navigation .nav-previous .meta-nav {
@@ -426,8 +431,12 @@ footer.entry-meta {
 	width: 50px;
 }
 
+.paging-navigation .nav-previous {
+	float: left;
+}
+
 .paging-navigation .nav-next {
-	padding: 0;
+	float: right;
 }
 
 .paging-navigation .nav-next .meta-nav {
@@ -451,6 +460,7 @@ footer.entry-meta {
 
 .paging-navigation .nav-links {
 	margin: 7px auto;
+	height: 20px
 }
 
 /*Archive Single Page*/
