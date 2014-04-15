@@ -217,6 +217,10 @@ h1, h2, h3, h4, h5, h6{
 	color: #AB0000;
 }
 
+.navbar{
+	margin-bottom: 0;
+}
+
 .navbar .navbar-search .search-query{
 	background-color: transparent;
 	background-image: url(images/search-icon.png);
