@@ -38,13 +38,10 @@
 .box{
 	border-right: #CCC 2px solid;
 	border-bottom: #AAA 2px solid;
-/*	background-color: #FFF;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);*/
 }
 
-.carousel-caption{
+.slider .item summary{
 	background: url('images/transparent.png');
-	/*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AAFFFFFF', endColorstr='#AAFFFFFF');*/
 }
 
 .ie8 .me-plugin {

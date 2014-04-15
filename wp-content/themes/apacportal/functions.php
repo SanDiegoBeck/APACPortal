@@ -52,9 +52,8 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 function apacportal_post_slider($args = array()){
 	
 	$defaults = array(
-		'show_bullets' => true,
-		'show_arrows' => false,
 		'posts_per_page' => 5,
+		'height' => '188',
 	);
 	
 	if(isset($args['category'])){
@@ -67,23 +66,10 @@ function apacportal_post_slider($args = array()){
 	
 	$id = isset($args['category']) ? $args['category'] : rand(100, 999);
 	
-	$out = '<div id="' . $id . '" class="carousel slide"><div class="carousel-inner">';
+	$out = '<div id="' . $id . '" class="slider"><div class="sliderContent" style="height: ' . $args['height'] . 'px">';
 	
 	foreach ( $posts as $index => $post ) {
-		$out .= '<div class="item' . ($index === 0 ? ' active' : '') . '">' . get_the_post_thumbnail($post->ID, 'home-news-slider') . '<div class="carousel-caption">' . $post->post_title . '</div>' . '</div>';
-	}
-	
-	if($args['show_bullets']){
-		$out .= '<ol class="carousel-indicators">';
-		foreach ( $posts as $index => $post ) {
-			$out .= '<li data-target="#' . $id . '" data-slide-to="'.$index.'"' . ($index === 0 ? ' class="active"' : '') . '></li>';
-		}
-		$out .= '</ol>';
-	}
-	
-	if($args['show_arrows']){
-		$out .= '<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>';
-		$out .= '<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>';
+		$out .= '<div class="item"><a href="' . get_permalink($post->ID) . '">' . get_the_post_thumbnail($post->ID, 'home-news-slider') . '</a>' . '<summary>' . $post->post_title . '</summary>' . '</div>';
 	}
 	
 	$out .= '</div></div>';

@@ -354,57 +354,20 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /*post thumbnail slider*/
-.carousel{
-	margin-bottom: 0;
-}
-
-.carousel-caption{
+.slider .item summary{
+	position: absolute;
+	bottom: 0;
+	color: #000;
 	background: rgba(255, 255, 255, 0.7);
-	padding: 7px;
-	line-height: 1.3;
-	padding-right: 90px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	padding-left: 1em;
+	line-height: 2;
+	padding-right: 80px;
 	word-wrap: normal;
 	overflow: hidden;
-}
-
-.carousel-indicators{
-	top: auto;
-	bottom: 10px;
-	right: 10px;
-}
-
-.carousel li{
-	margin-right: 3px;
-}
-
-.carousel-indicators li{
-	height: 11px;
-	margin-left: 3px;
-	background:url('images/bullets.png') no-repeat;
-}
-
-.carousel-indicators li.active{
-	background-position:0 -11px;
-}
-
-.carousel-inner .item {
-	-webkit-transition: opacity 3s;
-	-moz-transition: opacity 3s;
-	-ms-transition: opacity 3s;
-	-o-transition: opacity 3s;
-	transition: opacity 3s;
-}
-
-.carousel-inner .active.left {
-	left:0;opacity:0;z-index:2;
-}
-
-.carousel-inner .next {
-	left:0;
-	opacity:1;
-	z-index:1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	list-style-position: inside;
+	width: 100%;
 }
 
 /*Footer*/

@@ -1,14 +1,9 @@
 ﻿.slider {
-	/*float:left;*/	
 	position:relative;
-	/*padding-bottom:26px;*/
+	overflow: hidden;
 }
 
 .sliderContent {
-	float:left;
-	
-	clear:both;
-	position:relative;
 	overflow:hidden;
 }
 
