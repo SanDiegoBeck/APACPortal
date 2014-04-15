@@ -353,11 +353,10 @@ class PeopleFinder_Widget extends WP_Widget{
 		<div class="box">
 			<header>People Finder</header>
 			<div class="content">
-				<br>
 				<form class="form-inline" action="/user/">
-					<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Search..." style="width: 140px">
-					&nbsp;
-					<button type="submit" style="font-size: 0.9em;">SEARCH</button>
+					<br>
+					<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." class="span9">
+					<button type="submit" class="btn pull-right"><span class="icon-search"></span></button>
 				</form>
 			</div>
 		</div>

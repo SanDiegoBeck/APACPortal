@@ -28,10 +28,10 @@ $user_metas=array(
 <div id="primary" class="content-area">
 	<div id="content" class="site-content row-fluid" role="main">
 		<div class="span3">
-			<?php get_sidebar('left')?>
+			<?=do_shortcode('[sidebar id="left"]')?>
 		</div>
 		<div class="span9">
-			<table class="box table-bordered">
+			<table class="box table table-bordered table-striped">
 				<thead class="header">
 					<th width="180px">&nbsp;</th>
 					<th>&nbsp;</th>

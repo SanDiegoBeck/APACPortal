@@ -2,7 +2,7 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content row-fluid" role="main">
 			<div class="span3">
-				<?php get_sidebar('left')?>
+				<?=do_shortcode('[sidebar id="left"]')?>
 				<div class="box department-list">
 					<header>
 						Joint Ventures

@@ -13,7 +13,7 @@ get_header(); ?>
 	<div id="content" class="site-content clearfix" role="main">
 
 		<div class="span3">
-			<?=get_sidebar('left')?>
+			<?=do_shortcode('[sidebar id="left"]')?>
 		</div>
 		<div class="span9">
 		<?php /* The loop */ ?>
