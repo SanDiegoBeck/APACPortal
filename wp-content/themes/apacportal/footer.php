@@ -45,7 +45,7 @@
 					$('.share-price').text('Loading Share Price ...');
 
 					$('.share-price').length && $.get('/share-price/',function(result){
-						$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'').replace(/\<link[^\<^\>]*?\>/g,'').replace(/\<iframe[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+						$('.share-price').html($(result).find('.pr').children('span').prepend('Fiat SpA Share Price: € ').end().end());
 						localStorage.sharePrice=JSON.stringify({
 							content: $('.share-price').html(),
 							timestamp: new Date().getTime()
@@ -60,7 +60,7 @@
 					$.get('/world-time/',function(time){$('.worldtime').html(time);});
 
 					$('.share-price').length && $.get('/share-price/',function(result){
-						$('.share-price').html($(result.replace(/\<img[^\<^\>]*?\>/g,'')).find('#price-panel').children('div:first')).find('.pr').children('span').prepend('Fiat SpA Share Price: € ');
+						$('.share-price').html($(result).find('.pr').children('span').prepend('Fiat SpA Share Price: € ').end().end());
 						localStorage.sharePrice=JSON.stringify({
 							content: $('.share-price').html(),
 							timestamp: new Date().getTime()
