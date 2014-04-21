@@ -503,6 +503,7 @@ footer.entry-meta {
 
 .post table {
 	table-layout: fixed;
+	width: 100%;
 }
 
 .entry-content img.alignleft, .entry-content .wp-caption.alignleft {
