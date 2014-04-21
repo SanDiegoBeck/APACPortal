@@ -379,18 +379,27 @@ class Posts_Widget extends WP_Widget{
 	
 	function widget($args, $instance) {
 		
+		if(isset($instance['query_args'])){
+			$instance = wp_parse_args($instance['query_args'], $instance);
+			unset($instance['query_args']);
+		}
+		
 		echo $args['before_widget'];
 		
-		if (isset($instance['title']))
-			echo $args['before_title'] . $instance['title'] . $args['after_title'];
-		
-		$out .= '<div class="content">';
+		if (isset($instance['title'])){
+			echo $args['before_title'] . $instance['title'];
+			
+			if((!array_key_exists('limit', $instance) || $instance['limit'] > 0) && array_key_exists('category', $instance) && !array_key_exists('more_link', $instance)){
+				echo '<a href="'.(site_url().'/category/'.$instance['category']).'" class="more-link">More</a>';
+			}
+			
+			echo $args['after_title'];
+			
+		}
 		
 		if(array_key_exists('category', $instance)){
 			$out .= apacportal_post_list($instance['category']);
 		}
-		
-		$out .= '</div>';
 		
 		echo $out;
 		echo $args['after_widget'];
