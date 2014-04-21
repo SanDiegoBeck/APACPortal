@@ -287,7 +287,7 @@ add_action('init', function(){
 						$out .= '<a href="' . get_permalink($posts[0]->ID) . '">' . '<h4>' . $posts[0]->post_title . '</h4>'.'</a>';
 					}
 
-					$out .= $posts[0]->post_content;
+					$out .= wpautop($posts[0]->post_content);
 				}
 			}
 
