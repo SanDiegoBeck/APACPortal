@@ -258,38 +258,42 @@ add_action('init', function(){
 			$out .= '</header>';
 		}
 		
-		$out .= '<div class="content">';
+		if(!array_key_exists('content', $attrs) || $attrs['content'] !== 'none'){
 		
-		if($content){
-			$out .= do_shortcode(trim(strip_tags($content)));
-		}
-		
-		if(array_key_exists('category', $attrs)){
-			if($attrs['type'] === 'slider'){
-				$out .= apacportal_post_slider($attrs);
-			}else{
-				$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
+			$out .= '<div class="content">';
+
+			if($content){
+				$out .= do_shortcode(trim(strip_tags($content)));
 			}
-		}
-		
-		if($attrs['type'] === 'rss_feed'){
-			$out .= '<div ajax-resource="/rss-feed/">Loading RSS Data...</div>';
-		}
-		
-		if($attrs['type'] === 'single'){
-			$single_defaults = array( 'posts_per_page' => 1 );
-			$posts = get_posts(wp_parse_args($attrs, $single_defaults));
-			if(count($posts) > 0){
-				
-				if(isset($attrs['show_title']) && $attrs['show_title']){
-					$out .= '<a href="' . get_permalink($posts[0]->ID) . '">' . '<h4>' . $posts[0]->post_title . '</h4>'.'</a>';
+
+			if(array_key_exists('category', $attrs)){
+				if($attrs['type'] === 'slider'){
+					$out .= apacportal_post_slider($attrs);
+				}else{
+					$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
 				}
-				
-				$out .= $posts[0]->post_content;
 			}
+
+			if($attrs['type'] === 'rss_feed'){
+				$out .= '<div ajax-resource="/rss-feed/">Loading RSS Data...</div>';
+			}
+
+			if($attrs['type'] === 'single'){
+				$single_defaults = array( 'posts_per_page' => 1 );
+				$posts = get_posts(wp_parse_args($attrs, $single_defaults));
+				if(count($posts) > 0){
+
+					if(isset($attrs['show_title']) && $attrs['show_title']){
+						$out .= '<a href="' . get_permalink($posts[0]->ID) . '">' . '<h4>' . $posts[0]->post_title . '</h4>'.'</a>';
+					}
+
+					$out .= $posts[0]->post_content;
+				}
+			}
+
+			$out .= '</div>';
+			
 		}
-		
-		$out .= '</div>';
 		
 		$out .= '</div>';
 		
