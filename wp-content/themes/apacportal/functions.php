@@ -263,8 +263,8 @@ add_action('init', function(){
 		
 			$out .= '<div class="content"';
 			
-			if(array_key_exists('content-style', $attrs)){
-				$out .= ' style="' . $attrs['content-style'] . '"';
+			if(array_key_exists('content_style', $attrs)){
+				$out .= ' style="' . $attrs['content_style'] . '"';
 			}
 			
 			$out .= '>';
