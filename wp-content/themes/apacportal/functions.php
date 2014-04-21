@@ -261,7 +261,13 @@ add_action('init', function(){
 		
 		if(!array_key_exists('content', $attrs) || $attrs['content'] !== 'none'){
 		
-			$out .= '<div class="content">';
+			$out .= '<div class="content"';
+			
+			if(array_key_exists('content-style', $attrs)){
+				$out .= ' style="' . $attrs['content-style'] . '"';
+			}
+			
+			$out .= '>';
 
 			if($content){
 				$out .= do_shortcode(trim(strip_tags($content)));
