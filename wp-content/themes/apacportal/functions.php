@@ -163,6 +163,7 @@ add_filter('posts_orderby', function($orderby_statement){
  */
 add_action( 'admin_init', function(){
     add_post_type_support( 'post', 'page-attributes' );
+	add_post_type_support( 'link', 'page-attributes' );
 });
 
 /**
