@@ -17,6 +17,10 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	
 	$list='<' . $args['container'] . $container_class . '>';
 	
+	if(isset($args['limit'])){
+		$limit = $args['limit'];
+	}
+
 	foreach(
 		get_posts(
 			array_merge(
@@ -405,7 +409,7 @@ class Posts_Widget extends WP_Widget{
 		}
 		
 		if(array_key_exists('category', $instance)){
-			$out .= apacportal_post_list($instance['category']);
+			$out .= apacportal_post_list($instance['category'], 5, $instance);
 		}
 		
 		echo $out;
