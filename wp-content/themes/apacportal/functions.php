@@ -229,17 +229,17 @@ add_action('wp_footer', function(){
 add_action('init', function(){
 	
 	add_shortcode('row', function($attrs, $content){
-		$out = '<div class="row-fluid">' . do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content)) . '</div>';
+		$out = '<div class="row-fluid">' . do_shortcode($content) . '</div>';
 		return $out;
 	});
 	
 	add_shortcode('column', function($attrs, $content){
-		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content)) . '</div>';
+		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode($content) . '</div>';
 		return $out;
 	});
 	
 	add_shortcode('subcolumn', function($attrs, $content){
-		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content)) . '</div>';
+		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode($content) . '</div>';
 		return $out;
 	});
 	
@@ -371,6 +371,17 @@ function additional_active_item_classes($classes = array(), $menu_item = false){
 
     return $classes;
 }
+
+/**
+ * disable wpautop for pages
+ */
+add_action('pre_get_posts', function($query) {
+	if($query->is_page){
+		remove_filter( 'the_content', 'wpautop' );
+	}
+});
+
+
 
 /**
  * define customized widgets
