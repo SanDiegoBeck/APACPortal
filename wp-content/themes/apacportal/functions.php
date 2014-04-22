@@ -228,8 +228,18 @@ add_action('wp_footer', function(){
  */
 add_action('init', function(){
 	
+	add_shortcode('row', function($attrs, $content){
+		$out = '<div class="row-fluid">' . do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content)) . '</div>';
+		return $out;
+	});
+	
 	add_shortcode('column', function($attrs, $content){
-		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(trim(strip_tags($content))) . '</div>';
+		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content)) . '</div>';
+		return $out;
+	});
+	
+	add_shortcode('subcolumn', function($attrs, $content){
+		$out = '<div class="span' . $attrs['width'] . '">' . do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content)) . '</div>';
 		return $out;
 	});
 	
@@ -280,7 +290,7 @@ add_action('init', function(){
 			$out .= '>';
 
 			if($content){
-				$out .= do_shortcode(trim(strip_tags($content)));
+				$out .= do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content));
 			}
 
 			if(array_key_exists('category', $attrs)){
