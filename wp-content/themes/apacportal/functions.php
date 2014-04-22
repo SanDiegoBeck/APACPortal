@@ -31,6 +31,12 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	){
 		$list .= '<'. $args['item'] . ' title="'.$post->post_title.'"'.$item_class . '>';
 		
+		if(isset($args['bullets_thumbnail']) && $args['bullets_thumbnail']){
+			$list .= '<span class="flag">';
+			$list .= get_the_post_thumbnail('list-bullet');
+			$list .= '</span>';
+		}
+		
 		switch($post->post_type){
 			case 'link':
 				$list.='<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
