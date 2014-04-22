@@ -527,8 +527,12 @@ footer.entry-meta {
 }
 
 /*Market List*/
+.market-list .flag {
+	margin-right: 10px;
+}
+
 .market-list .flag img {
-	width: 30px
+	width: 30px;
 }
 
 .market-list .content ul li {

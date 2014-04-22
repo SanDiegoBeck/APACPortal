@@ -33,7 +33,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 		
 		if(isset($args['bullets_thumbnail']) && $args['bullets_thumbnail']){
 			$list .= '<span class="flag">';
-			$list .= get_the_post_thumbnail('list-bullet');
+			$list .= get_the_post_thumbnail($post->ID, 'list-bullet');
 			$list .= '</span>';
 		}
 		
