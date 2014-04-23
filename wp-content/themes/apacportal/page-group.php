@@ -10,14 +10,14 @@
 						<?=apacportal_post_list('corporate-history')?>
 					</div>
 				</div>
-				<div class="box">
+				<div class="box summary-thumbnail">
 					<header>
 						Executives
 					</header>
 					<div class="content">
 						<?php query_posts('category_name=departments/communication/executive-photos&orderby=ID&order=ASC&posts_per_page=-1')?>
 						<?php while(have_posts()):the_post(); ?>
-						<dl class="dl-horizontal employee-this-month">
+						<dl class="dl-horizontal">
 							<dt>
 								<?php the_post_thumbnail('thumbnail')?>
 							</dt>
