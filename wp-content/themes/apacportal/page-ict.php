@@ -16,7 +16,7 @@
 						Be an agile and  innovative business partner providing high quality, cost effective and secure technology solutions.
 					</div>
 				</div>
-				<div class="box">
+				<div class="box summary-thumbnail">
 					<header>
 						<span class="more-link"><a href="/category/departments/ict/employee-of-the-week">More</a></span>
 						Employee of the Week
@@ -24,7 +24,7 @@
 					<div class="content">
 						<?php query_posts('category_name=employee-of-the-week&posts_per_page=1')?>
 						<?php while(have_posts()):the_post(); ?>
-						<dl class="dl-horizontal employee-this-month">
+						<dl class="dl-horizontal">
 							<dt>
 								<?php the_post_thumbnail('thumbnail')?>
 							</dt>

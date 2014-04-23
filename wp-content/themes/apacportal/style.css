@@ -330,6 +330,28 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 
+.box.summary-thumbnail {
+	margin: auto auto 0.5em auto;
+}
+
+.box.summary-thumbnail dt, .box.summary-thumbnail dt img {
+	width: 80px;
+}
+
+.box.summary-thumbnail dd {
+	margin-left: 90px;
+}
+
+.box.summary-thumbnail dd ul li {
+	list-style: none;
+}
+
+.box.summary-thumbnail dd summary {
+	font-size: 0.9em;
+	font-style: italic;
+	line-height: 1.3;
+}
+
 /*post thumbnail slider*/
 .slider .item summary {
 	position: absolute;
@@ -548,29 +570,6 @@ footer.entry-meta {
 /*404 Page*/
 .error404 .page-wrapper {
 	background-color: #F6F6F6;
-}
-
-/*ICT Page*/
-.employee-this-month {
-	margin: auto auto 0.5em auto;
-}
-
-.employee-this-month dt, .employee-this-month dt img {
-	width: 80px;
-}
-
-.employee-this-month dd {
-	margin-left: 90px;
-}
-
-.employee-this-month dd ul li {
-	list-style: none;
-}
-
-.employee-this-month dd summary {
-	font-size: 0.9em;
-	font-style: italic;
-	line-height: 1.3;
 }
 
 blockquote.quotescollection {

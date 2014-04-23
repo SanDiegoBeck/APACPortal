@@ -2,18 +2,30 @@
 /**
  * retrieve a post list including "post", "attachment" and "link" post type
  * @param string $category_name
- * @param int $limit
+ * @param int $limit deprecated, TODO, should be removed after all pages are made dynamic
  * @param array $args
+ *	class modify the default HTML, possible values:
+ *		summary-thumbnail create a list including thumbnail, title and summary, is used in "employee of the week", ICT Page
+ *		bullets-thumbnail
+ *	contailer list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
+ *	item list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
+ *	... all arguments WP_Query supports
  * @return string
  */
 function apacportal_post_list($category_name,$limit=5,$args=array()){
 	
-	$defaults = array( 'container' => 'ul', 'container_class' => '', 'item' => 'li', 'item_class' =>'' );
+	$defaults = array( 'container' => 'ul', 'container_class' => array(), 'item' => 'li', 'item_class' =>array() );
+	
+	if(isset($args['summary_thumbnail']) && $args['summary_thumbnail']){
+		$defaults['container'] = 'dl';
+		$defaults['item'] = 'dd';
+		$defaults['container_class'][] = 'dl-horizontal';
+	}
 	
 	$args = wp_parse_args($args, $defaults);
 	
-	$container_class = $args->container_class ? ' class="'.$args->container_class.'"' : '';
-	$item_class = $args->item_class ? ' class="'.$args->item_class.'"' : '';
+	$container_class = $args['container_class'] ? ' class="' . implode(' ', $args['container_class']) . '"' : '';
+	$item_class = $args['item_class'] ? ' class="' . implode(' ', $args['item_class']) . '"' : '';
 	
 	$list='<' . $args['container'] . $container_class . '>';
 	
@@ -24,17 +36,34 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 	foreach(
 		get_posts(
 			array_merge(
-				array('category__in'=>array(get_category_by_slug($category_name)->cat_ID),'post_type'=>'any','post_status'=>array('inherited','published'),'posts_per_page'=>$limit,'orderby'=>'menu_order date','order'=>'desc','suppress_filters'=>false),
+				array(
+					'category__in'=>array(get_category_by_slug($category_name)->cat_ID),
+					'post_type'=>'any',
+					'post_status'=>array('inherited','published'),
+					'posts_per_page'=>$limit,
+					'orderby'=>'menu_order date',
+					'order'=>'desc',
+					'suppress_filters'=>false
+				),
 				$args
 			)
 		) as $post
 	){
+		
+		if(in_array('summary-thumbnail', $args['class'])){
+			$list .= '<dt>' . get_the_post_thumbnail($post->ID, 'thumbnail') . '</dt>';
+		}
+		
 		$list .= '<'. $args['item'] . ' title="'.$post->post_title.'"'.$item_class . '>';
 		
-		if(isset($args['bullets_thumbnail']) && $args['bullets_thumbnail']){
+		if(in_array('bullets-thumbnail', $args['class'])){
 			$list .= '<span class="flag">';
 			$list .= get_the_post_thumbnail($post->ID, 'list-bullet');
 			$list .= '</span>';
+		}
+		
+		if(in_array('summary-thumbnail', $args['class'])){
+			$list .= '<ul><li>';
 		}
 		
 		switch($post->post_type){
@@ -47,7 +76,13 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 			default:
 				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
 		}
-		$list.='</a></' . $args['item'] . '>';
+		
+		if(in_array('summary-thumbnail', $args['class'])){
+			$list .= '</li>';
+			$list .= '<li><summary>' . get_the_excerpt() . '</summary></li></ul>';
+		}
+		
+		$list.='</' . $args['item'] . '>';
 	}
 	$list.='</' . $args['container'] . '>';
 	
@@ -95,6 +130,15 @@ function get_total_hits(){
 	global $wpdb;
 	$count = $wpdb->get_row( " SELECT SUM( `meta_value` ) `count` FROM `wp_postmeta` WHERE `meta_key` = '_count-views_all' " )->count;
 	return $count;
+}
+
+function parse_comma_seperated_args(array $args, array $keys){
+	foreach($keys as $comma_seperated_arg){
+		if(isset($args[$comma_seperated_arg]) && is_string($args[$comma_seperated_arg])){
+			$args[$comma_seperated_arg] = explode(',', $args[$comma_seperated_arg]);
+		}
+	}
+	return $args;
 }
 
 /**
@@ -247,9 +291,35 @@ add_action('init', function(){
 		return $out;
 	});
 	
+	/**
+	 * The content list container shortcode
+	 * @param array|string $attr shortcode attributions
+	 *	title the visual title of the box, if omitted, box will hide the header section
+	 *	category
+	 *	type possible values:
+	 *		list
+	 *		single
+	 *		slider
+	 *		rss_feed
+	 *	class possible values:
+	 *		summary-thumbnail
+	 *		bullets-thumbnail
+	 *		no-margin-after
+	 *		no-min-height
+	 *		no-padding
+	 *		short
+	 *	content possible values: 
+	 *		none box will hide the content section
+	 *	... all possible args supported by apacportal_post_list() if type is list
+	 *	... all possible args supported by apacportal_post_slider() if type is slider
+	 */	
 	add_shortcode('box', function($attrs, $content){
 		
-		$defaults = array( 'type' => 'list' );
+		if(isset($attrs['class']) && is_string($attrs['class'])){
+			$attrs['class'] = explode(',', $attrs['class']);
+		}
+		
+		$defaults = array( 'type' => 'list', 'class'=>array( 'box' ) );
 		
 		$attrs = wp_parse_args($attrs, $defaults);
 		
