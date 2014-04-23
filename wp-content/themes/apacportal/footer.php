@@ -98,7 +98,7 @@
 				
 				$('input, textarea').placeholder();
 				
-				$('.slider').responsiveSlides({
+				$('.rslider').responsiveSlides({
 					auto: true,
 					nav: true,
 					pause: true,

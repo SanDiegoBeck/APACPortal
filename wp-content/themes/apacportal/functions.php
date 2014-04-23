@@ -12,22 +12,21 @@
  *	... all arguments WP_Query supports
  * @return string
  */
-function apacportal_post_list($category_name,$limit=5,$args=array()){
+function apacportal_post_list($category_name, $limit=5, $args = array()){
 	
-	$defaults = array( 'container' => 'ul', 'container_class' => array(), 'item' => 'li', 'item_class' =>array() );
+	$args = wp_parse_args($args); //parse without default first, for detecting and change the defaults
 	
-	if(isset($args['summary_thumbnail']) && $args['summary_thumbnail']){
+	$defaults = array( 'class' => '', 'container' => 'ul', 'container_class' => '', 'item' => 'li', 'item_class' => '' );
+	
+	if(in_array('summary-thumbnail', explode(' ', $args['class']))){
 		$defaults['container'] = 'dl';
 		$defaults['item'] = 'dd';
-		$defaults['container_class'][] = 'dl-horizontal';
+		$defaults['container_class'] .= ' dl-horizontal';
 	}
 	
 	$args = wp_parse_args($args, $defaults);
 	
-	$container_class = $args['container_class'] ? ' class="' . implode(' ', $args['container_class']) . '"' : '';
-	$item_class = $args['item_class'] ? ' class="' . implode(' ', $args['item_class']) . '"' : '';
-	
-	$list='<' . $args['container'] . $container_class . '>';
+	$list='<' . $args['container'] . ' class="' . $args['container_class'] . '"' . '>';
 	
 	if(isset($args['limit'])){
 		$limit = $args['limit'];
@@ -50,19 +49,19 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 		) as $post
 	){
 		
-		if(in_array('summary-thumbnail', $args['class'])){
+		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
 			$list .= '<dt>' . get_the_post_thumbnail($post->ID, 'thumbnail') . '</dt>';
 		}
 		
-		$list .= '<'. $args['item'] . ' title="'.$post->post_title.'"'.$item_class . '>';
+		$list .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['container_class'] . '"' . '>';
 		
-		if(in_array('bullets-thumbnail', $args['class'])){
+		if(in_array('bullets-thumbnail', explode(' ', $args['class']))){
 			$list .= '<span class="flag">';
 			$list .= get_the_post_thumbnail($post->ID, 'list-bullet');
 			$list .= '</span>';
 		}
 		
-		if(in_array('summary-thumbnail', $args['class'])){
+		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
 			$list .= '<ul><li>';
 		}
 		
@@ -77,7 +76,7 @@ function apacportal_post_list($category_name,$limit=5,$args=array()){
 				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
 		}
 		
-		if(in_array('summary-thumbnail', $args['class'])){
+		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
 			$list .= '</li>';
 			$list .= '<li><summary>' . get_the_excerpt() . '</summary></li></ul>';
 		}
@@ -132,10 +131,13 @@ function get_total_hits(){
 	return $count;
 }
 
-function parse_comma_seperated_args(array $args, array $keys){
-	foreach($keys as $comma_seperated_arg){
-		if(isset($args[$comma_seperated_arg]) && is_string($args[$comma_seperated_arg])){
-			$args[$comma_seperated_arg] = explode(',', $args[$comma_seperated_arg]);
+function parse_comma_seperated_args(array $args, $keys = null){
+	if(!is_null($keys) && !is_array($keys)){
+		$keys = array($keys);
+	}
+	foreach($args as $key => $value){
+		if(is_string($value) && (in_array($key, $keys) || is_null($key))){
+			$args[$key] = explode(',', $args[$key]);
 		}
 	}
 	return $args;
@@ -262,7 +264,7 @@ add_action('wp_footer', function(){
 	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), '3.11');
 	wp_register_script('mobilyslider', get_stylesheet_directory_uri().'/mobilyslider/mobilyslider.js', array('jquery'), '3.11');
 	wp_register_script('placeholder', get_stylesheet_directory_uri().'/js/jquery.placeholder.js', array('jquery'), '2.0.8');
-	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.js');
+	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js');
 	
 	wp_enqueue_script('bootstrap');
 	wp_enqueue_script('mobilyslider');
@@ -293,33 +295,29 @@ add_action('init', function(){
 	
 	/**
 	 * The content list container shortcode
-	 * @param array|string $attr shortcode attributions
-	 *	title the visual title of the box, if omitted, box will hide the header section
-	 *	category
-	 *	type possible values:
+	 * shortcode attributions
+	 *	title: the visual title of the box, if omitted, box will hide the header section
+	 *	category:
+	 *	type: possible values:
 	 *		list
 	 *		single
 	 *		slider
 	 *		rss_feed
-	 *	class possible values:
+	 *	class: possible values:
 	 *		summary-thumbnail
 	 *		bullets-thumbnail
 	 *		no-margin-after
 	 *		no-min-height
 	 *		no-padding
 	 *		short
-	 *	content possible values: 
+	 *	content: possible values: 
 	 *		none box will hide the content section
 	 *	... all possible args supported by apacportal_post_list() if type is list
 	 *	... all possible args supported by apacportal_post_slider() if type is slider
 	 */	
 	add_shortcode('box', function($attrs, $content){
 		
-		if(isset($attrs['class']) && is_string($attrs['class'])){
-			$attrs['class'] = explode(',', $attrs['class']);
-		}
-		
-		$defaults = array( 'type' => 'list', 'class'=>array( 'box' ) );
+		$defaults = array( 'type' => 'list', 'class'=>'' );
 		
 		$attrs = wp_parse_args($attrs, $defaults);
 		
@@ -333,7 +331,9 @@ add_action('init', function(){
 			$attrs['class'] .= ' list';
 		}
 		
-		$out = '<div class="box' . (array_key_exists('class', $attrs) ? ' '.$attrs['class'] : '') . '">';
+		$attrs['class'] .= ' box';	//instead of array_merge, we manually concat the default class...
+		
+		$out = '<div class="' . $attrs['class'] . '">';
 		
 		if(array_key_exists('title', $attrs)){
 			$out .= '<header>'.$attrs['title'];
@@ -454,8 +454,6 @@ add_action('pre_get_posts', function($query) {
 		remove_filter( 'the_content', 'wpautop' );
 	}
 });
-
-
 
 /**
  * define customized widgets
