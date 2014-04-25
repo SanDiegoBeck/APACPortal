@@ -45,8 +45,6 @@ function apacportal_post_list($category_name, $limit=5, $args = array()){
 				$args
 			);
 	
-	print_r($args);
-
 	foreach(get_posts($args) as $post){
 		
 		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
