@@ -31,10 +31,8 @@ function apacportal_post_list($category_name, $limit=5, $args = array()){
 	if(isset($args['limit'])){
 		$limit = $args['limit'];
 	}
-
-	foreach(
-		get_posts(
-			array_merge(
+	
+	$args = array_merge(
 				array(
 					'category__in'=>array(get_category_by_slug($category_name)->cat_ID),
 					'post_type'=>'any',
@@ -45,9 +43,11 @@ function apacportal_post_list($category_name, $limit=5, $args = array()){
 					'suppress_filters'=>false
 				),
 				$args
-			)
-		) as $post
-	){
+			);
+	
+	print_r($args);
+
+	foreach(get_posts($args) as $post){
 		
 		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
 			$list .= '<dt>' . get_the_post_thumbnail($post->ID, 'thumbnail') . '</dt>';
@@ -100,11 +100,17 @@ function apacportal_post_slider($args = array()){
 		'height' => '188',
 	);
 	
-	if(isset($args['category'])){
-		$args['category_name'] = $args['category'];
-	}
-	
 	$args = wp_parse_args($args, $defaults);
+	
+	$args = array_merge(
+		array(
+			'category__in'=>array(get_category_by_slug($args['category'])->cat_ID),
+			'orderby'=>'menu_order date',
+			'order'=>'desc',
+			'suppress_filters'=>false
+		),
+		$args
+	);
 	
 	$posts = get_posts($args);
 	
