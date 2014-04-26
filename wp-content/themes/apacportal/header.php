@@ -59,5 +59,5 @@ $total_hits = get_option('total_hits', 0);
 			</div><!-- #navbar -->
 		</header><!-- #masthead -->
 
-		<div id="main" class="site-main">
-			<?php if (function_exists('HAG_Breadcrumbs') && !is_front_page()) { HAG_Breadcrumbs(array('wrapper_element'=>'ul','wrapper_class'=>'wrapper breadcrumb','prefix'=>'<li>','suffix'=>'</li>','crumb_link'=>false,'last_link'=>true,'post_types'=>array('post'=>array('last_show'=>false)))); } ?>
+		<div id="main" class="site-main wrapper">
+			<?php if (function_exists('HAG_Breadcrumbs') && !is_front_page()) { HAG_Breadcrumbs(array('wrapper_element'=>'ul','wrapper_class'=>'breadcrumb','prefix'=>'<li>','suffix'=>'</li>','crumb_link'=>false,'last_link'=>true,'post_types'=>array('post'=>array('last_show'=>false)))); } ?>

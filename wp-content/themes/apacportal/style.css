@@ -4,70 +4,17 @@
 	Author : Uice Lu <uicelu@gmail.com>
 */
 
-/*Customize Fonts*/
-@font-face {
-    font-family: 'Helvetica Neue Lt Std';
-    src: url('fonts/HelveticaNeueLTStd-Roman.eot');
-    src: url('fonts/HelveticaNeueLTStd-Roman.eot?#iefix') format('embedded-opentype'),
-         url('fonts/HelveticaNeueLTStd-Roman.woff') format('woff'),
-         url('fonts/HelveticaNeueLTStd-Roman.ttf') format('truetype'),
-         url('fonts/HelveticaNeueLTStd-Roman.svg#HelveticaNeueLTStd-Roman') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Helvetica Neue Lt Std';
-    src: url('fonts/HelveticaNeueLTStd-Bd.eot');
-    src: url('fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'),
-         url('fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
-         url('fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype'),
-         url('fonts/HelveticaNeueLTStd-Bd.svg#HelveticaNeueLTStd-Bd') format('svg');
-    font-weight: bold;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Helvetica Neue Lt Std Condensed';
-    src: url('fonts/HelveticaNeueLTStd-Cn.eot');
-    src: url('fonts/HelveticaNeueLTStd-Cn.eot?#iefix') format('embedded-opentype'),
-         url('fonts/HelveticaNeueLTStd-Cn.woff') format('woff'),
-         url('fonts/HelveticaNeueLTStd-Cn.ttf') format('truetype'),
-         url('fonts/HelveticaNeueLTStd-Cn.svg#HelveticaNeueLTStd-Cn') format('svg');
-    font-weight: normal;
-    font-style: condensed;
-
-}
-
-@font-face {
-    font-family: 'Helvetica Neue Lt Std Light';
-    src: url('fonts/HelveticaNeueLTStd-Lt.eot');
-    src: url('fonts/HelveticaNeueLTStd-Lt.eot?#iefix') format('embedded-opentype'),
-         url('fonts/HelveticaNeueLTStd-Lt.woff') format('woff'),
-         url('fonts/HelveticaNeueLTStd-Lt.ttf') format('truetype'),
-         url('fonts/HelveticaNeueLTStd-Lt.svg#HelveticaNeueLTStd-Lt') format('svg');
-    font-weight: lighter;
-    font-style: normal;
-
-}
-
 /*Repeatable Patterns*/
 * {
 	font-weight: normal;
 }
 
 a {
-	color: #001144;
+	color: #003F7D;
 }
 
 a:hover {
 	text-decoration: none;
-}
-
-a:visited {
-	color: #003F7D;
 }
 
 td, th {
@@ -103,19 +50,20 @@ body {
 }
 
 body, a {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Helvetica Neue","Helvetica Neue Lt Std",Helvetica,Arial,sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+/*h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue","Helvetica Neue Lt Std",Helvetica,Arial,sans-serif;
+}*/
 
 .site {
 	background: none;
 }
 
 .wrapper {
-	width: 1080px;
+	width: 90%;
+	max-width: 1200px;
 	margin: auto;
 }
 
@@ -241,6 +189,11 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb {
 	background: none;
 	font-size: 0.9em;
+	margin: 5px 0;
+}
+
+.breadcrumb li:first-child a:first-child {
+	font-weight: bold;
 }
 
 .single-post .breadcrumb .current {
@@ -260,13 +213,8 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 10px;
 }
 
-#content {
-	margin: 0 auto;
-	width: 1080px;
-}
-
 .box {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	box-shadow: 2px 2px 5px #CCC;
 }
 
@@ -274,10 +222,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 1em;
 	padding:8px 8px;
 	color: #003F7D;
-	background: url('/wp-content/themes/apacportal/images/navbg.png') repeat-x;
+	background: #F6F6F6;
 	font-weight: bold;
-	border-radius: 3px;
-	border-bottom: 2px #DDD solid;
+	border-radius: 3px 3px 0 0;
+	border-bottom: 1px #DDD solid;
 }
 
 .box>header .more-link {
@@ -292,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .box>.content {
-	padding:10px;
+	padding:15px;
 	overflow-y: auto;
 	background-color: #FEFEFE;
 	min-height: 10em;
@@ -301,6 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 .box>.content ul {
 	margin: 0;
 	padding-left: 0;
+	list-style: circle inside;
 }
 
 .box>.content ul li {
@@ -310,8 +259,12 @@ h1, h2, h3, h4, h5, h6 {
 	white-space:nowrap;
 	text-overflow: ellipsis;*/
 	margin-bottom: 0.5em;
-	font-size: 0.85em;
-	list-style-position: inside;
+	/*font-size: 0.85em;*/
+}
+
+.box>.content img.aligncenter {
+	display: block;
+	margin: auto;
 }
 
 .box.no-margin-after {
@@ -353,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*post thumbnail slider*/
-.slider .item summary {
+.rslides summary {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -441,7 +394,6 @@ footer.entry-meta {
 	float: none;
 	font-style: normal;
 	font-size: 1.5em;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: 0;
 }
 
@@ -540,8 +492,7 @@ footer.entry-meta {
 	line-height: 30px;
 	padding: 0 10px;
 	list-style-type: circle;
-	margin-bottom: 5px;
-	border-radius: 5px;
+	margin-bottom: 0.5em;
 }
 
 .department-list .content ul li.coming-soon a, .market-list .content ul li.coming-soon a {
@@ -549,15 +500,15 @@ footer.entry-meta {
 }
 
 /*Market List*/
-.market-list .flag {
+.bullets-thumbnail .bullet {
 	margin-right: 10px;
 }
 
-.market-list .flag img {
+.bullets-thumbnail .bullet img {
 	width: 30px;
 }
 
-.market-list .content ul li {
+.bullets-thumbnail .content ul li {
 	list-style-type: none;
 }
 
@@ -597,20 +548,76 @@ blockquote.quotescollection cite {
 
 .box.product-picture .content dl {
 	float: left;
-	margin: auto 32px;
+	margin: 15px 2%;
+	width: 21%;
+}
+
+.box.product-picture .content dl dt {
+	box-shadow: 2px 2px 5px #CCC;
 }
 
 .box.product-picture .content dl dt img {
+	width: 100%;
 	/*width: 130px;*/
-	height: 130px;
+	/*height: 130px;*/
 }
 
 .box.product-picture .content dd {
 	text-align: center;
 	margin-top: 0.5em;
+	margin-left: 0;
 }
 
 /*MOPAR Page*/
 .page-mopar .market-list .content ul li {
 	background: none;
+}
+
+/*Customize Fonts*/
+@font-face {
+    font-family: 'Helvetica Neue Lt Std';
+    src: url('fonts/HelveticaNeueLTStd-Roman.eot');
+    src: url('fonts/HelveticaNeueLTStd-Roman.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Roman.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Roman.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Roman.svg#HelveticaNeueLTStd-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Lt Std';
+    src: url('fonts/HelveticaNeueLTStd-Bd.eot');
+    src: url('fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Bd.svg#HelveticaNeueLTStd-Bd') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Lt Std Condensed';
+    src: url('fonts/HelveticaNeueLTStd-Cn.eot');
+    src: url('fonts/HelveticaNeueLTStd-Cn.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Cn.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Cn.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Cn.svg#HelveticaNeueLTStd-Cn') format('svg');
+    font-weight: normal;
+    font-style: condensed;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Lt Std Light';
+    src: url('fonts/HelveticaNeueLTStd-Lt.eot');
+    src: url('fonts/HelveticaNeueLTStd-Lt.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Lt.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Lt.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Lt.svg#HelveticaNeueLTStd-Lt') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+
 }

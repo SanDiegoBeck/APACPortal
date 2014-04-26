@@ -10,7 +10,6 @@
  * @since Twenty Thirteen 1.0
  */
 ?>
-
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrapper">
@@ -98,9 +97,9 @@
 				
 				$('input, textarea').placeholder();
 				
-				$('.rslider').responsiveSlides({
+				$('.rslides').responsiveSlides({
 					auto: true,
-					nav: true,
+					pager: true,
 					pause: true,
 					pauseControls: true,
 					prevText: '&nbsp;',
