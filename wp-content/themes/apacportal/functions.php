@@ -4,122 +4,177 @@
  * @param string $category_name
  * @param int $limit deprecated, TODO, should be removed after all pages are made dynamic
  * @param array $args
- *	class modify the default HTML, possible values:
- *		summary-thumbnail create a list including thumbnail, title and summary, is used in "employee of the week", ICT Page
- *		bullets-thumbnail
  *	contailer list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
+ *	container_class
  *	item list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
+ *	item_class
+ *	thumbnail
+ *	thumbnail_container
+ *	thumbnail_class
+ *	excerpt
+ *	excerpt_container
+ *	excerpt_class
  *	... all arguments WP_Query supports
  * @return string
  */
-function apacportal_post_list($category_name, $limit=5, $args = array()){
-	
-	$args = wp_parse_args($args); //parse without default first, for detecting and change the defaults
-	
-	$defaults = array( 'class' => '', 'container' => 'ul', 'container_class' => '', 'item' => 'li', 'item_class' => '' );
-	
-	if(in_array('summary-thumbnail', explode(' ', $args['class']))){
-		$defaults['container'] = 'dl';
-		$defaults['item'] = 'dd';
-		$defaults['container_class'] .= ' dl-horizontal';
-	}
-	
-	$args = wp_parse_args($args, $defaults);
-	
-	$list='<' . $args['container'] . ' class="' . $args['container_class'] . '"' . '>';
-	
-	if(isset($args['limit'])){
-		$limit = $args['limit'];
-	}
-
-	foreach(
-		get_posts(
-			array_merge(
-				array(
-					'category__in'=>array(get_category_by_slug($category_name)->cat_ID),
-					'post_type'=>'any',
-					'post_status'=>array('inherited','published'),
-					'posts_per_page'=>$limit,
-					'orderby'=>'menu_order date',
-					'order'=>'desc',
-					'suppress_filters'=>false
-				),
-				$args
-			)
-		) as $post
-	){
-		
-		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
-			$list .= '<dt>' . get_the_post_thumbnail($post->ID, 'thumbnail') . '</dt>';
-		}
-		
-		$list .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['container_class'] . '"' . '>';
-		
-		if(in_array('bullets-thumbnail', explode(' ', $args['class']))){
-			$list .= '<span class="flag">';
-			$list .= get_the_post_thumbnail($post->ID, 'list-bullet');
-			$list .= '</span>';
-		}
-		
-		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
-			$list .= '<ul><li>';
-		}
-		
-		switch($post->post_type){
-			case 'link':
-				$list.='<a href="'.$post->post_content.'" target="_blank">'.$post->post_title.'</a>';
-				break;
-			case 'attachment':
-				$list.=preg_replace('/<a(.*?)>/i','<a$1 target="_blank">',wp_get_attachment_link($post->ID));
-				break;
-			default:
-				$list.='<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
-		}
-		
-		if(in_array('summary-thumbnail', explode(' ', $args['class']))){
-			$list .= '</li>';
-			$list .= '<li><summary>' . get_the_excerpt() . '</summary></li></ul>';
-		}
-		
-		$list.='</' . $args['item'] . '>';
-	}
-	$list.='</' . $args['container'] . '>';
-	
-	return $list;
-}
-
-/**
- * generate a carousel/slider from posts
- * @param args $args
- * @return string
- */
-function apacportal_post_slider($args = array()){
+function apacportal_post_list($args = array()){
 	
 	$defaults = array(
-		'posts_per_page' => 5,
-		'height' => '188',
+		'container' => 'ul', 'container_class' => '',
+		'item' => 'li', 'item_class' => '',
+		'show_thumbnail' => false, 'thumbnail_container' => 'span', 'thumbnail_class' => '',
+		'show_title' => true, 'title_container' => '', 'title_class' => '',
+		'show_excerpt' => false, 'excerpt_container' => 'summary', 'excerpt_class' => '',
+		'show_content' => false, 'content_container' => '', 'content_class'=> '',
+		'post_type'=>'any',
+		'post_status'=>array('inherited','published'),
+		'orderby'=>'menu_order date',
+		'order'=>'desc',
+		'suppress_filters'=>false
 	);
 	
-	if(isset($args['category'])){
-		$args['category_name'] = $args['category'];
+	//parse out the $args, according to which we change some of default args
+	$args = wp_parse_args($args);
+	
+	
+	//scratch alias
+	if(array_key_exists('category', $args)){
+		$defaults['category__in'] = array(get_category_by_slug($args['category'])->cat_ID);
+		unset($args['category']);
 	}
 	
+	if(array_key_exists('limit', $args)){
+		$defaults['posts_per_page'] = $args['limit'];
+		unset($args['limit']);
+	}
+
+	//TODO: the 'class' should be 'type', which is a certain value rather than an array
+	if(in_array('single', explode(' ', $args['class']))){
+		$defaults = array_merge($defaults, array(
+			'posts_per_page' => 1,
+			'post_type' => 'post',
+			'post_status' => 'publish',
+			'container' => false,
+			'item' => false,
+			'show_title' => false,
+			'title_container' => 'h4',
+			'show_content' => true,
+		));
+	}
+	
+	elseif(in_array('slider', explode(' ', $args['class']))){
+		$defaults = array_merge($defaults, array(
+			'show_thumbnail' => 'home-news-slider',
+			'title_container' => 'summary'
+		));
+	}
+
+	elseif(in_array('bullets-thumbnail', explode(' ', $args['class']))){
+		$defaults['show_thumbnail'] = 'list-bullet';
+		$defaults['thumbnail_class'] .= ' bullet';
+	}
+	
+	elseif(in_array('summary-thumbnail', explode(' ', $args['class']))){
+		$defaults = array_merge($defaults, array(
+			'container' => '',
+			'item' => 'dl',
+			'show_thumbnail' => 'thumbnail',
+			'thumbnail_container' => 'dt',
+			'content_container' => 'dd',
+			'show_excerpt' => true
+		));
+		$defaults['item_class'] .= ' dl-horizontal';
+	}
+
 	$args = wp_parse_args($args, $defaults);
 	
-	$posts = get_posts($args);
+	$out = '';
 	
-	$id = isset($args['category']) ? $args['category'] : rand(100, 999);
-	
-	$out = '<div id="' . $id . '" class="slider"><div class="sliderContent" style="height: ' . $args['height'] . 'px">';
-	
-	foreach ( $posts as $index => $post ) {
-		$out .= '<div class="item"><a href="' . get_permalink($post->ID) . '">' . get_the_post_thumbnail($post->ID, 'home-news-slider') . '</a>' . '<summary>' . $post->post_title . '</summary>' . '</div>';
+	if($args['container']){
+		$out .= '<' . $args['container'] . ' class="' . $args['container_class'] . '"' . '>';
 	}
 	
-	$out .= '</div></div>';
+	$posts = get_posts($args); //$out .= print_r($args, true);
+	
+	foreach( $posts as $post ){
+		
+		if($args['item']){
+			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . '"' . '>';
+		}
+		
+		if($args['show_thumbnail']){
+			
+			$out .= '<'.$args['thumbnail_container'].' class="' . $args['thumbnail_class'] . '">';
+			
+			if($post->post_type === 'post'){
+				$out .= '<a href="' . get_permalink($post->ID) . '">';
+			}
+			
+			$out .= get_the_post_thumbnail($post->ID, $args['show_thumbnail']);
+			
+			if($post->post_type === 'post'){
+				$out .= '</a>';
+			}
+			
+			$out .= '</' . $args['thumbnail_container'] . '>';
+			
+		}
+		
+		//the content container, if exists, contains title, excerpts and content
+		if($args['content_container']){
+			$out .= '<' . $args['content_container'] . ' class="' . $args['content_class'] . '"' . '>';
+		}
+		
+		if($args['show_title']){
+		
+			if($args['title_container']){
+				$out .= '<' . $args['title_container'] . ' class="' . $args['title_class'] . '"' . '>';
+			}
+
+			switch($post->post_type){
+				case 'link':
+					$out .= '<a href="' . $post->post_content . '" target="_blank">' . $post->post_title . '</a>';
+					break;
+
+				case 'attachment':
+					$out .= preg_replace('/<a(.*?)>/i','<a$1 target="_blank">', wp_get_attachment_link($post->ID));
+					break;
+
+				default:
+					$out .= '<a href="'.get_permalink($post->ID).'" target="_blank">'.$post->post_title.'</a>';
+			}
+
+			if($args['title_container']){
+				$out .= '</' . $args['title_container'] . '>';
+			}
+			
+		}
+		
+		if($args['show_excerpt']){
+			$out .= '<' . $args['excerpt_container'] . ' class="' . $args['excerpt_class'] . '">' .
+					$post->post_excerpt .
+					'</' . $args['excerpt_container'] . '>';
+		}
+		
+		if($args['show_content']){
+			$out .= wpautop($post->post_content);
+		}
+		
+		if($args['content_container']){
+			$out .= '</' . $args['content_container'] . '>';
+		}
+		
+		if($args['item']){
+			$out .= '</' . $args['item'] . '>';
+		}
+		
+	}
+	
+	if($args['container']){
+		$out .= '</' . $args['container'] . '>';
+	}
 	
 	return $out;
-	
 }
 
 /**
@@ -299,10 +354,10 @@ add_action('init', function(){
 	 *	title: the visual title of the box, if omitted, box will hide the header section
 	 *	category:
 	 *	type: possible values:
-	 *		list
-	 *		single
-	 *		slider
-	 *		rss_feed
+	 *		list, display a ul post list, is the default value
+	 *		single, display the first post's content
+	 *		slider, display a slider show of post thumbnails
+	 *		rss_feed, currently specific for Home -> Global News
 	 *	class: possible values:
 	 *		summary-thumbnail
 	 *		bullets-thumbnail
@@ -317,21 +372,28 @@ add_action('init', function(){
 	 */	
 	add_shortcode('box', function($attrs, $content){
 		
-		$defaults = array( 'type' => 'list', 'class'=>'' );
+		$defaults = array( 'type' => '', 'class'=>'' );
+		
+		$pre_attrs = wp_parse_args($attrs);
+		
+		if(array_key_exists('category', $pre_attrs)){
+			$defaults['type'] = 'list';
+		}
 		
 		$attrs = wp_parse_args($attrs, $defaults);
 		
+		$attrs['class'] .= ' box';	//instead of array_merge, we manually concat the default class...
+		
 		if($attrs['type'] === 'slider'){
 			$attrs['class'] .= ' slider';
+			$attrs['container_class'] .= ' rslides';
 		}
 		elseif($attrs['type'] === 'single'){
 			$attrs['class'] .= ' single';
 		}
-		else{
+		elseif($attrs['type'] === 'list'){
 			$attrs['class'] .= ' list';
 		}
-		
-		$attrs['class'] .= ' box';	//instead of array_merge, we manually concat the default class...
 		
 		$out = '<div class="' . $attrs['class'] . '">';
 		
@@ -366,30 +428,13 @@ add_action('init', function(){
 			if($content){
 				$out .= do_shortcode(preg_replace('/^(\<br \/\>)+|(\<br \/\>)+$/', '', $content));
 			}
-
-			if(array_key_exists('category', $attrs)){
-				if($attrs['type'] === 'slider'){
-					$out .= apacportal_post_slider($attrs);
-				}else{
-					$out .= apacportal_post_list($attrs['category'], array_key_exists('limit', $attrs) ? $attrs['limit'] : 5, $attrs);
-				}
+			
+			if(in_array($attrs['type'], array('list', 'slider', 'single'))){
+				$out .= apacportal_post_list($attrs);
 			}
-
+			
 			if($attrs['type'] === 'rss_feed'){
 				$out .= '<div ajax-resource="/rss-feed/">Loading RSS Data...</div>';
-			}
-
-			if($attrs['type'] === 'single'){
-				$single_defaults = array( 'posts_per_page' => 1 );
-				$posts = get_posts(wp_parse_args($attrs, $single_defaults));
-				if(count($posts) > 0){
-
-					if(isset($attrs['show_title']) && $attrs['show_title']){
-						$out .= '<a href="' . get_permalink($posts[0]->ID) . '">' . '<h4>' . $posts[0]->post_title . '</h4>'.'</a>';
-					}
-
-					$out .= wpautop($posts[0]->post_content);
-				}
 			}
 
 			$out .= '</div>';
@@ -508,7 +553,7 @@ class Posts_Widget extends WP_Widget{
 		}
 		
 		if(array_key_exists('category', $instance)){
-			$out .= apacportal_post_list($instance['category'], 5, $instance);
+			$out .= apacportal_post_list($instance);
 		}
 		
 		echo $out;
