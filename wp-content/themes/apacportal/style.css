@@ -579,6 +579,10 @@ blockquote.quotescollection cite {
 	margin-left: 0;
 }
 
+.box.slider>.content {
+	position: relative;
+}
+
 /*MOPAR Page*/
 .page-mopar .market-list .content ul li {
 	background: none;
