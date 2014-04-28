@@ -579,7 +579,7 @@ blockquote.quotescollection cite {
 	margin-left: 0;
 }
 
-.box.slider>.content {
+.box.slider {
 	position: relative;
 }
 

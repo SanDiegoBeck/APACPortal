@@ -17,7 +17,7 @@
 .box{
 	background-color: #FFF;
 	zoom: 1;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#CCC', Direction=135, Strength=3);
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='979797', Direction=135, Strength=3);
 }
 
 .box>.content, .box>header {
