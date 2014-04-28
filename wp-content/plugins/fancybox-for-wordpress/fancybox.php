@@ -191,7 +191,7 @@ add_action( 'wp_enqueue_scripts', 'mfbfw_scripts' ); // Load Scripts
 function mfbfw_styles() {
 
 	$settings = get_option( 'mfbfw' );
-	wp_enqueue_style( 'fancybox', FBFW_URL . 'fancybox/fancybox.css' );
+	wp_enqueue_style( 'fancybox', FBFW_URL . 'fancybox/fancybox.css', array(), '2014-4-28' );
 
 	?>
 
