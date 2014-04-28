@@ -398,7 +398,7 @@ add_action('init', function(){
 		$out = '<div class="' . $attrs['class'] . '">';
 		
 		if(array_key_exists('title', $attrs)){
-			$out .= '<header>'.$attrs['title'];
+			$out .= '<header>';
 			
 			if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs) && !array_key_exists('more_link', $attrs)){
 				$out .= '<a href="'.(site_url().'/category/'.$attrs['category']).'" class="more-link">More</a>';
@@ -411,6 +411,8 @@ add_action('init', function(){
 					$out .= '<a href="'.$href.'" class="more-link">'.$name.'</a>';
 				}
 			}
+			
+			$out .= $attrs['title'];
 			
 			$out .= '</header>';
 		}
@@ -516,8 +518,10 @@ class PeopleFinder_Widget extends WP_Widget{
 			<div class="content">
 				<form class="form-inline" action="/user/">
 					<br>
-					<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." style="width: 170px;">
 					<button type="submit" class="btn pull-right"><span class="icon-search"></span></button>
+					<div style="padding-right: 40px;">
+						<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." style="width: 88%;">
+					</div>
 				</form>
 			</div>
 		</div>

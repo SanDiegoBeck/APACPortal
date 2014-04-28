@@ -26,6 +26,7 @@ $total_hits = get_option('total_hits', 0);
 </head>
 
 <body <?php body_class(); ?>>
+	<div id="browser-upgrade-warning" class="alert alert-warning hidden">Please use Internet Explorer 8.0 or higher version and <strong>turn off the compatible mode</strong>.</div>
 	<div id="page" class="hfeed site">
 		<header id="masthead" class="site-header" role="banner">
 			<div class="banner" style="background-image: url('<?=get_stylesheet_directory_uri()?>/images/headerbg_<?=floor(rand(0,12))?>.jpg')">
