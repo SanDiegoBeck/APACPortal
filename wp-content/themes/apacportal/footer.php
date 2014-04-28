@@ -10,7 +10,6 @@
  * @since Twenty Thirteen 1.0
  */
 ?>
-
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrapper">
@@ -36,9 +35,9 @@
 		(function($){
 			$(function(){
 
-				if(localStorage && localStorage.sharePrice && JSON.parse(localStorage.sharePrice).content && (JSON.parse(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
+				if(localStorage && localStorage.sharePrice && $.parseJSON(localStorage.sharePrice).content && ($.parseJSON(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
 
-					$('.share-price').html(JSON.parse(localStorage.sharePrice).content);
+					$('.share-price').html($.parseJSON(localStorage.sharePrice).content);
 				}
 				else{
 
@@ -98,9 +97,9 @@
 				
 				$('input, textarea').placeholder();
 				
-				$('.rslider').responsiveSlides({
+				$('.rslides').responsiveSlides({
 					auto: true,
-					nav: true,
+					pager: true,
 					pause: true,
 					pauseControls: true,
 					prevText: '&nbsp;',

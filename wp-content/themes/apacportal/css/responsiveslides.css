@@ -2,7 +2,7 @@
 
 .rslides {
 	position: relative;
-	list-style: none;
+	list-style: none !important;
 	overflow: hidden;
 	width: 100%;
 	padding: 0;
@@ -16,6 +16,7 @@
 	width: 100%;
 	left: 0;
 	top: 0;
+	margin-bottom: 0 !important;
 }
 
 .rslides li:first-child {
@@ -48,4 +49,36 @@
 .rslides_nav.next {
 	right: 3%;
 	background-position-x: -12px;
+}
+
+.rslides_tabs {
+	position:absolute;
+	bottom:0.5em;
+	right:10px;
+	z-index:50;
+}
+
+.rslides_tabs li {
+	float: left;
+	list-style: none;
+	margin-bottom: 0 !important;
+}
+
+.rslides_tabs a {
+	display:block;
+	float:left;
+	text-indent:-9999px;
+	outline:none;
+	margin-left:5px;
+	width:10px;
+	height:11px;
+	background:url(../images/bullets.png) no-repeat;
+}
+
+.rslides_tabs .rslides_here a {
+	background-position:0 -11px;
+}
+
+.rslides_tabs a {
+	outline:none;
 }

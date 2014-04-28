@@ -3,7 +3,7 @@
 }
 
 .site-header .total-hits {
-	position: relative;
+	/*position: relative;*/
 }
 
 .navbar .navbar-search .search-query:focus{
@@ -17,22 +17,30 @@
 .box{
 	background-color: #FFF;
 	zoom: 1;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#CCC', Direction=135, Strength=3);
 }
 
 .box>.content, .box>header {
-	position: relative;
+	/*position: relative;*/
+	zoom: 1;
 }
 
-.slider .item summary{
+.slider ul li summary{
 	background: url('images/transparent.png');
 }
 
-.ie8 .me-plugin {
+.me-plugin {
 	position: static;
 }
 
 .mejs-layers, .mejs-overlay-play{
 	width: 100%;
 	height: 100%;
+}
+
+.ie7 #browser-upgrade-warning {
+	display: block !important;
+	visibility: visible !important;
+	text-align: center;
+	margin: 0;
 }
