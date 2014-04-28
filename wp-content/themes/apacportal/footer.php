@@ -72,16 +72,6 @@
 					return false;
 				});
 
-				$('.slider').mobilyslider({
-					transition: 'fade',
-					animationSpeed: 1000,
-					autoplay: true,
-					autoplaySpeed: 5000,
-					pauseOnHover: true,
-					bullets: true,
-					arrows: false
-				});
-
 				$('[ajax-resource]').each(function(){
 					var that = this;
 					$.get($(this).attr('ajax-resource'), function(response){
