@@ -27,7 +27,7 @@ function apacportal_post_list($args = array()){
 		'show_excerpt' => false, 'excerpt_container' => 'summary', 'excerpt_class' => '',
 		'show_content' => false, 'content_container' => '', 'content_class'=> '',
 		'post_type'=>'any',
-		'post_status'=>array('inherited','published'),
+		'post_status'=>array('inherit','publish'),
 		'orderby'=>'menu_order date',
 		'order'=>'desc',
 		'suppress_filters'=>false
