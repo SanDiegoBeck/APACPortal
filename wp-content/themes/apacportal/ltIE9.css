@@ -17,7 +17,7 @@
 .box{
 	background-color: #FFF;
 	zoom: 1;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#CCC', Direction=135, Strength=3);
 }
 
 .box>.content, .box>header {
@@ -25,7 +25,7 @@
 	zoom: 1;
 }
 
-.slider .item summary{
+.slider ul li summary{
 	background: url('images/transparent.png');
 }
 
