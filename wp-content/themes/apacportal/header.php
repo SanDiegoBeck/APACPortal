@@ -13,6 +13,7 @@ $total_hits = get_option('total_hits', 0);
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
