@@ -460,6 +460,26 @@ add_action('pre_get_posts', function($query) {
 });
 
 /**
+ * log non-logged in user into database
+ */
+add_action('wp_footer', function(){
+	
+	if(is_user_logged_in()){
+		return;
+	}
+	
+	global $wpdb;
+	
+	$wpdb->insert('log', array(
+		'ip'=>ip2long($_SERVER['REMOTE_ADDR']),
+		'client'=>$_SERVER['HTTP_USER_AGENT'],
+		'method'=>$_SERVER['REQUEST_METHOD'],
+		'uri'=>$_SERVER["REQUEST_URI"],
+	));
+	
+});
+
+/**
  * define customized widgets
  */
 class PeopleFinder_Widget extends WP_Widget{
