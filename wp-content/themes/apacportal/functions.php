@@ -4,13 +4,19 @@
  * @param string $category_name
  * @param int $limit deprecated, TODO, should be removed after all pages are made dynamic
  * @param array $args
- *	contailer list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
+ *	contailer: list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
  *	container_class
- *	item list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
+ *	item: list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
  *	item_class
- *	thumbnail
+ *	show_thumbnail
  *	thumbnail_container
  *	thumbnail_class
+ *	show_content
+ *	content_container
+ *	content_class
+ *	show_title
+ *	title_container
+ *	title_class
  *	excerpt
  *	excerpt_container
  *	excerpt_class
@@ -297,11 +303,10 @@ add_action('parse_query', function($wp_query){
 
 add_action('wp_enqueue_scripts', function(){
 	
-	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2');
-	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-04-15');
-	wp_register_style('mobilyslider', get_stylesheet_directory_uri().'/mobilyslider/style.css');
-	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css');
-	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css');
+	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2-2014-04-28');
+	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-04-28');
+	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
+	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css', array(), '2014-04-28');
 	
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('mobilyslider');
@@ -319,7 +324,7 @@ add_action('wp_footer', function(){
 	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), '3.11');
 	wp_register_script('mobilyslider', get_stylesheet_directory_uri().'/mobilyslider/mobilyslider.js', array('jquery'), '3.11');
 	wp_register_script('placeholder', get_stylesheet_directory_uri().'/js/jquery.placeholder.js', array('jquery'), '2.0.8');
-	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js');
+	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js', array('jquery'), '1.54');
 	
 	wp_enqueue_script('bootstrap');
 	wp_enqueue_script('mobilyslider');
