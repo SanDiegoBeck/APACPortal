@@ -30,10 +30,6 @@ input[type="file"] {
 	line-height: 1;
 }
 
-p {
-	text-align: justify;
-}
-
 summary p {
 	margin-bottom: 0;
 	word-wrap: break-word;
@@ -486,6 +482,10 @@ footer.entry-meta {
 	box-shadow: 2px 2px 5px #CCC;
 }
 
+.post p {
+	text-align: justify;
+}
+
 .post table {
 	table-layout: fixed;
 	width: 100%;
@@ -581,6 +581,10 @@ blockquote.quotescollection cite {
 
 .box.slider {
 	position: relative;
+}
+
+.box.scroll {
+	overflow-y: auto;
 }
 
 /*MOPAR Page*/
