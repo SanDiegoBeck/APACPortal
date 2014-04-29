@@ -20,9 +20,8 @@
 	filter: progid:DXImageTransform.Microsoft.Shadow(color='979797', Direction=135, Strength=3);
 }
 
-.box>.content, .box>header {
+.box>.content, .box>header, .box>header>a {
 	position: relative;
-	/*zoom: 1;*/
 }
 
 .slider ul li summary{

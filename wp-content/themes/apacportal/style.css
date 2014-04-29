@@ -230,7 +230,7 @@ body, a {
 
 .box>header .more-link {
 	float: right;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	font-weight: normal;
 	margin-left: 10px;
 }
@@ -241,7 +241,7 @@ body, a {
 
 .box>.content {
 	padding:15px;
-	/*overflow-y: auto;*/
+	overflow: hidden;
 	background-color: #FEFEFE;
 	min-height: 10em;
 }
@@ -254,12 +254,7 @@ body, a {
 
 .box>.content ul li {
 	line-height: 1.5;
-/*	word-wrap:normal;
-	overflow:hidden;
-	white-space:nowrap;
-	text-overflow: ellipsis;*/
 	margin-bottom: 0.5em;
-	/*font-size: 0.85em;*/
 }
 
 .box>.content img.aligncenter {
