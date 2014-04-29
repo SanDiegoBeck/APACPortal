@@ -3,7 +3,7 @@
 }
 
 .site-header .total-hits {
-	/*position: relative;*/
+	position: relative;
 }
 
 .navbar .navbar-search .search-query:focus{
@@ -21,8 +21,8 @@
 }
 
 .box>.content, .box>header {
-	/*position: relative;*/
-	zoom: 1;
+	position: relative;
+	/*zoom: 1;*/
 }
 
 .slider ul li summary{

@@ -245,7 +245,7 @@ body, a {
 
 .box>.content {
 	padding:15px;
-	overflow-y: auto;
+	/*overflow-y: auto;*/
 	background-color: #FEFEFE;
 	min-height: 10em;
 }
