@@ -578,7 +578,7 @@ blockquote.quotescollection cite {
 	position: relative;
 }
 
-.box.scroll {
+.box.scroll>.content {
 	overflow-y: auto;
 }
 

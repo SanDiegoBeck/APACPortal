@@ -14,6 +14,10 @@
 	color: #FFF;
 }
 
+.navbar .nav .menu-item a {
+	position: relative;
+}
+
 .box{
 	background-color: #FFF;
 	zoom: 1;
