@@ -50,12 +50,8 @@ body {
 }
 
 body, a {
-	font-family: "Helvetica Neue","Helvetica Neue Lt Std",Helvetica,Arial,sans-serif;
+	font-family: sans-serif;
 }
-
-/*h1, h2, h3, h4, h5, h6 {
-	font-family: "Helvetica Neue","Helvetica Neue Lt Std",Helvetica,Arial,sans-serif;
-}*/
 
 .site {
 	background: none;
