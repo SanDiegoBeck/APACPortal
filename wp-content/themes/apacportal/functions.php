@@ -219,6 +219,7 @@ add_action('init', function(){
 	add_image_size( 'home-news-slider', 526, 188, true );
 	add_image_size( '3-column-thumbnail', 249, 188, true );
 	add_image_size( 'list-bullet', 30, 30, true );
+	add_image_size( 'medium-thumbnail', 250, 250, true );
 });
 
 /**
