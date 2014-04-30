@@ -49,7 +49,7 @@ body {
 	background:#FFF url('images/bg.png') 0 220px repeat-x;
 }
 
-body, a {
+body, a, input {
 	font-family: sans-serif;
 }
 
@@ -303,7 +303,7 @@ body, a {
 	text-overflow: ellipsis;
 }
 
-/*post thumbnail slider*/
+/*Post thumbnail slider*/
 .rslides summary {
 	position: absolute;
 	bottom: 0;
@@ -576,6 +576,20 @@ blockquote.quotescollection cite {
 
 .box.scroll>.content {
 	overflow-y: auto;
+}
+
+.box>.content ul.pvc {
+	list-style-type: none;
+}
+
+.box>.content ul.pvc li a {
+	padding-left: 40px;
+	position: relative;
+}
+
+.box>.content ul.pvc li a .views-count {
+	position: absolute;
+	left: 0;
 }
 
 /*MOPAR Page*/
