@@ -383,6 +383,11 @@ footer.entry-meta {
 }
 
 /*Archive List Page*/
+.archive article {
+	margin-bottom: 20px;
+	background: #FFF;
+}
+
 .archive .hentry {
 	padding: 1em;
 }
@@ -484,6 +489,11 @@ footer.entry-meta {
 
 .entry-content img.alignleft, .entry-content .wp-caption.alignleft {
 	margin-left: -10px;
+}
+
+/*Search Page*/
+body.search #content {
+	background: #FFF;
 }
 
 /*Department List*/
