@@ -526,13 +526,6 @@ add_action('wp_footer', function(){
 });
 
 /**
- * support more mime files for uploading
- */
-add_action('upload_mimes', function($mimes = array()){
-	$mimes['msg'] = 'application/vnd.ms-outlook';
-});
-
-/**
  * define customized widgets
  */
 class PeopleFinder_Widget extends WP_Widget{
