@@ -208,9 +208,7 @@ function parse_comma_seperated_args(array $args, $keys = null){
  * force IE to disable compatible mode, 
  * else IE will automatically switch compatible mode for intranet.
  */
-add_action('init', function(){
-	header('X-UA-Compatible: IE=edge,chrome=1');
-});
+header('X-UA-Compatible: IE=edge,chrome=1');
 
 /**
  * add customized featured image size
@@ -276,7 +274,7 @@ add_filter('posts_orderby', function($orderby_statement){
 });
 
 /**
- * enable menu_order input form for "post"
+ * enable menu_order input form for "post" and "link"
  * it's defaultly an input form for "page"
  */
 add_action( 'admin_init', function(){
