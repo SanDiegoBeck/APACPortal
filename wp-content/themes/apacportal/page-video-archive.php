@@ -1,13 +1,12 @@
 <?php
-/**
- * The template for displaying Category pages.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
+
+query_posts(array(
+	'post_type'=>'attachment',
+	'post_status'=>'inherit',
+	'post_mime_type'=>'video',
+	'posts_per_page'=>5
+));
+
 get_header();
 ?>
 
@@ -30,33 +29,8 @@ get_header();
 				<?php /* The loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<h1 class="entry-title">
-						<?php						
-							switch(get_post_type()){
-								case 'link':
-									echo '<a href="'.get_the_content().'" target="_blank">'.get_the_title().'</a>';
-									break;
-								case 'attachment':
-									the_attachment_link();
-									break;
-								default:
-									echo '<a href="'.get_permalink().'" target="_blank">'.get_the_title().'</a>';
-							}
-						?>		
-						</h1>
-						<dl class="dl-horizontal">
-							<dt>
-								<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-								<div class="entry-thumbnail">
-									<?php the_post_thumbnail(); ?>
-									&nbsp;
-								</div>
-								<?php endif; ?>
-							</dt>
-							<dd>
-								<?php if(get_post_type()=='post'){ the_excerpt(); }?>
-							</dd>
-						</dl>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php the_content(); ?>
 					</article><!-- #post -->
 					<hr>
 				<?php endwhile; ?>
@@ -66,9 +40,11 @@ get_header();
 
 			<?php else : ?>
 				<?php get_template_part( 'content', 'none' ); ?>
-			<?php endif; ?>
+			<?php endif; wp_reset_query(); ?>
 			</div>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();
+?>
