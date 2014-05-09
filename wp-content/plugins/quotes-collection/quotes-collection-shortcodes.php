@@ -103,8 +103,14 @@ function quotescollection_shortcodes($atts = array())
 		
 	}
 	
-	else if($limit)
-		$condition .= " LIMIT ".$limit;
+	else if($limit){
+		if($limit === 'weekly'){
+			$condition .= ' LIMIT '.floor((time()-strtotime('2013-10-31'))/86400/7).', 1';
+		}
+		else{
+			$condition .= " LIMIT ".$limit;
+		}
+	}
 	
 //	return $condition;
 
