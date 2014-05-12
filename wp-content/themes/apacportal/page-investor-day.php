@@ -6,138 +6,17 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<meta http-equiv="Expires" content="0" />
 		<title>FCA Investor Day Presentations - APAConnect, Fiat Chrysler</title>
+		<?php wp_head(); ?>
 		<link href="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/css/screen.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/modernizr-2.7.2.min.js'></script>
-        <script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/jquery-1.10.2.min.js'></script>
-        <script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/plugins.js'></script>
-        <script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/scripts.js'></script>
-
-        <link type="text/xml" rel="alternate" href="http://apaconnect.fiat.chrysler.com/investorday/_vti_bin/spsdisco.aspx" />
-
-		<link rel="canonical" href="Home.aspx" />
-
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></head>
-	<body class="interna" onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
-
-		<script type="text/javascript">
-			//<![CDATA[
-			var MSOWebPartPageFormName = 'aspnetForm';
-			var g_presenceEnabled = true;
-			var g_wsaEnabled = false;
-			var g_wsaQoSEnabled = false;
-			var g_wsaQoSDataPoints = [];
-			var g_wsaLCID = 1033;
-			var g_wsaListTemplateId = 850;
-			var g_wsaSiteTemplateId = 'BLANKINTERNET#0';
-			var _fV4UI = true;
-			var _spPageContextInfo = {webServerRelativeUrl: "\u002finvestorday", webAbsoluteUrl: "http:\u002f\u002fapaconnect.fiat.chrysler.com\u002finvestorday", siteAbsoluteUrl: "http:\u002f\u002fapaconnect.fiat.chrysler.com\u002finvestorday", serverRequestPath: "\u002finvestorday\u002fPages\u002fHome.aspx", layoutsUrl: "_layouts\u002f15", webTitle: "FCA_Investorday Site", webTemplate: "53", tenantAppVersion: "0", webLogoUrl: "_layouts\u002f15\u002fimages\u002fsiteicon.png", webLanguage: 1033, currentLanguage: 1033, currentUICultureName: "en-US", currentCultureName: "en-US", clientServerTimeDelta: new Date("2014-05-12T03:16:40.3206657Z") - new Date(), siteClientTag: "4$$15.0.4481.1005", crossDomainPhotosEnabled: false, webUIVersion: 15, webPermMasks: {High: 16, Low: 196673}, pageListId: "{f327d37c-3a0a-447d-9b16-9c2ee3698a67}", pageItemId: 13, pagePersonalizationScope: 1, alertsEnabled: true, siteServerRelativeUrl: "\u002finvestorday", allowSilverlightPrompt: 'True'};
-			;//]]>
-		</script>
-
-		<script type="text/javascript">
-			//<![CDATA[
-			(function() {
-
-				if (typeof (_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
-					return;
-				}
-				_spBodyOnLoadFunctions.push(function() {
-
-					if (typeof (SPClientTemplates) === 'undefined' || SPClientTemplates === null || (typeof (APD_InAssetPicker) === 'function' && APD_InAssetPicker())) {
-						return;
-					}
-
-					var renderFollowFooter = function(renderCtx, calloutActionMenu)
-					{
-						if (renderCtx.ListTemplateType == 700)
-							myDocsActionsMenuPopulator(renderCtx, calloutActionMenu);
-						else
-							CalloutOnPostRenderTemplate(renderCtx, calloutActionMenu);
-
-						var listItem = renderCtx.CurrentItem;
-						if (typeof (listItem) === 'undefined' || listItem === null) {
-							return;
-						}
-						if (listItem.FSObjType == 0) {
-							calloutActionMenu.addAction(new CalloutAction({
-								text: Strings.STS.L_CalloutFollowAction,
-								tooltip: Strings.STS.L_CalloutFollowAction_Tooltip,
-								onClickCallback: function(calloutActionClickEvent, calloutAction) {
-									var callout = GetCalloutFromRenderCtx(renderCtx);
-									if (!(typeof (callout) === 'undefined' || callout === null))
-										callout.close();
-									SP.SOD.executeFunc('followingcommon.js', 'FollowSelectedDocument', function() {
-										FollowSelectedDocument(renderCtx);
-									});
-								}
-							}));
-						}
-					};
-
-					var registerOverride = function(id) {
-						var followingOverridePostRenderCtx = {};
-						followingOverridePostRenderCtx.BaseViewID = 'Callout';
-						followingOverridePostRenderCtx.ListTemplateType = id;
-						followingOverridePostRenderCtx.Templates = {};
-						followingOverridePostRenderCtx.Templates.Footer = function(renderCtx) {
-							var renderECB;
-							if (typeof (isSharedWithMeView) === 'undefined' || isSharedWithMeView === null) {
-								renderECB = true;
-							} else {
-								var viewCtx = getViewCtxFromCalloutCtx(renderCtx);
-								renderECB = !isSharedWithMeView(viewCtx);
-							}
-							return CalloutRenderFooterTemplate(renderCtx, renderFollowFooter, renderECB);
-						};
-						SPClientTemplates.TemplateManager.RegisterTemplateOverrides(followingOverridePostRenderCtx);
-					}
-					registerOverride(101);
-					registerOverride(700);
-				});
-			})();
-			(function() {
-
-				if (typeof (_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
-					return;
-				}
-				_spBodyOnLoadFunctions.push(function()
-				{
-					ExecuteOrDelayUntilScriptLoaded(
-							function()
-							{
-								var pairs = SP.ScriptHelpers.getDocumentQueryPairs();
-								var followDoc, itemId, listId, docName;
-								for (var key in pairs)
-								{
-									if (key.toLowerCase() == 'followdocument')
-										followDoc = pairs[key];
-									else if (key.toLowerCase() == 'itemid')
-										itemId = pairs[key];
-									else if (key.toLowerCase() == 'listid')
-										listId = pairs[key];
-									else if (key.toLowerCase() == 'docname')
-										docName = decodeURI(pairs[key]);
-								}
-
-								if (followDoc != null && followDoc == '1' && listId != null && itemId != null && docName != null)
-								{
-									SP.SOD.executeFunc('followingcommon.js', 'FollowDocumentFromEmail', function()
-									{
-										FollowDocumentFromEmail(itemId, listId, docName);
-									});
-								}
-
-							}, 'SP.init.js');
-
-				});
-			})();
-			if (typeof (DeferWebFormInitCallback) == 'function')
-				DeferWebFormInitCallback();//]]>
-		</script>
-
-
-
-
+		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/modernizr-2.7.2.min.js'></script>
+		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/jquery-1.10.2.min.js'></script>
+		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/plugins.js'></script>
+		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/scripts.js'></script>
+	        <link type="text/xml" rel="alternate" href="http://apaconnect.fiat.chrysler.com/investorday/_vti_bin/spsdisco.aspx" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	</head>
+	
+	<body class="interna">
 
 		<div id="s4-workspace">
 			<div id="s4-bodyContainer">
@@ -145,13 +24,13 @@
 					<div class="wrapper-site container">
 						<!--header-->
 						<header id="header" class="row">
-                            <p class="logo-top col-xs-12">
-                                <a href="<?=site_url()?>"><img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/logo_top.png" class="img-responsive" /></a>
-                            </p>
-                            <p class="h-top col-xs-12">
-                                <img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/header_top.gif" class="img-responsive" />
-                            </p>
-                        </header>
+							<p class="logo-top col-xs-12">
+								<a href="<?= site_url() ?>"><img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/logo_top.png" class="img-responsive" /></a>
+							</p>
+							<p class="h-top col-xs-12">
+								<img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/header_top.gif" class="img-responsive" />
+							</p>
+						</header>
 						<!--//header-->
 						<!--body-->
 						<div class="body">
@@ -197,12 +76,12 @@
 								</ul>
 							</nav>
 							<p class="legal_privacy">
-								<a class="legal_notes" href="<?=site_url()?>">APAConnect</a><span>|</span>
+								<a class="legal_notes" href="<?= site_url() ?>">APAConnect</a><span>|</span>
 								<a class="legal_notes" href="http://www.fiatspa.com" target="_blank">Fiat SPA</a><span>|</span>
 								<a class="legal_notes" href="http://www.chryslergroupllc.com/" target="_blank">Chrysler LLC</a><span>|</span>
-								<a class="legal_notes pp" href="<?=site_url()?>/wp-content/uploads/investorday/pages/legal_notes.html">Legal</a><span>|</span>
-								<a class="privacy_police pp" href="<?=site_url()?>/wp-content/uploads/investorday/pages/privacy_policy.html">Privacy</a><span>|</span>
-								<a class="privacy_police pp" href="<?=site_url()?>/wp-content/uploads/investorday/pages/contacts.html">Contacts</a>
+								<a class="legal_notes pp" href="<?= site_url() ?>/wp-content/uploads/investorday/pages/legal_notes.html">Legal</a><span>|</span>
+								<a class="privacy_police pp" href="<?= site_url() ?>/wp-content/uploads/investorday/pages/privacy_policy.html">Privacy</a><span>|</span>
+								<a class="privacy_police pp" href="<?= site_url() ?>/wp-content/uploads/investorday/pages/contacts.html">Contacts</a>
 							</p> 
 						</footer>
 						<!--//footer-->
@@ -210,20 +89,6 @@
 				</div>
 			</div>
 		</div>
-	<script>
-		(function(i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function() {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
-			a = s.createElement(o),
-					m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-		ga('create', 'UA-50449147-1', 'fcagroup.com');
-		ga('send', 'pageview');
-	</script>
-</body>
+
+	</body>
 </html>
