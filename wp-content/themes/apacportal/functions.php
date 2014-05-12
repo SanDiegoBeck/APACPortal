@@ -116,9 +116,17 @@ function apacportal_post_list($args = array()){
 				$out .= '<a href="' . get_permalink($post->ID) . '">';
 			}
 			
+			if($post->post_type === 'link'){
+				$out .= '<a href="' . $post->post_content . '">';
+			}
+			
 			$out .= get_the_post_thumbnail($post->ID, $args['show_thumbnail']);
 			
 			if($post->post_type === 'post'){
+				$out .= '</a>';
+			}
+			
+			if($post->post_type === 'link'){
 				$out .= '</a>';
 			}
 			
