@@ -54,7 +54,7 @@ $total_hits = get_option('total_hits', 0);
 				<nav id="site-navigation" class="navbar-inner" role="navigation">
 					<div class="wrapper">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
-						<span class="well well-small total-hits pull-right">Total Hits: <?=get_total_hits()?></span>
+						<span class="well well-small total-hits pull-right"><a href="<?=site_url()?>/stats/">Total Hits: <?=get_total_hits()?></a></span>
 						<?php get_search_form(); ?>
 					</div>
 				</nav><!-- #site-navigation -->
