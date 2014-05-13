@@ -55,8 +55,10 @@ $total_hits = get_option('total_hits', 0);
 					<div class="wrapper">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
 						<span class="well well-small total-hits pull-right">
-							<a href="<?=site_url()?>/stats/">Total Hits: <?=get_total_hits()?></a>
-							<span class="icon-exclamation-sign" title="View Portal Statistics"></span>
+							<a href="<?=site_url()?>/stats/">
+								Total Hits: <?=get_total_hits()?>
+								<span class="icon-exclamation-sign" title="View Portal Statistics"></span>
+							</a>
 						</span>
 						<?php get_search_form(); ?>
 					</div>
