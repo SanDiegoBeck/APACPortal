@@ -54,6 +54,7 @@ table.box {
 body {
 	color: #080808;
 	background:#FFF url('images/bg.png') 0 220px repeat-x;
+	font-size: 13px;
 }
 
 body, a, input {
