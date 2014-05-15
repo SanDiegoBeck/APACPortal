@@ -4,7 +4,8 @@ query_posts(array(
 	'post_type'=>'attachment',
 	'post_status'=>'inherit',
 	'post_mime_type'=>'video',
-	'posts_per_page'=>5
+	'posts_per_page'=>5,
+	'paged'=>$paged
 ));
 
 get_header();
