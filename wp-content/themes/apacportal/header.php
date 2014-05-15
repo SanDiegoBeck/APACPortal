@@ -19,6 +19,7 @@
 	<?php wp_head(); ?>
 	<!--[if lt IE 9]>
 	<script src="<?=get_template_directory_uri()?>/js/html5.js"></script>
+	<script src="<?=get_stylesheet_directory_uri()?>/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
