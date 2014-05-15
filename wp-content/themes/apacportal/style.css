@@ -390,6 +390,10 @@ footer.entry-meta {
 	color: #ea9629;
 }
 
+.edit-link {
+	font-size: 14px;
+}
+
 /*Archive List Page*/
 .archive article {
 	margin-bottom: 20px;
