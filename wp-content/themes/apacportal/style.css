@@ -1,4 +1,4 @@
-/* 
+g/* 
 	Name: Apac Portal
 	Template: twentythirteen
 	Author : Uice Lu <uicelu@gmail.com>
@@ -78,7 +78,7 @@ body, a, input {
 }
 
 .site-header .banner .main {
-	height: 170px;
+	height: 160px;
 	min-height: 150px;
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 2px 2px 20px #888;
