@@ -1,7 +1,3 @@
-<?php
-$total_hits = get_option('total_hits', 0);
-!is_user_logged_in() && $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] !== 'XMLHttpRequest' && update_option('total_hits', ++$total_hits);
-?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>

@@ -685,16 +685,16 @@ function twentythirteen_paging_nav() {
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'twentythirteen' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-next"><?php next_posts_link( __( 'Next <span>&rarr;</span>', 'twentythirteen' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-previous"><?php previous_posts_link( __( '<span>&larr;</span> Previous', 'twentythirteen' ) ); ?></div>
-			<?php endif; ?>
-
+		<div class="nav-links text-right">
+			<?php
+			echo paginate_links(array(
+				'base' => str_replace( 99999, '%#%', esc_url( get_pagenum_link( 99999 ) ) ),
+				'format'=>'/%n%/page/%#%',
+				'total'=>2,
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages)
+			);
+			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
