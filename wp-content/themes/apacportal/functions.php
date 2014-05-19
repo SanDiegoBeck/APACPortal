@@ -33,7 +33,7 @@ function apacportal_post_list($args = array()){
 		'show_excerpt' => false, 'excerpt_container' => 'summary', 'excerpt_class' => '',
 		'show_content' => false, 'content_container' => '', 'content_class'=> '',
 		'post_type'=>'any',
-		'post_status'=>array('inherit','publish'),
+		'post_status'=>array('inherit', 'publish'),
 		'orderby'=>'menu_order date',
 		'order'=>'desc',
 		'suppress_filters'=>false
@@ -42,10 +42,14 @@ function apacportal_post_list($args = array()){
 	//parse out the $args, according to which we change some of default args
 	$args = wp_parse_args($args);
 	
-	
 	//scratch alias
 	if(array_key_exists('category', $args)){
-		$defaults['category__in'] = array(get_category_by_slug($args['category'])->cat_ID);
+		if(strpos($args['category'], '+') !== false || strpos($args['category'], ',') !== false){
+			$defaults['category_name'] = $args['category'];
+		}
+		else{
+			$defaults['category__in'] = array(get_category_by_slug($args['category'])->cat_ID);
+		}
 		unset($args['category']);
 	}
 	
@@ -385,7 +389,9 @@ add_action('init', function(){
 		
 		$pre_attrs = wp_parse_args($attrs);
 		
-		if(array_key_exists('category', $pre_attrs)){
+		$query_args = array('category', 'category_name', 'tag');
+		
+		if(array_intersect(array_keys($pre_attrs), $query_args) !== array()){
 			$defaults['type'] = 'list';
 		}
 		
@@ -409,8 +415,13 @@ add_action('init', function(){
 		if(array_key_exists('title', $attrs)){
 			$out .= '<header>';
 			
-			if((!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && array_key_exists('category', $attrs) && !array_key_exists('more_link', $attrs)){
-				$out .= '<a href="'.(site_url().'/category/'.$attrs['category']).'" class="more-link">More</a>';
+			if($attrs['type'] === 'list' && (!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && !array_key_exists('more_link', $attrs)){
+				if(array_key_exists('category', $attrs)){
+					$out .= '<a href="'.(site_url().'/category/'.$attrs['category'].'/').'" class="more-link">More</a>';
+				}
+				else{
+					$out .= '<a href="'.(site_url() . '?' . http_build_query(array_intersect_key($attrs, array_flip($query_args)), null, null, PHP_QUERY_RFC1738)) . '" class="more-link">More</a>';
+				}
 			}
 			
 			if(array_key_exists('more_link', $attrs)){
