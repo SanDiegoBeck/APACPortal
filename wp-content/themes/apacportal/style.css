@@ -614,6 +614,11 @@ blockquote.quotescollection cite {
 	left: 0;
 }
 
+.box>.content .attachment-3-column-thumbnail {
+	height: 213px;
+}
+
+
 /*MOPAR Page*/
 .page-mopar .market-list .content ul li {
 	background: none;
