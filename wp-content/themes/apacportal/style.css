@@ -261,6 +261,11 @@ body, a, input {
 	margin-bottom: 0.5em;
 }
 
+.box.two-column>.content ul li {
+	float: left;
+	width: 50%;
+}
+
 .box>.content img.aligncenter {
 	display: block;
 	margin: auto;
@@ -615,7 +620,7 @@ blockquote.quotescollection cite {
 }
 
 .box>.content .attachment-3-column-thumbnail {
-	height: 213px;
+	height: 212px;
 }
 
 
