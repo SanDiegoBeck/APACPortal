@@ -208,6 +208,7 @@ body, a, input {
 .page-header {
 	background-color: #FFF;
 	padding-bottom: 0;
+	margin: 0;
 }
 
 .page-title {
