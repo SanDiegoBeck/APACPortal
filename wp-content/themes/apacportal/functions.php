@@ -306,10 +306,11 @@ add_action('parse_query', function($wp_query){
 		return;
 	}
 	
-	$wp_query->set('post_type', array('post','attachment','link'));
-	$wp_query->set('post_status', array('publish','inherit'));
-	$wp_query->set('orderby', 'menu_order date');
-	$wp_query->set('order', 'desc');
+	!get_query_var('post_type') && $wp_query->set('post_type', 'any');
+	!get_query_var('post_status') && $wp_query->set('post_status', array('publish','inherit'));
+	!get_query_var('orderby') && $wp_query->set('orderby', 'menu_order date');
+	!get_query_var('order') && $wp_query->set('order', 'desc');
+	
 });
 
 add_action('wp_enqueue_scripts', function(){
