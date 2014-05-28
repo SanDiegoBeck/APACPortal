@@ -531,6 +531,8 @@ body.search #content {
 
 /*Market List*/
 .bullets-thumbnail .bullet {
+	display: inline-block;
+	width: 30px;
 	margin-right: 10px;
 }
 
@@ -580,6 +582,16 @@ blockquote.quotescollection cite {
 	float: left;
 	margin: 15px 2%;
 	width: 21%;
+}
+
+.box.product-picture.three-column .content dl {
+	margin: 15px 1.666667%;
+	width: 30%;
+}
+
+.box.product-picture.loose .content dl {
+	margin: 15px 5%;
+	width: 15%;
 }
 
 .box.product-picture .content dl dt {
