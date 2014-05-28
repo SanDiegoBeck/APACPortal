@@ -4,6 +4,7 @@
  * @param string $category_name
  * @param int $limit deprecated, TODO, should be removed after all pages are made dynamic
  * @param array $args
+ *	each_column: an integer, list container repeats after which items are exported, a list, say, "ul", will than be divided to multiple "ul"s
  *	contailer: list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
  *	container_class
  *	item: list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
@@ -106,7 +107,7 @@ function apacportal_post_list($args = array()){
 	
 	$posts = get_posts($args); //$out .= print_r($args, true);
 	
-	foreach( $posts as $post ){
+	foreach( $posts as $index => $post ){
 		
 		if($args['item']){
 			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . '"' . '>';
@@ -184,6 +185,11 @@ function apacportal_post_list($args = array()){
 		
 		if($args['item']){
 			$out .= '</' . $args['item'] . '>';
+		}
+		
+		if(array_key_exists('each_column', $args) && $index % $args['each_column'] === $args['each_column'] - 1){
+			$out .= '</' . $args['container'] . '>';
+			$out .= '<' . $args['container'] . ' class="' . $args['container_class'] . '"' . '>';
 		}
 		
 	}
@@ -541,6 +547,11 @@ add_action('wp_footer', function(){
 		'uri'=>$_SERVER["REQUEST_URI"],
 	));
 	
+});
+
+add_action('init', function(){
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 });
 
 /**
