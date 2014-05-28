@@ -534,10 +534,13 @@ body.search #content {
 	display: inline-block;
 	width: 30px;
 	margin-right: 10px;
+	box-shadow: 2px 2px 5px #CCC;
+	border-radius: 15px;
 }
 
 .bullets-thumbnail .bullet img {
 	width: 30px;
+	border-radius: 15px
 }
 
 .bullets-thumbnail .content ul li {
