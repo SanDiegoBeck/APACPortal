@@ -385,14 +385,16 @@ add_action('init', function(){
 	 *		no-min-height
 	 *		no-padding
 	 *		short
-	 *	content: possible values: 
-	 *		none box will hide the content section
-	 *	... all possible args supported by apacportal_post_list() if type is list
-	 *	... all possible args supported by apacportal_post_slider() if type is slider
+	 *	title
+	 *	content:
+	 *		none: box will hide the content section
+	 *	content_class
+	 *	content_style
+	 *	... all possible args supported by apacportal_post_list() if type in list, single and slider
 	 */	
 	add_shortcode('box', function($attrs, $content){
 		
-		$defaults = array( 'type' => '', 'class'=>'' );
+		$defaults = array( 'type' => '', 'class'=>'', 'content_class'=>'' );
 		
 		$pre_attrs = wp_parse_args($attrs);
 		
@@ -405,6 +407,7 @@ add_action('init', function(){
 		$attrs = wp_parse_args($attrs, $defaults);
 		
 		$attrs['class'] .= ' box';	//instead of array_merge, we manually concat the default class...
+		$attrs['content_class'] .= ' content';
 		
 		if($attrs['type'] === 'slider'){
 			$attrs['class'] .= ' slider';
@@ -446,7 +449,7 @@ add_action('init', function(){
 		
 		if(!array_key_exists('content', $attrs) || $attrs['content'] !== 'none'){
 		
-			$out .= '<div class="content"';
+			$out .= '<div class="' . $attrs['content_class'] . '"';
 			
 			if(array_key_exists('content_style', $attrs)){
 				$out .= ' style="' . $attrs['content_style'] . '"';
