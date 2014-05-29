@@ -545,6 +545,7 @@ body.search #content {
 
 .bullets-thumbnail .content ul li {
 	list-style-type: none;
+	margin-bottom: 10px;
 }
 
 /*Notices*/
@@ -590,6 +591,11 @@ blockquote.quotescollection cite {
 .box.product-picture.three-column .content dl {
 	margin: 15px 1.666667%;
 	width: 30%;
+}
+
+.box.product-picture.five-column.loose .content dl {
+	margin: 15px 4%;
+	width: 12%;
 }
 
 .box.product-picture.loose .content dl {

@@ -556,7 +556,7 @@ add_action('wp_footer', function(){
  * add several common post type supports to  attachment
  */
 add_action('init', function(){
-    register_taxonomy_for_object_type( 'category', 'attachment' );
+	register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 	add_post_type_support( 'attachment', 'thumbnail' );
 });
@@ -575,8 +575,7 @@ class PeopleFinder_Widget extends WP_Widget{
 		<div class="box">
 			<header>People Finder</header>
 			<div class="content">
-				<form class="form-inline" action="/user/">
-					<br>
+				<form class="form-inline" action="/user/" style="margin:0">
 					<button type="submit" class="btn pull-right"><span class="icon-search"></span></button>
 					<div style="padding-right: 40px;">
 						<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." style="width: 88%;">
