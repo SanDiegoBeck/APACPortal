@@ -552,9 +552,13 @@ add_action('wp_footer', function(){
 	
 });
 
+/**
+ * add several common post type supports to  attachment
+ */
 add_action('init', function(){
     register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+	add_post_type_support( 'attachment', 'thumbnail' );
 });
 
 /**
