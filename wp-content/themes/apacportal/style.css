@@ -267,6 +267,11 @@ body, a, input {
 	width: 50%;
 }
 
+.box.three-column>.content ul li {
+	float: left;
+	width: 33.33%;
+}
+
 .box>.content img.aligncenter {
 	display: block;
 	margin: auto;
