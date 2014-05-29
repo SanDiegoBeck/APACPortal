@@ -572,7 +572,7 @@ class PeopleFinder_Widget extends WP_Widget{
 	
 	function widget() {
 		?>
-		<div class="box">
+		<div class="box no-min-height">
 			<header>People Finder</header>
 			<div class="content">
 				<form class="form-inline" action="/user/" style="margin:0">
