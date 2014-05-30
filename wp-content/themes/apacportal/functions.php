@@ -562,6 +562,18 @@ add_action('init', function(){
 });
 
 /**
+ * disable rich text edit for "page" and "link"
+ */
+add_filter( 'user_can_richedit', function() {
+	
+	global $post_type;
+
+	if (in_array($post_type, array('link', 'page')))
+		return false;
+	}
+);
+
+/**
  * define customized widgets
  */
 class PeopleFinder_Widget extends WP_Widget{
