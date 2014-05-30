@@ -593,6 +593,11 @@ blockquote.quotescollection cite {
 	width: 21%;
 }
 
+.box.product-picture.two-column .content dl {
+	margin: 15px 7%;
+	width: 36%;
+}
+
 .box.product-picture.three-column .content dl {
 	margin: 15px 1.666667%;
 	width: 30%;
