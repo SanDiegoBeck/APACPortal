@@ -66,8 +66,7 @@ body, a, input {
 }
 
 .wrapper {
-	width: 90%;
-	max-width: 1200px;
+	width: 1200px;
 	margin: auto;
 }
 
@@ -594,13 +593,13 @@ blockquote.quotescollection cite {
 }
 
 .box.product-picture.two-column .content dl {
-	margin: 15px 7%;
-	width: 36%;
+	margin: 15px 11%;
+	width: 28%;
 }
 
 .box.product-picture.three-column .content dl {
-	margin: 15px 1.666667%;
-	width: 30%;
+	margin: 15px 3.16666667%;
+	width: 27%;
 }
 
 .box.product-picture.five-column.loose .content dl {
