@@ -564,14 +564,16 @@ add_action('init', function(){
 /**
  * disable rich text edit for "page" and "link"
  */
-add_filter( 'user_can_richedit', function() {
+add_filter( 'user_can_richedit', function($c) {
 	
 	global $post_type;
 
-	if (in_array($post_type, array('link', 'page')))
+	if (in_array($post_type, array('link', 'page'))){
 		return false;
 	}
-);
+	
+	return $c;
+});
 
 /**
  * define customized widgets
