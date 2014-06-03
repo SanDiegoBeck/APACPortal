@@ -586,10 +586,10 @@ class PeopleFinder_Widget extends WP_Widget{
 	
 	function widget() {
 		?>
-		<div class="box no-min-height people-finder">
+		<div class="box people-finder">
 			<header>People Finder</header>
 			<div class="content">
-				<form class="form-inline" action="/user/" style="margin:0">
+				<form class="form-inline" action="/user/">
 					<button type="submit" class="btn pull-right"><span class="icon-search"></span></button>
 					<div style="padding-right: 40px;">
 						<input type="search" name="s_user" value="<?= $_GET['s_user'] ?>" placeholder="Type people name..." style="width: 88%;">

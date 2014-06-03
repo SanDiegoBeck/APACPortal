@@ -654,6 +654,11 @@ blockquote.quotescollection cite {
 	height: 212px;
 }
 
+/*People Finder*/
+.people-finder.box>.content>form{
+	margin-top:2em;
+}
+
 
 /*MOPAR Page*/
 .page-mopar .market-list .content ul li {
