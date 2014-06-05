@@ -743,3 +743,9 @@ function twentythirteen_paging_nav() {
 	<?php
 }
 endif;
+
+if( !function_exists('twentythirteen_fonts_url')) :
+function twentythirteen_fonts_url () {
+	return;
+}
+endif;
