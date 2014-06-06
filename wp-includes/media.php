@@ -1686,7 +1686,7 @@ function wp_video_shortcode( $attr, $content = '' ) {
 		'poster'   => '',
 		'loop'     => '',
 		'autoplay' => '',
-		'preload'  => 'metadata',
+		'preload'  => 'none',
 		'width'    => 640,
 		'height'   => 360,
 	);
