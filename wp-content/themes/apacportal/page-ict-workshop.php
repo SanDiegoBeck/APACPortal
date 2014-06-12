@@ -62,7 +62,7 @@
 																	</p>
 																	<p data-doctype='presentation' class='col-xs-3 col-xs-offset-1  col-sm-2 col-sm-offset-0'>
 																		<a href="<?php wp_get_attachment_url(get_the_ID()); ?>" target='_blank'>
-																			<span class='ico ico-pdf-blue'></span><span class='mb'><?=size_format(filesize(get_attached_file($attachment->ID)));?></span>
+																			<span class='ico ico-pdf-blue'></span><span class='mb'><?=size_format(filesize(get_attached_file($post->ID)));?></span>
 																		</a>
 																	</p>
 																</div>
