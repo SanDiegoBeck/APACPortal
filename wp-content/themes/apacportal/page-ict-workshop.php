@@ -23,13 +23,15 @@
 				<div class="container-fluid">
 					<div class="wrapper-site container">
 						<!--header-->
-						<header id="header" class="row">
+						<header id="header" class="row" style="padding:0 15px;">
 							<p class="logo-top col-xs-12">
 								<a href="<?= site_url() ?>"><img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/logo_top.png" class="img-responsive" /></a>
 							</p>
-							<p class="h-top col-xs-12">
-								<img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/header_top.gif" class="img-responsive" />
-							</p>
+							<div class="h-top col-xs-12" style="background: #6e80bf; color: #FFF; padding:20px; text-align: left; font-family:garamond, sans-serif">
+								<h2 style="float:left;">APAC ICT</h2>
+								<h1 style="float:left;clear:both;">Regional Conference</h1>
+								<h3 style="float:right">June. 10<sup>th</sup> - 13<sup>th</sup>, 2014</h3>
+							</div>
 						</header>
 						<!--//header-->
 						<!--body-->
@@ -58,7 +60,7 @@
 															<div class='list-cp-incard'>
 																<div class='row'>
 																	<p data-doctype='presentation' class='col-xs-8 col-sm-10'>
-																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" class='title' target='_blank'><?php the_title(); ?></a>
+																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" class='title' ><?php the_title(); ?></a>
 																	</p>
 																	<p data-doctype='presentation' class='col-xs-3 col-xs-offset-1  col-sm-2 col-sm-offset-0'>
 																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" target='_blank'>
