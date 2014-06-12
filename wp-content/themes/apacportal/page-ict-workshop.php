@@ -27,7 +27,7 @@
 							<p class="logo-top col-xs-12">
 								<a href="<?= site_url() ?>"><img src="<?= site_url() ?>/wp-content/uploads/2014/04/Fiat-Chrysler-For-Portal-526x188.jpg" class="img-responsive" /></a>
 							</p>
-							<div class="h-top col-xs-12" style="background: #6e80bf; color: #FFF; padding:20px; text-align: left; font-family:garamond, sans-serif">
+							<div class="h-top col-xs-12" style="color: rgb(1,57,131); padding:20px; text-align: left; font-family:garamond, sans-serif;border-top: 3px rgb(1,57,131) solid; border-left: 1px rgb(1,57,131) solid;">
 								<h2 style="float:left;">APAC ICT</h2>
 								<h1 style="float:left;clear:both;">Regional Conference</h1>
 								<h3 style="float:right">June. 10<sup>th</sup> - 13<sup>th</sup>, 2014</h3>
@@ -57,14 +57,14 @@
 																<h3><?php the_excerpt(); ?></h3>
 																<h4><?php echo $post->post_content ?></h4>
 															</div>
-															<div class='list-cp-incard'>
+															<div class='list-cp-incard' style="background-color:rgb(1,57,131)">
 																<div class='row'>
 																	<p data-doctype='presentation' class='col-xs-8 col-sm-10'>
 																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" class='title' ><?php the_title(); ?></a>
 																	</p>
 																	<p data-doctype='presentation' class='col-xs-3 col-xs-offset-1  col-sm-2 col-sm-offset-0'>
 																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" target='_blank'>
-																			<span class='ico ico-pdf-blue'></span><span class='mb'><?=size_format(filesize(get_attached_file($post->ID)));?></span>
+																			<span class='icon-download-alt icon-white' style="margin-left: 70px;margin-top: 4px;"></span><span class='mb'><?=size_format(filesize(get_attached_file($post->ID)));?></span>
 																		</a>
 																	</p>
 																</div>
