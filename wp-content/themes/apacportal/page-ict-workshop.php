@@ -25,7 +25,7 @@
 						<!--header-->
 						<header id="header" class="row" style="padding:0 15px;">
 							<p class="logo-top col-xs-12">
-								<a href="<?= site_url() ?>"><img src="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/img/shared/logo_top.png" class="img-responsive" /></a>
+								<a href="<?= site_url() ?>"><img src="<?= site_url() ?>/wp-content/uploads/2014/04/Fiat-Chrysler-For-Portal-526x188.jpg" class="img-responsive" /></a>
 							</p>
 							<div class="h-top col-xs-12" style="background: #6e80bf; color: #FFF; padding:20px; text-align: left; font-family:garamond, sans-serif">
 								<h2 style="float:left;">APAC ICT</h2>
