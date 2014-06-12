@@ -5,7 +5,7 @@
 		<meta name="GENERATOR" content="Microsoft SharePoint" />
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<meta http-equiv="Expires" content="0" />
-		<title>ICT Workshop - APAConnect, Fiat Chrysler</title>
+		<title>APAC ICT Regional Conference</title>
 		<?php wp_head(); ?>
 		<link href="<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/css/screen.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/modernizr-2.7.2.min.js'></script>
@@ -58,10 +58,10 @@
 															<div class='list-cp-incard'>
 																<div class='row'>
 																	<p data-doctype='presentation' class='col-xs-8 col-sm-10'>
-																		<a href="<?php wp_get_attachment_url(get_the_ID()); ?>" class='title' target='_blank'><?php the_title(); ?></a>
+																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" class='title' target='_blank'><?php the_title(); ?></a>
 																	</p>
 																	<p data-doctype='presentation' class='col-xs-3 col-xs-offset-1  col-sm-2 col-sm-offset-0'>
-																		<a href="<?php wp_get_attachment_url(get_the_ID()); ?>" target='_blank'>
+																		<a href="<?=wp_get_attachment_url(get_the_ID())?>" target='_blank'>
 																			<span class='ico ico-pdf-blue'></span><span class='mb'><?=size_format(filesize(get_attached_file($post->ID)));?></span>
 																		</a>
 																	</p>
