@@ -27,10 +27,10 @@
 							<p class="logo-top col-xs-12">
 								<a href="<?= site_url() ?>"><img src="<?= site_url() ?>/wp-content/uploads/2014/04/Fiat-Chrysler-For-Portal-526x188.jpg" class="img-responsive" /></a>
 							</p>
-							<div class="h-top col-xs-12" style="color: rgb(1,57,131); padding:20px; text-align: left; font-family:garamond, sans-serif;border-top: 3px rgb(1,57,131) solid; border-left: 1px rgb(1,57,131) solid;">
+							<div class="h-top col-xs-12" style="color: #FFF; padding:20px; text-align: left; font-family:garamond, sans-serif;border-top: 3px rgb(1,57,131) solid; border-left: 1px rgb(1,57,131) solid; background: rgb(1,57,131); box-shadow: -1px 0px 5px 0px rgba(50, 50, 50, 0.3);">
 								<h2 style="float:left;">APAC ICT</h2>
 								<h1 style="float:left;clear:both;">Regional Conference</h1>
-								<h3 style="float:right">June. 10<sup>th</sup> - 13<sup>th</sup>, 2014</h3>
+								<h3 style="float:right">June. 10<sup>th</sup> - 12<sup>th</sup>, 2014</h3>
 							</div>
 						</header>
 						<!--//header-->
