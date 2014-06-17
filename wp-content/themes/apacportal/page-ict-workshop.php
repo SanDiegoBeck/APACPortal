@@ -14,6 +14,17 @@
 		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/scripts.js'></script>
 		<link type="text/xml" rel="alternate" href="http://apaconnect.fiat.chrysler.com/investorday/_vti_bin/spsdisco.aspx" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			.paging-navigation {
+				background: none;
+			}
+			.page-numbers.current {
+				font-weight: bold;
+			}
+			a, input {
+				font-family: Helvetica, Arial, sans-serif;
+			}
+		</style>
 	</head>
 
 	<body class="interna">
@@ -44,7 +55,7 @@
 										 <p>INTRO Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="">Donec nec erat magna.</a> Sed mollis varius nunc, vel rutrum turpis adipiscing sed. Praesent sodales odio vitae nisl aliquet, et lobortis ligula pellentesque. Donec rhoncus urna sapien, eu rhoncus dolor luctus tincidunt. Integer at eros risus. Maecenas lobortis, mi id eleifend elementum, metus est porta justo, in dignissim nunc dui sit amet mi. Vivamus porttitor aliquet magna vitae porttitor.</p>-->
 
 								</div>
-								<?php query_posts(array('category_name'=>'ict-workshop', 'post_type'=>'any', 'post_status'=>'inherit')); ?>
+								<?php query_posts(array('category_name'=>'ict-workshop', 'post_type'=>'any', 'post_status'=>'inherit', 'paged'=>$paged)); ?>
 								<?php while(have_posts()): the_post(); ?>
 								<div class="grid-cards">
 									<div class='row cards-row'>
@@ -77,11 +88,8 @@
 									</div>
 								</div>
 								<?php endwhile; ?>
-								<div style='display:none' id='hidZone'><menu class="ms-hide">
-										<ie:menuitem id="MSOMenu_Help" iconsrc="/_layouts/15/images/HelpIcon.gif" onmenuclick="MSOWebPartPage_SetNewWindowLocation(MenuWebPart.getAttribute('helpLink'), MenuWebPart.getAttribute('helpMode'))" text="Help" type="option" style="display:none">
-
-										</ie:menuitem>
-									</menu></div>
+								<?php twentythirteen_paging_nav(); ?>
+								<?php wp_reset_query(); ?>
 							</span>
 						</div>
 						<!--//body-->
