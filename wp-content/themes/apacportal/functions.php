@@ -176,7 +176,7 @@ function apacportal_post_list($args = array()){
 		}
 		
 		if($args['show_content']){
-			$out .= wpautop($post->post_content);
+			$out .= do_shortcode(wpautop(wptexturize($post->post_content)));
 		}
 		
 		if($args['content_container']){
