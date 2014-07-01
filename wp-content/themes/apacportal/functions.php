@@ -335,7 +335,7 @@ add_action('wp_enqueue_scripts', function(){
 });
 
 add_action('admin_enqueue_scripts', function(){
-	wp_register_style('admin', get_template_directory_uri() . '/admin/style.css');
+	wp_register_style('admin', get_stylesheet_directory_uri() . '/admin/style.css');
 	wp_enqueue_style('admin');
 });
 
