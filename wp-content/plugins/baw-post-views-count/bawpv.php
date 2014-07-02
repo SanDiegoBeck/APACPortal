@@ -15,7 +15,7 @@ function baw_pvc_main()
 {
 	global $post, $bawpvc_options;
 	$bots = array( 	'wordpress', 'googlebot', 'google', 'msnbot', 'ia_archiver', 'lycos', 'jeeves', 'scooter', 'fast-webcrawler', 'slurp@inktomi', 'turnitinbot', 'technorati',
-					'yahoo', 'findexa', 'findlinks', 'gaisbo', 'zyborg', 'surveybot', 'bloglines', 'blogsearch', 'pubsub', 'syndic8', 'userland', 'gigabot', 'become.com' );
+					'yahoo', 'findexa', 'findlinks', 'gaisbo', 'zyborg', 'surveybot', 'bloglines', 'blogsearch', 'pubsub', 'syndic8', 'userland', 'gigabot', 'become.com', 'gsa-crawler' );
 	if( 	!( ( $bawpvc_options['no_members']=='on' && is_user_logged_in() ) || ( $bawpvc_options['no_admins']=='on' && current_user_can( 'administrator' ) ) ) && 
 			!empty( $_SERVER['HTTP_USER_AGENT'] ) &&
 			is_singular( $bawpvc_options['post_types'] ) && 
