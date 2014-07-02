@@ -50,6 +50,10 @@ table.box {
 	text-overflow: ellipsis;
 }
 
+#wpadminbar * {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
 /*Basic Structure*/
 body {
 	color: #080808;
