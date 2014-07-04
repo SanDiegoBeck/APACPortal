@@ -1,8 +1,6 @@
 <?php
 /**
  * retrieve a post list including "post", "attachment" and "link" post type
- * @param string $category_name
- * @param int $limit deprecated, TODO, should be removed after all pages are made dynamic
  * @param array $args
  *	each_column: an integer, list container repeats after which items are exported, a list, say, "ul", will than be divided to multiple "ul"s
  *	contailer: list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
