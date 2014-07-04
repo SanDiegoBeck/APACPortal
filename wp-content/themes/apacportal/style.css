@@ -644,14 +644,9 @@ blockquote.quotescollection cite {
 	list-style-type: none;
 }
 
-.box>.content ul.pvc li a {
-	padding-left: 3.5em;
-	position: relative;
-}
-
 .box>.content ul.pvc li a .views-count {
-	position: absolute;
-	left: 0;
+	float: left;
+	margin-right: 5px;
 }
 
 .box>.content .attachment-3-column-thumbnail {
