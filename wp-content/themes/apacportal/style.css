@@ -644,6 +644,16 @@ blockquote.quotescollection cite {
 	list-style-type: none;
 }
 
+.home.page .box>.content ul.pvc li a {
+	padding-left: 3.5em;
+	position: relative;
+}
+
+.home.page .box>.content ul.pvc li a .views-count {
+	position: absolute;
+	left: 0;
+}
+
 .box>.content ul.pvc li a .views-count {
 	float: left;
 	margin-right: 5px;
