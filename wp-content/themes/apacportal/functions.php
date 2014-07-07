@@ -343,7 +343,6 @@ add_action('admin_enqueue_scripts', function(){
 add_action('wp_footer', function(){
 	
 	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), '3.11');
-	wp_register_script('placeholder', get_stylesheet_directory_uri().'/js/jquery.placeholder.js', array('jquery'), '2.0.8');
 	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js', array('jquery'), '1.54');
 	
 	wp_enqueue_script('bootstrap');

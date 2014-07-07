@@ -85,7 +85,7 @@
 					$(this).addClass('folded').animate({width: 0}, 100)
 				});
 				
-				$('input, textarea').placeholder();
+				$('input, textarea').placeholder && $('input, textarea').placeholder();
 				
 				$('.rslides').responsiveSlides({
 					auto: true,
