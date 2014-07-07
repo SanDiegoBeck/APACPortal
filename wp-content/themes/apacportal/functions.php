@@ -428,7 +428,7 @@ add_action('init', function(){
 		if(array_key_exists('title', $attrs)){
 			$out .= '<header>';
 			
-			if(in_array($attrs['type'], array('list', 'slider', 'single')) && (!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && !array_key_exists('more_link', $attrs)){
+			if(in_array($attrs['type'], array('list', 'slider', 'single')) && (!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && !array_key_exists('name', $attrs) && !array_key_exists('more_link', $attrs)){
 				if(array_key_exists('category', $attrs)){
 					$out .= '<a href="'.(site_url().'/category/'.$attrs['category'].'/').'" class="more-link">More</a>';
 				}
