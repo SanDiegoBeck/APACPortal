@@ -25,6 +25,11 @@ input {
 	box-sizing: content-box;
 }
 
+input:focus {
+	border: none;
+	outline: none;
+}
+
 input[type="file"] {
 	border: none;
 	line-height: 1;

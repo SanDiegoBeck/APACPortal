@@ -80,9 +80,9 @@
 				});
 
 				$('.search-query').on('focus', function(){
-					$(this).removeClass('folded').animate({width: 200}, 100);
+					$(this).removeClass('folded').animate({width: 200}, 100).attr('placeholder', 'Search for:');
 				}).on('blur', function(){
-					$(this).addClass('folded').animate({width: 0}, 100)
+					$(this).addClass('folded').animate({width: 0}, 100).attr('placeholder', '');
 				});
 				
 				$('input, textarea').placeholder && $('input, textarea').placeholder();
