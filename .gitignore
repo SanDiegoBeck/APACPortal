@@ -3,5 +3,8 @@
 /nbproject
 /wp-content/uploads
 /wp-content/backup
+/wp-content/cache/
 /wp-config.php
-
+/investorday/
+/phpmyadmin
+/webalizer/
