@@ -1,6 +1,6 @@
 <?php
 
-$fields_plain_text = array('name_en'=>'English Name', 'name_cn'=>'Chinese Name', 'email'=>'Email', 'location'=>'Location', 'organization'=>'Organization', 'department'=>'Department', 'direct_manager'=>'Direct Manager', 'hire_date'=>'Hire Date (with Fiat Chrysler)');
+$fields_plain_text = array('name_en'=>'English Name', 'name_cn'=>'Chinese Name', 'id'=>'TID/UID', 'email'=>'Email', 'location'=>'Location', 'organization'=>'Organization', 'department'=>'Department', 'direct_manager'=>'Direct Manager', 'hire_date'=>'Hire Date (with Fiat Chrysler)');
 $fields_multi_line = array('reason'=>'Tell us why you want to participate in the program, and what you hope to archive', 'expectation'=>'What do you expect from your Mentor');
 
 $fields = array_merge($fields_plain_text, $fields_multi_line);
