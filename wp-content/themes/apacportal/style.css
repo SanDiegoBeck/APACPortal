@@ -149,6 +149,11 @@ body, a, input {
 
 .navbar .navbar-search {
 	margin-top: 7px;
+	height: 30px;
+}
+
+.navbar .navbar-search .search-query:focus {
+	outline: none;
 }
 
 .navbar .navbar-search .search-query {
@@ -159,7 +164,7 @@ body, a, input {
 	background-size: 24px 24px;	
 	padding-left: 30px;
 	width: 0;
-	line-height: 30px;
+	line-height: 20px;
 	margin-right: 10px;
 }
 
@@ -168,6 +173,7 @@ body, a, input {
 	box-shadow: none;
 	cursor: default;
 	margin-right: 0;
+	overflow: hidden;
 }
 
 .navbar-inner {
