@@ -1,4 +1,4 @@
-<form action="http://spsearch.fiat.com/search" class="navbar-search pull-right">
+<form action="http://spsearch.fiat.com/search" target="_blank" class="navbar-search pull-right">
     <input type="text" name="q" placeholder="" class="search-query folded">
     <button type="submit" class="hidden">Search</button>
     <input type="hidden" name="output" value="xml_no_dtd">
