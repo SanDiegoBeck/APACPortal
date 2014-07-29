@@ -14,21 +14,21 @@ if(isset($_POST['submit'])){
 				throw new Exception('Please fill in "' . $label . '"');
 			}
 		}
+	
+		$application_id = wp_insert_post(array(
+			'post_type'=>'form_data',
+			'post_title'=>$_POST['name_en'] . ' - Mentor Program Application'
+		));
+
+		foreach($fields as $field => $label){
+			add_post_meta($application_id, $field, $_POST[$field]);
+		}
+
+		$success = 'Congratulations! Your application was accepted.';
+	
 	}catch(Exception $e){
 		$error = $e->getMessage();
 	}
-	
-	$application_id = wp_insert_post(array(
-		'post_type'=>'form_data',
-		'post_title'=>$_POST['name_en'] . ' - Mentor Program Application'
-	));
-	
-	foreach($fields as $field => $label){
-		add_post_meta($application_id, $field, $_POST[$field]);
-	}
-	
-	$success = 'Congratulations! Your application was accepted.';
-	
 }
 the_post();
 get_header();

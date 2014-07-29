@@ -424,6 +424,10 @@ footer.entry-meta {
 	background: #FFF;
 }
 
+.archive article dl ul li {
+	list-style-type: none;
+}
+
 .archive .hentry {
 	padding: 1em;
 }
@@ -617,8 +621,13 @@ blockquote.quotescollection cite {
 }
 
 .box.product-picture.five-column.loose .content dl {
-	margin: 15px 4%;
-	width: 12%;
+	margin: 15px 0;
+	width: 20%;
+}
+
+.box.product-picture.five-column.loose .content dl dt {
+	width: 60%;
+	margin: auto;
 }
 
 .box.product-picture.loose .content dl {
@@ -628,10 +637,12 @@ blockquote.quotescollection cite {
 
 .box.product-picture .content dl dt {
 	box-shadow: 2px 2px 5px #CCC;
+	border-radius: 15%;
 }
 
 .box.product-picture .content dl dt img {
 	width: 100%;
+	border-radius: 15%;
 	/*width: 130px;*/
 	/*height: 130px;*/
 }
