@@ -616,8 +616,8 @@ blockquote.quotescollection cite {
 }
 
 .box.product-picture.three-column .content dl {
-	margin: 15px 3.16666667%;
-	width: 27%;
+	margin: 15px 0;
+	width: 33.33%;
 }
 
 .box.product-picture.five-column.loose .content dl {
@@ -625,7 +625,7 @@ blockquote.quotescollection cite {
 	width: 20%;
 }
 
-.box.product-picture.five-column.loose .content dl dt {
+.box.product-picture .content dl dt {
 	width: 60%;
 	margin: auto;
 }
