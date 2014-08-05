@@ -107,8 +107,24 @@ function apacportal_post_list($args = array()){
 	
 	foreach( $posts as $index => $post ){
 		
+		$tags = wp_get_post_tags($post->ID, array('fields'=>'names'));
+		
+		foreach(array('new', 'hot') as $featured_tag){
+			if(in_array($featured_tag, $tags)){
+				$args['item_class'] .= ' ' . $featured_tag;
+			}
+		}
+		
+		if(time() - strtotime($post->post_date) > 86400 * 3){
+			$args['item_class'] .= ' new';
+		}
+		
 		if($args['item']){
 			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . '"' . '>';
+		}
+		
+		if(strpos($args['item_class'], ' new') !== false){
+			$out .= '<img class="mark-new" src="http://img.sj33.cn/uploads/allimg/200803/20080320125246727.gif">';
 		}
 		
 		if($args['show_thumbnail']){
@@ -321,7 +337,8 @@ add_action('parse_query', function($wp_query){
 add_action('wp_enqueue_scripts', function(){
 	
 	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2-2014-04-28');
-	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-04-30');
+	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-08-05');
+	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css', array(), '2014-04-28');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	

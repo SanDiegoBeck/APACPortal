@@ -335,6 +335,15 @@ body, a, input {
 	text-overflow: ellipsis;
 }
 
+.box>.content ul li.hot a {
+	color: #00F;
+	font-weight: bold;
+}
+
+.box>.content ul li.new .mark-new {
+	margin-right: 3px;
+}
+
 /*Post thumbnail slider*/
 .rslides summary {
 	position: absolute;
