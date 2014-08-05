@@ -115,7 +115,7 @@ function apacportal_post_list($args = array()){
 			}
 		}
 		
-		if(time() - strtotime($post->post_date) > 86400 * 3){
+		if(time() - strtotime($post->post_date) < 86400 * 3){
 			$args['item_class'] .= ' new';
 		}
 		
@@ -123,7 +123,7 @@ function apacportal_post_list($args = array()){
 			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . '"' . '>';
 		}
 		
-		if(strpos($args['item_class'], ' new') !== false){
+		if($args['type'] === 'list' && strpos($args['item_class'], ' new') !== false){
 			$out .= '<img class="mark-new" src="http://img.sj33.cn/uploads/allimg/200803/20080320125246727.gif">';
 		}
 		
