@@ -322,12 +322,12 @@ add_action('wp_enqueue_scripts', function(){
 	
 	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2-2014-04-28');
 	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-04-30');
-	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css', array(), '2014-04-28');
+	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	
 	wp_enqueue_style('bootstrap');
-	wp_enqueue_style('ltIE9');
 	wp_enqueue_style('responsiveslides');
+	wp_enqueue_style('ltIE9');
 	wp_style_add_data('ltIE9', 'conditional', 'lt IE 9');
 	
 });
@@ -683,9 +683,14 @@ function twentythirteen_entry_meta() {
 		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
 
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
-	if ( $categories_list ) {
-		echo '<span class="categories-links"> View More in: ' . $categories_list . '</span>';
+	$categories = get_the_category();
+	if ( $categories ) {
+		$category_names = $category_slugs = array();
+		foreach($categories as $category){
+			$category_names[] = $category->name;
+			$category_slugs[] = $category->slug;
+		}
+		echo '<span class="categories-links"> View More in: <a href="' . site_url() . '/category/' . implode('+', $category_slugs) . '">' . implode(' ', $category_names) . '</a></span>';
 	}
 
 	// Translators: used between list items, there is a space after the comma.
