@@ -107,23 +107,25 @@ function apacportal_post_list($args = array()){
 	
 	foreach( $posts as $index => $post ){
 		
+		$post_class = '';
+		
 		$tags = wp_get_post_tags($post->ID, array('fields'=>'names'));
 		
 		foreach(array('new', 'hot') as $featured_tag){
 			if(in_array($featured_tag, $tags)){
-				$args['item_class'] .= ' ' . $featured_tag;
+				$post_class .= ' ' . $featured_tag;
 			}
 		}
 		
-		if(time() - strtotime($post->post_date) < 86400 * 3){
-			$args['item_class'] .= ' new';
+		if((time() - strtotime($post->post_date)) < (86400 * 3)){
+			$post_class .= ' new';
 		}
 		
 		if($args['item']){
-			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . '"' . '>';
+			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . $post_class . '"' . '>';
 		}
 		
-		if($args['type'] === 'list' && strpos($args['item_class'], ' new') !== false){
+		if($args['type'] === 'list' && strpos($post_class, ' new') !== false){
 			$out .= '<img class="mark-new" src="http://img.sj33.cn/uploads/allimg/200803/20080320125246727.gif">';
 		}
 		
