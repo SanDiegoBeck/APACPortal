@@ -2,11 +2,15 @@
 /*
   Plugin Name: JS & CSS Script Optimizer
   Plugin URI: http://4coder.info/en/code/wordpress-plugins/js-css-script-optimizer/
-  Version: 0.2.9
+  Version: 0.3.0
   Author: Yevhen Kotelnytskyi
   Author URI: http://4coder.info/en/
   Description: Features: Combine all scripts into the single file, Pack scripts using <a href="http://joliclic.free.fr/php/javascript-packer/en/">PHP version of the Dean Edwards's JavaScript Packer</a>, Move all JavaScripts to the bottom, Combine all CSS scripts into the single file, Minify CSS files (remove comments, tabs, spaces, newlines).
 */
+
+define('SO_REC_CACHE_DIR_PATH', str_replace(ABSPATH, '', WP_CONTENT_DIR . '/cache/scripts/'));
+define('SO_REC_CACHE_DIR_URL', content_url()  . '/cache/scripts/');
+
 class evScriptOptimizer {
 
     static $upload_url = '';
@@ -16,7 +20,7 @@ class evScriptOptimizer {
     static $options = null;
     static $js_printed = false;
 	static $css_printed = false;
-	
+
 	static $ordering_started = false;
 
     /**
@@ -29,7 +33,7 @@ class evScriptOptimizer {
         self::$plugin_path = dirname(__FILE__);
         
         // load plugin localizations
-        load_plugin_textdomain('spacker', self::$plugin_path . '/lang', self::$plugin_path . '/lang');
+        load_plugin_textdomain( 'spacker', false, dirname(plugin_basename(__FILE__)) . '/lang/' );
 
         // load options
         self::$options = get_option('spacker-options');
@@ -50,8 +54,8 @@ class evScriptOptimizer {
                 'cache'                 => array(),
                 'cache-css'             => array(),
 				'strict-ordering-beta'  => false,
-				'cache-dir-path'        => WP_CONTENT_DIR . '/cache/scripts/',
-				'cache-dir-url'         => content_url()  . '/cache/scripts/',
+				'cache-dir-path'        => SO_REC_CACHE_DIR_PATH,
+				'cache-dir-url'         => SO_REC_CACHE_DIR_URL,
 			);
         }
         else {
@@ -151,14 +155,35 @@ class evScriptOptimizer {
         }
         return true;
 	}
+    
+    static private function get_full_path( $path ) {
+        if (($path[0] == '/') or ($path[1] == ':')) {
+            return $path;
+        }
+        
+        return ABSPATH . '/' . $path;
+    }
 
     static function check_cache_directory() {
-        if (is_writable(self::$options['cache-dir-path'])) {
+        if (empty(self::$options['cache-dir-path']) 
+          or empty(self::$options['cache-dir-url'])) {
+            self::$options['cache-dir-path'] = SO_REC_CACHE_DIR_PATH;
+            self::$options['cache-dir-url']  = SO_REC_CACHE_DIR_URL;
+            self::save_options();
+        }    
+    
+        if ((self::$options['cache-dir-path'][0] == '/')
+          or (self::$options['cache-dir-path'][1] == ':')) {
+            self::$options['cache-dir-path'] = str_replace(ABSPATH, '', self::$options['cache-dir-path']);
+            self::save_options();
+        }    
+    
+        if (is_writable(self::get_full_path(self::$options['cache-dir-path']))) {
             return true;
         }
         else {
-            if (@mkdir(self::$options['cache-dir-path']) 
-                && @chmod(self::$options['cache-dir-path'], 0777)) {
+            if (@mkdir(self::get_full_path(self::$options['cache-dir-path']), 0777, true) 
+                && @chmod(self::get_full_path(self::$options['cache-dir-path']), 0777)) {
                 return true;
             }
         }
@@ -452,7 +477,7 @@ class evScriptOptimizer {
             }			
 			
             $cache_name = md5(md5($handles).$fileId);
-            $cache_file_path = self::$options['cache-dir-path'] . $cache_name . '.js';
+            $cache_file_path = self::get_full_path(self::$options['cache-dir-path']) . $cache_name . '.js';
             $cache_file_url = self::$options['cache-dir-url'] . $cache_name . '.js';
             // echo "$fileId<br>".self::$options['cache'][$cache_name]."<br>$cache_file_path<br>$cache_file_url<br>".is_readable($cache_file_path);
             
@@ -532,7 +557,7 @@ class evScriptOptimizer {
 					$fileId += $script['ver'].$script['src'];
 				}
                 $cache_name = md5(md5($handle).$fileId);
-                $cache_file_path = self::$options['cache-dir-path'] . $cache_name . '.js';
+                $cache_file_path = self::get_full_path(self::$options['cache-dir-path']) . $cache_name . '.js';
                 $cache_file_url = self::$options['cache-dir-url'] . $cache_name . '.js';
 
                 // Find a cache
@@ -672,7 +697,7 @@ class evScriptOptimizer {
                 $fileId = 'nover';
 			
             $cache_name = md5(md5($handles).$fileId);
-            $cache_file_path = self::$options['cache-dir-path'] . $cache_name . '.css';
+            $cache_file_path = self::get_full_path(self::$options['cache-dir-path']) . $cache_name . '.css';
             $cache_file_url = self::$options['cache-dir-url'] . $cache_name . '.css';
 			
             // Find a cache
@@ -693,6 +718,7 @@ class evScriptOptimizer {
 
                 // Get script contents
                 $_remote_get = wp_remote_get(self::add_url_param($src, 'v', rand(1, 9999999)));
+
                 if (! is_wp_error($_remote_get) && $_remote_get['response']['code'] == 200) {
                     $content = $_remote_get['body'];
 
@@ -702,8 +728,9 @@ class evScriptOptimizer {
                     $scripts_text .= $content . "\n";                    
                 }
                 else {
-                    if (! is_wp_error($_remote_get)) 
+                    if (! is_wp_error($_remote_get)) {
                         $error_message = "/* Error loading script content: $src; HTTP Code: {$_remote_get['response']['code']} ({$_remote_get['response']['message']}) */";
+                    }
                     else
                         $error_message = "/* Error loading script content: $src */";
                         
@@ -737,7 +764,7 @@ class evScriptOptimizer {
                     $fileId = 'nover';
                 
                 $cache_name = md5(md5($handle).$fileId);
-                $cache_file_path = self::$options['cache-dir-path'] . $cache_name . '.css';
+                $cache_file_path = self::get_full_path(self::$options['cache-dir-path']) . $cache_name . '.css';
                 $cache_file_url = self::$options['cache-dir-url'] . $cache_name . '.css';
 
                 // Find a cache
@@ -787,7 +814,7 @@ class evScriptOptimizer {
     }
 
     static function save_script($filename, $content) {
-        if (is_writable(self::$options['cache-dir-path'])) {
+        if (is_writable(self::get_full_path(self::$options['cache-dir-path']))) {
             $fhandle = @fopen($filename, 'w+');
             if ($fhandle) fwrite($fhandle, $content, strlen($content));
         }
