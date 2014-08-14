@@ -31,8 +31,9 @@ get_header();
 				<?php while ( have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<h1 class="entry-title">
-						<?php						
-							switch(get_post_type()){
+						<?php
+							$post_type = get_post_type();
+							switch($post_type){
 								case 'link':
 									echo '<a href="'.get_the_content().'" target="_blank">'.get_the_title().'</a>';
 									break;
@@ -52,6 +53,12 @@ get_header();
 									<?php the_post_thumbnail(); ?>
 									&nbsp;
 								</div>
+								<?php elseif ($post_type === 'attachment') : ?>
+									<?php
+									$fileinfo = wp_check_filetype(get_post_meta(get_the_ID(), '_wp_attached_file', true));
+									if(file_exists(get_stylesheet_directory() . '/images/file_icons/' . $fileinfo['ext']  . '.' . 'png')): ?>
+									<img src="<?=get_stylesheet_directory_uri() . '/images/file_icons/' . $fileinfo['ext']  . '.' . 'png'?>">
+									<?php endif; ?>
 								<?php endif; ?>
 							</dt>
 							<dd>
