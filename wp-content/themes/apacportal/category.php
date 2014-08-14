@@ -62,7 +62,14 @@ get_header();
 								<?php endif; ?>
 							</dt>
 							<dd>
-								<?php if(get_post_type()=='post'){ the_excerpt(); }?>
+								<?php if(get_post_type() === 'post'){ the_excerpt(); }?>
+								<?php if($post_type === 'attachment'): ?>
+								<ul>
+									<li><b>File Size: </b><?=size_format(filesize(get_attached_file(get_the_ID())))?></li>
+									<li><b>Uploaded at: </b><?php the_date(); ?></li>
+									<li><b>Categories: </b><?php the_category(', '); ?></li>
+								</ul>
+								<?php endif; ?>
 							</dd>
 						</dl>
 					</article><!-- #post -->
