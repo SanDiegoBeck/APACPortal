@@ -51,7 +51,7 @@ array_walk($users, function(&$user){
 					<th>Company</th>
 					<th>Department</th>
 				</thead>
-				<tbody class="content">
+				<tbody>
 <?php  $i=0; ?>
 <?php foreach($users as $user){?>
 					<?php  $i++ ?>
