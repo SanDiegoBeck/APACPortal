@@ -172,7 +172,7 @@ function apacportal_post_list($args = array()){
 					break;
 
 				case 'attachment':
-					$out .= preg_replace('/<a(.*?)>/i','<a$1 target="_blank">', wp_get_attachment_link($post->ID));
+					$out .= '<a href="' . wp_get_attachment_url($post->ID) . '">' . str_replace('_', '' , $post->post_title) . '</a>';
 					break;
 
 				default:
