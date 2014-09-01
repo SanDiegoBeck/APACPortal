@@ -1,0 +1,9 @@
+User-agent: gsa-crawler
+Disallow: /wp-content/themes
+Disallow: /wp-includes
+Disallow: /wp-admin
+Disallow: /share-price/
+Disallow: /world-time/
+
+User-agent: *
+Disallow: /
