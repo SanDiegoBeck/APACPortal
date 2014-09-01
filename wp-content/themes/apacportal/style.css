@@ -50,6 +50,10 @@ table.box {
 	text-overflow: ellipsis;
 }
 
+.alert {
+	box-shadow: 2px 2px 5px #CCC;
+}
+
 #wpadminbar * {
 	font-family: Helvetica, Arial, sans-serif;
 }
@@ -603,6 +607,11 @@ blockquote.quotescollection cite {
 	font-size: 0.6em;
 	display: block;
 	text-align: right;
+}
+
+blockquote p {
+	font-size: inherit;
+	line-height: 1.5;
 }
 
 .quotescollection_author {
