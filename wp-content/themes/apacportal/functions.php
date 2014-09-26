@@ -7,6 +7,8 @@
  *	container_class
  *	item: list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
  *	item_class
+ *	header_class
+ *	header_style
  *	show_thumbnail
  *	thumbnail_container
  *	thumbnail_class
@@ -445,8 +447,15 @@ add_action('init', function(){
 		$out = '<div class="' . $attrs['class'] . '">';
 		
 		if(array_key_exists('title', $attrs)){
-			$out .= '<header>';
 			
+			$out .= '<header class="' . $attrs['header_class'] . '"';
+			
+			if(array_key_exists('header_style', $attrs)){
+				$out .= ' style="' . $attrs['header_style'] . '"';
+			}
+			
+			$out .= '>';
+
 			if(in_array($attrs['type'], array('list', 'slider', 'single')) && (!array_key_exists('limit', $attrs) || $attrs['limit'] > 0) && !array_key_exists('name', $attrs) && !array_key_exists('more_link', $attrs)){
 				if(array_key_exists('category', $attrs)){
 					$out .= '<a href="'.(site_url().'/category/'.$attrs['category'].'/').'" class="more-link">More</a>';
