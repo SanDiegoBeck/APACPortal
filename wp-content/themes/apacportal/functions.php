@@ -124,7 +124,7 @@ function apacportal_post_list($args = array()){
 		}
 		
 		if($args['item']){
-			$out .= '<'. $args['item'] . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . $post_class . '"' . '>';
+			$out .= '<'. $args['item'] . ' id="'.$post->post_name.'"' . ' title="'.$post->post_title.'"' . ' class="' . $args['item_class'] . $post_class . '"' . '>';
 		}
 		
 		if($args['type'] === 'list' && strpos($post_class, ' new') !== false){
@@ -253,7 +253,7 @@ add_action('init', function(){
 	add_image_size( 'home-news-slider', 526, 188, true );
 	add_image_size( '3-column-thumbnail', 249, 188, true );
 	add_image_size( 'list-bullet', 30, 30, true );
-	add_image_size( 'medium-thumbnail', 250, 250, true );
+	add_image_size( 'medium-thumbnail', 250, 250 );
 });
 
 /**
