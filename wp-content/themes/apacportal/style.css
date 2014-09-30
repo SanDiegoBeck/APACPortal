@@ -550,6 +550,14 @@ footer.entry-meta {
 	border: none;
 	box-shadow: none;
 	border-radius: 0;
+
+.post.format-gallery .entry-header, .post.format-gallery .entry-content, .post.format-gallery .entry-summary, .post.format-gallery .entry-meta {
+	width: 90%;
+	max-width: none;
+}
+
+.post.format-gallery .alignright {
+	float: right;
 }
 
 /*Search Page*/
