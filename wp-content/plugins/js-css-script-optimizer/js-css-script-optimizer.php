@@ -2,7 +2,7 @@
 /*
   Plugin Name: JS & CSS Script Optimizer
   Plugin URI: http://4coder.info/en/code/wordpress-plugins/js-css-script-optimizer/
-  Version: 0.3.0
+  Version: 0.3.1
   Author: Yevhen Kotelnytskyi
   Author URI: http://4coder.info/en/
   Description: Features: Combine all scripts into the single file, Pack scripts using <a href="http://joliclic.free.fr/php/javascript-packer/en/">PHP version of the Dean Edwards's JavaScript Packer</a>, Move all JavaScripts to the bottom, Combine all CSS scripts into the single file, Minify CSS files (remove comments, tabs, spaces, newlines).
