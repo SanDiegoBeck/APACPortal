@@ -606,6 +606,32 @@ add_filter( 'user_can_richedit', function($c) {
 	return $c;
 });
 
+// add columns to User panel list page
+add_filter('manage_users_columns', function($column) {
+	
+	$column = array (
+		'cb' => '<input type="checkbox" />',
+		'username' => 'Username',
+		'name' => 'Name',
+		'department' => 'Department',
+		'role' => 'Role',
+		'posts' => 'Posts',
+	);
+    
+    return $column;
+	
+});
+
+// add the data
+add_filter('manage_users_custom_column', function ($val, $column_name, $user_id){
+    switch ($column_name) {
+        case 'department' :
+            return get_user_meta($user_id, 'department', true);
+        default:
+    }
+    return;
+}, 10, 3 );
+
 /**
  * define customized widgets
  */
