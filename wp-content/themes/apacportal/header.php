@@ -33,7 +33,7 @@
 					<div class="main">
 						<div class="description-top">
 							<a href="https://www.google.com/finance?q=BIT%3AF&sq=fiat%20spa&sp=4&ei=U4EeU9jxFsSUwQPSlgE" target="_blank">
-								<span class="share-price">&nbsp;</span>
+								<span class="no-share-price">&nbsp;</span>
 							</a>
 						</div>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
