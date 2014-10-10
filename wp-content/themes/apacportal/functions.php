@@ -590,6 +590,13 @@ add_action('init', function(){
 	register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 	add_post_type_support( 'attachment', 'thumbnail' );
+	
+	register_post_type('company_stamp_request', array(
+		'name'=>'Chop Request',
+		'public'=>true,
+		'show_ui'=>true,
+		'show_in_menu'=>true
+	));
 });
 
 /**
