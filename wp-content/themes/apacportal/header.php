@@ -37,7 +37,7 @@
 							</a>
 						</div>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-							<h1 class="site-title pull-left"><img src="<?=get_stylesheet_directory_uri()?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
+							<h1 class="site-title pull-left"><img src="<?=site_url()?>/wp-content/uploads/2014/10/FCA-logo-250x92.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
 						</a>
 						<h1 class="logo-aside pull-right"><img src="<?=get_stylesheet_directory_uri()?>/images/logo-apacportal.png"></h1>
 						<div class="description pull-left">
