@@ -9,6 +9,15 @@
  * @since Twenty Thirteen 1.0
  */
 get_header();
+
+$categories = get_the_category();
+$categories_name = array();
+
+foreach($categories as $category){
+	$categories_name[] = $category->name;
+}
+
+
 ?>
 
 	<div id="primary" class="content-area">
@@ -19,7 +28,7 @@ get_header();
 			<div class="span9 box">
 			<?php if ( have_posts() ) : ?>
 				<header class="archive-header">
-					<h1 class="archive-title"><?php printf(single_cat_title( '', false ) ); ?></h1>
+					<h1 class="archive-title"><?=implode(' ', $categories_name)?></h1>
 
 					<?php if ( category_description() ) : // Show an optional category description ?>
 					<div class="archive-meta"><?php echo category_description(); ?></div>
