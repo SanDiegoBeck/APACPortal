@@ -6,7 +6,7 @@ $feed_data = unserialize(get_option('feed_data'));
 
 if(empty($feed_data) || ($feed_data['timestamp'] < time() - 7200)){
 	$feed_data['chrysler'] = fetch_feed( 'http://scoop.chrysler.com/feed' );
-	$feed_data['fiat'] = fetch_feed( 'http://www.fiatspa.com/en-US/media_center/_layouts/15/listfeed.aspx?List=7F16150F-5594-419A-8A89-4F567AF5CEC8' );
+	$feed_data['fiat'] = fetch_feed( 'http://www.fcagroup.com/it-IT/Pages/RSS.aspx?Site=/en-us/media_center&FieldNameDesc=BoxTitle&FieldNameSort=ReferenceDate' );
 	$feed_data['timestamp'] = time();
 	update_option('feed_data', serialize($feed_data));
 }
