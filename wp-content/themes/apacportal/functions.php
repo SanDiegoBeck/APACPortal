@@ -745,6 +745,13 @@ function twentythirteen_entry_meta() {
 
 	// Translators: used between list items, there is a space after the comma.
 	$categories = get_the_category();
+	
+	foreach($categories as $key => $category){
+		if($category->slug === 'uncategorized'){
+			unset($categories[$key]);
+		}
+	}
+	
 	if ( $categories ) {
 		$category_names = $category_slugs = array();
 		foreach($categories as $category){
