@@ -11,6 +11,7 @@ a {
 
 a:hover {
 	text-decoration: none;
+	color: #597DDA;
 }
 
 td, th {
@@ -55,7 +56,7 @@ table.box {
 }
 
 #wpadminbar * {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue Lt Std', Helvetica, Arial, sans-serif;
 }
 
 /*Basic Structure*/
@@ -66,7 +67,11 @@ body {
 }
 
 body, a, input {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue Lt Std', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Helvetica Neue Lt Std Light', Helvetica, Arial, sans-serif;
 }
 
 .site {
@@ -120,7 +125,7 @@ body, a, input {
 }
 
 .description .worldtime .city {
-	color: #003F7D;
+	color: #597DDA;
 	margin-left: 10px;
 }
 
@@ -178,7 +183,7 @@ body, a, input {
 
 .navbar-inner {
 	padding: 0;
-	border-top: #003F7D 2px solid;
+	border-top: #597DDA 2px solid;
 	border-radius: 0;
 }
 
@@ -188,14 +193,15 @@ body, a, input {
 }
 
 .navbar .nav>li>a {
-	color: #003F7D;
+	color: #000;
 	padding: 10px 20px;
 }
 
 .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
-	color: #003F7D;
+	color: #597DDA;
 	font-weight: bold;
-	border-bottom: 3px solid #800;
+	border-bottom: 2px solid #DA9292;
+	text-shadow: none;
 }
 
 .site-header .total-hits {
@@ -239,7 +245,7 @@ body, a, input {
 .box>header, .box>.header {
 	font-size: 1em;
 	padding:8px 8px;
-	color: #003F7D;
+	color: rgb(64, 94, 151);
 	background: #F6F6F6;
 	font-weight: bold;
 	border-radius: 3px 3px 0 0;
@@ -336,7 +342,7 @@ body, a, input {
 }
 
 .box>.content ul li.hot a {
-	color: #6060B3;
+	color: #597DDA;
 	font-weight: bold;
 }
 
@@ -381,7 +387,7 @@ body, a, input {
 
 /*Posts Common*/
 .hentry {
-	padding: 40px 0;
+	padding: 30px 0 40px;
 }
 
 .entry-header, .entry-content, .entry-summary, .entry-meta {
@@ -500,7 +506,6 @@ footer.entry-meta {
 }
 
 .single-post .entry-header {
-	padding: 0 2em;
 	border-bottom: 1px solid #CCC;
 }
 
@@ -512,8 +517,7 @@ footer.entry-meta {
 }
 
 .single-post .entry-header {
-	max-width: none;
-	padding: 0 2em;
+	max-width: 604px;
 	border-bottom: 1px solid #CCC;
 }
 
@@ -525,6 +529,7 @@ footer.entry-meta {
 .single-post .post {
 	background-color: #FFF;
 	box-shadow: 2px 2px 5px #CCC;
+	margin-bottom: 10px;
 }
 
 .post p {
@@ -728,4 +733,53 @@ blockquote p {
 /*MOPAR Page*/
 .page-mopar .market-list .content ul li {
 	background: none;
+}
+
+/*Customize Fonts*/
+@font-face {
+    font-family: 'Helvetica Neue Lt Std';
+    src: url('fonts/HelveticaNeueLTStd-Roman.eot');
+    src: url('fonts/HelveticaNeueLTStd-Roman.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Roman.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Roman.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Roman.svg#HelveticaNeueLTStd-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Lt Std';
+    src: url('fonts/HelveticaNeueLTStd-Bd.eot');
+    src: url('fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Bd.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Bd.svg#HelveticaNeueLTStd-Bd') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Lt Std Condensed';
+    src: url('fonts/HelveticaNeueLTStd-Cn.eot');
+    src: url('fonts/HelveticaNeueLTStd-Cn.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Cn.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Cn.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Cn.svg#HelveticaNeueLTStd-Cn') format('svg');
+    font-weight: normal;
+    font-style: condensed;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Lt Std Light';
+    src: url('fonts/HelveticaNeueLTStd-Lt.eot');
+    src: url('fonts/HelveticaNeueLTStd-Lt.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeueLTStd-Lt.woff') format('woff'),
+         url('fonts/HelveticaNeueLTStd-Lt.ttf') format('truetype'),
+         url('fonts/HelveticaNeueLTStd-Lt.svg#HelveticaNeueLTStd-Lt') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+
 }
