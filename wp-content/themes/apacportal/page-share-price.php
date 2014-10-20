@@ -2,11 +2,13 @@
 
 try{
 	
-	$price = get_option('share_price_fiat_spa');
+	$price = json_decode(get_option('share_price_fiat_spa'), JSON_OBJECT_AS_ARRAY);
 	
-	if(false && !$price || $price['timestamp'] < time() - 60){
+	if(!$price || (!is_null($price['timestamp']) && $price['timestamp'] < time() - 60)){
 		
-		$html = @file_get_contents('https://www.google.com/finance?q=BIT%3AF&sq=fiat%20spa&sp=4&ei=U4EeU9jxFsSUwQPSlgE');
+		$price['timestamp'] = null;
+		update_option('share_price_fiat_spa', json_encode($price)); // tell other clients not to fetch shareprice
+		$html = @file_get_contents('http://www.google.com/finance?q=FCAU');
 
 		if(!$html){
 			throw new Exception('Google Finance connection refused');
@@ -22,7 +24,7 @@ try{
 			'timestamp' => time()
 		);
 		
-		update_option('share_price_fiat_spa', $price);
+		update_option('share_price_fiat_spa', json_encode($price));
 
 	}
 	

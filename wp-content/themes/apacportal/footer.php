@@ -35,36 +35,36 @@
 		(function($){
 			$(function(){
 
-//				if(localStorage && localStorage.sharePrice && $.parseJSON(localStorage.sharePrice).content && ($.parseJSON(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
-//
-//					$('.share-price').html($.parseJSON(localStorage.sharePrice).content);
-//				}
-//				else{
-//
-//					$('.share-price').text('Loading Share Price ...');
-//
-//					$('.share-price').length && $.get('/share-price/?_=' + new Date().getTime(),function(result){
-//						$('.share-price').html($(result).find('.pr').children('span').prepend('Fiat SpA Share Price: € ').end().end());
-//						localStorage.sharePrice=JSON.stringify({
-//							content: $('.share-price').html(),
-//							timestamp: new Date().getTime()
-//						});
-//					});
-//
-//				}
+				if(localStorage && localStorage.sharePrice && $.parseJSON(localStorage.sharePrice).content && ($.parseJSON(localStorage.sharePrice).timestamp > new Date().getTime() - 1.8E6)){
+
+					$('.share-price').html($.parseJSON(localStorage.sharePrice).content);
+				}
+				else{
+
+					$('.share-price').text('Loading Share Price ...');
+
+					$('.share-price').length && $.get('/share-price/?_=' + new Date().getTime(),function(result){
+						result && $('.share-price').html($(result).find('.pr').children('span').prepend('FCAN Share Price: $ ').end().end());
+						localStorage.sharePrice=JSON.stringify({
+							content: $('.share-price').html(),
+							timestamp: new Date().getTime()
+						});
+					});
+
+				}
 
 
 				setInterval(function(){
 
 					$.get('/world-time/?_=' + new Date().getTime(),function(time){$('.worldtime').html(time);});
 
-//					$.get('/share-price/?_=' + new Date().getTime(),function(result){
-//						$('.share-price').html($(result).find('.pr').children('span').prepend('Fiat SpA Share Price: € ').end().end());
-//						localStorage.sharePrice=JSON.stringify({
-//							content: $('.share-price').html(),
-//							timestamp: new Date().getTime()
-//						});
-//					});
+					$.get('/share-price/?_=' + new Date().getTime(),function(result){
+						$('.share-price').html($(result).find('.pr').children('span').prepend('FCAN Share Price: $ ').end().end());
+						localStorage.sharePrice=JSON.stringify({
+							content: $('.share-price').html(),
+							timestamp: new Date().getTime()
+						});
+					});
 
 				},60000);
 
