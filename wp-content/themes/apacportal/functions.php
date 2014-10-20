@@ -590,13 +590,46 @@ add_action('init', function(){
 	register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 	add_post_type_support( 'attachment', 'thumbnail' );
-	
-	register_post_type('company_stamp_request', array(
-		'name'=>'Chop Request',
-		'public'=>true,
+});
+
+add_action('init', function(){
+	register_post_type('chop_request', array(
+		'label'=>'Chop Requests',
 		'show_ui'=>true,
-		'show_in_menu'=>true
+		'show_in_menu'=>true,
+		'supports'=>array('title'),
+		'menu_icon'=>'dashicons-pressthis',
+		'register_meta_box_cb'=>function($post){
+		
+			add_meta_box('info', 'Request Detail', function($post){
+				require get_stylesheet_directory() . '/admin/chop_request_detail.php';
+			}, 'chop_request', 'normal');
+			
+			remove_meta_box( 'bawpvc_meta_box', 'chop_request' , 'side' );
+			
+			add_meta_box('status', 'Status', function($post){
+				require get_stylesheet_directory() . '/admin/chop_request_status.php';
+			}, 'chop_request', 'side');
+		}
 	));
+	add_role('internal_control','Internal Control',array(''));
+});
+
+add_action('save_post', function($post_id){
+	
+	$fields = array(
+		'request_status'=>'Request Status'
+	);
+	
+	if(isset($_POST['request_status'])){
+		add_post_meta($post_id, 'request_statuses', json_encode(array('user'=>wp_get_current_user()->display_name, 'value'=>$_POST['request_status'], 'time'=>time(), 'comments'=>$_POST['request_status_change_comments'])));
+	}
+	
+	foreach($fields as $field => $label){
+		if(isset($_POST[$field])){
+			update_post_meta($post_id, $field, $_POST[$field]);
+		}
+	}
 });
 
 /**
