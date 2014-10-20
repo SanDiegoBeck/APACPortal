@@ -44,7 +44,7 @@
 					$('.share-price').text('Loading Share Price ...');
 
 					$('.share-price').length && $.get('/share-price/?_=' + new Date().getTime(),function(result){
-						result && $('.share-price').html($(result).find('.pr').children('span').prepend('FCAN Share Price: $ ').end().end());
+						result && $('.share-price').html($(result).find('.pr').children('span').prepend('FCAU Share Price: $ ').end().end());
 						localStorage.sharePrice=JSON.stringify({
 							content: $('.share-price').html(),
 							timestamp: new Date().getTime()
@@ -59,7 +59,7 @@
 					$.get('/world-time/?_=' + new Date().getTime(),function(time){$('.worldtime').html(time);});
 
 					$.get('/share-price/?_=' + new Date().getTime(),function(result){
-						$('.share-price').html($(result).find('.pr').children('span').prepend('FCAN Share Price: $ ').end().end());
+						$('.share-price').html($(result).find('.pr').children('span').prepend('FCAU Share Price: $ ').end().end());
 						localStorage.sharePrice=JSON.stringify({
 							content: $('.share-price').html(),
 							timestamp: new Date().getTime()
