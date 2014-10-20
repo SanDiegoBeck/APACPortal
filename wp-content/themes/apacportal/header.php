@@ -32,9 +32,7 @@
 				<div class="wrapper">
 					<div class="main">
 						<div class="description-top">
-							<a href="https://www.google.com/finance?q=BIT%3AF&sq=fiat%20spa&sp=4&ei=U4EeU9jxFsSUwQPSlgE" target="_blank">
-								<span class="share-price">&nbsp;</span>
-							</a>
+							<span class="share-price">&nbsp;</span>
 						</div>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 							<h1 class="site-title pull-left"><img src="<?=site_url()?>/wp-content/uploads/2014/10/FCA-logo-250x92.png" alt="<?php bloginfo( 'name' ); ?>"></h1>
