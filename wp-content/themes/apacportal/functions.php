@@ -341,7 +341,7 @@ add_action('parse_query', function($wp_query){
 add_action('wp_enqueue_scripts', function(){
 	
 	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2-2014-04-28');
-	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-10-13');
+	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-10-23');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css', array(), '2014-04-28');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');

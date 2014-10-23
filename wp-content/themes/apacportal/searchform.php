@@ -1,5 +1,5 @@
 <form action="http://spsearch.fiat.com/search" target="_blank" class="navbar-search pull-right">
-    <input type="text" name="q" placeholder="" class="search-query folded">
+    <input type="text" name="q" placeholder="Search for..." class="search-query">
     <button type="submit" class="hidden">Search</button>
     <input type="hidden" name="output" value="xml_no_dtd">
     <input type="hidden" name="proxystylesheet" value="apaconn_fiat_chrysler">
