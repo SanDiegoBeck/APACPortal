@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
 				for($i = 0; $i < count($_POST['documents']['name']); $i++){
 					$documents[] = array('name'=>$_POST['documents']['name'][$i], 'pages'=>$_POST['documents']['pages'][$i]);
 				}
-				add_post_meta($application_id, $field, json_encode($documents));
+				add_post_meta($application_id, $field, json_encode($documents, JSON_UNESCAPED_UNICODE));
 			}else{
 				add_post_meta($application_id, $field, $_POST[$field]);
 			}

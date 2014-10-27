@@ -672,6 +672,37 @@ add_filter('manage_users_custom_column', function ($val, $column_name, $user_id)
     return;
 }, 10, 3 );
 
+add_filter('manage_chop_request_posts_columns', function ($columns){
+    $newcolumns = array(
+        'cb' => $columns['cb'],
+        'title' => $columns['title'],
+		'documents'=>'Documents',
+		'approval_file'=>'Approval File',
+		'status' => 'Status',
+		'date' => $columns['date']
+    );
+    return $newcolumns;
+});
+
+add_action('manage_chop_request_posts_custom_column', function ($column_name) {
+	global $post;
+    switch( $column_name ) {
+        case 'requestor' :
+            echo get_post_meta($post->ID, 'requestor', true);
+            break;
+		case 'documents':
+			$documents = json_decode(get_post_meta($post->ID, 'documents', true));
+			foreach($documents as $document){
+				echo $document->name . '&nbsp;(' . $document->pages . ')<br>';
+			}
+		case 'status' :
+			echo get_post_meta($post->ID, 'status', true);
+			break;
+		case 'approval_file':
+			echo '<a href="' . wp_get_attachment_url(get_post_meta($post->ID, 'approval_file_id', true)) . '" target="_blank">' . get_the_title(get_post_meta($post->ID, 'approval_file_id', true)) . '</a>';
+    }
+});
+
 /**
  * define customized widgets
  */
