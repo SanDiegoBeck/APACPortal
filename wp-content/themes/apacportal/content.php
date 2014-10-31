@@ -6,6 +6,14 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
+$the_categories = get_the_category();
+foreach($the_categories as $category){
+	$category_in[] = $category->slug;
+}
+$post_date_time = get_the_date('Y-m-d H:i:s');
+$previous_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('before'=>$post_date_time, 'inclusive'=>false), 'orderby'=>'date', 'order'=>'desc', 'category_name'=>implode('+', $category_in)))[0];
+$next_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('after'=>$post_date_time, 'inclusive'=>false), 'orderby'=>'date', 'order'=>'asc', 'category_name'=>implode('+', $category_in)))[0];
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -48,5 +56,13 @@
 		<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
 			<?php get_template_part( 'author-bio' ); ?>
 		<?php endif; ?>
+		
+		<hr>
+		
+		<div class="navigation clearfix">
+			<span class="pull-left">Newer Post: <a href="<?=get_the_permalink($next_post->ID)?>"><?=$next_post->post_title?></a></span>
+			<span class="pull-right">Older Post: <a href="<?=get_the_permalink($previous_post->ID)?>"><?=$previous_post->post_title?></a></span>
+		</div>
 	</footer><!-- .entry-meta -->
+
 </article><!-- #post -->

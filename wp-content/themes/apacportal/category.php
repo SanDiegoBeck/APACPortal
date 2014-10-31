@@ -53,7 +53,7 @@ foreach($categories as $category){
 									echo '<a href="'.get_permalink().'" target="_blank">'.get_the_title().'</a>';
 							}
 						?>
-						<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="entry-meta edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="entry-meta edit-link btn btn-mini">', '</span>' ); ?>
 						</h1>
 						<dl class="dl-horizontal">
 							<dt>
