@@ -9,8 +9,10 @@
  * @since Twenty Thirteen 1.0
  */
 get_header();
-
-$categories = get_the_category();
+$categories = array();
+foreach($wp_query->tax_query->queries as $tax_query){
+	$categories[] = get_category_by_slug($tax_query['terms'][0]);
+}
 $categories_name = array();
 
 foreach($categories as $category){
@@ -71,7 +73,12 @@ foreach($categories as $category){
 								<?php endif; ?>
 							</dt>
 							<dd>
-								<?php if(get_post_type() === 'post'){ the_excerpt(); }?>
+								<?php if(get_post_type() === 'post'){ ?>
+								<ul style="margin-bottom: 5px;">
+									<li><b>Categories: <?php the_category(', '); ?></b></li>
+								</ul>
+								<?=the_excerpt()?>
+								<?php }?>
 								<?php if($post_type === 'attachment'): ?>
 								<ul>
 									<li><b>File Size: </b><?=size_format(filesize(get_attached_file(get_the_ID())))?></li>
