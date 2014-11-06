@@ -576,6 +576,10 @@ add_action('wp_footer', function(){
 		return;
 	}
 	
+	if($_SERVER['HTTP_USER_AGENT'] === get_option('monitor_ua')){
+		return;
+	}
+	
 	global $wpdb;
 	
 	$wpdb->insert('log', array(
