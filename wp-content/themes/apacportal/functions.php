@@ -572,6 +572,10 @@ add_action('wp_footer', function(){
 		return;
 	}
 	
+	if(strpos($_SERVER['HTTP_USER_AGENT'], 'gsa-crawler') !== false){
+		return;
+	}
+	
 	global $wpdb;
 	
 	$wpdb->insert('log', array(
