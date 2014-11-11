@@ -11,8 +11,8 @@ foreach($the_categories as $category){
 	$category_in[] = $category->slug;
 }
 $post_date_time = get_the_date('Y-m-d H:i:s');
-$previous_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('before'=>$post_date_time, 'inclusive'=>false), 'orderby'=>'date', 'order'=>'desc', 'category_name'=>implode('+', $category_in)))[0];
-$next_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('after'=>$post_date_time, 'inclusive'=>false), 'orderby'=>'date', 'order'=>'asc', 'category_name'=>implode('+', $category_in)))[0];
+$previous_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('before'=>$post_date_time, 'inclusive'=>false, 'column'=>'post_date_gmt'), 'orderby'=>'date', 'order'=>'desc', 'category_name'=>implode('+', $category_in)))[0];
+$next_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('after'=>$post_date_time, 'inclusive'=>false, 'column'=>'post_date_gmt'), 'orderby'=>'date', 'order'=>'asc', 'category_name'=>implode('+', $category_in)))[0];
 
 ?>
 
@@ -60,8 +60,8 @@ $next_post = get_posts(array('posts_per_page'=>1, 'date_query'=>array('after'=>$
 		<hr>
 		
 		<div class="navigation clearfix">
-			<span class="pull-left">Newer Post: <a href="<?=get_the_permalink($next_post->ID)?>"><?=$next_post->post_title?></a></span>
-			<span class="pull-right">Older Post: <a href="<?=get_the_permalink($previous_post->ID)?>"><?=$previous_post->post_title?></a></span>
+			<?php if($next_post){ ?><span class="pull-left">Newer Post: <a href="<?=get_the_permalink($next_post->ID)?>"><?=$next_post->post_title?></a></span><?php } ?>
+			<?php if($previous_post){ ?><span class="pull-right">Older Post: <a href="<?=get_the_permalink($previous_post->ID)?>"><?=$previous_post->post_title?></a></span><?php } ?>
 		</div>
 	</footer><!-- .entry-meta -->
 
