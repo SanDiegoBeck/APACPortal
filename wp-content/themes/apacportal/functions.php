@@ -703,8 +703,11 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
 			foreach($documents as $document){
 				echo $document->name . '&nbsp;(' . $document->pages . ')<br>';
 			}
+			break;
 		case 'status' :
-			echo get_post_meta($post->ID, 'status', true);
+			$available_statuses = json_decode(get_option('chop_request_statuses'), JSON_OBJECT_AS_ARRAY);
+			$status = json_decode(get_post_meta($post->ID, 'request_statuses', true));
+			echo $status ? ($available_statuses[$status->value] . ', ' . $status->user . ', ' . date('Y-m-d', $status->time)) : '-';
 			break;
 		case 'approval_file':
 			echo '<a href="' . wp_get_attachment_url(get_post_meta($post->ID, 'approval_file_id', true)) . '" target="_blank">' . get_the_title(get_post_meta($post->ID, 'approval_file_id', true)) . '</a>';

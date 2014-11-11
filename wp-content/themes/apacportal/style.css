@@ -769,3 +769,9 @@ blockquote p {
     font-style: normal;
 
 }
+
+@media print {
+	.site-header, .site-footer {
+		display: none;
+	}
+}

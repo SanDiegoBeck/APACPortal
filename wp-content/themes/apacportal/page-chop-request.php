@@ -34,9 +34,11 @@ if(isset($_POST['submit'])){
 			
 		}
 		
+		$request_no = get_option('chop_request_last_no', 0) + 1;
+		
 		$application_id = wp_insert_post(array(
 			'post_type'=>'chop_request',
-			'post_title'=>$_POST['requestor'] . ' - ' . $_POST['stamp_type'] . ' Request',
+			'post_title'=>'No.' . $request_no . ' ' . $_POST['requestor'] . ' - ' . $_POST['stamp_type'] . ' Request',
 			'post_status'=>'private'
 		));
 		
@@ -56,7 +58,6 @@ if(isset($_POST['submit'])){
 			}
 		}
 		
-		$request_no = get_option('chop_request_last_no', 0) + 1;
 		add_post_meta($application_id, 'request_no', $request_no);
 		update_option('chop_request_last_no', $request_no);
 		
@@ -74,6 +75,19 @@ get_header();
 .form-horizontal .controls { margin-left: 320px; }
 .form-horizontal .control-group-area { min-height: 285px; }
 .box .content { background: url(http://apaconnect.fiat.chrysler.com/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 10%; }
+.form-actions.approval-sign-section {
+	display: none;
+}
+@media print {
+	
+	.approval-file-upload, .form-actions.submit-section, .remove-document, .add-document {
+		display: none;
+	}
+	
+	.form-actions.approval-sign-section {
+		display: block !important;
+	}
+}
 </style>
 <div class="site-content row-fluid" role="main">
 	<div class="box">
@@ -142,16 +156,24 @@ get_header();
 						</div>
 					</div>
 					<?php } ?>
-					<div class="contro-group">
+					<div class="control-group approval-file-upload">
 						<label class="control-label">Approval File Upload</label>
 						<div class="controls">
+							<button type="button" class="btn btn-mini btn-inverse" id="print">Print</button>
+							&nbsp;
+							<b>, Signed &amp; Upload: </b>
 							<input type="file" name="approval_file" />
 						</div>
 					</div>
 				</div>
-				<div class="form-actions">
+				<div class="form-actions submit-section">
+					<?php if(empty($success)){ ?>
 					<button type="submit" name="submit" class="btn btn-primary">Submit</button>
-					<button type="reset" class="btn">Reset</button>
+					<?php } ?>
+				</div>
+				<div class="form-actions approval-sign-section">
+					<h4 class="pull-left">Approval Sign: </h4>
+					<h3 class="pull-left" style="border-bottom:1px solid #333;width:300px;margin-left:30px;">&nbsp;</h3>
 				</div>
 			</form>
 		</div>
@@ -166,6 +188,10 @@ jQuery(function($){
 	
 	$('.documents').on('click', '.remove-document', function(){
 		$(this).closest('.document').remove();
+	});
+	
+	$('#print').on('click', function(){
+		print();
 	});
 });
 </script>
