@@ -710,7 +710,10 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
 			echo $status ? ($available_statuses[$status->value] . ', ' . $status->user . ', ' . date('Y-m-d', $status->time)) : '-';
 			break;
 		case 'approval_file':
-			echo '<a href="' . wp_get_attachment_url(get_post_meta($post->ID, 'approval_file_id', true)) . '" target="_blank">' . get_the_title(get_post_meta($post->ID, 'approval_file_id', true)) . '</a>';
+			if(get_post_meta($post->ID, 'approval_file_id', true)){
+				echo '<a href="' . wp_get_attachment_url(get_post_meta($post->ID, 'approval_file_id', true)) . '" target="_blank">' . get_the_title(get_post_meta($post->ID, 'approval_file_id', true)) . '</a>';
+			}
+			break;
     }
 });
 
