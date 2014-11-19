@@ -686,6 +686,7 @@ add_filter('manage_chop_request_posts_columns', function ($columns){
         'title' => $columns['title'],
 		'documents'=>'Documents',
 		'approval_file'=>'Approval File',
+		'legal_entity'=>'Legal Entity',
 		'status' => 'Status',
 		'date' => $columns['date']
     );
@@ -713,6 +714,9 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
 			if(get_post_meta($post->ID, 'approval_file_id', true)){
 				echo '<a href="' . wp_get_attachment_url(get_post_meta($post->ID, 'approval_file_id', true)) . '" target="_blank">' . get_the_title(get_post_meta($post->ID, 'approval_file_id', true)) . '</a>';
 			}
+			break;
+		case 'legal_entity':
+			echo get_post_meta($post->ID, 'legal_entity', true);
 			break;
     }
 });
