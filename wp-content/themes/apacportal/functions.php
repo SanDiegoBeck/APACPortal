@@ -257,14 +257,23 @@ function curl_call($url, $data = null, $method = 'GET'){
 			curl_setopt_array($ch, array(
 				CURLOPT_POST => TRUE,
 				CURLOPT_RETURNTRANSFER => TRUE,
-				CURLOPT_POSTFIELDS => $data
+				CURLOPT_POSTFIELDS => $data,
 //				CURLOPT_HTTPHEADER => array(
 //					'Content-Type: application/json'
 //				),
 //				CURLOPT_POSTFIELDS => json_encode($data)
+				CURLOPT_SSL_VERIFYHOST => FALSE,
+				CURLOPT_SSL_VERIFYPEER => FALSE,
 			));
 
 			$response = curl_exec($ch);
+			
+			if(!$response){
+				exit(curl_error($ch));
+			}
+			
+			curl_close($ch);
+
 			break;
 	}
 
@@ -272,10 +281,6 @@ function curl_call($url, $data = null, $method = 'GET'){
 		$response = json_decode($response);
 	}
 	
-	if(!$response){
-		exit('Failed to call ' . $url . '.');
-	}
-
 	return $response;
 
 }

@@ -57,6 +57,9 @@ get_header();
 					</dl>
 				</article>
 				<?php } ?>
+				<?php if(count($jobs) === 0){ ?>
+				No available positions.
+				<?php } ?>
 				<hr>
 			</div>
 
