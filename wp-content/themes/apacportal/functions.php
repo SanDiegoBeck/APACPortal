@@ -240,6 +240,47 @@ function parse_comma_seperated_args(array $args, $keys = null){
 	return $args;
 }
 
+function curl_call($url, $data = null, $method = 'GET'){
+
+	if(!is_null($data) && $method === 'GET'){
+		$method = 'POST';
+	}
+
+	switch(strtoupper($method)){
+		case 'GET':
+			$response = file_get_contents($url);
+			break;
+
+		case 'POST':
+			$ch = curl_init($url);
+
+			curl_setopt_array($ch, array(
+				CURLOPT_POST => TRUE,
+				CURLOPT_RETURNTRANSFER => TRUE,
+				CURLOPT_POSTFIELDS => $data
+//				CURLOPT_HTTPHEADER => array(
+//					'Content-Type: application/json'
+//				),
+//				CURLOPT_POSTFIELDS => json_encode($data)
+			));
+
+			$response = curl_exec($ch);
+			break;
+	}
+
+	if(!is_null(json_decode($response))){
+		$response = json_decode($response);
+	}
+	
+	if(!$response){
+		exit('Failed to call ' . $url . '.');
+	}
+
+	return $response;
+
+}
+
+
 /**
  * force IE to disable compatible mode, 
  * else IE will automatically switch compatible mode for intranet.
