@@ -41,20 +41,13 @@ get_header();
 				<?php foreach($jobs as $job){ ?>
 				<article id="job-<?=$job->id?>">
 					<h1 class="entry-title"><a href="<?=site_url()?>/career/?job_id=<?=$job->id?>"><?=$job->name?></a></h1>
-					<dl class="dl-horizontal">
-						<dt>
-							<ul>
-								<li><b>Businuss Unit: </b><?=$job->businessUnit?></li>
-								<li><b>Location: </b><?=$job->locationName?></li>
-								<li><b>Department: </b><?=$job->verticalName?></li>
-								<li><b>Contract Type: </b><?=$job->contractType?></li>
-								<li><b>Head Count: </b><?=$job->headCount?></li>
-							</ul>
-						</dt>
-						<dd>
-							<?=$job->publicDescription?>
-						</dd>
-					</dl>
+					<ul>
+						<li><b>Businuss Unit: </b><?=$job->businessUnit?></li>
+						<li><b>Location: </b><?=$job->locationName?></li>
+						<li><b>Department: </b><?=$job->verticalName?></li>
+						<li><b>Contract Type: </b><?=$job->contractType?></li>
+						<li><b>Head Count: </b><?=$job->headCount?></li>
+					</ul>
 				</article>
 				<?php } ?>
 				<?php if(count($jobs) === 0){ ?>
@@ -111,6 +104,7 @@ get_header();
 	}
 	.single-post .post {
 		padding: 20px 0;
+		margin-bottom: 0;
 	}
 	.single-post footer.entry-meta {
 		padding-top: 10px;
