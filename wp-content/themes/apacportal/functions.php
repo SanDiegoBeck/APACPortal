@@ -409,7 +409,7 @@ add_action('admin_enqueue_scripts', function(){
  */
 add_action('wp_footer', function(){
 	
-	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), '3.11');
+	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.js', array('jquery'), '2.3.2');
 	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js', array('jquery'), '1.54');
 	
 	wp_enqueue_script('bootstrap');
@@ -748,12 +748,17 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
 		case 'documents':
 			$documents = json_decode(get_post_meta($post->ID, 'documents', true));
 			foreach($documents as $document){
-				echo $document->name . '&nbsp;(' . $document->pages . ')<br>';
+				echo $document->name;
+				if($document->pages){
+					echo '&nbsp;(' . $document->pages . ')';
+				}
+				echo '<br>';
 			}
 			break;
 		case 'status' :
 			$available_statuses = json_decode(get_option('chop_request_statuses'), JSON_OBJECT_AS_ARRAY);
-			$status = json_decode(get_post_meta($post->ID, 'request_statuses', true));
+			$statuses = get_post_meta($post->ID, 'request_statuses');
+			$status = json_decode($statuses[count($statuses) - 1]);
 			echo $status ? ($available_statuses[$status->value] . ', ' . $status->user . ', ' . date('Y-m-d', $status->time)) : '-';
 			break;
 		case 'approval_file':
@@ -770,13 +775,23 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
 add_action('restrict_manage_posts', function () {
 	global $wpdb, $current_screen;
 	if ($current_screen->post_type == 'chop_request') {
+		
 		$chop_request_options = json_decode(get_option('chop_request_fields'));
 		$legal_entities = $chop_request_options->legal_entity->options;
 		echo '<select name="legal_entity">';
 		echo '<option value="">' . __( 'Show all legal entities', 'textdomain' ) . '</option>';
 		foreach ($legal_entities as $legal_entity) {
-			$selected = (!empty($_GET['legal_entity']) && $_GET['legal_entity'] == $legal_entitiy ) ? ' selected="selected"' : '';
+			$selected = (!empty($_GET['legal_entity']) && $_GET['legal_entity'] == $legal_entity ) ? ' selected="selected"' : '';
 			echo '<option' . $selected . ' value="' . $legal_entity . '">' . $legal_entity . '</option>';
+		}
+		echo '</select>';
+		
+		$available_statuses = json_decode(get_option('chop_request_statuses'));
+		echo '<select name="request_status">';
+		echo '<option value="">' . __( 'Show all statuses', 'textdomain' ) . '</option>';
+		foreach ($available_statuses as $status_name => $status_label) {
+			$selected = (!empty($_GET['request_status']) && $_GET['request_status'] == $status_name ) ? ' selected="selected"' : '';
+			echo '<option' . $selected . ' value="' . $status_name . '">' . $status_label . '</option>';
 		}
 		echo '</select>';
 	}
