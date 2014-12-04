@@ -808,6 +808,13 @@ add_filter('parse_query', function ($query) {
 				'value' => $_GET['legal_entity']
 			);
 		}
+		
+		if (!empty($_GET['request_status'])) {
+			$qv['meta_query'][] = array(
+				'field' => 'request_status',
+				'value' => $_GET['request_status']
+			);
+		}
 	}
 });
 
