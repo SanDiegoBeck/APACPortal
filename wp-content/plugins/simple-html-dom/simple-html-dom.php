@@ -103,7 +103,7 @@ function str_get_html($str, $lowercase=true, $forceTagsClosed=true, $target_char
 		$dom->clear();
 		return false;
 	}
-	$dom->load($str, $lowercase, $stripRN);exit('here we are4');
+	$dom->load($str, $lowercase, $stripRN);
 	return $dom;
 }
 

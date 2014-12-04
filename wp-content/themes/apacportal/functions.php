@@ -767,6 +767,35 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
     }
 });
 
+add_action('restrict_manage_posts', function () {
+	global $wpdb, $current_screen;
+	if ($current_screen->post_type == 'chop_request') {
+		$chop_request_options = json_decode(get_option('chop_request_fields'));
+		$legal_entities = $chop_request_options->legal_entity->options;
+		echo '<select name="legal_entity">';
+		echo '<option value="">' . __( 'Show all legal entities', 'textdomain' ) . '</option>';
+		foreach ($legal_entities as $legal_entity) {
+			$selected = (!empty($_GET['legal_entity']) && $_GET['legal_entity'] == $legal_entitiy ) ? ' selected="selected"' : '';
+			echo '<option' . $selected . ' value="' . $legal_entity . '">' . $legal_entity . '</option>';
+		}
+		echo '</select>';
+	}
+});
+
+add_filter('parse_query', function ($query) {
+	if (is_admin() AND $query->query['post_type'] == 'chop_request') {
+		$qv = &$query->query_vars;
+		$qv['meta_query'] = array();
+
+		if (!empty($_GET['legal_entity'])) {
+			$qv['meta_query'][] = array(
+				'field' => 'legal_entity',
+				'value' => $_GET['legal_entity']
+			);
+		}
+	}
+});
+
 /**
  * define customized widgets
  */
