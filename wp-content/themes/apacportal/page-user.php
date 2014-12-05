@@ -16,8 +16,6 @@ $query="
 	)
 	INNER JOIN wp_usermeta last_name ON wp_users.ID = last_name.user_id AND last_name.meta_key = 'last_name'
 	WHERE  (wp_usermeta.meta_value LIKE '$search%' OR wp_users.user_email LIKE '$search%')
-		AND wp_users.user_registered = 0
-		AND wp_users.user_status >= 0
 	GROUP BY wp_users.ID
 	ORDER BY last_name.meta_value ASC
 ";
@@ -30,6 +28,15 @@ array_walk($users, function(&$user){
 	$user->meta=get_user_meta($user->ID);
 });
 
+if($_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest'){
+	header('Content-Type: application/json');
+	$results = array();
+	foreach($users as $user){
+		$results[] = trim($user->meta['first_name'][0]) . ' ' . trim($user->meta['last_name'][0]) . ' <' . strtolower($user->user_email) . '>';
+	}
+	echo json_encode($results);
+}
+else{
 ?>
 <?php get_header(); ?>
 <style tyle="text/css">
@@ -75,5 +82,5 @@ array_walk($users, function(&$user){
 		</div>
 	</div><!-- #content -->
 </div><!-- #primary -->
-<?php get_footer(); ?>
+<?php get_footer(); }?>
 

@@ -269,13 +269,13 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 10em;
 }
 
-.box>.content ul {
+.box>.content>ul {
 	margin: 0;
 	padding-left: 0;
 	list-style: circle inside;
 }
 
-.box>.content ul li {
+.box>.content>ul li {
 	line-height: 1.5;
 	margin-bottom: 0.5em;
 }

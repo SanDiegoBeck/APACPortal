@@ -240,7 +240,7 @@ function parse_comma_seperated_args(array $args, $keys = null){
 	return $args;
 }
 
-function curl_call($url, $data = null, $method = 'GET'){
+function curl_call($url, $data = null, $method = 'GET', $type = 'form-data'){
 
 	if(!is_null($data) && $method === 'GET'){
 		$method = 'POST';
@@ -257,11 +257,10 @@ function curl_call($url, $data = null, $method = 'GET'){
 			curl_setopt_array($ch, array(
 				CURLOPT_POST => TRUE,
 				CURLOPT_RETURNTRANSFER => TRUE,
-				CURLOPT_POSTFIELDS => $data,
-//				CURLOPT_HTTPHEADER => array(
-//					'Content-Type: application/json'
-//				),
-//				CURLOPT_POSTFIELDS => json_encode($data)
+				CURLOPT_POSTFIELDS => $type === 'json' ? json_encode($data) : $data,
+				CURLOPT_HTTPHEADER => $type === 'json' ? array(
+					'Content-Type: application/json'
+				) : array(),
 				CURLOPT_SSL_VERIFYHOST => FALSE,
 				CURLOPT_SSL_VERIFYPEER => FALSE,
 			));
@@ -387,7 +386,7 @@ add_action('parse_query', function($wp_query){
 add_action('wp_enqueue_scripts', function(){
 	
 	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2-2014-04-28');
-	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-11-11');
+	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-12-05');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css', array(), '2014-04-28');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
