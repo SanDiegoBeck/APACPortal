@@ -10,8 +10,7 @@ if(empty($_GET['job_id'])){
 	$jobs = curl_call('https://fiat-chrysler.hiringboss.com/careersiteJobSearch.do', $data);
 }
 else{
-	$data = array('position'=>$_GET['job_id']);
-	$job = curl_call('https://fiat-chrysler.hiringboss.com/careersiteJobDetail.do', $data);
+	$job = curl_call('https://fiat-chrysler.hiringboss.com/hb/positions/' . $_GET['job_id'] . '.do?lang=en', $data);
 }
 get_header();
 ?>
@@ -74,7 +73,7 @@ get_header();
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<?=$job->fullDescription?>
+						<?=$job->publicDescription?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-meta">
