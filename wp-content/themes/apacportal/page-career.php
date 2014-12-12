@@ -41,11 +41,10 @@ get_header();
 				<article id="job-<?=$job->id?>">
 					<h1 class="entry-title"><a href="<?=site_url()?>/career/?job_id=<?=$job->id?>"><?=$job->name?></a></h1>
 					<ul>
-						<li><b>Businuss Unit: </b><?=$job->businessUnit?></li>
 						<li><b>Location: </b><?=$job->locationName?></li>
 						<li><b>Department: </b><?=$job->verticalName?></li>
 						<li><b>Contract Type: </b><?=$job->contractType?></li>
-						<li><b>Head Count: </b><?=$job->headCount?></li>
+						<li><b>Head Count: </b><?=$job->headCount?> (<?=date('M.jS, Y', strtotime($job->headCountOpenDate))?>-<?=date('M.jS, Y', strtotime($job->headCountCloseDate))?>)</li>
 					</ul>
 				</article>
 				<?php } ?>
@@ -63,7 +62,6 @@ get_header();
 
 						<div class="entry-meta">
 							<ul>
-								<li><b>Businuss Unit: </b><?=$job->businessUnit?></li>
 								<li><b>Location: </b><?=$job->locationName?></li>
 								<li><b>Department: </b><?=$job->verticalName?></li>
 								<li><b>Contract Type: </b><?=$job->contractType?></li>
@@ -77,7 +75,7 @@ get_header();
 					</div><!-- .entry-content -->
 
 					<footer class="entry-meta">
-						<a class="btn btn-primary disabled">Apply for this position</a>
+						<a href="<?=site_url()?>/career-application/?job_id=<?=$_GET['job_id']?>" class="btn btn-primary">Apply for this position</a>
 					</footer><!-- .entry-meta -->
 
 				</article>

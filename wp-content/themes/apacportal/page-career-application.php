@@ -1,17 +1,53 @@
 <?php
 
 if(isset($_POST['submit'])){
-	$data = $_POST;
-	$result = curl_call('https://fiat-chrysler.hiringboss.com/careersiteSubmitCandidate.do', $data, 'POST', 'json');
+	$resume_file = curl_file_create($_FILES['resume']['tmp_name'], $_FILES['resume']['type'], $_FILES['resume']['name']);
+	$uploaded_resume = curl_call('https://fiat-chrysler.hiringboss.com/careersiteUploadDocument.do', array('resume' => $resume_file));
+	
+	// TODO file upload failure
+	$_POST['candidateDocument'][] = array('documentId'=>$uploaded_resume->id, 'isPrimary'=>true);
+	
+	if(empty($_POST['candidate']['dateOfBirth'])){
+		unset($_POST['candidate']['dateOfBirth']);
+	}else{
+		$_POST['candidate']['dateOfBirth'] = date('d-m-Y', strtotime($_POST['candidate']['dateOfBirth']));
+	}
+	
+	if(empty($_POST['candidateEducation']['start_date'])){
+		unset($_POST['candidateEducation']['start_date']);
+	}else{
+		$_POST['candidateEducation']['start_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['start_date']));
+	}
+	
+	if(empty($_POST['candidateEducation']['graduation_date'])){
+		unset($_POST['candidateEducation']['graduation_date']);
+	}else{
+		$_POST['candidateEducation']['graduation_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['graduation_date']));
+	}
+	
+	$candidate_json = json_encode($_POST);
+	$result = curl_call('https://fiat-chrysler.hiringboss.com/careersiteSubmitCandidate.do?', array('candidateJson'=>$candidate_json));
+	
+	if($result->success === 'false'){// Hiring Boss, seriously?
+		$error = $result->error;
+	}
+	
 }
+
+$industries = curl_call('https://fiat-chrysler.hiringboss.com/applicationFormPredefinedInfo.do?lan=&type=industry')[0]->result;
+$personal_countries = curl_call('https://fiat-chrysler.hiringboss.com/applicationFormPredefinedInfo.do?lan=&type=personalCountry')[0]->result;
 
 get_header();
 ?>
 <div class="box">
 	<header>Job Application Form</header>
 	<div class="content">
-		<form method="post" class="form-horizontal">
+		<?php if($error){ ?>
+		<div class="alert alert-error"><?=$error->errorMessage?></div>
+		<?php } ?>
+		<form method="post" enctype="multipart/form-data" class="form-horizontal">
 			<input type="hidden" name="jobId" value="<?=$_GET['job_id']?>">
+			<input type="hidden" name="candidate[candidateSourceId]" value="32698">
 			<h4>Personal</h4>
 			<hr>
 			
@@ -37,7 +73,7 @@ get_header();
 					Day or Birth
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[dateOfBirth]" value="<?= $_POST['candidate']['dateOfBirth'] ?>" class="date-picker">
+					<input type="date" name="candidate[dateOfBirth]" value="<?= $_POST['candidate']['dateOfBirth'] ?>" class="date-picker">
 				</div>
 			</div>
 			<div class="control-group">
@@ -61,7 +97,7 @@ get_header();
 				</label>
 				<div class="controls">
 					<label class="radio">
-						<input type="radio" name="candidate[personalStatements]" value="Married"<?php if($_POST['candidate']['personalStatements'] === 'Married'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidate[personalStatements]" value="Married"<?php if($_POST['candidate']['personalStatements'] === 'Married'){?> checked="checked"<?php } ?>>
 						Married
 					</label>
 					<label class="radio">
@@ -75,7 +111,14 @@ get_header();
 					Current Location
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[personalCountry]" value="<?= $_POST['candidate']['personalCountry'] ?>" placeholder="Country">
+					<select name="candidate[personalCountry]">
+						<option value="">- please select -</option>
+						<?php foreach($personal_countries as $personal_country){ ?>
+						<option value="<?=$personal_country->value?>"<?php if($_POST['candidate']['personalCountry'] === $personal_country->value){ ?> selected<?php } ?>><?=$personal_country->name?></option>
+						<?php } ?>
+					</select>
+						
+					</select>
 					<input type="text" name="candidate[personalCity]" value="<?= $_POST['candidate']['personalCity'] ?>" placeholder="City">
 					<label class="checkbox-inline">
 						<input type="checkbox" name="candidate[relocate]" value="1"<?php if($_POST['candidate']['relocate']){?> checked="checked"<?php } ?>>
@@ -132,17 +175,17 @@ get_header();
 					Mandarin
 				</label>
 				<div class="controls">
-					<input type="hidden" name="candidateLanguage[][languageCode]" value="cn">
+					<input type="hidden" name="candidateLanguage[cn][languageCode]" value="cn">
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[][level]" value="1"<?php if($_POST['candidateLanguage'][0]['level'] === '1'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[cn][level]" value="1"<?php if($_POST['candidateLanguage']['cn']['level'] === '1'){?> ckecked="checked"<?php } ?>>
 						Limited
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[][level]" value="2"<?php if($_POST['candidateLanguage'][1]['level'] === '2'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[cn][level]" value="2"<?php if($_POST['candidateLanguage']['cn']['level'] === '2'){?> ckecked="checked"<?php } ?>>
 						Fair
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[][level]" value="3"<?php if($_POST['candidateLanguage'][2]['level'] === '3'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[cn][level]" value="3"<?php if($_POST['candidateLanguage']['cn']['level'] === '3'){?> ckecked="checked"<?php } ?>>
 						Fluent
 					</label>
 				</div>
@@ -153,17 +196,17 @@ get_header();
 					English
 				</label>
 				<div class="controls">
-					<input type="hidden" name="candidateLanguage[][languageCode]" value="en">
+					<input type="hidden" name="candidateLanguage[en][languageCode]" value="en">
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[][level]" value="1"<?php if($_POST['candidateLanguage'][0]['level'] === '1'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[en][level]" value="1"<?php if($_POST['candidateLanguage']['en']['level'] === '1'){?> ckecked="checked"<?php } ?>>
 						Limited
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[][level]" value="2"<?php if($_POST['candidateLanguage'][1]['level'] === '2'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[en][level]" value="2"<?php if($_POST['candidateLanguage']['en']['level'] === '2'){?> ckecked="checked"<?php } ?>>
 						Fair
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[][level]" value="3"<?php if($_POST['candidateLanguage'][2]['level'] === '3'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[en][level]" value="3"<?php if($_POST['candidateLanguage']['en']['level'] === '3'){?> ckecked="checked"<?php } ?>>
 						Fluent
 					</label>
 				</div>
@@ -195,7 +238,12 @@ get_header();
 					Industry
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[industry]" value="<?=$_POST['candidate']['industry']?>">
+					<select type="text" name="candidate[industry]">
+						<option value="">- please select -</option>
+						<?php foreach($industries as $industry){ ?>
+						<option value="<?=$industry->value?>"<?php if($_POST['candidate']['industry'] === $industry->value){ ?> selected<?php } ?>><?=$industry->name?></option>
+						<?php } ?>
+					</select>
 				</div>
 			</div>
 			
@@ -228,6 +276,18 @@ get_header();
 					<label class="checkbox">
 						<input type="checkbox" name="" value="">
 					</label>
+				</div>
+			</div>
+			
+			<h4>Resume Upload</h4>
+			<hr>
+			
+			<div class="control-group">
+				<label class="control-label">
+					Resume
+				</label>
+				<div class="controls">
+					<input type="file" name="resume">
 				</div>
 			</div>
 			
