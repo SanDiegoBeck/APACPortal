@@ -43,8 +43,6 @@ get_header();
 					<ul>
 						<li><b>Location: </b><?=$job->locationName?></li>
 						<li><b>Department: </b><?=$job->verticalName?></li>
-						<li><b>Contract Type: </b><?=$job->contractType?></li>
-						<li><b>Head Count: </b><?=$job->headCount?> (<?=date('M.jS, Y', strtotime($job->headCountOpenDate))?>-<?=date('M.jS, Y', strtotime($job->headCountCloseDate))?>)</li>
 					</ul>
 				</article>
 				<?php } ?>
