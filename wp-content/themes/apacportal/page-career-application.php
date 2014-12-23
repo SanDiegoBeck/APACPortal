@@ -1,35 +1,60 @@
 <?php
 
 if(isset($_POST['submit'])){
-	$resume_file = curl_file_create($_FILES['resume']['tmp_name'], $_FILES['resume']['type'], $_FILES['resume']['name']);
-	$uploaded_resume = curl_call('https://fiat-chrysler.hiringboss.com/careersiteUploadDocument.do', array('resume' => $resume_file));
 	
-	// TODO file upload failure
-	$_POST['candidateDocument'][] = array('documentId'=>$uploaded_resume->id, 'isPrimary'=>true);
-	
-	if(empty($_POST['candidate']['dateOfBirth'])){
-		unset($_POST['candidate']['dateOfBirth']);
-	}else{
-		$_POST['candidate']['dateOfBirth'] = date('d-m-Y', strtotime($_POST['candidate']['dateOfBirth']));
-	}
-	
-	if(empty($_POST['candidateEducation']['start_date'])){
-		unset($_POST['candidateEducation']['start_date']);
-	}else{
-		$_POST['candidateEducation']['start_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['start_date']));
-	}
-	
-	if(empty($_POST['candidateEducation']['graduation_date'])){
-		unset($_POST['candidateEducation']['graduation_date']);
-	}else{
-		$_POST['candidateEducation']['graduation_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['graduation_date']));
-	}
-	
-	$candidate_json = json_encode($_POST);
-	$result = curl_call('https://fiat-chrysler.hiringboss.com/careersiteSubmitCandidate.do?', array('candidateJson'=>$candidate_json));
-	
-	if($result->success === 'false'){// Hiring Boss, seriously?
-		$error = $result->error;
+	try {
+		unset($_POST['submit']);
+		
+		if(!($_FILES['resume']['name'])){
+			throw new Exception('Please upload your resume.');
+		}
+		
+		$resume_file = curl_file_create($_FILES['resume']['tmp_name'], $_FILES['resume']['type'], $_FILES['resume']['name']);
+		$uploaded_resume = curl_call('https://fiat-chrysler.hiringboss.com/careersiteUploadDocument.do', array('resume' => $resume_file, 'documentType' => 'resume', 'fileName' => $_FILES['resume']['name']));
+
+		// TODO file upload failure
+		$_POST['candidateDocument'][] = array('documentId'=>$uploaded_resume->id, 'isPrimary'=>true);
+
+		if(empty($_POST['candidate']['dateOfBirth'])){
+			unset($_POST['candidate']['dateOfBirth']);
+		}else{
+			$_POST['candidate']['dateOfBirth'] = date('d-m-Y', strtotime($_POST['candidate']['dateOfBirth']));
+		}
+
+		if(empty($_POST['candidateEducation']['start_date'])){
+			unset($_POST['candidateEducation']['start_date']);
+		}else{
+			$_POST['candidateEducation']['start_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['start_date']));
+		}
+
+		if(empty($_POST['candidateEducation']['graduation_date'])){
+			unset($_POST['candidateEducation']['graduation_date']);
+		}else{
+			$_POST['candidateEducation']['graduation_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['graduation_date']));
+		}
+
+		if(empty($_POST['candidate']['industry'])){
+			unset($_POST['candidate']['industry']);
+		}
+		
+		if(empty($_POST['candidate']['personalCountry'])){
+			unset($_POST['candidate']['personalCountry']);
+		}
+		
+		unset($_POST['candidateLanguage']);
+		
+		$candidate_json = json_encode($_POST, JSON_UNESCAPED_UNICODE);
+		
+		$result = curl_call('https://fiat-chrysler.hiringboss.com/careersiteSubmitCandidate.do?', array('candidateJson'=>$candidate_json));
+		
+		if($result->success === 'false'){ // Hiring Boss, seriously?
+			throw new Exception($result->error->errorMessage);
+		}else{
+			$success = true;
+		}
+
+	} catch (Exception $e) {
+		$error = $e->getMessage();
 	}
 	
 }
@@ -43,7 +68,10 @@ get_header();
 	<header>Job Application Form</header>
 	<div class="content">
 		<?php if($error){ ?>
-		<div class="alert alert-error"><?=$error->errorMessage?></div>
+		<div class="alert alert-error"><?=$error?></div>
+		<?php } ?>
+		<?php if($success){ ?>
+		<div class="alert alert-success">Thank you for you application.</div>
 		<?php } ?>
 		<form method="post" enctype="multipart/form-data" class="form-horizontal">
 			<input type="hidden" name="jobId" value="<?=$_GET['job_id']?>">
@@ -82,11 +110,11 @@ get_header();
 				</label>
 				<div class="controls">
 					<label class="radio">
-						<input type="radio" name="candidate[male]" value="1"<?php if($_POST['candidate']['male'] === '1'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidate[male]" value="1"<?php if($_POST['candidate']['male'] === '1'){?> checked="checked"<?php } ?>>
 						Male
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidate[male]" value="0"<?php if($_POST['candidate']['male'] === '0'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidate[male]" value="0"<?php if($_POST['candidate']['male'] === '0'){?> checked="checked"<?php } ?>>
 						Female
 					</label>
 				</div>
@@ -101,7 +129,7 @@ get_header();
 						Married
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidate[personalStatements]" value="Single"<?php if($_POST['candidate']['personalStatements'] === 'Single'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidate[personalStatements]" value="Single"<?php if($_POST['candidate']['personalStatements'] === 'Single'){?> checked="checked"<?php } ?>>
 						Single
 					</label>
 				</div>
@@ -177,15 +205,15 @@ get_header();
 				<div class="controls">
 					<input type="hidden" name="candidateLanguage[cn][languageCode]" value="cn">
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[cn][level]" value="1"<?php if($_POST['candidateLanguage']['cn']['level'] === '1'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[cn][level]" value="1"<?php if($_POST['candidateLanguage']['cn']['level'] === '1'){?> checked="checked"<?php } ?>>
 						Limited
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[cn][level]" value="2"<?php if($_POST['candidateLanguage']['cn']['level'] === '2'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[cn][level]" value="2"<?php if($_POST['candidateLanguage']['cn']['level'] === '2'){?> checked="checked"<?php } ?>>
 						Fair
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[cn][level]" value="3"<?php if($_POST['candidateLanguage']['cn']['level'] === '3'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[cn][level]" value="3"<?php if($_POST['candidateLanguage']['cn']['level'] === '3'){?> checked="checked"<?php } ?>>
 						Fluent
 					</label>
 				</div>
@@ -198,15 +226,15 @@ get_header();
 				<div class="controls">
 					<input type="hidden" name="candidateLanguage[en][languageCode]" value="en">
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[en][level]" value="1"<?php if($_POST['candidateLanguage']['en']['level'] === '1'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[en][level]" value="1"<?php if($_POST['candidateLanguage']['en']['level'] === '1'){?> checked="checked"<?php } ?>>
 						Limited
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[en][level]" value="2"<?php if($_POST['candidateLanguage']['en']['level'] === '2'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[en][level]" value="2"<?php if($_POST['candidateLanguage']['en']['level'] === '2'){?> checked="checked"<?php } ?>>
 						Fair
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[en][level]" value="3"<?php if($_POST['candidateLanguage']['en']['level'] === '3'){?> ckecked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[en][level]" value="3"<?php if($_POST['candidateLanguage']['en']['level'] === '3'){?> checked="checked"<?php } ?>>
 						Fluent
 					</label>
 				</div>
@@ -256,7 +284,7 @@ get_header();
 				</div>
 			</div>
 			
-			<div class="control-group">
+<!--			<div class="control-group">
 				<label class="control-label">
 					Currently employed by Fiat Chrysler Automobile
 				</label>
@@ -277,7 +305,7 @@ get_header();
 						<input type="checkbox" name="" value="">
 					</label>
 				</div>
-			</div>
+			</div>-->
 			
 			<h4>Resume Upload</h4>
 			<hr>
