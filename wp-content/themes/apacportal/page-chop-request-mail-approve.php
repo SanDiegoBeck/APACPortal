@@ -1,5 +1,4 @@
 <?php
-
 $fields = json_decode(get_option('chop_request_fields'), JSON_OBJECT_AS_ARRAY);
 
 if(isset($_POST['submit'])){
@@ -102,7 +101,7 @@ if(isset($_POST['submit'])){
 					. 'Please DO NOT REPLY this email. For technical support, please contact uice.lu@fcagroup.com' . "\n"
 					. 'Please DO NOT FORWARD this email to others, since it contains sensitive url link.';
 			
-			$result = mail($approver_email, 'company chop request pending your approval #' . $request_no, $message, 'From: APAConnect <apaconnect@fcagroup.com>');
+			$result = mail($approver_email, 'Company Chop request pending your approval #' . $request_no, $message, 'From: APAConnect <apaconnect@fcagroup.com>');
 			
 			if(!$result){
 				throw new Exception('Fail to send an email to: ' . $approver_email);
