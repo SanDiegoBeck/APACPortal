@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 		unset($matches);
 		
 		if(empty($requestor_email)){
-			throw new Exception('Not valid email format: ' . $_POST['requestor'].'. Please use Name &lt;suffix@fcagroup.com&gt;');
+			throw new Exception('Not valid email format: ' . $_POST['requestor'].'. Please use Name &lt;prefix@fcagroup.com&gt;');
 		}
 		
 		if(empty($_POST['is_on_exempt_list'])){
@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
 			unset($matches);
 			
 			if(empty($approver_email)){
-				throw new Exception('Not valid email format: ' . $_POST['approver'].'. Please use Name &lt;suffix@fcagroup.com&gt;');
+				throw new Exception('Not valid email format: ' . $_POST['approver'].'. Please use Name &lt;prefix@fcagroup.com&gt;');
 			}
 		}
 		
@@ -125,7 +125,11 @@ if(isset($_POST['submit'])){
 			}
 		}
 		
-		$success = 'Your request NO. is ' . get_post_meta($application_id, 'request_no', true) . '. We have sent an email to ' . $approver_email;
+		$success = 'Your request NO. is ' . get_post_meta($application_id, 'request_no', true) . '.';
+		
+		if(empty($_POST['is_on_exempt_list'])){
+			$success .= ' We have sent an email to ' . $approver_email;
+		}
 	
 	}catch(Exception $e){
 		$error = $e->getMessage();
@@ -211,7 +215,7 @@ get_header();
 						</div>
 					</div>
 					<?php } ?>
-					<div class="control-group approver-section">
+					<div class="control-group approver-section"<?php if($chop_request ? get_post_meta($chop_request->ID, 'is_on_exempt_list', true) : $_POST['is_on_exempt_list']){ ?> style="display:none"<?php } ?>>
 						<label class="control-label">Approver</label>
 						<div class="controls">
 							<input type="text" id="approver" name="approver" value="<?=$chop_request ? get_post_meta($chop_request->ID, 'approver', true) : $_POST['approver']?>" autocomplete="off" style="width:315px" placeholder="Name <prefix@fcagroup.com>" />
