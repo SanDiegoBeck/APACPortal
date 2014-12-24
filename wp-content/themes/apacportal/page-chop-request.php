@@ -93,6 +93,9 @@ get_header();
 	<div class="box">
 		<header><?php the_title(); ?></header>
 		<div class="content">
+			<div class="alert alert-info">
+				<b>Mailing approval work flow is available!</b> Your request can be approved by email now. <a href="<?=site_url()?>/chop-request-mail-approve/" class="btn btn-primary">Try it out!</a>
+			</div>
 			<?php if($error){ ?>
 			<div class="alert alert-error"><?=$error?></div>
 			<?php } ?>

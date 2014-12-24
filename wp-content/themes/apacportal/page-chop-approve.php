@@ -7,14 +7,18 @@ if(empty($chop_request)){
 
 if(isset($_POST['status'])){
 	
-	add_post_meta($chop_request->ID, 'request_statuses', json_encode(array('user'=>get_post_meta($chop_request->ID, 'approver', true), 'value'=>$_POST['status'], 'time'=>time(), 'comments'=>$_POST['comments'])));
-	update_post_meta($chop_request->ID, 'request_status', $_POST['status']);
+	$status = $_POST['status'];
+	
+	add_post_meta($chop_request->ID, 'request_statuses', json_encode(array('user'=>get_post_meta($chop_request->ID, 'approver', true), 'value'=>$status, 'time'=>time(), 'comments'=>$_POST['comments'])));
+	update_post_meta($chop_request->ID, 'request_status', $status);
 	
 	// TODO if rejected, generate a new hash key for employee to resubmit
+	$request_hash = md5($chop_request->ID . $_POST['requestor'] . NONCE_SALT);
+	add_post_meta($chop_request->ID, 'request_hash', $request_hash);
 	
 	// send an email to approver
 	$message = 'Dear employee,' . "\n\n"
-			. 'Your Chop Request was ' . $_POST['status'] . '.' . "\n\n"
+			. 'Your Chop Request was ' . $status . '.' . "\n\n"
 			. '	Request No.: ' . get_post_meta($chop_request->ID, 'request_no', true) . "\n"
 			. '	Stamp Type: ' . get_post_meta($chop_request->ID, 'stamp_type', true) . "\n"
 			. '	Legal Entity: ' . get_post_meta($chop_request->ID, 'legal_entity', true) . "\n"
@@ -26,8 +30,21 @@ if(isset($_POST['status'])){
 	foreach($documents as $document){
 		$message .= ($document->name . ' (' . $document->pages . ')' . "\n");
 	}
+	
+	if($_POST['comments']){
+		$message .= "\n"
+				. 'Approval comments: '
+				. $_POST['comments']
+				. "\n";
+	}
 
-	$result = mail(get_post_meta($chop_request->ID, 'requestor_email', true), 'Company Chop request approved #' . get_post_meta($chop_request->ID, 'request_no', true), $message, 'From: APAConnect <apaconnect@fcagroup.com>');
+	$message .= "\n"
+			. 'Please revise your request in the following link: '
+			. site_url() . '/chop-request-mail-approve/?request_key=' . $request_hash . "\n\n"
+			. 'Please DO NOT REPLY this email. For technical support, please contact uice.lu@fcagroup.com ' . "\n"
+			. 'Please DO NOT FORWARD this email to others, since it contains sensitive url link.';
+
+	$result = mail(get_post_meta($chop_request->ID, 'requestor_email', true), 'Company Chop request ' . $status . ' #' . get_post_meta($chop_request->ID, 'request_no', true), $message, 'From: APAConnect <apaconnect@fcagroup.com>');
 	
 	if($result === true){
 		delete_post_meta($chop_request->ID, 'approve_hash');
@@ -48,10 +65,9 @@ get_header();
 	<div class="content">
 		<?php if($error){ ?>
 		<div class="alert alert-error"><?=$error?></div>
+		<?php }elseif($success){ ?>
+		<div class="alert alert-success">Request has been <?=$status?>.</div>
 		<?php }else{ ?>
-		<?php if($success){ ?>
-		<div class="alert alert-success">Request has been <?=$_POST['status']?>.</div>
-		<?php } ?>
 		<form method="post" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label">
