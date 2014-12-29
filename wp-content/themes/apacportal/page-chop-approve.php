@@ -12,11 +12,12 @@ if(isset($_POST['status'])){
 	add_post_meta($chop_request->ID, 'request_statuses', json_encode(array('user'=>get_post_meta($chop_request->ID, 'approver', true), 'value'=>$status, 'time'=>time(), 'comments'=>$_POST['comments'])));
 	update_post_meta($chop_request->ID, 'request_status', $status);
 	
-	// TODO if rejected, generate a new hash key for employee to resubmit
-	$request_hash = md5($chop_request->ID . $_POST['requestor'] . NONCE_SALT);
-	add_post_meta($chop_request->ID, 'request_hash', $request_hash);
+	if($status === 'rejected'){
+		$request_hash = md5($chop_request->ID . $_POST['requestor'] . NONCE_SALT);
+		add_post_meta($chop_request->ID, 'request_hash', $request_hash);
+	}
 	
-	// send an email to approver
+	// send an email to requestor
 	$message = 'Dear employee,' . "\n\n"
 			. 'Your Chop Request was ' . $status . '.' . "\n\n"
 			. '	Request No.: ' . get_post_meta($chop_request->ID, 'request_no', true) . "\n"
@@ -38,12 +39,14 @@ if(isset($_POST['status'])){
 				. "\n";
 	}
 
-	$message .= "\n"
-			. 'Please revise your request in the following link: '
-			. site_url() . '/chop-request-mail-approve/?request_key=' . $request_hash . "\n\n"
-			. 'Please DO NOT REPLY this email. For technical support, please contact uice.lu@fcagroup.com ' . "\n"
-			. 'Please DO NOT FORWARD this email to others, since it contains sensitive url link.';
-
+	if($status === 'rejected'){
+		$message .= "\n"
+				. 'Please revise your request in the following link: '
+				. site_url() . '/chop-request-mail-approve/?request_key=' . $request_hash . "\n\n"
+				. 'Please DO NOT REPLY this email. For technical support, please contact uice.lu@fcagroup.com ' . "\n"
+				. 'Please DO NOT FORWARD this email to others, since it contains sensitive url link.';
+	}
+	
 	$result = mail(get_post_meta($chop_request->ID, 'requestor_email', true), 'Company Chop request ' . $status . ' #' . get_post_meta($chop_request->ID, 'request_no', true), $message, 'From: APAConnect <apaconnect@fcagroup.com>');
 	
 	if($result === true){
