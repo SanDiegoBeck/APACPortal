@@ -143,7 +143,7 @@ get_header();
 .form-horizontal .control-label { width: 300px; }
 .form-horizontal .controls { margin-left: 320px; }
 .form-horizontal .control-group-area { min-height: 285px; }
-.box .content { background: url(http://apaconnect.fiat.chrysler.com/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 10%; }
+.box .content { background: url(http://apaconnect.fiat.chrysler.com/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 25%; }
 </style>
 <div class="site-content row-fluid" role="main">
 	<div class="box">
