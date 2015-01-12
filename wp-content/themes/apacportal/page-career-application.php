@@ -32,16 +32,13 @@ if(isset($_POST['submit'])){
 		}else{
 			$_POST['candidateEducation']['graduation_date'] = date('d-m-Y', strtotime($_POST['candidateEducation']['graduation_date']));
 		}
-
-		if(empty($_POST['candidate']['industry'])){
-			unset($_POST['candidate']['industry']);
-		}
 		
+		$_POST['candidate']['companyJson'] = json_encode(array('industry', $_POST['candidate']['industry'], 'function'=>$_POST['candidate']['currentFunction']));
+		unset($_POST['candidate']['industry']); unset($_POST['candidate']['currentFunction']);
+
 		if(empty($_POST['candidate']['personalCountry'])){
 			unset($_POST['candidate']['personalCountry']);
 		}
-		
-		unset($_POST['candidateLanguage']);
 		
 		$candidate_json = json_encode($_POST, JSON_UNESCAPED_UNICODE);
 		
@@ -59,7 +56,8 @@ if(isset($_POST['submit'])){
 	
 }
 
-$industries = curl_call('https://fiat-chrysler.hiringboss.com/applicationFormPredefinedInfo.do?lan=&type=industry')[0]->result;
+$job = curl_call('https://fiat-chrysler.hiringboss.com/hb/positions/' . $_GET['job_id'] . '.do?lang=en');
+//$industries = curl_call('https://fiat-chrysler.hiringboss.com/applicationFormPredefinedInfo.do?lan=&type=industry')[0]->result;
 $personal_countries = curl_call('https://fiat-chrysler.hiringboss.com/applicationFormPredefinedInfo.do?lan=&type=personalCountry')[0]->result;
 
 get_header();
@@ -73,9 +71,19 @@ get_header();
 		<?php if($success){ ?>
 		<div class="alert alert-success">Thank you for you application.</div>
 		<?php } ?>
+		
+		<h1 class="entry-title"><?=$job->name?></h1>
+		<ul>
+			<li><b>Location: </b><?=$job->locationName?></li>
+			<li><b>Department: </b><?=$job->verticalName?></li>
+		</ul>
+		<hr>
+		
+		<div class="well well-small">*All Information is Required</div>
+		
 		<form method="post" enctype="multipart/form-data" class="form-horizontal">
-			<input type="hidden" name="jobId" value="<?=$_GET['job_id']?>">
-			<input type="hidden" name="candidate[candidateSourceId]" value="32698">
+			<input type="hidden" name="jobId" value="<?=$_GET['job_id']?>" required>
+			<input type="hidden" name="candidate[candidateSourceId]" value="32698" required>
 			<h4>Personal</h4>
 			<hr>
 			
@@ -84,8 +92,8 @@ get_header();
 					Full Name
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[familyName]" value="<?= $_POST['candidate']['familyName'] ?>" placeholder="Family Name">
-					<input type="text" name="candidate[firstName]" value="<?= $_POST['candidate']['firstName'] ?>" placeholder="First Name">
+					<input type="text" name="candidate[familyName]" value="<?= $_POST['candidate']['familyName'] ?>" placeholder="Family Name" required>
+					<input type="text" name="candidate[firstName]" value="<?= $_POST['candidate']['firstName'] ?>" placeholder="First Name" required>
 				</div>
 			</div>
 			<div class="control-group">
@@ -93,15 +101,15 @@ get_header();
 					English Name
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[nickname]" value="<?= $_POST['candidate']['nickname'] ?>">
+					<input type="text" name="candidate[nickname]" value="<?= $_POST['candidate']['nickname'] ?>" required>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label">
-					Day or Birth
+					Date or Birth
 				</label>
 				<div class="controls">
-					<input type="date" name="candidate[dateOfBirth]" value="<?= $_POST['candidate']['dateOfBirth'] ?>" class="date-picker">
+					<input type="date" name="candidate[dateOfBirth]" value="<?= $_POST['candidate']['dateOfBirth'] ?>" class="date-picker" required>
 				</div>
 			</div>
 			<div class="control-group">
@@ -110,7 +118,7 @@ get_header();
 				</label>
 				<div class="controls">
 					<label class="radio">
-						<input type="radio" name="candidate[male]" value="1"<?php if($_POST['candidate']['male'] === '1'){?> checked="checked"<?php } ?>>
+						<input type="radio" name="candidate[male]" value="1"<?php if($_POST['candidate']['male'] === '1'){?> checked="checked"<?php } ?> required>
 						Male
 					</label>
 					<label class="radio">
@@ -125,7 +133,7 @@ get_header();
 				</label>
 				<div class="controls">
 					<label class="radio">
-						<input type="radio" name="candidate[personalStatements]" value="Married"<?php if($_POST['candidate']['personalStatements'] === 'Married'){?> checked="checked"<?php } ?>>
+						<input type="radio" name="candidate[personalStatements]" value="Married"<?php if($_POST['candidate']['personalStatements'] === 'Married'){?> checked="checked"<?php } ?> required>
 						Married
 					</label>
 					<label class="radio">
@@ -147,7 +155,7 @@ get_header();
 					</select>
 						
 					</select>
-					<input type="text" name="candidate[personalCity]" value="<?= $_POST['candidate']['personalCity'] ?>" placeholder="City">
+					<input type="text" name="candidate[personalCity]" value="<?= $_POST['candidate']['personalCity'] ?>" placeholder="City" required>
 					<label class="checkbox-inline">
 						<input type="checkbox" name="candidate[relocate]" value="1"<?php if($_POST['candidate']['relocate']){?> checked="checked"<?php } ?>>
 						Willing for relocation	
@@ -159,7 +167,7 @@ get_header();
 					Contact Number
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[phone]" value="<?= $_POST['candidate']['phone'] ?>" placeholder="Mobile">
+					<input type="text" name="candidate[phone]" value="<?= $_POST['candidate']['phone'] ?>" placeholder="Mobile" required>
 					<input type="text" name="candidate[home_phone]" value="<?= $_POST['candidate']['home_phone'] ?>" placeholder="Home (if any)">
 				</div>
 			</div>
@@ -168,11 +176,11 @@ get_header();
 					Email Address
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[email]" value="<?= $_POST['candidate']['email'] ?>">
+					<input type="text" name="candidate[email]" value="<?= $_POST['candidate']['email'] ?>" required>
 				</div>
 			</div>
 			
-			<h4>Education</h4>
+			<h4>Education <small>Highest Degree</small></h4>
 			<hr>
 			
 			<div class="control-group">
@@ -180,8 +188,8 @@ get_header();
 					Start & Graduation Date
 				</label>
 				<div class="controls">
-					<input type="text" name="candidateEducation[start_date]" value="<?= $_POST['candidateEducation']['start_date'] ?>" placeholder="Start Date">
-					<input type="text" name="candidateEducation[graduation_date]" value="<?= $_POST['candidateEducation']['graduation_date'] ?>" placeholder="Graduation Date">
+					<input type="text" name="candidateEducation[start_date]" value="<?= $_POST['candidateEducation']['start_date'] ?>" placeholder="Start Date" required>
+					<input type="text" name="candidateEducation[graduation_date]" value="<?= $_POST['candidateEducation']['graduation_date'] ?>" placeholder="Graduation Date" required>
 				</div>
 			</div>
 			
@@ -190,15 +198,15 @@ get_header();
 					School
 				</label>
 				<div class="controls">
-					<input type="text" name="candidateEducation[school_name]" value="<?= $_POST['candidateEducation']['school_name'] ?>" placeholder="School Name">
-					<input type="text" name="candidateEducation[degree_name]" value="<?= $_POST['candidateEducation']['degree_name'] ?>" placeholder="Degree Name">
+					<input type="text" name="candidateEducation[school_name]" value="<?= $_POST['candidateEducation']['school_name'] ?>" placeholder="School Name" required>
+					<input type="text" name="candidateEducation[degree_name]" value="<?= $_POST['candidateEducation']['degree_name'] ?>" placeholder="Degree Name" required>
 				</div>
 			</div>
 			
 			<h4>Language</h4>
 			<hr>
 			
-			<div class="control-group">
+<!--			<div class="control-group">
 				<label class="control-label">
 					Mandarin
 				</label>
@@ -217,24 +225,24 @@ get_header();
 						Fluent
 					</label>
 				</div>
-			</div>
+			</div>-->
 			
 			<div class="control-group">
 				<label class="control-label">
 					English
 				</label>
 				<div class="controls">
-					<input type="hidden" name="candidateLanguage[en][languageCode]" value="en">
+					<input type="hidden" name="candidateLanguage[languageCode]" value="en">
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[en][level]" value="1"<?php if($_POST['candidateLanguage']['en']['level'] === '1'){?> checked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[level]" value="1"<?php if($_POST['candidateLanguage']['level'] === '1'){?> checked="checked"<?php } ?> required>
 						Limited
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[en][level]" value="2"<?php if($_POST['candidateLanguage']['en']['level'] === '2'){?> checked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[level]" value="2"<?php if($_POST['candidateLanguage']['level'] === '2'){?> checked="checked"<?php } ?>>
 						Fair
 					</label>
 					<label class="radio">
-						<input type="radio" name="candidateLanguage[en][level]" value="3"<?php if($_POST['candidateLanguage']['en']['level'] === '3'){?> checked="checked"<?php } ?>>
+						<input type="radio" name="candidateLanguage[level]" value="3"<?php if($_POST['candidateLanguage']['level'] === '3'){?> checked="checked"<?php } ?>>
 						Fluent
 					</label>
 				</div>
@@ -242,6 +250,15 @@ get_header();
 			
 			<h4>Working Background</h4>
 			<hr>
+			
+			<div class="control-group">
+				<label class="control-label">
+					Current Employer
+				</label>
+				<div class="controls">
+					<input type="text" name="candidate[currentEmployer]" value="<?=$_POST['candidate']['currentEmployer']?>">
+				</div>
+			</div>
 			
 			<div class="control-group">
 				<label class="control-label">
@@ -257,7 +274,7 @@ get_header();
 					Function
 				</label>
 				<div class="controls">
-					<input type="text" name="candidate[currentFunction]" value="<?=$_POST['candidate']['currentFunction']?>"><!--TODO not found in API-->
+					<input type="text" name="candidate[currentFunction]" value="<?=json_decode($_POST['companyJson'])->currentFunction?>"><!--TODO not found in API-->
 				</div>
 			</div>
 			
@@ -266,12 +283,14 @@ get_header();
 					Industry
 				</label>
 				<div class="controls">
-					<select type="text" name="candidate[industry]">
-						<option value="">- please select -</option>
-						<?php foreach($industries as $industry){ ?>
-						<option value="<?=$industry->value?>"<?php if($_POST['candidate']['industry'] === $industry->value){ ?> selected<?php } ?>><?=$industry->name?></option>
-						<?php } ?>
-					</select>
+					<label class="radio">
+						<input type="radio" name="candidate[industry]" value="Automotive"<?php if(json_decode($_POST['companyJson'])->industry === 'Automotive'){?> checked="checked"<?php } ?> required>
+						Automotive
+					</label>
+					<label class="radio">
+						<input type="radio" name="candidate[industry]" value="Non-Automotive"<?php if(json_decode($_POST['companyJson'])->industry === 'Non-Automotive'){?> checked="checked"<?php } ?>>
+						Non-Automotive
+					</label>
 				</div>
 			</div>
 			
@@ -280,7 +299,7 @@ get_header();
 					Years of Working Experience
 				</label>
 				<div class="controls">
-					<input type="number" name="candidate[yearOfExperience]" value="<?=$_POST['candidate']['yearOfExperience']?>">
+					<input type="number" name="candidate[yearOfExperience]" value="<?=$_POST['candidate']['yearOfExperience']?>" required>
 				</div>
 			</div>
 			
@@ -315,7 +334,7 @@ get_header();
 					Resume
 				</label>
 				<div class="controls">
-					<input type="file" name="resume">
+					<input type="file" name="resume" required>
 				</div>
 			</div>
 			
