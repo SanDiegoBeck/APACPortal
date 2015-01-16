@@ -3,8 +3,9 @@
  * retrieve a post list including "post", "attachment" and "link" post type
  * @param array $args
  *	each_column: an integer, list container repeats after which items are exported, a list, say, "ul", will than be divided to multiple "ul"s
- *	contailer: list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
+ *	container: list container, default is 'ul', but if there is a 'summary-thumbnail' class, default would be 'dl'
  *	container_class
+ *	container_style
  *	item: list items container, default is li, but if there is a 'summary-thumbnail' class, default would be 'dd'
  *	item_class
  *	header_class
@@ -27,7 +28,7 @@
 function apacportal_post_list($args = array()){
 	
 	$defaults = array(
-		'container' => 'ul', 'container_class' => '',
+		'container' => 'ul', 'container_class' => '', 'container_style' => '',
 		'item' => 'li', 'item_class' => '',
 		'show_thumbnail' => false, 'thumbnail_container' => 'span', 'thumbnail_class' => '',
 		'show_title' => true, 'title_container' => '', 'title_class' => '',
@@ -102,7 +103,14 @@ function apacportal_post_list($args = array()){
 	$out = '';
 	
 	if($args['container']){
-		$out .= '<' . $args['container'] . ' class="' . $args['container_class'] . '"' . '>';
+		
+		$out .= '<' . $args['container'] . ' class="' . $args['container_class'] . '"';
+		
+		if($args['container_style']){
+			$out .= ' style="' . $args['container_style'] . '"';
+		}
+		
+		$out .= '>';
 	}
 	
 	$posts = get_posts($args); //$out .= print_r($args, true);
