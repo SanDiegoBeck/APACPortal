@@ -4,6 +4,9 @@ $fields = json_decode(get_option('chop_request_fields'), JSON_OBJECT_AS_ARRAY);
 
 if(isset($_POST['submit'])){
 	try{
+		
+		$_POST = stripslashes_deep($_POST);
+
 		foreach(json_decode(get_option('chop_request_fields'), JSON_OBJECT_AS_ARRAY) as $field => $label){
 			if((!(is_array($fields[$field]) && $fields[$field]['type'] === 'checkbox')) && empty($_POST[$field])){
 				throw new Exception('Please fill in "' . (is_array($label) ? $label['label'] : $label) . '"');
@@ -48,6 +51,7 @@ if(isset($_POST['submit'])){
 		
 		foreach($fields as $field => $label){
 			if($field === 'documents'){
+				$_POST['documents'] = stripslashes_deep($_POST['documents']);
 				$documents = array();
 				for($i = 0; $i < count($_POST['documents']['name']); $i++){
 					$documents[] = array('name'=>$_POST['documents']['name'][$i], 'pages'=>$_POST['documents']['pages'][$i]);
