@@ -136,7 +136,7 @@ function apacportal_post_list($args = array()){
 		}
 		
 		if($args['type'] === 'list' && strpos($post_class, ' new') !== false){
-			$out .= '<img class="mark-new" src="http://img.sj33.cn/uploads/allimg/200803/20080320125246727.gif">';
+			$out .= '<img class="mark-new" src="http://apaconnect.fiat.chrysler.com/wp-content/uploads/2015/01/20080320125246727.gif">';
 		}
 		
 		if($args['show_thumbnail']){
@@ -431,6 +431,11 @@ add_action('wp_footer', function(){
 add_action('init', function(){
 	
 	add_shortcode('row', function($attrs, $content){
+		$out = '<div class="row-fluid">' . do_shortcode($content) . '</div>';
+		return $out;
+	});
+	
+	add_shortcode('subrow', function($attrs, $content){
 		$out = '<div class="row-fluid">' . do_shortcode($content) . '</div>';
 		return $out;
 	});
