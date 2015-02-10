@@ -9,7 +9,7 @@
 	</span>
 	<textarea name="request_status_change_comments" placeholder="Comments" style="margin-top:10px;width:100%"></textarea>
 	<?php foreach(get_post_meta($post->ID, 'request_statuses') as $status){ ?>
-	<?php $status = json_decode($status); ?>
+	<?php $status = json_decode(stripslashes($status)); ?>
 	<hr>
 	<div style="font-weight:bold">
 		<?=date('Y-m-d', $status->time)?>

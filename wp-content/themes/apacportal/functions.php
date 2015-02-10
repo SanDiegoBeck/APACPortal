@@ -771,7 +771,7 @@ add_action('manage_chop_request_posts_custom_column', function ($column_name) {
 		case 'status' :
 			$available_statuses = json_decode(get_option('chop_request_statuses'), JSON_OBJECT_AS_ARRAY);
 			$statuses = get_post_meta($post->ID, 'request_statuses');
-			$status = json_decode($statuses[count($statuses) - 1]);
+			$status = json_decode(stripslashes($statuses[count($statuses) - 1]));
 			echo $status ? ($available_statuses[$status->value] . ', ' . $status->user . ', ' . date('Y-m-d', $status->time)) : '-';
 			break;
 		case 'approval_file':
