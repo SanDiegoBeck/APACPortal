@@ -248,42 +248,43 @@ function parse_comma_seperated_args(array $args, $keys = null){
 	return $args;
 }
 
-function curl_call($url, $data = null, $method = 'GET', $type = 'form-data'){
-
+function curl_call($url, $data = null, $method = 'GET', $type = 'form-data', $headers = array()){
+	
 	if(!is_null($data) && $method === 'GET'){
 		$method = 'POST';
 	}
 
-	switch(strtoupper($method)){
-		case 'GET':
-			$response = file_get_contents($url);
+	switch($type){
+		case 'form-data':
 			break;
-
-		case 'POST':
-			$ch = curl_init($url);
-
-			curl_setopt_array($ch, array(
-				CURLOPT_POST => TRUE,
-				CURLOPT_RETURNTRANSFER => TRUE,
-				CURLOPT_POSTFIELDS => $type === 'json' ? json_encode($data) : $data,
-				CURLOPT_HTTPHEADER => $type === 'json' ? array(
-					'Content-Type: application/json'
-				) : array(),
-				CURLOPT_SSL_VERIFYHOST => FALSE,
-				CURLOPT_SSL_VERIFYPEER => FALSE,
-			));
-
-			$response = curl_exec($ch);
-			
-			if(!$response){
-				exit(curl_error($ch));
-			}
-			
-			curl_close($ch);
-
+		case 'json':
+			$headers[] = 'Content-Type: application/json';
 			break;
+		default:
+			$headers[] = 'Content-Type: application/x-www-form-urlencoded';
+	}
+	
+	$ch = curl_init($url);
+	
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	
+	if($method === 'POST'){
+		curl_setopt($ch, CURLOPT_POST, TRUE);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $type === 'json' ? json_encode($data) : $data);
+	}
+	
+	$response = curl_exec($ch);
+
+	if(!$response){
+		print_r(curl_error($ch));
+		exit;
 	}
 
+	curl_close($ch);
+	
 	if(!is_null(json_decode($response))){
 		$response = json_decode($response);
 	}

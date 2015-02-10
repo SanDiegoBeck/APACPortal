@@ -59,6 +59,27 @@ table.box {
 	font-family: 'Helvetica Neue Lt Std', Helvetica, Arial, sans-serif;
 }
 
+/* Alignment */
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn.btn-primary {
+	background-image: linear-gradient(to bottom, #7494E5, #597DDA);
+	background-color: #597DDA;
+}
+
 /*Basic Structure*/
 body {
 	color: #080808;
@@ -536,7 +557,7 @@ footer.entry-meta {
 }
 
 .post table {
-	table-layout: fixed;
+	/*table-layout: fixed;*/
 	width: 100%;
 }
 
