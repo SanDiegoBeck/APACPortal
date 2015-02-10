@@ -22,21 +22,20 @@
 	<script src="<?=get_stylesheet_directory_uri()?>/js/respond.min.js"></script>
 	<script src="<?=get_stylesheet_directory_uri()?>/js/jquery.placeholder.js"></script>
 	<![endif]-->
-	<?php if(in_array(get_current_user_id(), array(1, 2, 1838))){ ?>
 	<style type="text/css">
-		#page { background: url('http://apaconnect.fiat.chrysler.com/wp-content/uploads/2015/01/APAC-Portal-new-bg-2.jpg') 50% 100%; background-size: cover; }
-		.description .worldtime .city { color: #A2073D; }
-		.navbar-inner { border-top: #A2073D 2px solid; }
-		.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus { color: #A2073D; }
-		.breadcrumb { background: rgba(255,255,255,0.9); }
-		.breadcrumb a { text-shadow: none; }
-		.box>header, .box>.header { color: rgb(98, 1, 1); background: #FFFFD1; }
-		<?php if($_GET['style'] == 2){ ?>
-		.box>header, .box>.header { color: #FFF; background: #FFFFD1; background-image: linear-gradient(to right, #960000, #FF8080); }
-		<?php } ?>
-		.site-footer { border-top: none; }
+		#page{ background: url('http://apaconnect.fiat.chrysler.com/wp-content/uploads/2015/02/New-Year-Background.jpg') no-repeat #000; background-size: contain; }
+		.site-header .banner .wrapper { width: 100%; }
+		.site-header .banner { background: none !important; }
+		.site-header .banner .main { height:250px; background:none; position:relative; box-shadow:none; }
+		.site-title { visibility: hidden; }
+		.site-header .share-price .pr { color: #ED3B50; }
+		.description .worldtime .city { color: #B6B6B6; }
+		.description .worldtime .time { color: #E5E5E5; }
+		.description { position:absolute; bottom:10px; right:20px }
+		#site-navigation { border-top-color:#A02932; }
+		.site-footer { border-top: solid 1px #EE4F5B; }
+		.site-footer .nav>li>a { color: #EE4F5B; }
 	</style>
-	<?php } ?>
 </head>
 
 <body <?php body_class(); ?>>

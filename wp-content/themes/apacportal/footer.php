@@ -96,6 +96,12 @@
 					nextText: '&nbsp;'
 				});
 				
+				if(localStorage && !localStorage.newYearAnimatePlayed){
+					$('.site-header .banner .main').css('height', 1000).delay(2000).animate({height: 235}, 3000);
+					$('#page').delay(4000).animate({'background-position-y': -15}, 1000);
+					localStorage.newYearAnimatePlayed = true;
+				}
+				
 			});
 		})(jQuery);
 		
