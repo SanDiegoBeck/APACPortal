@@ -4,9 +4,11 @@ try{
 	
 	$price = json_decode(get_option('share_price_fiat_spa'), JSON_OBJECT_AS_ARRAY);
 	
-	if(!$price || (!is_null($price['timestamp']) && $price['timestamp'] < time() - 60)){
+	if(!$price || (!(is_null($price['timestamp']) && time() < $price['retry_at']) && $price['timestamp'] < time() - 60)){
 		
 		$price['timestamp'] = null;
+		$price['retry_at'] = time() + 60;
+		
 		update_option('share_price_fiat_spa', json_encode($price)); // tell other clients not to fetch shareprice
 		$html = @file_get_contents('http://www.google.com/finance?q=FCAU');
 
