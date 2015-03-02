@@ -33,13 +33,13 @@
 		.description .worldtime .time { color: #E5E5E5; }
 		.description { position:absolute; bottom:10px; right:20px }
 		#site-navigation { border-color:#A02932; box-shadow: 2px 2px 5px #2A1C1C; }
-		.navbar-inner { background-image: linear-gradient(to bottom, #430508, #AD3340); }
+		.navbar-inner { background-color: rgb(114, 37, 46); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF430508', endColorstr='#FFAD3340', GradientType=0); background-image: linear-gradient(to bottom, #430508, #AD3340); }
 		.navbar .nav>li>a { color: #FFEDEB; text-shadow: none; }
-		.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus { color: #FEFDFA; font-weight: bold; border-bottom: 2px solid #DA9292; text-shadow: none; background-color: rgba(50, 0, 0, 0.5); }
+		.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus { color: #FEFDFA; font-weight: bold; border-bottom: 2px solid #DA9292; text-shadow: none; background-color: rgb(114, 37, 46); background-color: rgba(50, 0, 0, 0.5); }
 		.navbar .nav>li>a:focus, .navbar .nav>li>a:hover { color: #F0B8B8; }
-		.navbar .navbar-search .search-query { border-color: #BE5656; background-color: rgba(114, 37, 46, 0.8); }
+		.navbar .navbar-search .search-query { border-color: #BE5656; background-color: rgb(114, 37, 46); background-color: rgba(114, 37, 46, 0.8); }
 		.total-hits a { color: #CFBABA; }
-		.site-header .total-hits { background-color: rgba(114, 37, 46, 0.8); border-color: #BE5656; }
+		.site-header .total-hits { background-color: rgb(114, 37, 46); background-color: rgba(114, 37, 46, 0.8); border-color: #BE5656; }
 		.site-footer { border-top: solid 1px #EE4F5B; }
 		.site-footer .nav>li>a { color: #EE4F5B; }
 		.box>header { color: rgb(134, 34, 43); }
