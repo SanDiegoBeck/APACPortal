@@ -4,6 +4,3 @@ Disallow: /wp-includes
 Disallow: /wp-admin
 Disallow: /share-price/
 Disallow: /world-time/
-
-User-agent: *
-Disallow: /
