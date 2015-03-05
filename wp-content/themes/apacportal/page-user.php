@@ -32,7 +32,15 @@ if($_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest'){
 	header('Content-Type: application/json');
 	$results = array();
 	foreach($users as $user){
-		$results[] = trim($user->meta['first_name'][0]) . ' ' . trim($user->meta['last_name'][0]) . ' <' . strtolower($user->user_email) . '>';
+		if(isset($_GET['as_object'])){
+			$results[] = array(
+				'id'=>$user->ID,
+				'name'=>$user->display_name,
+				'email'=>strtolower($user->user_email)
+			);
+		}else{
+			$results[] = $user->display_name . ' <' . strtolower($user->user_email) . '>';
+		}
 	}
 	echo json_encode($results);
 }

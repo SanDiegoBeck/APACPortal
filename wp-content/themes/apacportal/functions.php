@@ -699,6 +699,71 @@ add_action('save_post', function($post_id){
 	}
 });
 
+add_action('init', function(){
+	
+	register_post_type('department', array(
+		'label'=>'Departments',
+		'show_ui'=>true,
+		'show_in_menu'=>true,
+		'supports'=>array('title'),
+		'menu_icon'=>'dashicons-pressthis',
+		'register_meta_box_cb'=>function($post){
+		
+			add_meta_box('info', 'Department Detail', function($post){
+				$uda_levels = json_decode(get_option('uda_levels'));
+				$countries = json_decode(get_option('countries'));
+				require get_stylesheet_directory() . '/admin/department_detail.php';
+			}, 'department', 'normal');
+			
+			remove_meta_box( 'bawpvc_meta_box', 'department' , 'side' );
+			
+		}
+	));
+});
+
+add_action('save_post', function($post_id){
+	
+	$uda_levels = json_decode(get_option('uda_levels'));
+	
+	if($_POST['post_type'] === 'department'){
+		foreach($uda_levels as $uda_level){
+			
+			$level_name = sanitize_title($uda_level->name);
+			
+			if(!isset($_POST[$level_name]) || !is_array($_POST[$level_name])){
+				$_POST[$level_name] = array();
+			}
+				
+			$approvers = get_post_meta($post_id, $level_name);
+
+			$to_remove = array_diff($approvers, $_POST[$level_name]);
+
+			$to_add = array_diff($_POST[$level_name], $approvers);
+
+			foreach($to_remove as $approver_id){
+				delete_post_meta($post_id, $level_name, $approver_id);
+			}
+
+			foreach($to_add as $approver_id){
+				add_post_meta($post_id, $level_name, $approver_id);
+			}
+		}
+		
+		$fields = array(
+			'legal_entity'=>'Legal Entity',
+			'country'=>'Country',
+		);
+
+		foreach($fields as $field => $label){
+			if(isset($_POST[$field])){
+				update_post_meta($post_id, $field, $_POST[$field]);
+			}
+		}
+	}
+	
+});
+
+
 /**
  * disable rich text edit for "page" and "link"
  */
