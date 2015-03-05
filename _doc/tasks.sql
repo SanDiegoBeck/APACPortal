@@ -25,3 +25,10 @@ MAX(IF(meta_key = 'hire_date', meta_value, '')) `Hire Date`,
 MAX(IF(meta_key = 'reason', meta_value, '')) `Reason`,
 MAX(IF(meta_key = 'expectation', meta_value, '')) `Expectation`
 from wp_postmeta where post_id in (select ID from wp_posts where post_type = 'form_data') group by post_id;
+
+-- Update all user display_name to first_name + last_name.
+update wp_users
+inner join wp_usermeta first_name on first_name.`user_id` = wp_users.id and first_name.`meta_key` = 'first_name'
+inner join wp_usermeta last_name on last_name.`user_id` = wp_users.id and last_name.`meta_key` = 'last_name'
+set wp_users.display_name = concat(first_name.meta_value, ' ', last_name.meta_value)
+;
