@@ -701,8 +701,8 @@ add_action('save_post', function($post_id){
 
 add_action('init', function(){
 	
-	register_post_type('department', array(
-		'label'=>'Departments',
+	register_post_type('function', array(
+		'label'=>'Functions',
 		'show_ui'=>true,
 		'show_in_menu'=>true,
 		'supports'=>array('title'),
@@ -710,12 +710,16 @@ add_action('init', function(){
 		'register_meta_box_cb'=>function($post){
 		
 			add_meta_box('info', 'Department Detail', function($post){
+				
 				$uda_levels = json_decode(get_option('uda_levels'));
+				$uda_steps = json_decode(get_option('uda_steps'));
+				$uda_approvers = json_decode(get_post_meta($post->ID, 'uda_approvers', true));
+
 				$countries = json_decode(get_option('countries'));
 				require get_stylesheet_directory() . '/admin/department_detail.php';
-			}, 'department', 'normal');
+			}, 'function', 'normal');
 			
-			remove_meta_box( 'bawpvc_meta_box', 'department' , 'side' );
+			remove_meta_box( 'bawpvc_meta_box', 'function' , 'side' );
 			
 		}
 	));
@@ -723,41 +727,40 @@ add_action('init', function(){
 
 add_action('save_post', function($post_id){
 	
+	if($_POST['post_type'] !== 'function'){
+		return;
+	}
+	
+	$uda_steps = json_decode(get_option('uda_steps'));
 	$uda_levels = json_decode(get_option('uda_levels'));
 	
-	if($_POST['post_type'] === 'department'){
-		foreach($uda_levels as $uda_level){
-			
-			$level_name = sanitize_title($uda_level->name);
-			
-			if(!isset($_POST[$level_name]) || !is_array($_POST[$level_name])){
-				$_POST[$level_name] = array();
-			}
-				
-			$approvers = get_post_meta($post_id, $level_name);
-
-			$to_remove = array_diff($approvers, $_POST[$level_name]);
-
-			$to_add = array_diff($_POST[$level_name], $approvers);
-
-			foreach($to_remove as $approver_id){
-				delete_post_meta($post_id, $level_name, $approver_id);
-			}
-
-			foreach($to_add as $approver_id){
-				add_post_meta($post_id, $level_name, $approver_id);
-			}
-		}
+	$uda_approvers = array();
+	
+	foreach($uda_levels as $uda_level){
 		
-		$fields = array(
-			'legal_entity'=>'Legal Entity',
-			'country'=>'Country',
-		);
-
-		foreach($fields as $field => $label){
-			if(isset($_POST[$field])){
-				update_post_meta($post_id, $field, $_POST[$field]);
+		$level_name = sanitize_title($uda_level->name);
+		
+		foreach($uda_steps as $step){
+			
+			if(!isset($_POST[$level_name][$step->name]) || !is_array($_POST[$level_name][$step->name])){
+				$_POST[$level_name][$step->name] = array();
 			}
+
+			$uda_approvers[$step->name][$level_name] = $_POST[$level_name][$step->name];
+		}
+			
+	}
+	
+	update_post_meta($post_id, 'uda_approvers', json_encode($uda_approvers));
+
+	$fields = array(
+		'legal_entity'=>'Legal Entity',
+		'country'=>'Country',
+	);
+
+	foreach($fields as $field => $label){
+		if(isset($_POST[$field])){
+			update_post_meta($post_id, $field, $_POST[$field]);
 		}
 	}
 	

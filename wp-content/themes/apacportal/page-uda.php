@@ -1,11 +1,14 @@
 <?php
 
+$uda_steps = json_decode(get_option('uda_steps'));
 $uda_levels = json_decode(get_option('uda_levels'));
 $countries = json_decode(get_option('countries'));
 
 if(isset($_POST['department_name'])){
 	
-	$department = get_posts(array('s'=>$_POST['department_name'], 'post_type'=>'department'))[0];
+	$department = get_posts(array('s'=>$_POST['department_name'], 'post_type'=>'function'))[0];
+	
+	$uda_approvers = json_decode(get_post_meta($department->ID, 'uda_approvers', true));
 	
 	$authorized_levels = array();
 	
@@ -71,7 +74,8 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="span6">
-					<h3>Authorized Approvers</h3>
+					<?php foreach($uda_steps as $uda_step){ ?>
+					<h4><?=$uda_step->approvers?></h4>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -82,7 +86,7 @@ get_header(); ?>
 						</thead>
 						<tbody>
 							<?php foreach($authorized_levels as $level_name => $authorization){ ?>
-							<?php foreach(get_post_meta($department->ID, $level_name) as $approver_id){ ?>
+							<?php foreach($uda_approvers->{$uda_step->name}->$level_name as $approver_id){ ?>
 							<?php $approver = get_userdata($approver_id); ?>
 							<tr>
 								<td><?=$approver->display_name?></td>
@@ -93,6 +97,7 @@ get_header(); ?>
 							<?php } ?>
 						</tbody>
 					</table>
+					<?php } ?>
 				</div>
 				<div class="form-actions" style="clear:both">
 					<button type="submit" class="btn btn-primary">Submit</button>

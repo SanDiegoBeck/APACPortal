@@ -1,7 +1,7 @@
 <?php
 
 $departments = get_posts(array(
-	'post_type'=>'department',
+	'post_type'=>'function',
 	'name'=>sanitize_title($_POST['department_name'])
 ));
 

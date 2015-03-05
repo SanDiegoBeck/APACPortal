@@ -47,19 +47,29 @@
 						</tr>
 					</tbody>
 				</table>
-				<ul class="approvers">
-					<?php foreach(get_post_meta($post->ID, $level_name) as $approver_id){ ?>
+				<?php foreach($uda_steps as $uda_step){ ?>
+				<h4><?=$uda_step->approvers?></h4>
+				<ul class="approvers <?=$uda_step->name?>">
+					<?php foreach($uda_approvers->{$uda_step->name}->$level_name as $approver_id){ ?>
 					<li>
 						<?php $approver = get_userdata($approver_id); ?>
 						<?php $approver->meta = get_user_meta($approver_id)?>
 						<b><?=$approver->display_name?></b> &lt;<?=$approver->user_email?>&gt;
-						<input type="hidden" name="<?=$level_name?>[]" value="<?=$approver_id?>">
-						<span class="remove dashicons dashicons-trash" target="<?=$approver_id?>" style="font-size:16px;cursor:pointer"></span>
+						<input type="hidden" name="<?=$level_name?>[<?=$uda_step->name?>][]" value="<?=$approver_id?>">
+						<span class="remove dashicons dashicons-trash" target="<?=$approver_id?>"></span>
 					</li>
 					<?php } ?>
 				</ul>
-				<input type="text" class="user-finder code regular-text" data-level="<?=$level_name?>" style="float: left;">
-				<button type="submit" class="button" style="height:27px;margin-top:1px">Add</button>
+				<hr>
+				<?php } ?>
+				<div class="approver-add">
+					<select name="approver_type">
+						<?php foreach($uda_steps as $step){ ?>
+						<option value="<?=$step->name?>"><?=$step->approvers?></option>
+						<?php } ?>
+					</select>
+					<input type="text" class="user-finder code regular-text" placeholder="Search employee by name, email..." data-level="<?=$level_name?>">
+				</div>
 			</td>
 		</tr>
 		<?php } ?>
@@ -114,7 +124,13 @@
 			}
 			
 			var levelName = $(this).data('level');
-			$(this).parent().siblings('.approvers').append($('<li/>', {text: '<' + user.email + '>'}).prepend('<b>' + user.name + '</b>').append('<input type="hidden" name="' + levelName + '[]" value="' + user.id + '"> <span class="remove dashicons dashicons-trash" target="' + user.id + '"></span>'));
+			var step = $(this).parents('.approver-add:first').find('[name="approver_type"]').val();
+			$(this).parents('.approver-add:first')
+				.siblings('.approvers.' + step)
+				.append($('<li/>', {text: '<' + user.email + '>'})
+				.prepend('<b>' + user.name + '</b>')
+				.append('<input type="hidden" name="' + levelName + '[' + step + '][]" value="' + user.id + '"> <span class="remove dashicons dashicons-trash" target="' + user.id + '"></span>'));
+		
 			$(this).val('');
 		}).on('blur', function(){
 			$(this).val('');
@@ -193,5 +209,14 @@
 		border: 1px #333 solid;
 		border-right: 1px #333 solid;
 	}
-	
+	.approver-add input.regular-text {
+		width: 20em;
+		height: 28px;
+		border-radius: 5px;
+		vertical-align: baseline !important;
+	}
+	.approvers .remove {
+		font-size:16px;
+		cursor:pointer;
+	}
 </style>
