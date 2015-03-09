@@ -119,7 +119,7 @@
 			source: users.ttAdapter()
 		}).on('typeahead:selected typeahead:autocompleted', function(event, user){
 			
-			if($('.approvers [value="' + user.id + '"]').length){
+			if($(this).parents('.approvers:first').find('[value="' + user.id + '"]').length){
 				return;
 			}
 			
