@@ -31,17 +31,17 @@ $user_metas=array(
 			<?=do_shortcode('[sidebar id="left"]')?>
 		</div>
 		<div class="span9">
-			<table class="box table table-bordered table-striped">
+			<table class="box table table-bordered table-striped table-hover">
 				<thead class="header">
 					<th width="180px">&nbsp;</th>
 					<th>&nbsp;</th>
 				</thead>
-				<tbody class="content">
+				<tbody>
 					<tr>
 						<td>First Name</td>
 						<td><?=implode((array)$user->data->meta['first_name'])?></td>
 					</tr>
-					<tr>
+					<tr class="odd">
 						<td>Last Name</td>
 						<td><?=implode((array)$user->data->meta['last_name'])?></td>
 					</tr>
@@ -49,7 +49,7 @@ $user_metas=array(
 						<td>Telephone</td>
 						<td><?=implode((array)$user->data->meta['telephone'])?></td>
 					</tr>
-					<tr>
+					<tr class="odd">
 						<td>Cellphone</td>
 						<td><?=implode((array)$user->data->meta['cellphone'])?></td>
 					</tr>
@@ -57,7 +57,7 @@ $user_metas=array(
 						<td>Email</td>
 						<td><?=$user->data->user_email?></td>
 					</tr>
-					<tr>
+					<tr class="odd">
 						<td>Department</td>
 						<td><?=implode((array)$user->data->meta['department'])?></td>
 					</tr>
@@ -65,7 +65,7 @@ $user_metas=array(
 						<td>Company Name</td>
 						<td><?=implode((array)$user->data->meta['company_name'])?></td>
 					</tr>
-					<tr>
+					<tr class="odd">
 						<td>Working Site Country</td>
 						<td><?=implode((array)$user->data->meta['working_site_country'])?></td>
 					</tr>

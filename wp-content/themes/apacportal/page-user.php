@@ -58,7 +58,7 @@ else{
 			<?=do_shortcode('[sidebar id="left"]')?>
 		</div>
 		<div class="span9">
-			<table class="box table table-bordered table-striped">
+			<table class="box table table-bordered table-striped table-hover">
 				<thead class="header">
 					<th>Name<span class="icon icon-info-sign" title="Click Names For More Information"></span></th>
 					<th>Telephone</th>
