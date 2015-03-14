@@ -16,7 +16,7 @@
 				<?php //get_sidebar( 'main' ); ?>
 				<nav>
 					<ul class="nav">
-						<li><a href="/wp-content/uploads/2013/11/Privacy-Policy.pdf" target="_blank">Privacy Policy</a></li>
+						<li><a href="<?=site_url()?>/wp-content/uploads/2013/11/Privacy-Policy.pdf" target="_blank">Privacy Policy</a></li>
 						<li>|</li>
 						<li><a href="mailto:hr638@chrysler.com">Contact Us</a></li>
 					</ul>
@@ -56,9 +56,9 @@
 
 				setInterval(function(){
 
-					$.get('/world-time/?_=' + new Date().getTime(),function(time){$('.worldtime').html(time);});
+					$.get('<?=site_url()?>/world-time/?_=' + new Date().getTime(),function(time){$('.worldtime').html(time);});
 
-					$.get('/share-price/?_=' + new Date().getTime(),function(result){
+					$.get('<?=site_url()?>/share-price/?_=' + new Date().getTime(),function(result){
 						$('.share-price').html($(result).find('.pr').children('span').prepend('FCAU Share Price: $ ').end().end());
 						localStorage.sharePrice=JSON.stringify({
 							content: $('.share-price').html(),

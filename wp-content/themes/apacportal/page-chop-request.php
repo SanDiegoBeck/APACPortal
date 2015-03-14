@@ -78,7 +78,7 @@ get_header();
 .form-horizontal .control-label { width: 300px; }
 .form-horizontal .controls { margin-left: 320px; }
 .form-horizontal .control-group-area { min-height: 285px; }
-.box .content { background: url(http://apaconnect.fiat.chrysler.com/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 25%; }
+.box .content { background: url(<?=site_url()?>/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 25%; }
 .form-actions.approval-sign-section {
 	display: none;
 }

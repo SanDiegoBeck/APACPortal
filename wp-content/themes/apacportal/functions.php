@@ -136,7 +136,7 @@ function apacportal_post_list($args = array()){
 		}
 		
 		if($args['type'] === 'list' && strpos($post_class, ' new') !== false){
-			$out .= '<img class="mark-new" src="http://apaconnect.fiat.chrysler.com/wp-content/uploads/2015/01/20080320125246727.gif">';
+			$out .= '<img class="mark-new" src="' . site_url() . '/wp-content/uploads/2015/01/20080320125246727.gif">';
 		}
 		
 		if($args['show_thumbnail']){

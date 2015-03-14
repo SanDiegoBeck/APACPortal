@@ -36,7 +36,7 @@ get_header();
 <style type="text/css">
 .form-horizontal .control-label { width: 300px; }
 .form-horizontal .controls { margin-left: 320px; }
-.box .content { background: url(http://apaconnect.fiat.chrysler.com/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 10%; }
+.box .content { background: url(<?=site_url()?>/wp-content/uploads/2014/05/forms.png) no-repeat #FFF 80% 10%; }
 </style>
 <div class="site-content row-fluid" role="main">
 	<div class="box">

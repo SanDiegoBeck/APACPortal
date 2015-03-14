@@ -12,7 +12,7 @@
 		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/jquery-1.10.2.min.js'></script>
 		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/lib/plugins.js'></script>
 		<script type="text/javascript" src='<?= site_url() ?>/wp-content/uploads/investorday/style/FCAInvestorDay/js/scripts.js'></script>
-	        <link type="text/xml" rel="alternate" href="http://apaconnect.fiat.chrysler.com/investorday/_vti_bin/spsdisco.aspx" />
+	        <link type="text/xml" rel="alternate" href="<?=site_url()?>/investorday/_vti_bin/spsdisco.aspx" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	</head>
 	

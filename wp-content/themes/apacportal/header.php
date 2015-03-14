@@ -23,7 +23,7 @@
 	<script src="<?=get_stylesheet_directory_uri()?>/js/jquery.placeholder.js"></script>
 	<![endif]-->
 	<style type="text/css">
-		#page{ background: url('http://apaconnect.fiat.chrysler.com/wp-content/uploads/2015/02/New-Year-Background.jpg') no-repeat #000; background-size: contain; }
+		#page{ background: url('<?=site_url()?>/wp-content/uploads/2015/02/New-Year-Background.jpg') no-repeat #000; background-size: contain; min-height: 768px; }
 		.site-header .banner .wrapper { width: 100%; }
 		.site-header .banner { background: none !important; }
 		.site-header .banner .main { height:250px; background:none; position:relative; box-shadow:none; }
