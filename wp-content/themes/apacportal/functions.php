@@ -773,6 +773,15 @@ add_action('save_post', function($post_id){
 	
 });
 
+add_action('init', function(){
+	register_post_type('workhour_request', array(
+		'label'=>'Leave & OT',
+		'show_ui'=>true,
+		'show_in_menu'=>true,
+		'supports'=>array('title'),
+		'menu_icon'=>'dashicons-clock',
+	));
+});
 
 /**
  * disable rich text edit for "page" and "link"
