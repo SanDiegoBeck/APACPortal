@@ -392,13 +392,23 @@ add_action('parse_query', function($wp_query){
 	
 });
 
-add_action('wp_enqueue_scripts', function(){
+add_action('init', function(){
 	
 	wp_register_style('bootstrap', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '2.3.2-2014-04-28');
 	wp_register_style('twentythirteen-style', get_stylesheet_uri(), array(), '2014-12-05');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
 	wp_register_style('responsiveslides', get_stylesheet_directory_uri().'/css/responsiveslides.css', array(), '2014-04-28');
 	wp_register_style('ltIE9', get_stylesheet_directory_uri().'/ltIE9.css', array(), '2014-04-28');
+	wp_register_style('fullcalendar', get_stylesheet_directory_uri().'/css/fullcalendar.min.css', array(), '2.3.0');
+	
+	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.js', array('jquery'), '2.3.2');
+	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js', array('jquery'), '1.54');
+	wp_register_script('moment', get_stylesheet_directory_uri().'/js/moment.min.js', array(), '2.9.0');
+	wp_register_script('fullcalendar', get_stylesheet_directory_uri().'/js/fullcalendar.min.js', array('jquery', 'moment'), '2.3.0');
+	
+});
+
+add_action('wp_enqueue_scripts', function(){
 	
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('responsiveslides');
@@ -416,9 +426,6 @@ add_action('admin_enqueue_scripts', function(){
  * the javascripts should be loaded on the page footer, to ensure the page loading speed
  */
 add_action('wp_footer', function(){
-	
-	wp_register_script('bootstrap', get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.js', array('jquery'), '2.3.2');
-	wp_register_script('responsiveslides', get_stylesheet_directory_uri().'/js/responsiveslides.min.js', array('jquery'), '1.54');
 	
 	wp_enqueue_script('bootstrap');
 	wp_enqueue_script('placeholder');
