@@ -316,6 +316,7 @@ add_action('init', function(){
 add_filter('user_contactmethods', function($profile_fields) {
 
 	$profile_fields=array(
+		'employee_id'=>'Employee ID',
 		'telephone'=>'Telephone',
 		'cellphone'=>'Cell Phone',
 		'department'=>'Department',

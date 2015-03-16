@@ -1,4 +1,32 @@
+<?php 
+set_time_limit(0);
+ignore_user_abort();
+
+$users = get_users(array('orderby'=>'ID'));
+
+foreach($users as $user){
+	
+	$user->first_name = ucwords(strtolower($user->first_name));
+	$user->last_name = ucwords(strtolower($user->last_name));
+	$user->user_email = strtolower($user->user_email);
+	
+	update_user_meta($user->ID, 'first_name', $user->first_name);
+	update_user_meta($user->ID, 'last_name', $user->last_name);
+	
+	$user->display_name = $user->first_name . ' ' . $user->last_name;
+	
+	wp_update_user(array(
+		'ID'=>$user->ID,
+		'user_nicename'=>$user->display_name,
+		'display_name'=>$user->display_name,
+		'user_email'=>$user->user_email,
+	));
+}
+
+echo 'Completed.';
+?>
 <?php
+exit;
 get_header();
 try{	
 	$user_metas=array(

@@ -15,7 +15,7 @@ $query="
 		AND wp_usermeta.meta_key IN ('first_name','last_name','telephone','cellphone','department','company_name','working_site_country')
 	)
 	INNER JOIN wp_usermeta last_name ON wp_users.ID = last_name.user_id AND last_name.meta_key = 'last_name'
-	WHERE  (wp_usermeta.meta_value LIKE '$search%' OR wp_users.user_email LIKE '$search%')
+	WHERE wp_users.user_status >= 0 AND (wp_usermeta.meta_value LIKE '$search%' OR wp_users.user_email LIKE '$search%')
 	GROUP BY wp_users.ID
 	ORDER BY last_name.meta_value ASC
 ";

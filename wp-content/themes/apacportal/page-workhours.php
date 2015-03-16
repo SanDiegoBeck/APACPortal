@@ -164,7 +164,7 @@ get_header(); ?>
 				</div>
 				<div class="controls multi-days hide">
 					<div class="input-append">
-						<input type="number" name="days" disabled="disabled" style="width:2em">
+						<input type="number" name="days" disabled="disabled" style="width:4em">
 						<span class="add-on">Days</span>
 					</div>
 				</div>
