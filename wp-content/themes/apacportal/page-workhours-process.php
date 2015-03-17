@@ -21,12 +21,8 @@ if(isset($_POST['status'])){
 	
 	// send an email to requestor
 	$message = 'Dear employee,' . "\n\n"
-			. 'Your Chop Request was ' . $status . '.' . "\n\n"
-			. '	Request No.: ' . get_post_meta($workhour_request->ID, 'request_no', true) . "\n"
-			. '	Stamp Type: ' . get_post_meta($workhour_request->ID, 'stamp_type', true) . "\n"
-			. '	Legal Entity: ' . get_post_meta($workhour_request->ID, 'legal_entity', true) . "\n"
-			. '	Function / Department: ' . get_post_meta($workhour_request->ID, 'department', true) . "\n"
-			. '	Approver: ' . get_post_meta($workhour_request->ID, 'approver', true) . "\n\n";
+			. 'Your ' . get_post_meta($workhour_request->ID, 'type', true) . ' leave request was ' . $status . '.' . "\n\n"
+			. '	Approver: ' . get_post_meta($workhour_request->ID, 'approver_name', true) . "\n\n";
 	
 	$documents = json_decode(get_post_meta($workhour_request->ID, 'documents', true));
 	
@@ -49,7 +45,7 @@ if(isset($_POST['status'])){
 				. 'Please DO NOT FORWARD this email to others, since it contains sensitive url link.';
 	}
 	
-	$result = mail(get_post_meta($workhour_request->ID, 'requestor_email', true), 'Company Chop request ' . $status . ' #' . get_post_meta($workhour_request->ID, 'request_no', true), $message, 'From: APAConnect <apaconnect@fcagroup.com>');
+	$result = mail(get_post_meta($workhour_request->ID, 'requestor_email', true), 'leave request ' . $status, $message, 'From: APAConnect <apaconnect@fcagroup.com>');
 	
 	if($result === true){
 		delete_post_meta($workhour_request->ID, 'approve_hash');

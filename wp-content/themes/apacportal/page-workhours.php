@@ -11,6 +11,11 @@ $my_workhours = get_posts(
 	)
 );
 
+if(get_current_user_id()){
+	$manager_id = get_user_meta(get_current_user_id(), 'manager_id', true);
+	$manager = get_userdata($manager_id);
+}
+
 if(isset($_POST['submit'])){
 	$workhour_request = $_POST;
 	
@@ -33,19 +38,12 @@ if(isset($_POST['submit'])){
 	add_post_meta($request_id, 'start_time', $workhour_request['start_time']);
 	add_post_meta($request_id, 'reason', $workhour_request['reason']);
 	
-	$current_user = get_current_user();
+	$current_user = wp_get_current_user();
+
 	add_post_meta($request_id, 'requestor_id', $current_user->ID);
 	add_post_meta($request_id, 'requestor_name', $current_user->display_name);
 	add_post_meta($request_id, 'requestor_email', $current_user->user_email);
 	
-	$manager_id = get_user_meta($current_user->ID, 'manager', true);
-	
-	if(!$manager_id){
-		throw new Exception('Fail to find a manager.');
-		// TODO: what if no manager found?
-	}
-	
-	$manager = get_userdata($manager_id);
 	add_post_meta($request_id, 'approver_id', $manager->ID);
 	add_post_meta($request_id, 'approver_name', $manager->display_name);
 	add_post_meta($request_id, 'approver_email', $manager->user_email);
@@ -68,21 +66,22 @@ if(isset($_POST['submit'])){
 	// send an email to approver
 	$message = 'Dear manager,' . "\n\n"
 			. 'There\'s a ' . $request_name . ' pending your approval.' . "\n\n"
+			. '	Requestor: ' . $current_user->display_name . "\n"
 			. '	Leave Type: ' . $workhour_request['type'] . "\n"
-			. '	Requestor: ' . $workhour_request['requestor_name'] . "\n";
+			. '	Duration: ' . $workhour_request['days'] . ' Days' . "\n";
 
 	$message .= "\n"
 			. 'Please approve / reject in the following link: '
-			. site_url() . '/wordhours/?key=' . $approve_hash . "\n\n"
+			. site_url() . '/workhours-process/?key=' . $approve_hash . "\n\n"
 			. 'Please DO NOT REPLY this email. For technical support, please contact uice.lu@fcagroup.com ' . "\n"
 			. 'Please DO NOT FORWARD this email to others, since it contains sensitive url link.';
 
-	$result = mail($approver_email, $request_name . ' pending your approval [' . $workhour_request['requestor_name'] . ']', $message, 'From: APAConnect <apaconnect@fcagroup.com>');
+	$result = mail($manager->user_email, $request_name . ' pending your approval [' . $current_user->display_name . ']', $message, 'From: APAConnect <apaconnect@fcagroup.com>');
 
 	if($result === true){
 		delete_post_meta($chop_request->ID, 'request_hash');
 	}else{
-		throw new Exception('Fail to send an email to: ' . $approver_email);
+		throw new Exception('Fail to send an email to: ' . $manager->user_email);
 		// TODO what to do when request saved but email not sent?
 	}
 	
@@ -97,6 +96,14 @@ get_header(); ?>
 				<div id="calendar"></div>
 			</div>
 			<div class="span3">
+				<?php if(!get_current_user_id()){ ?>
+				<form id="email-login" class="form form-inline">
+					<input type="text" placeholder="search your name, email" class="employee-name-email" style="width:200px">
+					<button type="submit" class="btn">Login</button>
+				</form>
+				<?php } ?>
+				
+				<?php if(get_current_user_id()){ ?>
 				<div class="text-right">
 					<div class="btn-group">
 						<button class="btn active">Me</button>
@@ -115,7 +122,8 @@ get_header(); ?>
 				<h4>Medical Leave</h4>
 				<div class="progress progress-striped">
 					<div class="bar" style="width: 40%;">3 / 15</div>
-				 </div>
+				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -195,6 +203,12 @@ get_header(); ?>
 				<label class="control-label">Reason</label>
 				<div class="controls">
 					<textarea name="reason" rows="5"></textarea>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Approver</label>
+				<div class="controls">
+					<div class="uneditable-input"><?=$manager->display_name?></div>
 				</div>
 			</div>
 			<input type="hidden" name="submit">
@@ -277,6 +291,26 @@ jQuery(function($){
 			end: '18:00',
 			dow: [1, 2, 3, 4, 5]
 		}
+	});
+	
+	$('input.employee-name-email').typeahead({
+		source: function(query, process){
+			$.get('<?=site_url()?>/user?s_user=' + query, function(result){
+				process(result);
+			})
+		},
+		minLength: 2,
+		highlighter: function(item){
+			return item;
+		}
+	});
+	
+	$('#email-login').on('submit', function(){
+		var email = $(this).find('input.employee-name-email').val();
+		$.post('<?=site_url()?>/email-login/', {email: email, redirectTo: '<?=site_url() . $_SERVER["REQUEST_URI"]?>'}, function(){
+			alert('Please check your mailbox.');
+		});
+		return false;
 	});
 });
 </script>

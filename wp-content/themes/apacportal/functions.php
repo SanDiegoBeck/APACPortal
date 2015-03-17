@@ -714,7 +714,7 @@ add_action('init', function(){
 		'show_ui'=>true,
 		'show_in_menu'=>true,
 		'supports'=>array('title'),
-		'menu_icon'=>'dashicons-pressthis',
+		'menu_icon'=>'dashicons-networking',
 		'register_meta_box_cb'=>function($post){
 		
 			add_meta_box('info', 'Department Detail', function($post){

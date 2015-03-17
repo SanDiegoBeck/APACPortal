@@ -155,7 +155,7 @@ get_header();
 			<?php if($success){ ?>
 			<div class="alert alert-success"><?=$success?></div>
 			<?php } ?>
-			<form class="form-horizontal" method="post">
+			<form class="form-horizontal span7" method="post">
 				<div class="control-group-area">
 					<?php foreach($fields as $field => $label){ ?>
 					<div class="control-group">
@@ -190,7 +190,7 @@ get_header();
 							</div>
 								<?php }elseif($field === 'requestor'){ ?>
 							<input type="text" id="requestor" name="requestor" value="<?=$chop_request ? get_post_meta($chop_request->ID, 'requestor', true) : $_POST['requestor']?>" autocomplete="off" style="width:315px" placeholder="Name <prefix@fcagroup.com>" />
-							<label class="label label-info" style="display:none;margin-top:5px">We will update you the status. Please select or type in an email yourself. Format is "Name &lt;email@fcagroup.com&gt;"</label>
+							<label class="label label-info hide" style="margin-top:5px">We will update you the status. Please select or type in an email yourself. Format is "Name &lt;email@fcagroup.com&gt;"</label>
 								<?php }else{ ?>
 							<input type="text" name="<?=$field?>" value="<?=$chop_request ? get_post_meta($chop_request->ID, $field, true) : $_POST[$field]?>">
 								<?php } ?>
@@ -219,7 +219,7 @@ get_header();
 						<label class="control-label">Approver</label>
 						<div class="controls">
 							<input type="text" id="approver" name="approver" value="<?=$chop_request ? get_post_meta($chop_request->ID, 'approver', true) : $_POST['approver']?>" autocomplete="off" style="width:315px" placeholder="Name <prefix@fcagroup.com>" />
-							<label class="label label-info" style="display:none;margin-top:5px">We will send an email to the approver. Please select or type in an email yourself. Format is "Name &lt;email@fcagroup.com&gt;"</label>
+							<label class="label label-info hide" style="margin-top:5px">We will send an email to the approver. Please select or type in an email yourself. Format is "Name &lt;email@fcagroup.com&gt;"</label>
 						</div>
 					</div>
 				</div>
@@ -252,12 +252,12 @@ jQuery(function($){
 	});
 	
 	$('#requestor, #approver').on('focus', function(){
-		$(this).siblings('.label').fadeIn(300);
+		$(this).siblings('.label').show(200);
 	}).on('blur', function(){
-		$(this).siblings('.label').fadeOut(300);
+		$(this).siblings('.label').hide(200);
 	}).typeahead({
 		source: function(query, process){
-			$.get('/user?s_user=' + query, function(result){
+			$.get('<?=site_url()?>/user?s_user=' + query, function(result){
 				process(result);
 			})
 		},
@@ -269,4 +269,9 @@ jQuery(function($){
 	
 });
 </script>
+<style type="text/css">
+	.label {
+		white-space: normal;
+	}
+</style>
 <?php get_footer(); ?>
